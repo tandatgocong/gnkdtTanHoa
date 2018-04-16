@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15, 15.25" name="dbKyThuat">
+  <DataContextMoniker Name="/dbKyThuatDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f17b2847-8b03-4a03-8547-29eb4d54b457" absoluteBounds="0.75, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dbKyThuatDataContext/ConfigPath" />
+      <nestedChildShapes>
+        <elementListCompartment Id="757ea5ea-5a5a-4f50-950c-376e8f86a2c1" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aabab3ec-896e-46d9-971a-2b93aee9bef9" absoluteBounds="3.75, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dbKyThuatDataContext/DANHBO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="502b27dc-c4d7-4e07-897d-294274518725" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea25081e-62a6-4108-81e4-91a1f64e4e74" absoluteBounds="0.75, 3.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/dbKyThuatDataContext/DongHo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="40ddf06a-5645-478a-92af-591bd391f02a" absoluteBounds="0.765, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="026c7247-fd10-48d2-90c6-3234037bad75" absoluteBounds="3.75, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/dbKyThuatDataContext/HeThongVan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca8ba2a2-ebff-4ae5-baba-13d2f6615c44" absoluteBounds="3.765, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ddbc6146-2aa5-4c13-9863-820f20a30a52" absoluteBounds="6.75, 0.75, 2, 6.7707340494791666">
+      <DataClassMoniker Name="/dbKyThuatDataContext/KT_BaoBe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd443d83-d2af-47c8-8d4d-28888d0c7c32" absoluteBounds="6.765, 1.21, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dc0b40a5-f181-43b7-94a8-6831d591cc38" absoluteBounds="0.75, 6.75, 2, 4.6554182942708318">
+      <DataClassMoniker Name="/dbKyThuatDataContext/KT_BaoBe_BB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d05de2f4-d691-42f2-a326-0ec0eea04f11" absoluteBounds="0.765, 7.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2cddc2f2-6de8-4852-b1a7-945ad48a284f" absoluteBounds="3.75, 8.75, 2, 3.6939111328124987">
+      <DataClassMoniker Name="/dbKyThuatDataContext/KT_DongNuoc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4614c9a3-92f2-4780-a6ca-fe83bcad4540" absoluteBounds="3.765, 9.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bbc3fce0-77f2-4da4-8387-07b08b724652" absoluteBounds="6.75, 8.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/dbKyThuatDataContext/KT_DonViSuaBe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6c2e602-9d24-4842-be49-1dd1781fcf04" absoluteBounds="6.765, 9.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c170f99c-327a-471f-bffe-27e972f5b075" absoluteBounds="9.75, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/dbKyThuatDataContext/KT_NhanVienGiamSat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71cdd486-6dd4-4f7c-8fec-1bf46563dbb8" absoluteBounds="9.765, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3ca98b7c-b929-416a-bd5f-386c89799d09" absoluteBounds="9.75, 4.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/dbKyThuatDataContext/KT_NhanVienSuaBe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="211c14d0-7bf8-478e-bc02-8777af74dec9" absoluteBounds="9.765, 5.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="78d41b88-1878-4784-ab3d-a39feb02f180" absoluteBounds="9.75, 8.75, 2, 6.1938297526041666">
+      <DataClassMoniker Name="/dbKyThuatDataContext/KT_Van" />
+      <nestedChildShapes>
+        <elementListCompartment Id="08a18be2-858f-401f-b1d4-7e977e8074e2" absoluteBounds="9.765, 9.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6bb6095d-d877-46eb-b3e6-b3b0fe6f3427" absoluteBounds="12.75, 0.75, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/dbKyThuatDataContext/Nhom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15b43fbc-1391-45b0-a10c-9d9a4573b9e6" absoluteBounds="12.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dc2bc294-eee6-4c8b-b7c0-2a372f24df4b" absoluteBounds="12.75, 3.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbKyThuatDataContext/QuanPhuong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7434af5-2789-4b32-b81b-a68b6e16344b" absoluteBounds="12.765, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3b7017ea-792f-4b89-9afe-b4b2ffdeeca3" absoluteBounds="12.75, 6.75, 2, 3.1170068359375014">
+      <DataClassMoniker Name="/dbKyThuatDataContext/sys_User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="58648a9c-d021-4430-9fb9-07d67fe05e16" absoluteBounds="12.765, 7.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="731fd2a9-df55-4f8d-a435-3c96d1bd5c5c" absoluteBounds="12.75, 10.75, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/dbKyThuatDataContext/THONGTINDMA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="78875ff9-a744-4814-a92a-5e9c1d6528ac" absoluteBounds="12.765, 11.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
