@@ -1,0 +1,1 @@
+Taskkill /IM iPMAC-TANHOA.exe /F
