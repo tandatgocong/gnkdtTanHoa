@@ -64,7 +64,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="app.config" />
-    <None Include="bin\Debug\PmacCopy.bat" />
+    <None Include="Lib\ON.BAT" />
     <None Include="DataBase.dbml.layout">
       <DependentUpon>DataBase.dbml</DependentUpon>
     </None>
@@ -85,8 +85,8 @@
       <LastGenOutput>DataBase.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="OFF.BAT" />
-    <None Include="PmacCopy.bat" />
+    <None Include="Lib\OFF.BAT" />
+    <None Include="Lib\PmacCopy.bat" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -102,6 +102,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="rstrui.exe_I009b_0409.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
