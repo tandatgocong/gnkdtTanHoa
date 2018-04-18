@@ -12,6 +12,9 @@ namespace GiamNuocWeb
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            log4net.ILog logger = log4net.LogManager.GetLogger("File");
+
+            Response.Redirect(@"Default.aspx");
         }
     }
 }

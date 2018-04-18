@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>Lib\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -50,9 +53,93 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\animate.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
     <Content Include="Default.aspx" />
+    <Content Include="FlowPlayer\flowplayer-3.2.12.min.js" />
+    <Content Include="FlowPlayer\flowplayer-3.2.16.swf" />
+    <Content Include="FlowPlayer\flowplayer.controls-3.2.15.swf" />
+    <Content Include="FlowPlayer\flowplayer.pseudostreaming-3.2.12.swf" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Home.aspx" />
     <Content Include="iisstart.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Image\1down.png" />
+    <Content Include="Image\1up.png" />
+    <Content Include="Image\3.jpg" />
+    <Content Include="Image\add.ico" />
+    <Content Include="Image\airport_runway.png" />
+    <Content Include="Image\bg.gif" />
+    <Content Include="Image\bg.jpg" />
+    <Content Include="Image\bg_head.jpg" />
+    <Content Include="Image\block_bg.gif" />
+    <Content Include="Image\box-bullet1.gif" />
+    <Content Include="Image\btn-chitiet.gif" />
+    <Content Include="Image\bullet0_over.png" />
+    <Content Include="Image\button_bg.png" />
+    <Content Include="Image\Capture.JPG" />
+    <Content Include="Image\chiropractor.png" />
+    <Content Include="Image\chuagiao.png" />
+    <Content Include="Image\db.png" />
+    <Content Include="Image\delete2.ico" />
+    <Content Include="Image\dhTong.png" />
+    <Content Include="Image\dhTong2.png" />
+    <Content Include="Image\dhTong22.png" />
+    <Content Include="Image\dot.png" />
+    <Content Include="Image\down.png" />
+    <Content Include="Image\e.png" />
+    <Content Include="Image\edit.ico" />
+    <Content Include="Image\EDIT.png" />
+    <Content Include="Image\error.gif" />
+    <Content Include="Image\favicon.ico" />
+    <Content Include="Image\foot.png" />
+    <Content Include="Image\icon2.png" />
+    <Content Include="Image\l11.gif" />
+    <Content Include="Image\Logo Tan Hoa.png" />
+    <Content Include="Image\logo.png" />
+    <Content Include="Image\Marker.png" />
+    <Content Include="Image\Marker2.png" />
+    <Content Include="Image\MarkerSuaTam-.png" />
+    <Content Include="Image\MarkerSuaTam.png" />
+    <Content Include="Image\Markerxong.png" />
+    <Content Include="Image\menu_bg.png" />
+    <Content Include="Image\navigation.jpg" />
+    <Content Include="Image\news_list_bg.gif" />
+    <Content Include="Image\nochange.png" />
+    <Content Include="Image\print_icon.gif" />
+    <Content Include="Image\reddot.png" />
+    <Content Include="Image\s.png" />
+    <Content Include="Image\ss-GIAM.PNG" />
+    <Content Include="Image\ss-TANG.PNG" />
+    <Content Include="Image\table_list_bghead.png" />
+    <Content Include="Image\tch2.png" />
+    <Content Include="Image\th.png" />
+    <Content Include="Image\Untitled.png" />
+    <Content Include="Image\up.png" />
+    <Content Include="Image\Van2.png" />
+    <Content Include="Image\vanbien.png" />
+    <Content Include="Image\vanchan.png" />
+    <Content Include="Image\warning.gif" />
+    <Content Include="Image\warning.png" />
+    <Content Include="Image\warning2.png" />
+    <Content Include="Image\workshop.png" />
+    <Content Include="Image\xacan.gif" />
+    <Content Include="Image\xacan.png" />
+    <Content Include="Image\XOA.png" />
+    <Content Include="Image\ydot.png" />
+    <Content Include="JavaScript\headmenu.css" />
+    <Content Include="JavaScript\headmenu.js" />
+    <Content Include="JavaScript\jquery-1.10.0.min.js" />
+    <Content Include="JavaScript\jquery-1.2.6.js" />
+    <Content Include="JavaScript\jquery-1.6.2.js" />
+    <Content Include="JavaScript\jquery-ui.css" />
+    <Content Include="JavaScript\jquery-ui.min.js" />
+    <Content Include="JavaScript\transmenu.js" />
+    <Content Include="Lib\log4net.dll" />
+    <Content Include="StyleSheet\style.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -68,6 +155,20 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.Master.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.Master.designer.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
     <Compile Include="iisstart.aspx.cs">
       <DependentUpon>iisstart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -76,6 +177,17 @@
       <DependentUpon>iisstart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Home.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fonts\fontawesome-webfont.eot" />
+    <None Include="fonts\fontawesome-webfont.ttf" />
+    <None Include="fonts\fontawesome-webfont.woff" />
+    <None Include="fonts\fontawesome-webfont.woff2" />
+    <None Include="fonts\FontAwesome.otf" />
+    <None Include="Logs\Log4Net.log" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
