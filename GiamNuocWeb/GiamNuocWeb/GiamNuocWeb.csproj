@@ -62,7 +62,6 @@
     <Content Include="FlowPlayer\flowplayer.controls-3.2.15.swf" />
     <Content Include="FlowPlayer\flowplayer.pseudostreaming-3.2.12.swf" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="Home.aspx" />
     <Content Include="iisstart.aspx" />
     <Content Include="Image\1down.png" />
     <Content Include="Image\1up.png" />
@@ -135,7 +134,6 @@
     <Content Include="JavaScript\jquery-ui.css" />
     <Content Include="JavaScript\jquery-ui.min.js" />
     <Content Include="JavaScript\transmenu.js" />
-    <Content Include="Lib\log4net.dll" />
     <Content Include="StyleSheet\style.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -155,20 +153,6 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Home.Master.cs">
-      <DependentUpon>Home.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Home.Master.designer.cs">
-      <DependentUpon>Home.Master</DependentUpon>
-    </Compile>
     <Compile Include="iisstart.aspx.cs">
       <DependentUpon>iisstart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -179,15 +163,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Home.Master" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="fonts\fontawesome-webfont.eot" />
     <None Include="fonts\fontawesome-webfont.ttf" />
     <None Include="fonts\fontawesome-webfont.woff" />
     <None Include="fonts\fontawesome-webfont.woff2" />
     <None Include="fonts\FontAwesome.otf" />
     <None Include="Logs\Log4Net.log" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Lib\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
