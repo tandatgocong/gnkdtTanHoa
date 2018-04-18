@@ -46,6 +46,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stasusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
+            this.btExit = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,11 +204,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btExit
+            // 
+            this.btExit.Location = new System.Drawing.Point(108, 246);
+            this.btExit.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(68, 32);
+            this.btExit.TabIndex = 16;
+            this.btExit.Text = "Exit";
+            this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(784, 308);
+            this.Controls.Add(this.btExit);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label5);
@@ -222,9 +236,9 @@
             this.Controls.Add(this.dongho);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "Form1";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "PMAC Status";
             this.statusStrip1.ResumeLayout(false);
@@ -252,6 +266,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel stasusLabel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btExit;
     }
 }
 

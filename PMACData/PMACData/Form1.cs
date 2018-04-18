@@ -34,82 +34,7 @@ namespace PMACData
 
              
         }
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //   // System.Diagnostics.Process.Start("OFF.BAT");
-        //    Process[] processlist = Process.GetProcesses();
-        //    //MessageBox.Show(this, Process.GetProcessesByName("iPMAC-TANHOA.exe").Length +"");
-        //    foreach (Process theprocess in processlist)
-        //    {
-        //       if ("iPMAC-TANHOA".Contains(theprocess.ProcessName))
-        //           MessageBox.Show(this, theprocess.ProcessName);
-                              
-        //    }
-            
-        //}
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //System.Diagnostics.Process.Start(@"D:\PROJECT\iPmac2SQL\iPMAC-TANHOA.exe");
-            string time2 = DateTime.Now.ToString("T");
-            MessageBox.Show(this, time2);
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            this.dongho.Text = DateTime.Now.ToString("G");
-            string path = @"C:\PMAC\DATA";
-         
-            DateTime dt = Directory.GetLastWriteTime(path);
-            lbFilePMAC.Text = dt.ToString("G");
-            AppPmac();
-
-            //getTimeDatabase();
-            //DateTime t = DateTime.Now;
-            //MessageBox.Show(this, t.ToString("T") + "__" + t.Hour.ToString() + "__" + t.Minute.ToString() + "__" + t.Second.ToString());
-            
-            
-
-            DateTime tNow = DateTime.Now;
-            if (tNow.Hour % 2 == 0 && tNow.Minute == 15 && tNow.Second == 0)
-            {
-                btCopy.PerformClick();
-                stop.PerformClick();
-                start.PerformClick();
-                getTimeDatabase();
-                stasusLabel.Text = stasusLabel.Text + "__" + tNow.ToString("T");
-            }
-
-            
-            if (tNow.Hour % 2 == 1 && tNow.Minute == 0 && tNow.Second == 0)
-            { 
-                getTimeDatabase();
-            }
-            string timeNow = DateTime.Now.ToString("T");
-
-            string time1 = DateTime.Parse("12:15:00 AM").ToString("T");
-
-            //if (time1.Equals(time2))
-            //{
-            //    MessageBox.Show(this, "1");
-            //    // timer1.Stop();
-            //}
-
-            //string time3 = DateTime.Parse("9:37:00 AM").ToString("T");
-
-            //if (time3.Equals(time2))
-            //{
-            //    MessageBox.Show(this, "2");
-            //    // timer1.Stop();
-            //}
-
-
-            //time1 = DateTime.Parse("9:30:00 AM").ToString("t");
-            //if (time1.Equals(time2))
-            //{
-            //    MessageBox.Show(this, "fdsafD");
-            //}
-        }
+      
 
         public void AppPmac()
         {
@@ -125,16 +50,59 @@ namespace PMACData
                 {
 
                     this.lbStatus.Text = "Stop";
+                   
+
                 }
             }
-                       
-        }
-         
 
-        private void btReset_Click(object sender, EventArgs e)
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
-              
-              
+            this.dongho.Text = DateTime.Now.ToString("G");
+            string path = @"C:\PMAC\DATA";
+         
+            DateTime dt = Directory.GetLastWriteTime(path);
+            lbFilePMAC.Text = dt.ToString("G");
+
+            AppPmac();
+
+
+            DateTime tNow = DateTime.Now;
+
+            if (tNow.Hour % 2 == 0 && tNow.Minute == 0 && tNow.Second == 0)
+            {
+                stop.PerformClick();
+            }
+
+            if (tNow.Hour % 2 == 0 && tNow.Minute == 15 && tNow.Second == 0)
+            {
+                
+                start.PerformClick();
+
+                btCopy.PerformClick();
+
+              //  start.PerformClick();
+              //  getTimeDatabase();
+                stasusLabel.Text = stasusLabel.Text + "__" + tNow.ToString("T");
+            }
+
+
+            if (tNow.Minute % 10==0 && tNow.Second == 0 && lbStatus.Text.Equals("Stop"))
+            {
+                start.PerformClick();
+            }
+
+            if (tNow.Minute % 20 == 0 && tNow.Second == 0)
+            {
+                getTimeDatabase();
+            }
+
+
+            
+            // tieng
+            
+            
         }
 
         private void btCopy_Click(object sender, EventArgs e)
@@ -161,6 +129,11 @@ namespace PMACData
         private void button1_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
