@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="tanhoa" Class="DMADataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=192.168.1.9;Initial Catalog=tanhoa;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="tanhoaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.g_ThongTinDHT" Member="g_ThongTinDHTs">
+    <Type Name="g_ThongTinDHT">
+      <Column Name="STT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaDMA" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ViTri" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Phuong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Quan" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PRV" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CoDHN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Hieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PinNguon" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ThietBi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HamDHT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TuCelloMK4" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="StatusDHT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TinhTrangDH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TinhTrangBlogger" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TinhTrangPRV" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoSIM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoSeri" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoGon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
-using WebMobile.DataBase;
+ 
 using System.Data;
 using log4net;
+using GiamNuocWeb.DataBase;
 
-namespace WebMobile.Class
+namespace GiamNuocWeb.Class
 {
-    public static class LinQConnectionGM
+    public static class LinQConnection 
     {
-        /*
+        
         private static readonly ILog log = LogManager.GetLogger(typeof(LinQConnection).Name);
-
+        static DMADataContext db = new DMADataContext();
         public static int ExecuteCommand(string sql)
         {
             int result = 0;
-            GanMoiDataContext db = new GanMoiDataContext();
             try
             {
                 SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
@@ -49,7 +49,6 @@ namespace WebMobile.Class
         public static int ExecuteCommand_(string sql)
         {
             int result = 0;
-            GanMoiDataContext db = new GanMoiDataContext();
             try
             {
                 SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
@@ -81,7 +80,6 @@ namespace WebMobile.Class
         public static DataTable getDataTable(string sql)
         {
             DataTable table = new DataTable();
-            GanMoiDataContext db = new GanMoiDataContext();
             try
             {
                 if (db.Connection.State == ConnectionState.Open)
@@ -105,7 +103,7 @@ namespace WebMobile.Class
 
         public static DataTable getDataTable(string sql, int FirstRow, int pageSize)
         {
-            GanMoiDataContext db = new GanMoiDataContext();
+            
             try
             {
                 if (db.Connection.State == ConnectionState.Open)
@@ -130,7 +128,5 @@ namespace WebMobile.Class
             return null;
         }
 
-      
-       */
     }
 }

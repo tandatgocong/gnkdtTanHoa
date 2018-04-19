@@ -2,129 +2,131 @@
 <publishData>
   <publishProfile publishUrl="C:\inetpub\wwwroot" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
     <file relUrl="Image/btn-chitiet.gif" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/XOA.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Default.aspx" publishTime="04/18/2018 15:55:59" />
-    <file relUrl="images/pics11.jpg" publishTime="05/06/2014 20:48:34" />
     <file relUrl="Image/Marker2.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/e.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="iisstart.aspx" publishTime="04/18/2018 15:56:43" />
     <file relUrl="Image/Marker.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/l11.gif" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/workshop.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/print_icon.gif" publishTime="04/16/2018 09:34:38" />
     <file relUrl="FlowPlayer/flowplayer-3.2.12.min.js" publishTime="04/16/2018 09:34:36" />
-    <file relUrl="Image/error.gif" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="images/pics10.jpg" publishTime="05/06/2014 20:48:34" />
     <file relUrl="Image/db.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="images/pics07.jpg" publishTime="05/06/2014 20:48:34" />
+    <file relUrl="Image/vanchan.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/navigation.jpg" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/logo.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="images/pics02.jpg" publishTime="05/06/2014 20:48:34" />
     <file relUrl="Lib/Microsoft.Office.Interop.Excel.dll" publishTime="04/16/2018 09:34:41" />
-    <file relUrl="Image/Van2.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="images/pics11.jpg" publishTime="05/06/2014 20:48:34" />
     <file relUrl="Image/button_bg.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Web.config" publishTime="04/18/2018 16:13:03" />
+    <file relUrl="Web.config" publishTime="04/19/2018 16:34:37" />
     <file relUrl="Image/menu_bg.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/bg.jpg" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/ss-GIAM.PNG" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/Capture.JPG" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/vanbien.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="js/skel.min.js" publishTime="05/06/2014 20:48:34" />
+    <file relUrl="images/pics08.jpg" publishTime="05/06/2014 20:48:34" />
+    <file relUrl="Image/bullet0_over.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Lib/log4net.dll" publishTime="04/16/2018 09:34:41" />
     <file relUrl="Image/tch2.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="images/pics03.jpg" publishTime="05/06/2014 20:48:34" />
-    <file relUrl="Image/3.jpg" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="css/style-mobile.css" publishTime="04/19/2018 15:49:40" />
+    <file relUrl="images/pics02.jpg" publishTime="05/06/2014 20:48:34" />
     <file relUrl="Image/bg.gif" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Global.asax" publishTime="04/18/2018 16:03:27" />
-    <file relUrl="iisstart.aspx" publishTime="04/18/2018 15:56:43" />
-    <file relUrl="FlowPlayer/flowplayer.controls-3.2.15.swf" publishTime="04/16/2018 09:34:36" />
-    <file relUrl="Lib/CKEditor.NET.dll" publishTime="04/16/2018 09:34:41" />
+    <file relUrl="Image/xacan.gif" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="js/skel.min.js" publishTime="05/06/2014 20:48:34" />
+    <file relUrl="JavaScript/jquery-1.10.0.min.js" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/th.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="css/style-1000px.css" publishTime="05/06/2014 20:48:34" />
+    <file relUrl="Image/vanbien.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="css/font-awesome.css" publishTime="04/16/2018 09:34:41" />
-    <file relUrl="SanLuong.aspx" publishTime="04/19/2018 08:53:41" />
+    <file relUrl="Image/MarkerSuaTam.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="bin/DropDownCheckBoxes.dll" publishTime="04/19/2018 16:03:55" />
+    <file relUrl="SanLuong.aspx" publishTime="04/19/2018 16:55:13" />
+    <file relUrl="FlowPlayer/flowplayer.pseudostreaming-3.2.12.swf" publishTime="04/16/2018 09:34:36" />
     <file relUrl="Image/1down.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/MarkerSuaTam-.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="css/font-awesome.min.css" publishTime="04/16/2018 09:34:41" />
-    <file relUrl="bin/log4net.dll" publishTime="04/16/2018 09:34:41" />
+    <file relUrl="js/jquery.min.js" publishTime="04/19/2018 14:59:15" />
     <file relUrl="Image/dot.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="FlowPlayer/flowplayer-3.2.16.swf" publishTime="04/16/2018 09:34:36" />
-    <file relUrl="Image/reddot.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="css/style-desktop.css" publishTime="04/19/2018 15:53:14" />
+    <file relUrl="images/pics03.jpg" publishTime="05/06/2014 20:48:34" />
     <file relUrl="JavaScript/jquery-1.2.6.js" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/Untitled.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="css/skel-noscript.css" publishTime="04/19/2018 16:42:02" />
     <file relUrl="Image/down.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/news_list_bg.gif" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="images/pics05.jpg" publishTime="05/06/2014 20:48:34" />
-    <file relUrl="Image/warning.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="JavaScript/headmenu.js" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/delete2.ico" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/favicon.ico" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/Untitled.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="JavaScript/jquery-1.6.2.js" publishTime="04/16/2018 09:34:39" />
+    <file relUrl="Image/dhTong22.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="images/pics12.jpg" publishTime="05/06/2014 20:48:34" />
-    <file relUrl="Home.Master" publishTime="04/19/2018 09:16:38" />
-    <file relUrl="Image/xacan.gif" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/workshop.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/warning.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Home.Master" publishTime="04/19/2018 16:49:55" />
+    <file relUrl="Image/Capture.JPG" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/warning2.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/1up.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/chuagiao.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Home.aspx" publishTime="04/19/2018 09:33:33" />
+    <file relUrl="Home.aspx" publishTime="04/19/2018 09:35:50" />
     <file relUrl="Image/ss-TANG.PNG" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/edit.ico" publishTime="04/16/2018 09:34:38" />
     <file relUrl="JavaScript/transmenu.js" publishTime="04/16/2018 09:34:39" />
+    <file relUrl="Lib/DropDownCheckBoxes.dll" publishTime="04/19/2018 16:03:55" />
+    <file relUrl="Image/up.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/chiropractor.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/dhTong22.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="images/pics06.jpg" publishTime="05/06/2014 20:48:34" />
+    <file relUrl="ApLuc.aspx" publishTime="04/19/2018 09:35:58" />
     <file relUrl="JavaScript/headmenu.css" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/add.ico" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="JavaScript/jquery-ui.css" publishTime="04/16/2018 09:34:39" />
     <file relUrl="js/init.js" publishTime="05/06/2014 20:48:34" />
+    <file relUrl="Image/bg_head.jpg" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/Logo Tan Hoa.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="css/style-mobile.css" publishTime="04/19/2018 09:31:14" />
+    <file relUrl="Image/Van2.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Lib/String_Indentity_.dll" publishTime="04/16/2018 09:34:41" />
     <file relUrl="images/pics01.jpg" publishTime="05/06/2014 20:48:34" />
     <file relUrl="Image/block_bg.gif" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/news_list_bg.gif" publishTime="04/16/2018 09:34:38" />
     <file relUrl="css/images/mobileUI-site-nav-opener-bg.svg" publishTime="05/06/2014 20:48:34" />
     <file relUrl="Image/s.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/delete2.ico" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="twocolumn2.html" publishTime="05/06/2014 20:48:34" />
-    <file relUrl="Image/bg_head.jpg" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="bin/log4net.dll" publishTime="04/16/2018 09:34:41" />
     <file relUrl="Image/table_list_bghead.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="JavaScript/jquery-1.6.2.js" publishTime="04/16/2018 09:34:39" />
-    <file relUrl="GiamNuocWeb.Publish.xml" publishTime="04/19/2018 09:32:11" />
+    <file relUrl="images/pics10.jpg" publishTime="05/06/2014 20:48:34" />
+    <file relUrl="images/pics07.jpg" publishTime="05/06/2014 20:48:34" />
     <file relUrl="Image/Markerxong.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="images/pics09.jpg" publishTime="05/06/2014 20:48:34" />
     <file relUrl="JavaScript/jquery-ui.min.js" publishTime="04/16/2018 09:34:39" />
-    <file relUrl="Image/ydot.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="ApLuc.aspx" publishTime="04/19/2018 08:56:16" />
-    <file relUrl="Lib/AjaxControlToolkit.dll" publishTime="04/16/2018 09:34:40" />
+    <file relUrl="twocolumn2.html" publishTime="05/06/2014 20:48:34" />
     <file relUrl="css/animate.css" publishTime="04/16/2018 09:34:41" />
-    <file relUrl="Image/up.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/favicon.ico" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/e.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Lib/CKEditor.NET.dll" publishTime="04/16/2018 09:34:41" />
+    <file relUrl="Image/xacan.png" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/box-bullet1.gif" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="StyleSheet/style.css" publishTime="04/16/2018 09:34:41" />
-    <file relUrl="LuuLuong.aspx" publishTime="04/19/2018 08:53:28" />
-    <file relUrl="images/pics08.jpg" publishTime="05/06/2014 20:48:34" />
-    <file relUrl="Image/MarkerSuaTam.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/3.jpg" publishTime="04/16/2018 09:34:38" />
     <file relUrl="Image/warning.gif" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/add.ico" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="JavaScript/headmenu.js" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="images/spacer.gif" publishTime="05/06/2014 20:48:34" />
+    <file relUrl="Lib/AjaxControlToolkit.dll" publishTime="04/16/2018 09:34:40" />
     <file relUrl="Image/EDIT.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/nochange.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/vanchan.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="css/style.css" publishTime="04/19/2018 09:22:45" />
-    <file relUrl="images/banner.jpg" publishTime="05/06/2014 20:48:34" />
+    <file relUrl="Image/reddot.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="GiamNuocWeb.Publish.xml" publishTime="04/19/2018 16:42:08" />
+    <file relUrl="css/style.css" publishTime="04/19/2018 16:54:04" />
+    <file relUrl="FlowPlayer/flowplayer-3.2.16.swf" publishTime="04/16/2018 09:34:36" />
     <file relUrl="Image/dhTong.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/XOA.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="css/font-awesome.min.css" publishTime="04/16/2018 09:34:41" />
     <file relUrl="images/pics04.jpg" publishTime="05/06/2014 20:48:34" />
     <file relUrl="Image/icon2.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/xacan.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="css/skel-noscript.css" publishTime="05/06/2014 20:48:34" />
-    <file relUrl="Lib/String_Indentity.dll" publishTime="04/16/2018 09:34:41" />
+    <file relUrl="Image/error.gif" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="images/pics05.jpg" publishTime="05/06/2014 20:48:34" />
+    <file relUrl="css/style-1000px.css" publishTime="05/06/2014 20:48:34" />
     <file relUrl="js/html5shiv.js" publishTime="05/06/2014 20:48:34" />
-    <file relUrl="images/pics06.jpg" publishTime="05/06/2014 20:48:34" />
-    <file relUrl="bin/GiamNuocWeb.dll" publishTime="04/19/2018 09:31:45" />
-    <file relUrl="images/spacer.gif" publishTime="05/06/2014 20:48:34" />
-    <file relUrl="js/skel-panels.min.js" publishTime="05/06/2014 20:48:34" />
-    <file relUrl="JavaScript/jquery-1.10.0.min.js" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="css/style-desktop.css" publishTime="04/19/2018 09:22:56" />
-    <file relUrl="fonts/fontawesome-webfont.svg" publishTime="04/16/2018 09:34:42" />
-    <file relUrl="bin/GiamNuocWeb.pdb" publishTime="04/19/2018 09:31:45" />
-    <file relUrl="Image/bullet0_over.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/warning2.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/airport_runway.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="Image/dhTong2.png" publishTime="04/16/2018 09:34:38" />
-    <file relUrl="FlowPlayer/flowplayer.pseudostreaming-3.2.12.swf" publishTime="04/16/2018 09:34:36" />
-    <file relUrl="JavaScript/jquery-ui.css" publishTime="04/16/2018 09:34:39" />
+    <file relUrl="bin/GiamNuocWeb.dll" publishTime="04/19/2018 16:48:01" />
+    <file relUrl="images/banner.jpg" publishTime="05/06/2014 20:48:34" />
     <file relUrl="css/images/img_arrow.jpg" publishTime="05/06/2014 20:48:34" />
+    <file relUrl="js/skel-panels.min.js" publishTime="05/06/2014 20:48:34" />
+    <file relUrl="LuuLuong.aspx" publishTime="04/19/2018 09:36:12" />
+    <file relUrl="Image/dhTong2.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="fonts/fontawesome-webfont.svg" publishTime="04/16/2018 09:34:42" />
+    <file relUrl="bin/GiamNuocWeb.pdb" publishTime="04/19/2018 16:48:01" />
+    <file relUrl="FlowPlayer/flowplayer.controls-3.2.15.swf" publishTime="04/16/2018 09:34:36" />
     <file relUrl="Image/foot.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/airport_runway.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/l11.gif" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/ydot.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Image/nochange.png" publishTime="04/16/2018 09:34:38" />
+    <file relUrl="Lib/String_Indentity.dll" publishTime="04/16/2018 09:34:41" />
   </publishProfile>
 </publishData>

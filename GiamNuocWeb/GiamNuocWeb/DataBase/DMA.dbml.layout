@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DMA">
+  <DataContextMoniker Name="/DMADataContext" />
+  <nestedChildShapes>
+    <classShape Id="c9b6ddfd-5983-4c94-97a1-0cfa03e9c81c" absoluteBounds="2, 1.375, 2, 4.0544051106770826">
+      <DataClassMoniker Name="/DMADataContext/g_ThongTinDHT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7056005-8298-451e-9abd-3a54596f524a" absoluteBounds="2.015, 1.835, 1.9700000000000002, 3.494405110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

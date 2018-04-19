@@ -8,7 +8,7 @@
 		<meta name="keywords" content="" />
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
@@ -21,13 +21,13 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 	</head>
 	<body class="homepage">
-
+     <form id="form1" runat="server">
 		<!-- Header -->
 		<div id="header">
 			<div class="container">
 				<!-- Logo -->
 				<div id="logo">
-					<h1><a href="#">Đồng Hồ Tổng DMA</a></h1>
+					<h1><a href="#">ĐỒNG HỒ DMA - TÂN HÒA</a></h1>
 				</div>
 
 				<!-- Nav -->
@@ -42,11 +42,14 @@
 
 			</div>
 		</div>      
-		<div id="main">
+		<div id="main" style="font-size:15px;">
 			  <div style="margin-left:5px; margin-right:5px;">
-					<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+              <div class="dhnLoi">
+                 <marquee ><asp:Label ID="Label1" runat="server" Text="Tổi"></asp:Label></marquee>
+              </div>              
+              <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
        
-                     </asp:ContentPlaceHolder>
+              </asp:ContentPlaceHolder>
 			 </div>
 		</div>
 
@@ -56,6 +59,6 @@
 				© Copyright 2018 - Tan Hoa Water Supply JSC. Developed by Tan Hoa's GNKDT
 			</div>
 		</div>
-
+        </form>
 	</body>
 </html>

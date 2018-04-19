@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 
-namespace WebMobile.Class
+namespace GiamNuocWeb.Class
 {
     public static class Format
     {

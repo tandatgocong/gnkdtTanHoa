@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using GiamNuocWeb.Class;
 
 namespace GiamNuocWeb
 {
@@ -11,7 +12,7 @@ namespace GiamNuocWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.Label1.Text = CThongTinDMA.getDHTLoi();
         }
     }
 }
