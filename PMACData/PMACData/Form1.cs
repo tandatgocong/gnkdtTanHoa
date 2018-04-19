@@ -70,7 +70,7 @@ namespace PMACData
 
             DateTime tNow = DateTime.Now;
 
-            if (tNow.Hour % 2 == 0 && tNow.Minute == 0 && tNow.Second == 0)
+            if (tNow.Hour % 2 == 0 && tNow.Minute ==40 && tNow.Second == 0)
             {
                 stop.PerformClick();
             }
@@ -88,21 +88,17 @@ namespace PMACData
             }
 
 
-            if (tNow.Minute % 10==0 && tNow.Second == 0 && lbStatus.Text.Equals("Stop"))
-            {
-                start.PerformClick();
-            }
+            //if (tNow.Minute % 10==0 && tNow.Second == 0 && lbStatus.Text.Equals("Stop"))
+            //{
+            //    start.PerformClick();
+            //}
 
             if (tNow.Minute % 20 == 0 && tNow.Second == 0)
             {
                 getTimeDatabase();
             }
 
-
-            
             // tieng
-            
-            
         }
 
         private void btCopy_Click(object sender, EventArgs e)
