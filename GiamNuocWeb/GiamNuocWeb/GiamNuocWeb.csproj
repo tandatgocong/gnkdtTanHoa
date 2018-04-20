@@ -41,6 +41,9 @@
       <HintPath>Lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -71,10 +74,6 @@
     <Content Include="css\style-mobile.css" />
     <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
-    <Content Include="FlowPlayer\flowplayer-3.2.12.min.js" />
-    <Content Include="FlowPlayer\flowplayer-3.2.16.swf" />
-    <Content Include="FlowPlayer\flowplayer.controls-3.2.15.swf" />
-    <Content Include="FlowPlayer\flowplayer.pseudostreaming-3.2.12.swf" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="GiamNuocWeb.Publish.xml" />
     <Content Include="Global.asax" />
@@ -123,6 +122,8 @@
     <Content Include="Image\error.gif" />
     <Content Include="Image\favicon.ico" />
     <Content Include="Image\foot.png" />
+    <Content Include="Image\home-icon.jpg" />
+    <Content Include="Image\Home2.png" />
     <Content Include="Image\icon2.png" />
     <Content Include="Image\l11.gif" />
     <Content Include="Image\Logo Tan Hoa.png" />
@@ -178,6 +179,7 @@
     <Content Include="Lib\String_Indentity.dll" />
     <Content Include="Lib\String_Indentity_.dll" />
     <Content Include="LuuLuong.aspx" />
+    <Content Include="pageSanLuong.aspx" />
     <Content Include="SanLuong.aspx" />
     <Content Include="twocolumn2.html" />
     <Content Include="Web.config" />
@@ -215,6 +217,11 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DmaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DmaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -246,6 +253,13 @@
     <Compile Include="LuuLuong.aspx.designer.cs">
       <DependentUpon>LuuLuong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pageSanLuong.aspx.cs">
+      <DependentUpon>pageSanLuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageSanLuong.aspx.designer.cs">
+      <DependentUpon>pageSanLuong.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanLuong.aspx.cs">
       <DependentUpon>SanLuong.aspx</DependentUpon>
@@ -260,6 +274,17 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DMA.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="DmaDataSet.xsc">
+      <DependentUpon>DmaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DmaDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DmaDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DmaDataSet.xss">
+      <DependentUpon>DmaDataSet.xsd</DependentUpon>
     </None>
     <None Include="fonts\fontawesome-webfont.eot" />
     <None Include="fonts\fontawesome-webfont.ttf" />
@@ -276,6 +301,9 @@
     <None Include="DataBase\DMA.dbml.layout">
       <DependentUpon>DMA.dbml</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="rpSanLuong.rdlc" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

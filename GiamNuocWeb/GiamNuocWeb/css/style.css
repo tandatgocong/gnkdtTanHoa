@@ -415,3 +415,13 @@
     height: 25px;
 
 }
+
+.date_time{
+	float: right;
+	margin-left: 5px;
+    padding-top: 10px;
+	background-color:#02579D;
+	font:bold 13px Arial, Tahoma, verdana, sans-serif;
+	color:#FFF;
+	margin-right: 2px;
+}

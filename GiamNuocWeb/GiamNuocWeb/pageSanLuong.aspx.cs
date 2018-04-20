@@ -4,19 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using GiamNuocWeb.DataBase;
 using GiamNuocWeb.Class;
-using Microsoft.Reporting.WebForms;
+using GiamNuocWeb.DataBase;
 
 namespace GiamNuocWeb
 {
-    public partial class SanLuong : System.Web.UI.Page
+    public partial class pageSanLuong : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
+            this.tTuNgay.Text = DateTime.Now.ToString("MM/dd/yyyy");
+            this.tDenNgay.Text = DateTime.Now.ToString("MM/dd/yyyy");
             getLoadDMA();
             getSanLuong();
         }
@@ -26,7 +27,7 @@ namespace GiamNuocWeb
             List<g_ThongTinDHT> ls = CThongTinDMA.getDMAHoatDong();
             foreach (var item in ls)
             {
-                 DropDownDMA.Items.Add(item.MaDMA);                
+                DropDownDMA.Items.Add(item.MaDMA);
             }
         }
         public void getSanLuong()

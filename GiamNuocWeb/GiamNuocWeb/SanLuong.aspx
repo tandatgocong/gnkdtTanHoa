@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="SanLuong.aspx.cs" Inherits="GiamNuocWeb.SanLuong" %>
 <%@ Register TagPrefix="asp" Namespace="Saplin.Controls" Assembly="DropDownCheckBoxes" %>
+<%--
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+--%>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <script language="javascript" type="text/javascript">
@@ -31,6 +34,23 @@
     <tr><td class=style1 colspan=2><asp:Button ID="Button1" CssClass=button runat="server" Text="Xem" /></td></tr>
 </table>
 
+<table border="1" style="margin-top:10px;">
+    <tr>
+    <td>
+         <%--   <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
+            Font-Size="8pt" InteractiveDeviceInfos="(Collection)" 
+            WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="669px">
+            <LocalReport ReportPath="rpSanLuong.rdlc">
+                <DataSources>
+                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="dsDma" />
+                </DataSources>
+            </LocalReport>
+        </rsweb:ReportViewer>--%>
+    </td>
+    </tr>
+  </table>
 
     
  </div>    
