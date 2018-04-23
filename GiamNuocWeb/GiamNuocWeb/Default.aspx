@@ -14,6 +14,7 @@
    
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
+        <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Button" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
             Font-Size="8pt" InteractiveDeviceInfos="(Collection)" 

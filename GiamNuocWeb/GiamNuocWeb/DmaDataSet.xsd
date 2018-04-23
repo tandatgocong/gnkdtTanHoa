@@ -87,6 +87,16 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="g_LuuLuongDHT" msprop:Generator_TableClassName="g_LuuLuongDHTDataTable" msprop:Generator_TableVarName="tableg_LuuLuongDHT" msprop:Generator_RowChangedName="g_LuuLuongDHTRowChanged" msprop:Generator_TablePropName="g_LuuLuongDHT" msprop:Generator_RowDeletingName="g_LuuLuongDHTRowDeleting" msprop:Generator_RowChangingName="g_LuuLuongDHTRowChanging" msprop:Generator_RowEvHandlerName="g_LuuLuongDHTRowChangeEventHandler" msprop:Generator_RowDeletedName="g_LuuLuongDHTRowDeleted" msprop:Generator_RowClassName="g_LuuLuongDHTRow" msprop:Generator_UserTableName="g_LuuLuongDHT" msprop:Generator_RowEvArgName="g_LuuLuongDHTRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NGAY" msprop:Generator_ColumnVarNameInTable="columnNGAY" msprop:Generator_ColumnPropNameInRow="NGAY" msprop:Generator_ColumnPropNameInTable="NGAYColumn" msprop:Generator_UserColumnName="NGAY" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="GIO" msprop:Generator_ColumnVarNameInTable="columnGIO" msprop:Generator_ColumnPropNameInRow="GIO" msprop:Generator_ColumnPropNameInTable="GIOColumn" msprop:Generator_UserColumnName="GIO" type="xs:short" minOccurs="0" />
+              <xs:element name="MaDMA" msprop:Generator_ColumnVarNameInTable="columnMaDMA" msprop:Generator_ColumnPropNameInRow="MaDMA" msprop:Generator_ColumnPropNameInTable="MaDMAColumn" msprop:Generator_UserColumnName="MaDMA" type="xs:string" minOccurs="0" />
+              <xs:element name="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" msprop:Generator_UserColumnName="Value" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">

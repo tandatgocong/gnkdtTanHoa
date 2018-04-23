@@ -37,7 +37,7 @@
 <table border="1" style="margin-top:10px;">
     <tr>
     <td>
-         <%--   <asp:ScriptManager ID="ScriptManager1" runat="server">
+         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
             Font-Size="8pt" InteractiveDeviceInfos="(Collection)" 
@@ -47,7 +47,7 @@
                     <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="dsDma" />
                 </DataSources>
             </LocalReport>
-        </rsweb:ReportViewer>--%>
+        </rsweb:ReportViewer>
     </td>
     </tr>
   </table>

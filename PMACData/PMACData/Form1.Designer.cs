@@ -47,6 +47,8 @@
             this.stasusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,7 +184,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stasusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 286);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 483);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(784, 22);
             this.statusStrip1.TabIndex = 14;
@@ -215,12 +217,33 @@
             this.btExit.UseVisualStyleBackColor = true;
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(592, 246);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 31);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 23;
+            this.listBox1.Location = new System.Drawing.Point(133, 296);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(639, 142);
+            this.listBox1.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(784, 308);
+            this.ClientSize = new System.Drawing.Size(784, 505);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btExit);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
@@ -267,6 +290,8 @@
         private System.Windows.Forms.ToolStripStatusLabel stasusLabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btExit;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

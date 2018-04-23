@@ -179,6 +179,7 @@
     <Content Include="Lib\String_Indentity.dll" />
     <Content Include="Lib\String_Indentity_.dll" />
     <Content Include="LuuLuong.aspx" />
+    <Content Include="pageLuuLuong.aspx" />
     <Content Include="pageSanLuong.aspx" />
     <Content Include="SanLuong.aspx" />
     <Content Include="twocolumn2.html" />
@@ -253,6 +254,13 @@
     <Compile Include="LuuLuong.aspx.designer.cs">
       <DependentUpon>LuuLuong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pageLuuLuong.aspx.cs">
+      <DependentUpon>pageLuuLuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageLuuLuong.aspx.designer.cs">
+      <DependentUpon>pageLuuLuong.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pageSanLuong.aspx.cs">
       <DependentUpon>pageSanLuong.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -303,6 +311,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="rpLuLuongByDate.rdlc" />
+    <EmbeddedResource Include="rpLuLuongByGio.rdlc" />
     <EmbeddedResource Include="rpSanLuong.rdlc" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

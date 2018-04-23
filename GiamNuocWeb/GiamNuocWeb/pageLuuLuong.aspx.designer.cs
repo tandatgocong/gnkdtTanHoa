@@ -10,7 +10,7 @@
 namespace GiamNuocWeb {
     
     
-    public partial class pageSanLuong {
+    public partial class pageLuuLuong {
         
         /// <summary>
         /// title control.

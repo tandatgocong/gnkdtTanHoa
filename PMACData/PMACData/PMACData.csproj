@@ -52,6 +52,9 @@
     <ApplicationIcon>rstrui.exe_I009b_0409.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\GiamNuocWeb\GiamNuocWeb\Lib\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />

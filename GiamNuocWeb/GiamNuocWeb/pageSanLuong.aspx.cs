@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using GiamNuocWeb.Class;
 using GiamNuocWeb.DataBase;
+using Microsoft.Reporting.WebForms;
 
 namespace GiamNuocWeb
 {
@@ -16,10 +17,10 @@ namespace GiamNuocWeb
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
-            this.tTuNgay.Text = DateTime.Now.ToString("MM/dd/yyyy");
-            this.tDenNgay.Text = DateTime.Now.ToString("MM/dd/yyyy");
+            //this.tTuNgay.Text = DateTime.Now.ToString("MM/dd/yyyy");
+            //this.tDenNgay.Text = DateTime.Now.ToString("MM/dd/yyyy");
             getLoadDMA();
-            getSanLuong();
+         //   getSanLuong();
         }
 
         public void getLoadDMA()
@@ -32,14 +33,34 @@ namespace GiamNuocWeb
         }
         public void getSanLuong()
         {
-            //ReportViewer1.ProcessingMode = ProcessingMode.Local;
+            string listDMA = "";
+            foreach (System.Web.UI.WebControls.ListItem item in DropDownDMA.Items)
+            {
 
-            //ReportParameter p1 = new ReportParameter("tuNgay", " 23/07/2018 ĐẾN 25/88/2018");
-            //this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
+                if (item.Selected)
+                {
+                    listDMA += "'" + item.Value + "',";
+                }
 
-            //ReportDataSource rds = new ReportDataSource("dsDma", CSanLuong.getSanLuong("", "", "").Tables["g_SanLuongDHT"]);
-            //ReportViewer1.LocalReport.DataSources.Clear();
-            //ReportViewer1.LocalReport.DataSources.Add(rds);
+
+            }
+            ReportViewer1.ProcessingMode = ProcessingMode.Local;
+            
+            string tn = this.tTuNgay.Text;
+            string dn = this.tDenNgay.Text;
+
+            ReportParameter p1 = new ReportParameter("tuNgay", "" + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
+            this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
+
+            ReportDataSource rds = new ReportDataSource("dsDma", CSanLuong.getSanLuong(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_SanLuongDHT"]);
+            ReportViewer1.LocalReport.DataSources.Clear();
+            ReportViewer1.LocalReport.DataSources.Add(rds);
+        }
+
+        protected void bt_Click(object sender, EventArgs e)
+        {
+            
+             getSanLuong();
         }
     }
 }
