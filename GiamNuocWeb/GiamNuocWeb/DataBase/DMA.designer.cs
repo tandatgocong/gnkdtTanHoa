@@ -120,6 +120,14 @@ namespace GiamNuocWeb.DataBase
 		
 		private string _SoGon;
 		
+		private string _ChannelId;
+		
+		private string _ChannelOut;
+		
+		private string _ChannelCMP;
+		
+		private string _StatusCMP;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -164,6 +172,14 @@ namespace GiamNuocWeb.DataBase
     partial void OnSoSeriChanged();
     partial void OnSoGonChanging(string value);
     partial void OnSoGonChanged();
+    partial void OnChannelIdChanging(string value);
+    partial void OnChannelIdChanged();
+    partial void OnChannelOutChanging(string value);
+    partial void OnChannelOutChanged();
+    partial void OnChannelCMPChanging(string value);
+    partial void OnChannelCMPChanged();
+    partial void OnStatusCMPChanging(string value);
+    partial void OnStatusCMPChanged();
     #endregion
 		
 		public g_ThongTinDHT()
@@ -567,6 +583,86 @@ namespace GiamNuocWeb.DataBase
 					this._SoGon = value;
 					this.SendPropertyChanged("SoGon");
 					this.OnSoGonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChannelId", DbType="VarChar(50)")]
+		public string ChannelId
+		{
+			get
+			{
+				return this._ChannelId;
+			}
+			set
+			{
+				if ((this._ChannelId != value))
+				{
+					this.OnChannelIdChanging(value);
+					this.SendPropertyChanging();
+					this._ChannelId = value;
+					this.SendPropertyChanged("ChannelId");
+					this.OnChannelIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChannelOut", DbType="VarChar(50)")]
+		public string ChannelOut
+		{
+			get
+			{
+				return this._ChannelOut;
+			}
+			set
+			{
+				if ((this._ChannelOut != value))
+				{
+					this.OnChannelOutChanging(value);
+					this.SendPropertyChanging();
+					this._ChannelOut = value;
+					this.SendPropertyChanged("ChannelOut");
+					this.OnChannelOutChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChannelCMP", DbType="VarChar(50)")]
+		public string ChannelCMP
+		{
+			get
+			{
+				return this._ChannelCMP;
+			}
+			set
+			{
+				if ((this._ChannelCMP != value))
+				{
+					this.OnChannelCMPChanging(value);
+					this.SendPropertyChanging();
+					this._ChannelCMP = value;
+					this.SendPropertyChanged("ChannelCMP");
+					this.OnChannelCMPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusCMP", DbType="VarChar(50)")]
+		public string StatusCMP
+		{
+			get
+			{
+				return this._StatusCMP;
+			}
+			set
+			{
+				if ((this._StatusCMP != value))
+				{
+					this.OnStatusCMPChanging(value);
+					this.SendPropertyChanging();
+					this._StatusCMP = value;
+					this.SendPropertyChanged("StatusCMP");
+					this.OnStatusCMPChanged();
 				}
 			}
 		}

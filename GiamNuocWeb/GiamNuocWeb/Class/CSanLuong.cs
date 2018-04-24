@@ -32,5 +32,24 @@ namespace GiamNuocWeb.Class
 
             return dsemp;
         }
+
+        public static dsDma getSanLuongNRW(string madma, string tNgay, string dNgay)
+        {
+            dsDma dsemp = new dsDma();
+            try
+            {
+                string query = " select convert(date,[TimeStamp],103) as  [TimeStamp], MaDMA, CSCU, CSMOI, TIEUTHU from g_SanLuongNRW  ";
+                query += " where  MaDMA IN (" + madma + ") AND convert(date,[TimeStamp],101) BETWEEN CONVERT(datetime,'" + tNgay + "',101) AND CONVERT(datetime,'" + dNgay + "',101)  ";
+                query += " order by [TimeStamp] asc, MaDMA asc ";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
+                adapter.Fill(dsemp, "g_SanLuongDHT");
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+
+            return dsemp;
+        }
     }
 }

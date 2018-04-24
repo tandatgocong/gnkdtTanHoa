@@ -1,14 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageLuuLuong.aspx.cs" Inherits="GiamNuocWeb.pageLuuLuong" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageApLuc.aspx.cs" Inherits="GiamNuocWeb.pageApLuc" %>
 <%@ Register TagPrefix="ff" Namespace="Saplin.Controls" Assembly="DropDownCheckBoxes" %>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<script language="javascript" type="text/javascript">
-    window.document.getElementById("HOME").className = "";
-    window.document.getElementById("SANLUONG").className = "";
-    window.document.getElementById("LUULUONG").className = "active";
-    window.document.getElementById("APLUC").className = "";
+ <script language="javascript" type="text/javascript">
+     window.document.getElementById("HOME").className = "";
+     window.document.getElementById("SANLUONG").className = "";
+     window.document.getElementById("LUULUONG").className = "";
+     window.document.getElementById("APLUC").className = "active";
   </script>
-    <style>
+   <style>
     
         .style1
         {
@@ -22,7 +22,7 @@
               </div> 
 
 <div class="title_page"><a href="Home.aspx" class="active">&nbsp;<img src="Image/Home2.png" />&nbsp;</a>
-<asp:Label ID="title" runat="server" Text="Lưu lượng đồng hồ tổng">
+<asp:Label ID="title" runat="server" Text="Áp Lực đồng hồ tổng">
 </asp:Label></div>
 <table border="1" style="margin-top:10px;">
     <tr><td class="style1">Mã DMA : </td>
@@ -40,7 +40,6 @@
     <tr><td class="style1">Đến Ngày </td><td><asp:TextBox ID="tDenNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
     <tr><td class="style1" colspan="2"><asp:Button ID="Button1" CssClass="button" runat="server" Text="&nbsp;Xem&nbsp;" OnClick="bt_Click" /></td></tr>
 </table>
-
 <table border="1" style="margin-top:5px;">
     <tr>
     <td>
@@ -53,4 +52,5 @@
     </td>
     </tr>
   </table>
+
 </asp:Content>

@@ -270,15 +270,6 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>LƯU LƯỢNG TRUNG BÌNH (m3h)  ĐỒNG HỒ TỔNG DMA TỪ NGÀY </Value>
-                <Style>
-                  <FontFamily>Times New Roman</FontFamily>
-                  <FontSize>14pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <Color>Red</Color>
-                </Style>
-              </TextRun>
-              <TextRun>
                 <Value>=Parameters!tuNgay.Value</Value>
                 <Style>
                   <FontFamily>Times New Roman</FontFamily>

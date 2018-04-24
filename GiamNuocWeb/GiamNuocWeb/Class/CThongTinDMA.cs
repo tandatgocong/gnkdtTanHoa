@@ -24,9 +24,26 @@ namespace GiamNuocWeb.Class
             return s;
         }
 
+        public static string getCMPLoi()
+        {
+
+            DataTable t = LinQConnection.getDataTable("select MaDMA from g_ThongTinDHT WHERE StatusCMP='0' ORDER BY STT ASC");
+            string s = "Tổng Số " + t.Rows.Count + " CMP Không hoạt động : ";
+            for (int i = 0; i < t.Rows.Count; i++)
+            {
+                s += t.Rows[i]["MaDMA"].ToString() + " ; ";
+            }
+            return s;
+        }
+
         public static List<g_ThongTinDHT> getDMAHoatDong()
         {
             var q = from p in db.g_ThongTinDHTs where p.StatusDHT == true orderby p.STT ascending select p;
+            return q.ToList();
+        }
+        public static List<g_ThongTinDHT> getCMPHoatDong()
+        {
+            var q = from p in db.g_ThongTinDHTs where p.StatusCMP =="1" orderby p.STT ascending select p;
             return q.ToList();
         }
 

@@ -2,10 +2,10 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DMA">
   <DataContextMoniker Name="/DMADataContext" />
   <nestedChildShapes>
-    <classShape Id="c9b6ddfd-5983-4c94-97a1-0cfa03e9c81c" absoluteBounds="2, 1.375, 2, 4.0544051106770826">
+    <classShape Id="061e2fc5-550e-42b4-8cc9-df54879a1965" absoluteBounds="1.875, 1.625, 2, 4.71179443359375">
       <DataClassMoniker Name="/DMADataContext/g_ThongTinDHT" />
       <nestedChildShapes>
-        <elementListCompartment Id="a7056005-8298-451e-9abd-3a54596f524a" absoluteBounds="2.015, 1.835, 1.9700000000000002, 3.494405110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="402da93b-4959-4c6c-8f9f-be647c872a2f" absoluteBounds="1.8900000000000001, 2.085, 1.9700000000000002, 4.15179443359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

@@ -10,7 +10,16 @@
 namespace GiamNuocWeb {
     
     
-    public partial class SanLuong {
+    public partial class pageApLuc {
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// title control.
@@ -31,22 +40,22 @@ namespace GiamNuocWeb {
         protected global::Saplin.Controls.DropDownCheckBoxes DropDownDMA;
         
         /// <summary>
-        /// TextBox1 control.
+        /// tTuNgay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox tTuNgay;
         
         /// <summary>
-        /// TextBox2 control.
+        /// tDenNgay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox tDenNgay;
         
         /// <summary>
         /// Button1 control.
@@ -65,5 +74,14 @@ namespace GiamNuocWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// ReportViewer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
     }
 }

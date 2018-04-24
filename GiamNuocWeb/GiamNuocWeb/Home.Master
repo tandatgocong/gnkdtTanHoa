@@ -36,7 +36,7 @@
 						<li id="HOME" class="active" ><a href="Home.aspx" class="active">Home</a></li>
 						<li id="SANLUONG" ><a href="pageSanLuong.aspx">Sản Lượng</a></li>
 						<li id="LUULUONG" ><a href="pageLuuLuong.aspx">Lưu lượng</a></li>
-						<li id="APLUC" ><a href="ApLuc.aspx">Áp Lực</a></li>
+						<li id="APLUC" ><a href="pageApLuc.aspx">Áp Lực</a></li>
 					</ul>
 				</nav>
 
@@ -44,10 +44,7 @@
     	</div>      
 		   
         <div id="main" style="font-size:15px;">
-			  <div style="margin-left:5px; margin-right:5px;">
-              <div class="dhnLoi">
-                 <marquee ><asp:Label ID="Label1" runat="server" Text="Tổi"></asp:Label></marquee>
-              </div>              
+			  <div style="margin-left:5px; margin-right:5px;">             
               <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
        
               </asp:ContentPlaceHolder>

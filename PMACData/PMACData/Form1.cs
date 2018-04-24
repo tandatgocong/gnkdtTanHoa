@@ -30,11 +30,10 @@ namespace PMACData
         }
         public void getTimeDatabase()
         {
-            
+            db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, db.t_Channel_Configurations);
             var q = from query in db.t_Channel_Configurations orderby query.TimeStamp descending select query;
             this.lbDatabase.Text = q.First().TimeStamp.Value.ToString("G");
-
-             
+                        
         }
       
 
@@ -60,12 +59,22 @@ namespace PMACData
         {
             this.dongho.Text = DateTime.Now.ToString("G");
             string path = @"C:\PMAC\DATA";
+            string path2 = @"\\192.168.1.2\c$\PMAC\DATA";
          
             DateTime dt = Directory.GetLastWriteTime(path);
             lbFilePMAC.Text = dt.ToString("G");
 
-            AppPmac();
+            //DateTime dt2 = Directory.GetLastWriteTime(path2);
+            //dt2.ToString("G");
+            //if (!lbFilePMAC.Equals(dt2.ToString("G")))
+            //{
+            //    btCopy.PerformClick();
+            //}
+          //  lbFilePMAC.Text = dt.ToString("G");
 
+
+            AppPmac();
+          
 
             DateTime tNow = DateTime.Now;
 
@@ -92,15 +101,16 @@ namespace PMACData
             //    start.PerformClick();
             //}
 
-            if (tNow.Minute % 20 == 0 && tNow.Second == 0)
+            if (tNow.Minute % 10 == 0 && tNow.Second == 0)
             {
                 getTimeDatabase();
-            }        
-          if (tNow.Hour == 7 && tNow.Minute == 0 && tNow.Second == 0)
+            }
+            if (tNow.Hour == 7 && tNow.Minute == 0 && tNow.Second == 0)
             {
-            
-              DateTime t = DateTime.Now;
-                 UpdateSanLuongDHT(t);
+
+                DateTime t = DateTime.Now;
+                UpdateSanLuongDHT(t);
+                UpdateSanLuongNRW(t);
             }
               
 
@@ -245,13 +255,68 @@ namespace PMACData
             }
         }
 
+        public void UpdateSanLuongNRW(DateTime d)
+        {
+            string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*    FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE  IndexTimeStamp is not null and REPLACE( LEFT([Description],6),' ','') <> ''  order by [Description] asc ";
+
+            //string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*  FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE ChannelId='20238_02'  order by MaDMA";
+            DataTable table = getDataTable(sql);
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                string tbName = "t_Index_Logger_" + table.Rows[i]["ChannelId"];
+                string ngay = d.ToString("yyyy-MM-dd") + " 04:00:00:000";
+                string maDMA = table.Rows[i]["MaDMA"] + "";
+
+                string SQL = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
+
+                DataTable t1 = getDataTable(SQL);
+
+                double csMoi = -1.0;
+                if (t1.Rows.Count != 0)
+                    try
+                    {
+                        csMoi = double.Parse(t1.Rows[0][0].ToString());
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+
+
+                string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 23:00:00:000";
+
+                string SQL2 = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
+
+                DataTable t2 = getDataTable(SQL2);
+
+                double csCu = -1.0;
+                if (t2.Rows.Count != 0)
+                    try
+                    {
+                        csCu = double.Parse(t2.Rows[0][0].ToString());
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+
+                string sqlInsert = "INSERT INTO g_SanLuongNRW VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + (Math.Round(csMoi) - Math.Round(csCu)) + ")";
+                string sqlUpdate = "UPDATE  g_SanLuongNRW SET [CSCU] = " + Math.Round(csCu) + " ,[CSMOI] = " + Math.Round(csMoi) + ",[TIEUTHU] = " + (Math.Round(csMoi) - Math.Round(csCu)) + " WHERE [TimeStamp]='" + ngay + "' AND [MaDMA]='" + maDMA + "'";
+
+                if (ExecuteCommand(sqlInsert) == 0)
+                    ExecuteCommand(sqlUpdate);
+                //listBox1.Items.Add(maDMA + "__" + Math.Round(csCu) + "___" + Math.Round(csMoi));
+            }
+        }
+
+
         private void button2_Click(object sender, EventArgs e)
         {
             DateTime t = DateTime.Now;
 
-            for (int i = 0; i < 400; i++)
+            for (int i = 0; i < 200; i++)
             {
-                UpdateSanLuongDHT(t);
+                UpdateSanLuongNRW(t);
                 t = t.Date.AddDays(-1);
             }
            

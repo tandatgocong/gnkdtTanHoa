@@ -22,6 +22,10 @@
       <Column Name="SoSIM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SoSeri" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SoGon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChannelId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ChannelOut" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ChannelCMP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StatusCMP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
