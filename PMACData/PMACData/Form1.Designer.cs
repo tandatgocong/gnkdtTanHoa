@@ -47,6 +47,8 @@
             this.stasusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
+            this.btCopyData = new System.Windows.Forms.Button();
+            this.btSanLuong = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -215,12 +217,36 @@
             this.btExit.UseVisualStyleBackColor = true;
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
+            // btCopyData
+            // 
+            this.btCopyData.Location = new System.Drawing.Point(695, 234);
+            this.btCopyData.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btCopyData.Name = "btCopyData";
+            this.btCopyData.Size = new System.Drawing.Size(75, 34);
+            this.btCopyData.TabIndex = 17;
+            this.btCopyData.Text = "Copy";
+            this.btCopyData.UseVisualStyleBackColor = true;
+            this.btCopyData.Click += new System.EventHandler(this.btCopyData_Click);
+            // 
+            // btSanLuong
+            // 
+            this.btSanLuong.Location = new System.Drawing.Point(465, 234);
+            this.btSanLuong.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btSanLuong.Name = "btSanLuong";
+            this.btSanLuong.Size = new System.Drawing.Size(226, 34);
+            this.btSanLuong.TabIndex = 18;
+            this.btSanLuong.Text = "Update SẢN LƯỢNG";
+            this.btSanLuong.UseVisualStyleBackColor = true;
+            this.btSanLuong.Click += new System.EventHandler(this.btSanLuong_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(784, 307);
+            this.Controls.Add(this.btSanLuong);
+            this.Controls.Add(this.btCopyData);
             this.Controls.Add(this.btExit);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
@@ -267,6 +293,8 @@
         private System.Windows.Forms.ToolStripStatusLabel stasusLabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btExit;
+        private System.Windows.Forms.Button btCopyData;
+        private System.Windows.Forms.Button btSanLuong;
     }
 }
 

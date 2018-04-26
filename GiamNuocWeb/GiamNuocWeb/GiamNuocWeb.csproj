@@ -72,6 +72,7 @@
     <Content Include="css\style-desktop.css" />
     <Content Include="css\style-mobile.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\StyleSheet.css" />
     <Content Include="Default.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="GiamNuocWeb.Publish.xml" />
@@ -178,6 +179,7 @@
     <Content Include="Lib\String_Indentity.dll" />
     <Content Include="Lib\String_Indentity_.dll" />
     <Content Include="pageApLuc.aspx" />
+    <Content Include="pageDongHoTong.aspx" />
     <Content Include="pageLuuLuong.aspx" />
     <Content Include="pageSanLuong.aspx" />
     <Content Include="twocolumn2.html" />
@@ -244,6 +246,13 @@
     </Compile>
     <Compile Include="pageApLuc.aspx.designer.cs">
       <DependentUpon>pageApLuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pageDongHoTong.aspx.cs">
+      <DependentUpon>pageDongHoTong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageDongHoTong.aspx.designer.cs">
+      <DependentUpon>pageDongHoTong.aspx</DependentUpon>
     </Compile>
     <Compile Include="pageLuuLuong.aspx.cs">
       <DependentUpon>pageLuuLuong.aspx</DependentUpon>

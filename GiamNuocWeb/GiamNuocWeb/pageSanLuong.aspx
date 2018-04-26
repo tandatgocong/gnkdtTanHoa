@@ -7,7 +7,7 @@
                    window.document.getElementById("SANLUONG").className = "active";
                    window.document.getElementById("LUULUONG").className = "";
                    window.document.getElementById("APLUC").className = "";
-
+                   window.document.getElementById("DHT").className = ""; 
   </script>
   <style>
     

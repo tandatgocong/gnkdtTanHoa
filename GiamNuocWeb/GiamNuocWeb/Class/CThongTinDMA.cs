@@ -47,7 +47,17 @@ namespace GiamNuocWeb.Class
             return q.ToList();
         }
 
+        public static List<g_ThongTinDHT> getThongTinDHT()
+        {
+            var q = from p in db.g_ThongTinDHTs orderby p.STT ascending select p;
+            return q.ToList();
+        }
 
+        public static g_ThongTinDHT getDHTByMaDMA(string ma)
+        {
+            var q = from p in db.g_ThongTinDHTs where p.MaDMA==ma orderby p.STT ascending select p;
+            return q.SingleOrDefault();
+        }
 
     }
 }

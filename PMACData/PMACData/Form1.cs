@@ -89,6 +89,7 @@ namespace PMACData
                 start.PerformClick();
 
                 btCopy.PerformClick();
+                btCopyData.PerformClick();
 
               //  start.PerformClick();
               //  getTimeDatabase();
@@ -105,7 +106,7 @@ namespace PMACData
             {
                 getTimeDatabase();
             }
-            if (tNow.Hour == 7 && tNow.Minute == 0 && tNow.Second == 0)
+            if (tNow.Hour == 8 && tNow.Minute == 20 && tNow.Second == 0)
             {
 
                 DateTime t = DateTime.Now;
@@ -211,7 +212,7 @@ namespace PMACData
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 string tbName = "t_Index_Logger_" + table.Rows[i]["ChannelId"];
-                string ngay = d.ToString("yyyy-MM-dd") + " 06:00:00:000";
+                string ngay = d.ToString("yyyy-MM-dd") + " 07:00:00:000";
                 string maDMA = table.Rows[i]["MaDMA"] + "";
 
                 string SQL = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
@@ -229,7 +230,7 @@ namespace PMACData
 
                     }
 
-                string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 06:00:00:000";
+                string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:00:00:000";
 
                 string SQL2 = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
 
@@ -310,16 +311,23 @@ namespace PMACData
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
+       
+
+        private void btCopyData_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("pmacServer.bat");
+        }
+
+        private void btSanLuong_Click(object sender, EventArgs e)
         {
             DateTime t = DateTime.Now;
 
             for (int i = 0; i < 200; i++)
             {
                 UpdateSanLuongNRW(t);
+                UpdateSanLuongDHT(t);
                 t = t.Date.AddDays(-1);
             }
-           
         }
     }
 }
