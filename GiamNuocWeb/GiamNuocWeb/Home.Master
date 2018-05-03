@@ -27,7 +27,7 @@
 			<div class="container">
 				<!-- Logo -->
 				<div id="logo">
-					<h1><a href="#">ĐỒNG HỒ DMA - TÂN HÒA</a></h1>
+					<h3><a href="#">ĐỒNG HỒ DMA - TÂN HÒA</a></h3>
 				</div>
 
 				<!-- Nav -->
@@ -38,6 +38,7 @@
 						<li id="SANLUONG" ><a href="pageSanLuong.aspx">Sản Lượng</a></li>
 						<li id="LUULUONG" ><a href="pageLuuLuong.aspx">Lưu lượng</a></li>
 						<li id="APLUC" ><a href="pageApLuc.aspx">Áp Lực</a></li>
+                        <li id="Li1" ><a href="pageLogin.aspx">Login</a></li>
 					</ul>
 				</nav>
 

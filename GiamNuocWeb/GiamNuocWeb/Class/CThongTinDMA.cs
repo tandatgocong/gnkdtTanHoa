@@ -59,5 +59,34 @@ namespace GiamNuocWeb.Class
             return q.SingleOrDefault();
         }
 
+        public static bool Update()
+        {
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+            return false;
+        }
+        public static bool InsertLichSu(g_GhiChu g)
+        {
+            try
+            {
+                db.g_GhiChus.InsertOnSubmit(g);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                
+                
+            }
+            return false;
+        }
+
     }
 }

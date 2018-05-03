@@ -81,7 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Lib\ON.BAT" />
     <None Include="DataBase.dbml.layout">
       <DependentUpon>DataBase.dbml</DependentUpon>

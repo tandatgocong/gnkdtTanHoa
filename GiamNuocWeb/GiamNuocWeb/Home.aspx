@@ -88,8 +88,9 @@
     </style>
 
   <body>
+  <table><tr><td>fdsa</td></tr></table>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-     <div id="map" style="width: 100%; height:100vh"></div>
+     <div id="map" style="width: 100%; height:80vh"></div>
 
     <script>
         var lagx;
@@ -112,7 +113,57 @@
                 mapTypeId: 'roadmap'
             });
 
+              
+
             ////////////////////////
+            infowindow = new google.maps.InfoWindow();
+                        var html = " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Nhập Thông Tin  </div> <br/> <table  >" +                                            
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;' >Loại</td> <td><select id='loai'>" +
+                         "<option value='01' SELECTED> DHT </option>" +
+                         "<option value='02' > CMP </option>" +                        
+                          "</select> </td></tr>" +
+                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>DMA</td> <td><select id='madma'>" +
+                         "<option value='01-01' SELECTED>01-01</option>" + "<option value='01-02'>01-02</option>" + "<option value='01-03'>01-03</option>" + "<option value='01-04'>01-04</option>" +
+                         "<option value='02-01'>02-01</option>" + "<option value='02-02'>02-02</option>" + "<option value='02-03'>02-03</option>" + "<option value='02-04'>02-04</option>" + "<option value='02-05'>02-05</option>" +
+                         "<option value='02-06'>02-06</option>" + "<option value='03-01'>03-01</option>" + "<option value='03-02'>03-02</option>" + "<option value='03-03'>03-03</option>" + "<option value='03-04'>03-04</option>" +
+                         "<option value='03-05'>03-05</option>" + "<option value='03-06'>03-06</option>" + "<option value='03-07'>03-07</option>" + "<option value='03-08'>03-08</option>" + "<option value='03-09'>03-09</option>" +
+                         "<option value='03-10'>03-10</option>" + "<option value='03-11'>03-11</option>" + "<option value='03-12'>03-12</option>" + "<option value='03-13'>03-13</option>" + "<option value='03-14'>03-14</option>" +
+                         "<option value='04-01'>04-01</option>" + "<option value='04-02'>04-02</option>" + "<option value='04-03'>04-03</option>" + "<option value='04-04'>04-04</option>" + "<option value='04-05'>04-05</option>" +
+                         "<option value='04-06'>04-06</option>" + "<option value='04-07'>04-07</option>" + "<option value='06-01'>06-01</option>" + "<option value='06-01A'>06-01A</option>" + "<option value='06-02'>06-02</option>" +
+                         "<option value='06-03'>06-03</option>" + "<option value='06-04'>06-04</option>" + "<option value='07-01'>07-01</option>" + "<option value='07-02'>07-02</option>" + "<option value='07-03'>07-03</option>" +
+                         "<option value='07-04'>07-04</option>" + "<option value='07-05'>07-05</option>" + "<option value='07-06'>07-06</option>" + "<option value='07-07'>07-07</option>" + "<option value='07-08'>07-08</option>" +
+                         "<option value='07-09'>07-09</option>" + "<option value='07-09A'>07-09A</option>" + "<option value='07-10'>07-10</option>" + "<option value='08-01'>08-01</option>" + "<option value='08-02'>08-02</option>" +
+                         "<option value='08-03'>08-03</option>" + "<option value='08-04'>08-04</option>" + "<option value='08-05'>08-05</option>" + "<option value='08-06'>08-06</option>" + "<option value='08-07'>08-07</option>" +
+                         "<option value='08-08'>08-08</option>" + "<option value='08-09'>08-09</option>" + "<option value='08-10'>08-10</option>" + "<option value='08-11'>08-11</option>" + "<option value='08-12'>08-12</option>" +
+                         "<option value='09-01'>TânBình</option>" + "<option value='09-01A'>09-01A</option>" + "<option value='09-02'>09-02</option>" + "<option value='09-03 '>09-03 </option>" + "<option value='09-04'>09-04</option>" +
+                         "<option value='09-05'>09-05</option>" + "<option value='09-06'>09-06</option>" + "<option value='10-01'>10-01</option>" + "<option value='10-02'>10-02</option>" + "<option value='10-03'>10-03</option>" +
+                         "<option value='10-04'>10-04</option>" + "<option value='10-05'>10-05</option>" + "<option value='10-06'>10-06</option>" + "<option value='10-07'>10-07</option>" + "<option value='11-01'>11-01</option>" +
+                         "<option value='11-02'>11-02</option>" + "<option value='11-03 '>11-03 </option>" + "<option value='11-04'>11-04</option>" + "<option value='11-05'>11-05</option>" + "<option value='11-06'>11-06</option>" +
+                         "<option value='11-07'>11-07</option>" + "<option value='11-08'>11-08</option>" + "<option value='11-09'>11-09</option>" + "<option value='11-10'>11-10</option>" + "<option value='11-11'>11-11</option>" +
+                         "<option value='11-12'>11-12</option>" + "<option value='11-13'>11-13</option>" + "<option value='11-14'>11-14</option>" + "<option value='11-15'>11-15</option>" + "<option value='12-01'>12-01</option>" +
+                         "<option value='12-02'>12-02</option>" + "<option value='12-03'>12-03</option>" + "<option value='12-04'>12-04</option>" + "<option value='12-05'>12-05</option>" + 
+                         "</select> </td></tr>" + 
+                         "<tr style=' height: 30px; '><td style='hight:100px; width:80px;'></td><td><input type='button' class='button' value='Save' onclick='save()'/></td></tr></table>";
+
+                    infowindow = new google.maps.InfoWindow({
+                        content: html 
+                    });
+
+                    google.maps.event.addListener(map, "click", function (event) {
+                        marker = new google.maps.Marker({
+                            position: event.latLng,
+                            map: map
+                        });
+                        google.maps.event.addListener(marker, "click", function () {
+                            infowindow.open(map, marker),
+                            lagx=marker.getPosition().lat(),
+                            lagy=marker.getPosition().lng()
+                        });
+                    });
+                     
+
+          
+           ////////////////////////
             <% 
                     int f=1;
                     DataTable   table = new DataTable();
@@ -123,21 +174,21 @@
                         {
                             f++;
                         %>
-                           var x = parseFloat(<%=table.Rows[j]["lat"]%>);
-                           var y = parseFloat(<%=table.Rows[j]["lng"]%>);
+                           var x = parseFloat(<%=table.Rows[j]["DHTLat"]%>);
+                           var y = parseFloat(<%=table.Rows[j]["DHTLng"]%>);
                           // var latlng2 = new google.maps.LatLng(x, y);
 
                              var latlng2 = new google.maps.LatLng(x, y);
 
-                             var name<%=f%> =<%=table.Rows[j]["ID"]%>;
+                             var name<%=f%> =<%=table.Rows[j]["STT"]%>;
 
                              var icon_='/Image/dhTong2.png';
-                             var lb='<%=table.Rows[j]["MaDma"]%>';
+                             var lb='<%=table.Rows[j]["MaDMA"]%>';
                                                             
                            var marker<%=f%> = new google.maps.Marker({
 				              position: latlng2,
                               icon: icon_, 
-                              label: {text: lb, color: "Red", fontWeight: "bold" },
+                              label: {text: lb, color: "Red", fontWeight: "bold",fontSize: "25px"},
 				              map: map,
 				              title: name<%=f%>
 				              });
@@ -148,32 +199,8 @@
 
 
                               var iwContent="<table border=1 cellpadding=0 cellspacing=0> ";
-                                 iwContent+="<tr> ";
-                                 //iwContent+="<td  style='width:88px;height: 30px;' rowspan=2> Áp Lực&nbsp;</td>";
-                                 <% 
-                                    if((string)table.Rows[j]["F"]=="1")
-                                    {%>
-                                        iwContent+=" <td rowspan=2 style='width:60px;height: 30px; text-align: center;'><img width='50px' height='24px'  src='../Image/error.gif' /></td> ";
-                                     <%}
-                                     else  if((string)table.Rows[j]["F"]=="0")
-                                     {%>
-                                         iwContent+=" <td rowspan=2 style='width:60px;height: 30px; text-align: center;background-color:Yellow;font-size:x-large;color:Blue;font-weight:bold'><b><a target='_blank'  href='QuanLyDMA_Chart.aspx?value=<%=table.Rows[j]["IDApLuc"]%>'><%=table.Rows[j]["ApLuc"]%> </a></b></td> ";
-                                     <%}
-                                    else   
-                                    {%>
-                                      iwContent+=" <td rowspan=2 style='width:60px;height: 30px; text-align: center;font-size:x-large;color:Blue;font-weight:bold'><a target='_blank'  href='QuanLyDMA_Chart.aspx?value=<%=table.Rows[j]["IDApLuc"]%>'><%=table.Rows[j]["ApLuc"]%></td> ";
-                                    <%}
+                                 iwContent+="<tr><td>fdsafdsa</td></tr> ";
                                  
-                                 %>
-                                 
-                                // iwContent+=" <td style='width:60px;height: 15px; text-align: center;font-weight:bold'><%=table.Rows[j]["ApLucMin"]%></td> ";
-                               //  iwContent+="</tr> ";
-                              //   iwContent+="<tr><td style='width:60px;height: 15px; text-align: center;font-weight:bold'><%=table.Rows[j]["ApLucMax"]%></td> ";
-                                 iwContent+=" </tr> ";
-                           //      iwContent+=" <tr> ";
-                           //      iwContent+="   <td style='width:88px;height: 30px;'>Lưu Lượng</td><td colspan=2 ";
-                            //     iwContent+="        style='text-align: center'></td> ";
-                            //     iwContent+="  </tr> ";
                                 iwContent+="</table>";
                               infowindow3.setContent(iwContent);
 
@@ -185,6 +212,8 @@
                         }
                        }
             %>
+
+
 
 
 
@@ -261,7 +290,7 @@
                         }
                        }
                     %>
-
+/*
            
            var layer = new google.maps.FusionTablesLayer({
               query: {
@@ -279,7 +308,30 @@
                     }]
             });
             layer.setMap(map);
+            */
 
+                     var infoWindow = new google.maps.InfoWindow({map: map});
+
+            // Try HTML5 geolocation.
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                      lat: position.coords.latitude,
+                      lng: position.coords.longitude
+                    };
+
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('Location');
+                    map.setCenter(pos);
+                  }, function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                  });
+                } else {
+                  // Browser doesn't support Geolocation
+                  handleLocationError(false, infoWindow, map.getCenter());
+                }
+
+                 
 
            
              
@@ -345,7 +397,19 @@
             });
             
  }
-    
+             function save() {  
+                   var madma = document.getElementById("madma").value;
+                   var loai = document.getElementById("loai").value;
+                   
+                   var newUrl="pageAddLocaiton.aspx?lat="+lagx+ "&lng=" + lagy+ "&madma=" + madma + "&loai=" + loai ; 
+                   // alert(latlng);
+                   document.location.href = newUrl;
+                                    
+                   // var newUrl="addBaoBee.aspx?lat="+lagx+ "&lng=" + lagy ;
+                   // alert(latlng);
+                   //document.location.href = newUrl;
+                      
+              }
 
     </script>
     

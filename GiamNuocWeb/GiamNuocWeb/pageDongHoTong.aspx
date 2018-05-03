@@ -1,18 +1,38 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageDongHoTong.aspx.cs" Inherits="GiamNuocWeb.pageDongHoTong" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <script language="javascript" type="text/javascript">
+    <script language="javascript" type="text/javascript">
      window.document.getElementById("HOME").className = "";
      window.document.getElementById("SANLUONG").className = "";
      window.document.getElementById("LUULUONG").className = "";
      window.document.getElementById("DHT").className = "active";
      window.document.getElementById("APLUC").className = "";
-  </script>
+   
+ function getLocation() {
+    if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+    
 
+    function geoSuccess(position) 
+    {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        alert("lat:" + lat + " lng:" + lng);
+    }
+    function geoError() 
+    {
+        alert("Geocoder failed.");
+    }
+
+</script>
     <link href="css/StyleSheet.css" rel="stylesheet" type="text/css" />
     <table class='table_list' style="width:100%;">           
 
             <tr  >
-                <td class="style3">
+                <td class="style3" style="width: 10px">
                     &nbsp;</td>
                 <td class="style3" colspan="3">
                     <div class="title_page2"> MÃ DMA : 
@@ -26,7 +46,7 @@
             </tr>
 
             <tr>
-                <td class="style3">
+                <td class="style3" style="width: 10px">
                     &nbsp;</td>
                 <td class="style3" colspan="3"  >
                     <div class="title_page">
@@ -34,12 +54,12 @@
                 </td>
             </tr>
             <tr>
-                <td class="style30" style="height: 37px">
+                <td class="style30" style="height: 37px; width: 10px;">
                 </td>
-                <td class="style30" style="width: 53px; height: 37px;">
+                <td class="style30" style="width: 23px; height: 37px;">
                     </td>
                 <td class="style65" 
-                    style="border-bottom: 1px #99cc99 solid; width: 71px; height: 37px;">
+                    style="border-bottom: 1px #99cc99 solid; width: 82px; height: 37px;">
                     <asp:Label ID="Label4" runat="server" 
                         Text="Vị Trí:"></asp:Label>
                 </td>
@@ -50,9 +70,9 @@
                     </td>
             </tr>
             <tr>
-                <td class="style41" style="height: 39px">
+                <td class="style41" style="height: 39px; width: 10px;">
                     </td>
-                <td class="style41" style="width: 53px; height: 39px;">
+                <td class="style41" style="width: 23px; height: 39px;">
                     </td>
                 <td colspan=2 class="style67" 
                     style="border-bottom: 1px #99cc99 solid; height: 39px;">
@@ -78,9 +98,9 @@
                     </td>
             </tr>
             <tr>
-                <td class="style41" style="height: 38px">
+                <td class="style41" style="height: 38px; width: 10px;">
                     </td>
-                <td class="style41" style="width: 53px; height: 38px;">
+                <td class="style41" style="width: 23px; height: 38px;">
                     </td>
                 <td colspan=2 class="style67" 
                     style="border-bottom: 1px #99cc99 solid; height: 38px;">
@@ -110,7 +130,11 @@
                             <td style="width: 89px">
                                 Pin Nguồn</td>
                             <td>
-                    <asp:TextBox ID="txtPinNguon" runat="server" Height="27px" Width="91px"></asp:TextBox>
+                                <asp:DropDownList ID="cmpPinNguon" runat="server" Height="36px" Width="107px">
+                                    <asp:ListItem Value="Pin ắc quy">Pin ắc quy</asp:ListItem>
+                                    <asp:ListItem Value="Pin ABB">Pin ABB</asp:ListItem>
+                                    <asp:ListItem>Pin Isomag</asp:ListItem>
+                                </asp:DropDownList>
                             </td>
                         </tr>
                     </table>
@@ -122,9 +146,9 @@
                     </td>
             </tr>
             <tr>
-                <td class="style41" style="height: 35px">
+                <td class="style41" style="height: 35px; width: 10px;">
                     </td>
-                <td class="style41" style="width: 53px; height: 35px;">
+                <td class="style41" style="width: 23px; height: 35px;">
                     </td>
                 <td colspan=2 class="style67" 
                     style="border-bottom: 1px #99cc99 solid; height: 35px;">
@@ -135,25 +159,26 @@
                         Text="PRV :"></asp:Label>
                             &nbsp;</td>
                             <td class="style62" style="width: 56px">
-                                <asp:DropDownList ID="prv" runat="server" Height="31px" Width="56px">
+                                <asp:DropDownList ID="prv" runat="server" Height="31px" Width="71px">
                                     <asp:ListItem Value="True">Có</asp:ListItem>
                                     <asp:ListItem Value="False">Không</asp:ListItem>
                                 </asp:DropDownList>
                             </td>
-                            <td class="style62" style="width: 81px">
+                            <td class="style62" style="width: 88px">
                     <asp:Label ID="Label2" runat="server" 
                         Text="Hầm ĐHT :"></asp:Label>
                             </td>
                             <td style="width: 56px">
-                                <asp:DropDownList ID="hamdht" runat="server" Height="31px" Width="56px">
+                                <asp:DropDownList ID="hamdht" runat="server" Height="31px" Width="69px">
                                     <asp:ListItem Value="Có">Có</asp:ListItem>
                                     <asp:ListItem Value="Không">Không</asp:ListItem>
                                 </asp:DropDownList>
                             </td>
-                            <td style="width: 68px">
-                                &nbsp;</td>
-                            <td style="width: 142px">
-                                &nbsp;</td>
+                            <td style="width: 111px">
+                                Tình trạng PRV</td>
+                            <td style="width: 266px">
+                    <asp:TextBox ID="txtTinhTrangPRV" runat="server" Height="27px" Width="152px"></asp:TextBox>
+                            </td>
                             <td>
                                 &nbsp;</td>
                             <td>
@@ -168,9 +193,9 @@
                     </td>
             </tr>
             <tr>
-                <td class="style41" style="height: 42px">
+                <td class="style41" style="height: 42px; width: 10px;">
                     </td>
-                <td class="style41" style="width: 53px; height: 42px;">
+                <td class="style41" style="width: 23px; height: 42px;">
                     </td>
                 <td colspan=2 class="style67" 
                     style="border-bottom: 1px #99cc99 solid; height: 42px;">
@@ -196,12 +221,12 @@
                     </td>
             </tr>
             <tr>
-                <td class="style45" style="height: 38px">
+                <td class="style45" style="height: 38px; width: 10px;">
                     </td>
-                <td class="style45" style="width: 53px; height: 38px;">
+                <td class="style45" style="width: 23px; height: 38px;">
                     </td>
                 <td class="style68" 
-                    style="border-bottom: 1px #99cc99 solid; width: 71px; height: 38px;">
+                    style="border-bottom: 1px #99cc99 solid; width: 82px; height: 38px;">
                     <asp:Label ID="Label15" runat="server" 
                         Text="Số Sim:"></asp:Label>
                             </td>
@@ -215,99 +240,143 @@
 </td>
             </tr>
             <tr>
-                <td class="style3">
-                    &nbsp;</td>
-                <td class="style3" style="width: 53px">
-                    &nbsp;</td>
-                <td class="style64" style="border-bottom: 1px #99cc99 solid; width: 71px;">
-                    &nbsp;</td>
-                <td class="style25" style="border-bottom: 1px #99cc99 solid">                    &nbsp;</td>
-                <td class="style11">
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td class="style3">
+                <td class="style58" style="width: 10px">
                 </td>
-                <td class="style3" style="width: 53px">
+                <td class="style58" style="width: 23px">
                     &nbsp;</td>
-                <td class="style64" style="border-bottom: 1px #99cc99 solid; width: 71px;">
-                    &nbsp;</td>
-                <td class="style25" style="border-bottom: 1px #99cc99 solid">
-                                    &nbsp;</td>
-                <td class="style11">
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td class="style50">
-                    </td>
-                <td class="style50" style="width: 53px">
-                    &nbsp;</td>
-                <td class="style69" style="border-bottom: 1px #99cc99 solid; width: 71px;">
-                    &nbsp;</td>
-                <td class="style52" style="border-bottom: 1px #99cc99 solid">
-                    <br />
-                </td>
-                <td class="style53">
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td class="style58">
-                </td>
-                <td class="style58" style="width: 53px">
-                    &nbsp;</td>
-                <td class="style59" style="width: 71px">
+                <td class="style59" style=" width: 82px; vertical-align: text-top;" >
                     <asp:Label ID="Label10" runat="server" 
                         Text="Hình"></asp:Label>
-                    </td>
+                    Ảnh Thiết Bi</td>
                 <td class="style60" colspan="2">
-                    <asp:Image ID="imgFile" runat="server" Height="208px" 
-                        Width="349px" Visible="False" />
-                    <div class="criteria_scroll">
-                   
+                    <asp:Image ID="imgFile" runat="server" Height="317px" 
+                        Width="431px" Visible="False" />
+                  <div class="criteria_scroll">
+                        <%
+                            if (Session["imgfile"] != null)
+                            {
+                                string filelis = Session["imgfile"].ToString();
+                                string[] words = Regex.Split(filelis, ",");
+                                for (int i = 0; i < words.Length; i++)
+                                {
+                                    if (!words[i].Equals(""))
+                                    {
+                                        Response.Write("<img  src=" + words[i] + " Height='317px' Width='431px' /> ");
+                                    }
+
+                                }
+                            }
+                  %>
                     </div>
                 </td>
             </tr>
             <tr>
-                <td class="style3">
+                <td class="style3" style="width: 10px">
                 </td>
-                <td class="style3" style="width: 53px">
+                <td class="style3" style="width: 23px">
                     &nbsp;</td>
-                <td class="style64" style="width: 71px">
+                <td class="style64" style="width: 82px">
                     Chọn Hình</td>
                 <td class="style25">
                     <asp:FileUpload ID="FileUpload1" runat="server" />
+                    <asp:Button ID="btUpload" runat="server" onclick="Button1_Click" 
+                        CssClass="button"  Text="Upload" 
+                        ValidationGroup="adsfdsafd" Visible="False" />
+                    <asp:Button ID="btClear" runat="server" onclick="Button2_Click1" 
+                        CssClass="button"  Text="Clear" 
+                        ValidationGroup="adsfdsafd" Visible="False" />
                     <asp:HiddenField ID="imagePath" runat="server" />
                 </td>
                 <td class="style17">
                     <asp:Label ID="upload" runat="server" ForeColor="Red"></asp:Label>
                 </td>
             </tr>
-            <tr>
-                <td class="style54">
+            <tr style="border-bottom: 1px #99cc99 solid; ">
+                <td class="style3" style="height: 31px; width: 10px;">
                     </td>
-                <td class="style54" style="width: 53px">
+                <td class="style3" style="width: 23px; height: 31px;">
+                    </td>
+                <td class="style64"  
+                    style="border-bottom: 1px #99cc99 solid; height: 31px; width: 82px;">
+                    Sự cố</td>
+                <td class="style25"  style="border-bottom: 1px #99cc99 solid; height: 31px;">
+                    <asp:TextBox ID="txtNoiDung" runat="server" Height="69px" TextMode="MultiLine" 
+                        Width="432px"></asp:TextBox>
+                </td>
+                <td class="style17" style="height: 31px">
+                    </td>
+            </tr>
+            <tr>
+                <td class="style54" style="width: 10px">
+                    </td>
+                <td class="style54" style="width: 23px">
                     &nbsp;</td>
-                <td class="style70" style="width: 71px">
+                <td class="style70" style="width: 82px">
                     </td>
                 <td class="style56">
                     <asp:Button ID="btSearch" runat="server" CssClass="button" Font-Bold="True" 
                         Font-Names="Times New Roman" Font-Size="12pt" Height="30px" 
-                        onclick="btSearch_Click" Text="CẬP NHẬT" Width="115px" />
+                        onclick="btSearch_Click" Text="CẬP NHẬT" Width="115px" Visible="False" />
+                    <asp:Label ID="lbThanhCong" runat="server" ForeColor="Blue" Font-Bold="True" 
+                        Font-Size="13pt"></asp:Label>
                 </td>
                 <td class="style57">
                     </td>
             </tr>
             <tr>
-                <td class="style3">
+                <td class="style3" style="width: 10px">
                     &nbsp;</td>
-                <td class="style3" style="width: 53px">
+                <td class="style3" style="width: 23px">
                     &nbsp;</td>
-                <td class="style64" style="width: 71px">
+                <td class="style64" style="width: 82px">
                     &nbsp;</td>
                 <td class="style27" colspan="2">
-                    <asp:Label ID="lbThanhCong" runat="server" ForeColor="Blue" Font-Bold="True" 
-                        Font-Size="13pt"></asp:Label>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="style3" style="height: 20px; width: 10px;">
                     </td>
+                <td class="style3" style="width: 23px; height: 20px;">
+                    </td>
+                <td class="title_mobile"  colspan="3"  style="border-bottom: 1px  #FF0000 solid; background-color: #FFFF99; " colspan="2"> Lịch sử kiểm tra  ĐHT</td>
+            </tr>
+            <tr>
+                <td class="style3" style="width: 10px">
+                    &nbsp;</td>
+                <td class="style3" style="width: 23px">
+                    &nbsp;</td>
+                <td class="style64" colspan="3">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+                        BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" 
+                        CellPadding="4" ForeColor="Black" GridLines="Vertical">
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns>
+                            <asp:BoundField DataField="CREATEDATE" HeaderText="Ngày Kiểm Tra">
+                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="NOIDUNG" HeaderText="Nội Dung">
+                            <ItemStyle Width="500px" />
+                            </asp:BoundField>
+                        </Columns>
+                        <FooterStyle BackColor="#CCCC99" />
+                        <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                        <RowStyle BackColor="#F7F7DE" />
+                        <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                        <SortedAscendingHeaderStyle BackColor="#848384" />
+                        <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                        <SortedDescendingHeaderStyle BackColor="#575357" />
+                    </asp:GridView>
+                </td>
+            </tr>
+            <tr>
+                <td class="style3" style="width: 10px">
+                    &nbsp;</td>
+                <td class="style3" style="width: 23px">
+                    &nbsp;</td>
+                <td class="style64" colspan="3">
+                    &nbsp;</td>
             </tr>
         </table>
 </asp:Content>

@@ -178,8 +178,10 @@
     <Content Include="Lib\Microsoft.Office.Interop.Excel.dll" />
     <Content Include="Lib\String_Indentity.dll" />
     <Content Include="Lib\String_Indentity_.dll" />
+    <Content Include="pageAddLocaiton.aspx" />
     <Content Include="pageApLuc.aspx" />
     <Content Include="pageDongHoTong.aspx" />
+    <Content Include="pageLogin.aspx" />
     <Content Include="pageLuuLuong.aspx" />
     <Content Include="pageSanLuong.aspx" />
     <Content Include="twocolumn2.html" />
@@ -240,6 +242,13 @@
     <Compile Include="iisstart.aspx.designer.cs">
       <DependentUpon>iisstart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pageAddLocaiton.aspx.cs">
+      <DependentUpon>pageAddLocaiton.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageAddLocaiton.aspx.designer.cs">
+      <DependentUpon>pageAddLocaiton.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pageApLuc.aspx.cs">
       <DependentUpon>pageApLuc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,6 +262,13 @@
     </Compile>
     <Compile Include="pageDongHoTong.aspx.designer.cs">
       <DependentUpon>pageDongHoTong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pageLogin.aspx.cs">
+      <DependentUpon>pageLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageLogin.aspx.designer.cs">
+      <DependentUpon>pageLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="pageLuuLuong.aspx.cs">
       <DependentUpon>pageLuuLuong.aspx</DependentUpon>
@@ -307,6 +323,9 @@
     <EmbeddedResource Include="rpLuLuongByDate.rdlc" />
     <EmbeddedResource Include="rpLuLuongByGio.rdlc" />
     <EmbeddedResource Include="rpSanLuong.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FileUpload\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

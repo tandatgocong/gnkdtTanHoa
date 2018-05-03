@@ -112,13 +112,13 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.TextBox txtThietBi;
         
         /// <summary>
-        /// txtPinNguon control.
+        /// cmpPinNguon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPinNguon;
+        protected global::System.Web.UI.WebControls.DropDownList cmpPinNguon;
         
         /// <summary>
         /// Label1 control.
@@ -155,6 +155,15 @@ namespace GiamNuocWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList hamdht;
+        
+        /// <summary>
+        /// txtTinhTrangPRV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTinhTrangPRV;
         
         /// <summary>
         /// txtTinhTrangDHT control.
@@ -220,6 +229,24 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
+        /// btUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btUpload;
+        
+        /// <summary>
+        /// btClear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btClear;
+        
+        /// <summary>
         /// imagePath control.
         /// </summary>
         /// <remarks>
@@ -238,6 +265,15 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.Label upload;
         
         /// <summary>
+        /// txtNoiDung control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNoiDung;
+        
+        /// <summary>
         /// btSearch control.
         /// </summary>
         /// <remarks>
@@ -254,5 +290,14 @@ namespace GiamNuocWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbThanhCong;
+        
+        /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }
