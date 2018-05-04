@@ -75,7 +75,6 @@
     <Content Include="css\StyleSheet.css" />
     <Content Include="Default.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="GiamNuocWeb.Publish.xml" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="iisstart.aspx" />
@@ -108,7 +107,7 @@
     <Content Include="Image\button_bg.png" />
     <Content Include="Image\Capture.JPG" />
     <Content Include="Image\chiropractor.png" />
-    <Content Include="Image\chuagiao.png" />
+    <Content Include="Image\cmp.png" />
     <Content Include="Image\db.png" />
     <Content Include="Image\delete2.ico" />
     <Content Include="Image\dhTong.png" />

@@ -54,8 +54,9 @@ namespace GiamNuocWeb
                     kt.ViTri = this.txtViTri.Text;
                     kt.Phuong = this.txtPhuong.Text;
                     kt.Quan = this.txtQuan.Text;
-                    kt.CoDHN = this.txtCoDHN.Text;
-                    kt.Hieu = this.txtHieuDHN.Text;
+                    kt.ViTriCMP = this.txtViTriCMP.Text;
+                    kt.CoDHN = this.txtCoDHN0.Text;
+                    kt.Hieu = this.txtHieuDHN0.Text;
                     kt.ThietBi = this.txtThietBi.Text;
                     kt.PinNguon = this.cmpPinNguon.SelectedValue;
                     try { kt.PRV = bool.Parse(this.prv.SelectedValue); }
@@ -68,7 +69,8 @@ namespace GiamNuocWeb
                     kt.SoSIM = this.txtSoSim.Text;
                     try
                     {
-                        kt.Img = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1);
+                        //kt.Img = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1);
+                        kt.Img = this.imagePath.Value.Replace(",,",@",");
                     }
                     catch (Exception) { }
 
@@ -125,6 +127,7 @@ namespace GiamNuocWeb
         {
             try
             {
+                lbThanhCong.Text = "";
                 string madma = listDMA.SelectedValue.ToString();
                 g_ThongTinDHT dh = CThongTinDMA.getDHTByMaDMA(madma);
                 if (dh != null)
@@ -132,8 +135,9 @@ namespace GiamNuocWeb
                     this.txtViTri.Text = dh.ViTri;
                     this.txtPhuong.Text = dh.Phuong;
                     this.txtQuan.Text = dh.Quan;
-                    this.txtCoDHN.Text = dh.CoDHN;
-                    this.txtHieuDHN.Text = dh.Hieu;
+                    this.txtCoDHN0.Text = dh.CoDHN;
+                    this.txtViTriCMP.Text = dh.ViTriCMP;
+                    this.txtHieuDHN0.Text = dh.Hieu;
                     this.txtThietBi.Text = dh.ThietBi;
                  //   this.txtPinNguon.Text = dh.PinNguon;
                     this.txtSoSim.Text = dh.SoSIM;
@@ -177,6 +181,7 @@ namespace GiamNuocWeb
                     }
                     SaveLocation = SaveLocation + @"/" + madma + @"/" + fileName;
 
+                     
                     FileUpload1.SaveAs(SaveLocation);
 
                     upload.Visible = true;
@@ -192,13 +197,14 @@ namespace GiamNuocWeb
 
                    // Session["imgfile"] = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1);
                     Session["imgfile"] = this.imagePath.Value;
-                    imgFile.ToolTip = "This file was stored to as file.";
+                   
                 }
                 catch (Exception ex)
                 {
                     this.upload.Text = "Lỗi Không Upload Ảnh Về Server" + ex.ToString();
                 }
         }
+        
         private void WriteToFile(string strPath, ref byte[] Buffer)
         {
             FileStream newFile = new FileStream(strPath, FileMode.Create);

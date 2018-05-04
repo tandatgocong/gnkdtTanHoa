@@ -22,15 +22,6 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.DropDownList listDMA;
         
         /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
         /// txtViTri control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace GiamNuocWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtViTri;
+        
+        /// <summary>
+        /// txtViTriCMP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtViTriCMP;
         
         /// <summary>
         /// txtPhuong control.
@@ -58,40 +58,40 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.TextBox txtQuan;
         
         /// <summary>
-        /// Label12 control.
+        /// Label16 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label12;
+        protected global::System.Web.UI.WebControls.Label Label16;
         
         /// <summary>
-        /// txtCoDHN control.
+        /// txtCoDHN0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCoDHN;
+        protected global::System.Web.UI.WebControls.TextBox txtCoDHN0;
         
         /// <summary>
-        /// Label13 control.
+        /// Label17 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label13;
+        protected global::System.Web.UI.WebControls.Label Label17;
         
         /// <summary>
-        /// txtHieuDHN control.
+        /// txtHieuDHN0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHieuDHN;
+        protected global::System.Web.UI.WebControls.TextBox txtHieuDHN0;
         
         /// <summary>
         /// Label14 control.
@@ -121,13 +121,13 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.DropDownList cmpPinNguon;
         
         /// <summary>
-        /// Label1 control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
         /// prv control.
@@ -139,13 +139,13 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.DropDownList prv;
         
         /// <summary>
-        /// Label2 control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
         /// hamdht control.
@@ -200,15 +200,6 @@ namespace GiamNuocWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSoSim;
-        
-        /// <summary>
-        /// Label10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
         
         /// <summary>
         /// imgFile control.

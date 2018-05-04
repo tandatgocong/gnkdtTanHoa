@@ -17,30 +17,34 @@
             </td>
         </tr>
         <tr>
-            <td style="width: 15px; height: 21px" valign="top">
+            <td style="height: 21px" valign="top">
                 <asp:Label ID="Label2" runat="server" Text="Tên đăng nhập :" Width="112px" 
                     style="text-align: right"></asp:Label></td>
             <td style="height: 30px; width: 1366px; text-align: left;" valign="top">
-                <asp:TextBox ID="txtusername" runat="server" Width="159px"></asp:TextBox>
+                <asp:TextBox ID="txtusername" runat="server" Width="159px" Height="29px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                     ErrorMessage="(*)" ControlToValidate="txtusername" ForeColor="Red"></asp:RequiredFieldValidator></td>
         </tr>
         <tr>
-            <td style="width: 15px; text-align: right;" valign="top">
-                <asp:Label ID="Label3" runat="server" Text="Mật khẩu  :" Width="80px"></asp:Label></td>
-            <td style="width: 1366px; text-align: left;" valign="top">
+            <td style="text-align: right; height: 24px;" valign="top">
+                <asp:Label ID="Label3" runat="server" Text="Mật khẩu  :" Width="80px" 
+                    Height="28px"></asp:Label></td>
+            <td style="width: 1366px; text-align: left; height: 24px;" valign="top">
                 <asp:TextBox ID="txtpassword" runat="server" TextMode="Password"
-                    Width="159px"></asp:TextBox>
+                    Width="159px" Height="29px"></asp:TextBox>
                 </td>
         </tr>
         <tr>
-            <td colspan="2" style="height: 35px">
-                <asp:Button ID="Button1" runat="server"  Text="&nbsp;Đăng Nhập&nbsp;" Width="103px" 
-                    onclick="Button1_Click" CssClass="button" Height="25px"/>
-                &nbsp;&nbsp;&nbsp;
-                <input id="Reset1" style="width: 95px" type="reset" value="Hủy bỏ" 
-                    class="button" /><br />
-                <br />
+            <td style="text-align: right; height: 32px;" valign="top">
+                &nbsp;</td>
+            <td style="width: 1366px; text-align: left; height: 32px;" valign="top">
+                <asp:Button ID="Button1" runat="server"  Text="Đăng Nhập" Width="114px" 
+                    onclick="Button1_Click" CssClass="button" Height="30px"/>
+                </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="height: 56px">
+                &nbsp;<br />
                 <asp:Label ID="mess" runat="server" ForeColor="Red" 
                     Text="(*) Đăng Nhập Thất Bại" Visible="False"></asp:Label>
             </td>

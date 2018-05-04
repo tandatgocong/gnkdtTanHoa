@@ -21,9 +21,9 @@ namespace GiamNuocWeb
             DataTable tb = LinQConnection.getDataTable(sql);
             Session["dsDHTong"] = tb;
 
-            //string sql2 = "SELECT * FROM g_ThongTinDHT WHERE StatusDHT IN (0,1) AND DHTLat IS NOT NULL ";
-            //DataTable tb2 = LinQConnection.getDataTable(sql);
-            //Session["dsDHTong"] = tb;
+            string sql2 = "SELECT * FROM g_ThongTinDHT WHERE StatusCMP IN (0,1) AND CMPLat IS NOT NULL ";
+            DataTable tb2 = LinQConnection.getDataTable(sql2);
+            Session["dsCMP"] = tb2;
         }
     }
 }
