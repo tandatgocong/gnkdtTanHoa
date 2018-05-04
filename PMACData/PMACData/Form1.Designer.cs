@@ -49,6 +49,7 @@
             this.btExit = new System.Windows.Forms.Button();
             this.btCopyData = new System.Windows.Forms.Button();
             this.btSanLuong = new System.Windows.Forms.Button();
+            this.btupdateVa = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -239,12 +240,24 @@
             this.btSanLuong.UseVisualStyleBackColor = true;
             this.btSanLuong.Click += new System.EventHandler(this.btSanLuong_Click);
             // 
+            // btupdateVa
+            // 
+            this.btupdateVa.Location = new System.Drawing.Point(378, 234);
+            this.btupdateVa.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btupdateVa.Name = "btupdateVa";
+            this.btupdateVa.Size = new System.Drawing.Size(75, 34);
+            this.btupdateVa.TabIndex = 19;
+            this.btupdateVa.Text = "Value";
+            this.btupdateVa.UseVisualStyleBackColor = true;
+            this.btupdateVa.Click += new System.EventHandler(this.btupdateVa_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(784, 307);
+            this.Controls.Add(this.btupdateVa);
             this.Controls.Add(this.btSanLuong);
             this.Controls.Add(this.btCopyData);
             this.Controls.Add(this.btExit);
@@ -295,6 +308,7 @@
         private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.Button btCopyData;
         private System.Windows.Forms.Button btSanLuong;
+        private System.Windows.Forms.Button btupdateVa;
     }
 }
 

@@ -114,6 +114,9 @@
             });
 
               
+           
+          
+            
 
             ////////////////////////
             infowindow = new google.maps.InfoWindow();
@@ -199,7 +202,8 @@
 
 
                               var iwContent="<table border=1 cellpadding=0 cellspacing=0> ";
-                                 iwContent+="<tr><td>OK</td></tr> ";
+                                 iwContent+="<tr><td style='border-bottom:1px; border-bottom-style:dotted;'><b><%=table.Rows[j]["vLuuLuong"]%> </b> <img src='Image/m3h.gif'/></td></tr> ";
+                                 iwContent+="<tr><td><b><%=table.Rows[j]["vApOut"]%> </b> kg </td></tr> ";
                                  
                                 iwContent+="</table>";
                               infowindow3.setContent(iwContent);
@@ -249,7 +253,7 @@
 
 
                               var iwContent="<table border=1 cellpadding=0 cellspacing=0> ";
-                                 iwContent+="<tr><td>OK</td></tr> ";
+                                  iwContent+="<tr><td><b><%=table.Rows[j]["vCMP"]%> </b> kg </td></tr> ";
                                  
                                 iwContent+="</table>";
                               infowindow4.setContent(iwContent);
@@ -264,9 +268,7 @@
             %>
 
             ////////////////////
-            /*
-           
-           var layer = new google.maps.FusionTablesLayer({
+         /*   var layer = new google.maps.FusionTablesLayer({
               query: {
                 select: 'col2',
                 from: '1gosPIEZPWjr_sBAEGwWzTB7ZU5BQuR7q91oLbRy5'
