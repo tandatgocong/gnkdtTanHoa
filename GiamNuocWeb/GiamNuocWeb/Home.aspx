@@ -113,11 +113,7 @@
                 mapTypeId: 'roadmap'
             });
 
-              
-           
-          
-            
-
+             
             ////////////////////////
             infowindow = new google.maps.InfoWindow();
                         var html = " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Nhập Thông Tin  </div> <br/> <table  >" +                                            
@@ -138,7 +134,7 @@
                          "<option value='07-09'>07-09</option>" + "<option value='07-09A'>07-09A</option>" + "<option value='07-10'>07-10</option>" + "<option value='08-01'>08-01</option>" + "<option value='08-02'>08-02</option>" +
                          "<option value='08-03'>08-03</option>" + "<option value='08-04'>08-04</option>" + "<option value='08-05'>08-05</option>" + "<option value='08-06'>08-06</option>" + "<option value='08-07'>08-07</option>" +
                          "<option value='08-08'>08-08</option>" + "<option value='08-09'>08-09</option>" + "<option value='08-10'>08-10</option>" + "<option value='08-11'>08-11</option>" + "<option value='08-12'>08-12</option>" +
-                         "<option value='09-01'>TânBình</option>" + "<option value='09-01A'>09-01A</option>" + "<option value='09-02'>09-02</option>" + "<option value='09-03 '>09-03 </option>" + "<option value='09-04'>09-04</option>" +
+                         "<option value='09-01'>09-01</option>" + "<option value='09-01A'>09-01A</option>" + "<option value='09-02'>09-02</option>" + "<option value='09-03 '>09-03 </option>" + "<option value='09-04'>09-04</option>" +
                          "<option value='09-05'>09-05</option>" + "<option value='09-06'>09-06</option>" + "<option value='10-01'>10-01</option>" + "<option value='10-02'>10-02</option>" + "<option value='10-03'>10-03</option>" +
                          "<option value='10-04'>10-04</option>" + "<option value='10-05'>10-05</option>" + "<option value='10-06'>10-06</option>" + "<option value='10-07'>10-07</option>" + "<option value='11-01'>11-01</option>" +
                          "<option value='11-02'>11-02</option>" + "<option value='11-03 '>11-03 </option>" + "<option value='11-04'>11-04</option>" + "<option value='11-05'>11-05</option>" + "<option value='11-06'>11-06</option>" +
@@ -291,14 +287,36 @@
             // Try HTML5 geolocation.
                 if (navigator.geolocation) {
                   navigator.geolocation.getCurrentPosition(function(position) {
-                    var pos = {
-                      lat: position.coords.latitude,
-                      lng: position.coords.longitude
-                    };
+                 
+                 var latlng99999 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-                    infoWindow.setPosition(pos);
-                    infoWindow.setContent('Location');
-                    map.setCenter(pos);
+                 var icon_='/Image/nursery.png';
+                 var marker99999= new google.maps.Marker({
+				              position: latlng99999, 
+                              icon: icon_, 
+				              map: map 
+				              });
+                           
+                marker99999.setMap(map);
+                var  infowindow99999 = new google.maps.InfoWindow();
+                var iwContent="<table border=1 cellpadding=0 cellspacing=0> "; 
+                    iwContent+="<tr><td> Location </td></tr> ";
+                    iwContent+="</table>";
+                infowindow99999.setContent(iwContent);
+                infowindow99999.open(map,marker99999);
+
+                map.setCenter(marker99999.getPosition());
+
+//                    var pos = {
+//                      lat: position.coords.latitude,
+//                      lng: position.coords.longitude
+//                    };
+
+//                    infoWindow.setPosition(pos);
+//                    infoWindow.setContent('Location');
+//                    map.setCenter(pos);
+
+
                   }, function() {
                     handleLocationError(true, infoWindow, map.getCenter());
                   });
@@ -307,9 +325,7 @@
                   handleLocationError(false, infoWindow, map.getCenter());
                 }
 
-                 
-
-           
+                  
              
             // Create the search box and link it to the UI element.
             var input = document.getElementById('pac-input');
@@ -372,7 +388,7 @@
                 map.fitBounds(bounds);
             });
             
- }
+    }
              function save() {  
                    var madma = document.getElementById("madma").value;
                    var loai = document.getElementById("loai").value;

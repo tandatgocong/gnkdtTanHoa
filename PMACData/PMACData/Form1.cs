@@ -336,7 +336,7 @@ namespace PMACData
 
         public void UpdateValue()
         {
-            string sql = " SELECT  * FROM g_ThongTinDHT  WHERE StatusDHT IN (1) ";
+            string sql = " SELECT  * FROM g_ThongTinDHT ";
 
             //string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*  FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE ChannelId='20238_02'  order by MaDMA";
             DataTable table = getDataTable(sql);
@@ -346,7 +346,7 @@ namespace PMACData
                 string tbCMP = "t_Data_Logger_" + table.Rows[i]["ChannelCMP"];
                 string tbALOut = "t_Data_Logger_" + table.Rows[i]["ChannelOut"];
                 string maDMA = table.Rows[i]["MaDMA"] + "";
-
+                
                 string sqlUpdate = "UPDATE dbo.g_ThongTinDHT SET vLuuLuong=T1.Value ";
                 sqlUpdate += " FROM ( ";
                 sqlUpdate += " SELECT  TOP(1) Value FROM " + tbName + " ORDER BY [TimeStamp] DESC ";
@@ -354,6 +354,11 @@ namespace PMACData
                 sqlUpdate += " WHERE [MaDMA]='" + maDMA + "'";
 
                 ExecuteCommand(sqlUpdate);
+
+                //if (maDMA == "06-02")
+                //{
+                //    sqlUpdate = "UPDATE dbo.g_ThongTinDHT SET vCMP=T1.Value ";
+                //}
 
                 sqlUpdate = "UPDATE dbo.g_ThongTinDHT SET vCMP=T1.Value ";
                 sqlUpdate += " FROM ( ";
