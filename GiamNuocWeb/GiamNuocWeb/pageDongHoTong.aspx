@@ -6,6 +6,7 @@
      window.document.getElementById("LUULUONG").className = "";
      window.document.getElementById("DHT").className = "active";
      window.document.getElementById("APLUC").className = "";
+     window.document.getElementById("THATTHOAT").className = ""; 
 
 </script>
 <style>

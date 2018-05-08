@@ -2,12 +2,13 @@
 <%@ Register TagPrefix="ff" Namespace="Saplin.Controls" Assembly="DropDownCheckBoxes" %>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script language="javascript" type="text/javascript">
-                   window.document.getElementById("HOME").className = "";
-                   window.document.getElementById("SANLUONG").className = "active";
-                   window.document.getElementById("LUULUONG").className = "";
-                   window.document.getElementById("APLUC").className = "";
-                   window.document.getElementById("DHT").className = ""; 
+  <script language="javascript" type="text/javascript">
+          window.document.getElementById("HOME").className = "";
+          window.document.getElementById("SANLUONG").className = "active";
+          window.document.getElementById("LUULUONG").className = "";
+          window.document.getElementById("APLUC").className = "";
+          window.document.getElementById("DHT").className = "";
+          window.document.getElementById("THATTHOAT").className = ""; 
   </script>
   <style>
     

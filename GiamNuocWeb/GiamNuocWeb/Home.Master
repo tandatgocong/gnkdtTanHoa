@@ -29,7 +29,7 @@
 			<div class="container">
 				<!-- Logo -->
 				<div id="logo">
-					<h1><a href="#">ĐỒNG HỒ DMA - TÂN HÒA</a></h1>
+					<h1><a href="#">DMA - TÂN HÒA</a></h1>
 				</div>
 
 				<!-- Nav -->
@@ -37,6 +37,7 @@
 					<ul>
 						<li id="HOME" class="active" ><a href="Home.aspx" class="active">Home</a></li>
                         <li id="DHT"><a href="pageDongHoTong.aspx" class="active">Đồng Hồ DMA</a></li>
+                        <li id="THATTHOAT" ><a href="pageThatThoat.aspx">Thất Thoát</a></li>
 						<li id="SANLUONG" ><a href="pageSanLuong.aspx">Sản Lượng</a></li>
 						<li id="LUULUONG" ><a href="pageLuuLuong.aspx">Lưu lượng</a></li>
 						<li id="APLUC" ><a href="pageApLuc.aspx">Áp Lực</a></li>

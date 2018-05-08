@@ -184,6 +184,7 @@
     <Content Include="pageLogin.aspx" />
     <Content Include="pageLuuLuong.aspx" />
     <Content Include="pageSanLuong.aspx" />
+    <Content Include="pageThatThoat.aspx" />
     <Content Include="twocolumn2.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -283,6 +284,13 @@
     </Compile>
     <Compile Include="pageSanLuong.aspx.designer.cs">
       <DependentUpon>pageSanLuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pageThatThoat.aspx.cs">
+      <DependentUpon>pageThatThoat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageThatThoat.aspx.designer.cs">
+      <DependentUpon>pageThatThoat.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

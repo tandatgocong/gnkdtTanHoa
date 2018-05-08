@@ -6,8 +6,9 @@
      window.document.getElementById("HOME").className = "";
      window.document.getElementById("SANLUONG").className = "";
      window.document.getElementById("LUULUONG").className = "";
-     window.document.getElementById("DHT").className = ""; 
+     window.document.getElementById("DHT").className = "";
      window.document.getElementById("APLUC").className = "active";
+     window.document.getElementById("THATTHOAT").className = ""; 
   </script>
    <style>
     
