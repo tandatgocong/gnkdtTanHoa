@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using GiamNuocWeb.Class;
 
 namespace GiamNuocWeb
 {
@@ -11,7 +13,9 @@ namespace GiamNuocWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string sql = "SELECT * FROM g_LabelDMA  ";
+            DataTable tb = LinQConnection.getDataTable(sql);
+            Session["dsDHtt"] = tb;
         }
     }
 }

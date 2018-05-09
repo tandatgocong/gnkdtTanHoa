@@ -1,4 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageThatThoat.aspx.cs" Inherits="GiamNuocWeb.pageThatThoat" %>
+
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <script language="javascript" type="text/javascript">
       window.document.getElementById("HOME").className = "";
@@ -133,6 +137,55 @@
             }
         });
         layer.setMap(map);
+
+         ////////////////////////
+            <% 
+                    int f=1;
+                    DataTable   table = new DataTable();
+                       if(Session["dsDHtt"]!=null)
+                       {
+                        table = (DataTable)Session["dsDHtt"];
+                        for(int j=0;j<table.Rows.Count;j++)
+                        {
+                            f++;
+                        %>
+                           var x = parseFloat(<%=table.Rows[j]["Lat"]%>);
+                           var y = parseFloat(<%=table.Rows[j]["Lng"]%>);
+                          // var latlng2 = new google.maps.LatLng(x, y);
+
+                             var latlng2 = new google.maps.LatLng(x, y);
+
+                             var name<%=f%> ='';
+
+                             //var icon_='/Image/dhTong2.png';
+                             var lb='<%=table.Rows[j]["MaDMA"]%>';
+                                                            
+                           var marker<%=f%> = new google.maps.Marker({
+				              position: latlng2,
+                              icon: {
+                                    path: google.maps.SymbolPath.CIRCLE,
+                                    fillColor: '#00F',
+                                    fillOpacity: 0.6,
+                                    strokeColor: '#00A',
+                                    strokeOpacity: 0.9,
+                                    strokeWeight: 1,
+                                    scale: 2
+                                }, 
+                              label: {text: lb, color: "Red", fontWeight: "bold",fontSize: "20px"},
+				              map: map,
+				              title: name<%=f%>
+				              });
+                           
+                            marker<%=f%>.setMap(map);
+
+
+                           
+                        <%
+                        }
+                       }
+            %>
+
+
             ////////////////////
          /*   var layer = new google.maps.FusionTablesLayer({
               query: {

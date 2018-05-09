@@ -30,6 +30,9 @@ namespace GiamNuocWeb
                 string sql = "UPDATE g_ThongTinDHT SET CMPLat='" + lat + "', CMPLng='" + lng + "' WHERE MaDMA='" + madma + "' ";
                 LinQConnection.ExecuteCommand(sql);
             }
+            //string sql = "INSERT INTO g_LabelDMA VALUES ('" + madma + "','" + lat + "','" + lng + "') ";
+            //    LinQConnection.ExecuteCommand(sql);
+            
             Response.Redirect(@"Home.aspx");
             
         }

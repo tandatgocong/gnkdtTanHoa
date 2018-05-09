@@ -62,6 +62,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Home2.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="css\font-awesome.min.css" />
@@ -202,6 +203,13 @@
     <Compile Include="Class\CThongTinDMA.cs" />
     <Compile Include="Class\Format.cs" />
     <Compile Include="Class\LinQConnection.cs" />
+    <Compile Include="Home2.aspx.cs">
+      <DependentUpon>Home2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home2.aspx.designer.cs">
+      <DependentUpon>Home2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\DMA.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
