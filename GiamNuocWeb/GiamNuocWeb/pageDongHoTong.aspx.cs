@@ -17,13 +17,14 @@ namespace GiamNuocWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
             //this.tTuNgay.Text = DateTime.Now.ToString("MM/dd/yyyy");
             //this.tDenNgay.Text = DateTime.Now.ToString("MM/dd/yyyy");
             getLoadDMA();
+            Session["imgfile"] = null;
             //   getSanLuong();
         }
 
@@ -42,40 +43,40 @@ namespace GiamNuocWeb
                 btSearch.Visible = true;
             }
         }
-
+        g_ThongTinDHT dh = null;
         protected void btSearch_Click(object sender, EventArgs e)
         {
             string madma = listDMA.SelectedValue.ToString();
-            g_ThongTinDHT kt = CThongTinDMA.getDHTByMaDMA(madma);
+            dh = CThongTinDMA.getDHTByMaDMA(madma);
             try
             {
-                if (kt != null)
+                if (dh != null)
                 {
-                    kt.ViTri = this.txtViTri.Text;
-                    kt.Phuong = this.txtPhuong.Text;
-                    kt.Quan = this.txtQuan.Text;
-                    kt.ViTriCMP = this.txtViTriCMP.Text;
-                    kt.CoDHN = this.txtCoDHN0.Text;
-                    kt.Hieu = this.txtHieuDHN0.Text;
-                    kt.ThietBi = this.txtThietBi.Text;
-                    kt.PinNguon = this.cmpPinNguon.SelectedValue;
-                    try { kt.PRV = bool.Parse(this.prv.SelectedValue); }
+                    dh.ViTri = this.txtViTri.Text;
+                    dh.Phuong = this.txtPhuong.Text;
+                    dh.Quan = this.txtQuan.Text;
+                    dh.ViTriCMP = this.txtViTriCMP.Text;
+                    dh.CoDHN = this.txtCoDHN0.Text;
+                    dh.Hieu = this.txtHieuDHN0.Text;
+                    dh.ThietBi = this.txtThietBi.Text;
+                    dh.PinNguon = this.cmpPinNguon.SelectedValue;
+                    try { dh.PRV = bool.Parse(this.prv.SelectedValue); }
                     catch (Exception) { }
-                    try { kt.HamDHT = hamdht.SelectedValue; }
+                    try { dh.HamDHT = hamdht.SelectedValue; }
                     catch (Exception) { }
-                    kt.TinhTrangPRV = this.txtTinhTrangPRV.Text;
-                    kt.TinhTrangDH = this.txtTinhTrangDHT.Text;
-                    kt.TinhTrangBlogger = this.txtTinhTrangBlogger.Text;
-                    kt.SoSIM = this.txtSoSim.Text;
+                    dh.TinhTrangPRV = this.txtTinhTrangPRV.Text;
+                    dh.TinhTrangDH = this.txtTinhTrangDHT.Text;
+                    dh.TinhTrangBlogger = this.txtTinhTrangBlogger.Text;
+                    dh.SoSIM = this.txtSoSim.Text;
                     try
                     {
                         //kt.Img = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1);
-                        kt.Img = this.imagePath.Value.Replace(",,",@",");
+                        dh.Img = this.imagePath.Value.Replace(",,", @",");
                     }
                     catch (Exception) { }
 
-                    kt.ModifyDate = DateTime.Now;
-                    kt.ModifyBy = Session["login"] + "";
+                    dh.ModifyDate = DateTime.Now;
+                    dh.ModifyBy = Session["login"] + "";
 
                 }
                 if (CThongTinDMA.Update())
@@ -125,11 +126,12 @@ namespace GiamNuocWeb
         }
         protected void listDMA_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Session["imgfile"] = "";
             try
             {
                 lbThanhCong.Text = "";
                 string madma = listDMA.SelectedValue.ToString();
-                g_ThongTinDHT dh = CThongTinDMA.getDHTByMaDMA(madma);
+                dh = CThongTinDMA.getDHTByMaDMA(madma);
                 if (dh != null)
                 {
                     this.txtViTri.Text = dh.ViTri;

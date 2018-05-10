@@ -15,9 +15,9 @@
     height: 317px; */
     width: 317px;
     height: 431px;  
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Safari 3-8 */
-    transform: rotate(90deg);
+    /*-ms-transform: rotate(90deg);  
+    -webkit-transform: rotate(90deg);  
+    transform: rotate(90deg);*/
 }
   
     

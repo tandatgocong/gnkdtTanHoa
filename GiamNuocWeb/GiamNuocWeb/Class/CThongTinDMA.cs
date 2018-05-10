@@ -55,7 +55,7 @@ namespace GiamNuocWeb.Class
 
         public static g_ThongTinDHT getDHTByMaDMA(string ma)
         {
-            var q = from p in db.g_ThongTinDHTs where p.MaDMA==ma orderby p.STT ascending select p;
+            var q = from p in db.g_ThongTinDHTs where p.MaDMA==ma   select p;
             return q.SingleOrDefault();
         }
 
@@ -64,6 +64,7 @@ namespace GiamNuocWeb.Class
             try
             {
                 db.SubmitChanges();
+               // db.Refresh(System.Data.Linq.RefreshMode,null);
                 return true;
             }
             catch (Exception ex)

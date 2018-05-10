@@ -42,7 +42,7 @@ namespace GiamNuocWeb.DataBase
     #endregion
 		
 		public DMADataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["tanhoaConnectionString1"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["tanhoaConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
