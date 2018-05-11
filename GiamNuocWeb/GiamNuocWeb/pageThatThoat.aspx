@@ -94,13 +94,61 @@
       #target {
         width: 345px;
       }
+     .box {
+            position:absolute;
+            left:20px;
+            top:80px;
+            z-index:999;
+   
+        }
     </style>
 
   <body>
   <table><tr><td>fdsa</td></tr></table>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-     <div id="map" style="width: 100%; height:82vh"></div>
-
+    <div id="map" style="width: 100%; height:82vh"></div>
+     <div class=box>
+     <table style="text-align:center">
+            <tr>
+                <td style="background-color:#00ffff; color:White">
+                   < 10%&nbsp;</td>                 
+                <td style="color:Blue; border-bottom: 1px ">
+                    &nbsp;SL: 20</td>
+            </tr>
+            <tr>
+                <td style="background-color:#fce5cd; color:White">
+                    10 -> 20%&nbsp;</td>
+              <td>
+                    &nbsp;</td>
+                
+            </tr>
+            <tr>
+                  <td style="background-color:#f6b26b; color:White">
+                    20 -> 30%&nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+             <tr>
+                  <td style="background-color:#b45f06; color:White">
+                    30 -> 40%&nbsp;</td>
+                <td>
+                    &nbsp;</td>
+               
+            </tr>
+             <tr>
+                  <td style="background-color:#783f04; color:White">
+                    40 -> 50%&nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+             <tr>
+                  <td style="background-color:#ff00ff; color:White">
+                   &nbsp;> 50%&nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+        </table>
+     </div>
     <script>
         var lagx;
         var lagy;
@@ -171,7 +219,7 @@
                                     strokeWeight: 1,
                                     scale: 2
                                 }, 
-                              label: {text: lb, color: "Red", fontWeight: "bold",fontSize: "20px"},
+                              label: {text: lb, color: "Red", fontWeight: "bold",fontSize: "11px"},
 				              map: map,
 				              title: name<%=f%>
 				              });
