@@ -8,12 +8,11 @@ using GiamNuocWeb.Class;
 
 namespace GiamNuocWeb
 {
-    public partial class Home : System.Web.UI.MasterPage
+    public partial class Error : System.Web.UI.Page
     {
-        
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Label1.Text = CThongTinDMA.loggger;
         }
     }
 }

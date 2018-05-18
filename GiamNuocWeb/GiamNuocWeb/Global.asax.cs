@@ -19,8 +19,9 @@ namespace GiamNuocWeb
         protected void Session_Start(object sender, EventArgs e)
         {
             Session["imgfile"] = null;
-            Session["login"] = null;
+            Session["login"] = "Admin";
             Session["dsDHTong"] = null;
+            Session["err"] = "";
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

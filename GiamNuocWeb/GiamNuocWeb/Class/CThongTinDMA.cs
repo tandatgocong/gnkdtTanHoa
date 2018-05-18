@@ -8,9 +8,11 @@ using log4net;
 
 namespace GiamNuocWeb.Class
 {
+    
     public class CThongTinDMA
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(LinQConnection).Name);
+        static public string loggger = "";
+        private static readonly ILog log = LogManager.GetLogger(typeof(CThongTinDMA).Name);
         static DMADataContext db = new DMADataContext();
         public static string getDHTLoi()
         {
@@ -69,6 +71,7 @@ namespace GiamNuocWeb.Class
             }
             catch (Exception ex)
             {
+                loggger = ex.Message;
                 log.Error(ex.Message);
             }
             return false;
@@ -83,7 +86,7 @@ namespace GiamNuocWeb.Class
             }
             catch (Exception ex)
             {
-                
+                loggger = ex.Message;
                 
             }
             return false;
