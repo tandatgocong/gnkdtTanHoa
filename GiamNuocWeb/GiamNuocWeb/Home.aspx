@@ -85,10 +85,19 @@
       #target {
         width: 345px;
       }
+      
+     
+
     </style>
 
+
   <body>
-  <table><tr><td>fdsa</td></tr></table>
+   <table><tr><td> <div class="title_page2"> MÃ DMA : 
+                        <asp:DropDownList ID="listDMA" runat="server" Height="27px" Width="115px" 
+                            AutoPostBack="True" onselectedindexchanged="listDMA_SelectedIndexChanged">
+                        </asp:DropDownList>
+                    </div></td></tr></table> 
+
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
      <div id="map" style="width: 100%; height:80vh"></div>
 

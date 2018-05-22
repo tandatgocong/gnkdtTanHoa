@@ -32,8 +32,8 @@ namespace GiamNuocWeb
             }
             //string sql = "INSERT INTO g_LabelDMA VALUES ('" + madma + "','" + lat + "','" + lng + "') ";
             //    LinQConnection.ExecuteCommand(sql);
-            
-            Response.Redirect(@"Home.aspx");
+
+            Response.Redirect(@"Home2.aspx");
             
         }
 

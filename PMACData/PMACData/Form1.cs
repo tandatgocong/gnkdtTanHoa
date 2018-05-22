@@ -30,7 +30,7 @@ namespace PMACData
         }
         public void getTimeDatabase()
         {
-            db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, db.t_Channel_Configurations);
+            //db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, db.t_Channel_Configurations);
             var q = from query in db.t_Channel_Configurations orderby query.TimeStamp descending select query;
             this.lbDatabase.Text = q.First().TimeStamp.Value.ToString("G");
 
