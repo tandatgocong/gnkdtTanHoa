@@ -10,33 +10,33 @@
 namespace GiamNuocWeb {
     
     
-    public partial class Home1 {
+    public partial class pageChart {
         
         /// <summary>
-        /// listDMA control.
+        /// title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList listDMA;
+        protected global::System.Web.UI.WebControls.Label title;
         
         /// <summary>
-        /// chekApLuc control.
+        /// tTuNgay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chekApLuc;
+        protected global::System.Web.UI.WebControls.TextBox tTuNgay;
         
         /// <summary>
-        /// chekLuuLuong control.
+        /// RadioButtonList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chekLuuLuong;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
     }
 }

@@ -91,12 +91,17 @@
     </style>
 
 
-  <body>
-   <table><tr><td> <div class="title_page2"> MÃ DMA : 
-                        <asp:DropDownList ID="listDMA" runat="server" Height="27px" Width="115px" 
-                            AutoPostBack="True" onselectedindexchanged="listDMA_SelectedIndexChanged">
+  <body> <div class="dhnLoi">
+   <table><tr><td> <div class="title_page2"> DMA : 
+                        <asp:DropDownList ID="listDMA" runat="server" Height="24px" 
+           Width="67px" onselectedindexchanged="listDMA_SelectedIndexChanged" 
+           AutoPostBack="True">
                         </asp:DropDownList>
-                    </div></td></tr></table> 
+                    </div></td><td>
+                        <asp:CheckBox ID="chekApLuc" runat="server" Text="Áp Lực" AutoPostBack="True" 
+                            oncheckedchanged="chekApLuc_CheckedChanged" /> </td><td>
+                        <asp:CheckBox ID="chekLuuLuong" runat="server" Text="Lưu Lượng" 
+                            AutoPostBack="True" oncheckedchanged="chekLuuLuong_CheckedChanged" /> </td></tr></table> </div>
 
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
      <div id="map" style="width: 100%; height:80vh"></div>
@@ -113,12 +118,13 @@
         // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
         function initAutocomplete() {
-            var latlng = new google.maps.LatLng(10.801433295748337, 106.65252816547981);
+         
+            var latlng = new google.maps.LatLng(<%=Session["center"] %>);
             var marker;
             var infowindow;
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: latlng,
-                zoom: 15,
+                zoom: <%=Session["zoom"]%>,
                 mapTypeId: 'roadmap'
             });
 
@@ -158,7 +164,7 @@
 
 
                               var iwContent="<table border=1 cellpadding=0 cellspacing=0> ";
-                                 iwContent+="<tr><td style='border-bottom:1px; border-bottom-style:dotted;'><b><%=table.Rows[j]["vLuuLuong"]%> </b> <img src='Image/m3h.gif'/></td></tr> ";
+                                 iwContent+="<tr><td style='border-bottom:1px; border-bottom-style:dotted;'> <a href='pageChart.aspx?value=<%=table.Rows[j]["MaDMA"]%>'> <b><%=table.Rows[j]["vLuuLuong"]%> </b> <img src='Image/m3h.gif'/> </a> </td></tr> ";
                                  iwContent+="<tr><td><b><%=table.Rows[j]["vApOut"]%> </b> kg </td></tr> ";
                                  
                                 iwContent+="</table>";
@@ -167,7 +173,6 @@
 				
                             infowindow3.open(map,marker<%=f%>);
 
-                           
                         <%
                         }
                        }
@@ -209,7 +214,7 @@
 
 
                               var iwContent="<table border=1 cellpadding=0 cellspacing=0> ";
-                                  iwContent+="<tr><td><b><%=table.Rows[j]["vCMP"]%> </b> kg </td></tr> ";
+                                  iwContent+="<tr><td style='color:red;'><b><%=table.Rows[j]["vCMP"]%> </b> kg </td></tr> ";
                                  
                                 iwContent+="</table>";
                               infowindow4.setContent(iwContent);
@@ -224,7 +229,7 @@
             %>
 
             ////////////////////
-         /*   var layer = new google.maps.FusionTablesLayer({
+           var layer = new google.maps.FusionTablesLayer({
               query: {
                 select: 'col2',
                 from: '1gosPIEZPWjr_sBAEGwWzTB7ZU5BQuR7q91oLbRy5'
@@ -240,7 +245,7 @@
                     }]
             });
             layer.setMap(map);
-            */
+           
 
                 
 
