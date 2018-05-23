@@ -74,43 +74,6 @@ namespace GiamNuocWeb
             {
 
             }
-            
-            //Session["imgfile"] = "";
-            //try
-            //{
-            //    lbThanhCong.Text = "";
-            //    string madma = listDMA.SelectedValue.ToString();
-            //    dh = CThongTinDMA.getDHTByMaDMA(madma);
-            //    if (dh != null)
-            //    {
-            //        this.txtViTri.Text = dh.ViTri;
-            //        this.txtPhuong.Text = dh.Phuong;
-            //        this.txtQuan.Text = dh.Quan;
-            //        this.txtCoDHN0.Text = dh.CoDHN;
-            //        this.txtViTriCMP.Text = dh.ViTriCMP;
-            //        this.txtHieuDHN0.Text = dh.Hieu;
-            //        this.txtThietBi.Text = dh.ThietBi;
-            //        //   this.txtPinNguon.Text = dh.PinNguon;
-            //        this.txtSoSim.Text = dh.SoSIM;
-            //        this.txtTinhTrangDHT.Text = dh.TinhTrangDH;
-            //        this.txtTinhTrangBlogger.Text = dh.TinhTrangBlogger;
-            //        this.txtTinhTrangPRV.Text = dh.TinhTrangPRV;
-            //        prv.SelectedValue = dh.PRV.ToString();
-            //        hamdht.SelectedValue = dh.HamDHT.ToString();
-            //        cmpPinNguon.SelectedValue = dh.PinNguon.ToString();
-            //        txtSoSim.Text = dh.SoSIM;
-            //        this.imagePath.Value = dh.Img;
-            //        Session["imgfile"] = dh.Img;
-
-            //        loadGhiChu();
-            //    }
-            //}
-            //catch (Exception)
-            //{
-
-
-            //}
-
         }
 
         public void Select(string maDMA)

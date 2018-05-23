@@ -21,7 +21,14 @@
             chart.title.remove();
         }
     </script>
-<table><tr><td colspan=2 ><div class="title_page"><a href="Home.aspx" class="active">&nbsp;<img src="Image/Home2.png" />&nbsp;</a> <asp:Label ID="title" runat="server" Text="DMA"></asp:Label></div></td></tr>
+<table><tr><td colspan=2 ><div class="title_page2"> DMA : 
+                        <asp:DropDownList ID="listDMA" runat="server" Height="24px" 
+           Width="67px" onselectedindexchanged="listDMA_SelectedIndexChanged" 
+           AutoPostBack="True">
+                        </asp:DropDownList>
+                    <asp:Button ID="Button1" runat="server" CssClass="button" 
+        OnClick="bt_Click" Text="&nbsp;Xem&nbsp;" />
+                    </div></td></tr>
 <tr><td>Ngày</td><td><asp:TextBox ID="tTuNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
 <tr><td colspan=2 >
     <asp:RadioButtonList ID="RadioButtonList1" runat="server" 

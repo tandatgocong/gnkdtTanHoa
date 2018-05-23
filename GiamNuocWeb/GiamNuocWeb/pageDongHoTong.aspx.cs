@@ -15,6 +15,7 @@ namespace GiamNuocWeb
 {
     public partial class pageDongHoTong : System.Web.UI.Page
     {
+        static g_ThongTinDHT dh;
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -43,11 +44,11 @@ namespace GiamNuocWeb
                 btSearch.Visible = true;
             }
         }
-        g_ThongTinDHT dh = null;
+       
         protected void btSearch_Click(object sender, EventArgs e)
         {
             string madma = listDMA.SelectedValue.ToString();
-            dh = CThongTinDMA.getDHTByMaDMA(madma);
+            //dh = CThongTinDMA.getDHTByMaDMA(madma);
             try
             {
                 if (dh != null)

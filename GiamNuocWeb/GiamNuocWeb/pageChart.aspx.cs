@@ -13,19 +13,33 @@ namespace GiamNuocWeb
     public partial class pageChart : System.Web.UI.Page
     {
        static  g_ThongTinDHT gTg;
+       static string value;
         protected void Page_Load(object sender, EventArgs e)
         {
 
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
-            string value = Request.Params["value"].ToString();
+            value = Request.Params["value"].ToString();
             gTg = CThongTinDMA.getDHTByMaDMA(value);
-            title.Text ="DMA "+ gTg.MaDMA;
+            //title.Text ="DMA "+ gTg.MaDMA;
             tTuNgay.Text = DateTime.Today.ToString("yyyy-MM-dd");
             getLuuLuong();
+            getLoadDMA();
+            listDMA.SelectedValue = value;
 
         }
+
+        public void getLoadDMA()
+        {
+            List<g_ThongTinDHT> ls = CThongTinDMA.getThongTinDHT();
+            listDMA.DataSource = ls;
+            listDMA.DataValueField = "MaDMA";
+            listDMA.DataTextField = "MaDMA";
+            listDMA.DataBind();
+
+        }
+
         public void getLuuLuong()
         {
             if (gTg != null)
@@ -166,6 +180,76 @@ namespace GiamNuocWeb
 
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (RadioButtonList1.SelectedValue == "1")
+            { getLuuLuong(); }
+            if (RadioButtonList1.SelectedValue == "2")
+            { getInlet(); }
+            if (RadioButtonList1.SelectedValue == "3")
+            { getOutlet(); }
+            if (RadioButtonList1.SelectedValue == "4")
+            { getCMP(); }
+        }
+        
+        protected void listDMA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                value = listDMA.SelectedValue.ToString();
+                if (RadioButtonList1.SelectedValue == "1")
+                { getLuuLuong(); }
+                if (RadioButtonList1.SelectedValue == "2")
+                { getInlet(); }
+                if (RadioButtonList1.SelectedValue == "3")
+                { getOutlet(); }
+                if (RadioButtonList1.SelectedValue == "4")
+                { getCMP(); }
+            }
+            catch (Exception)
+            {
+
+            }
+
+            //Session["imgfile"] = "";
+            //try
+            //{
+            //    lbThanhCong.Text = "";
+            //    string madma = listDMA.SelectedValue.ToString();
+            //    dh = CThongTinDMA.getDHTByMaDMA(madma);
+            //    if (dh != null)
+            //    {
+            //        this.txtViTri.Text = dh.ViTri;
+            //        this.txtPhuong.Text = dh.Phuong;
+            //        this.txtQuan.Text = dh.Quan;
+            //        this.txtCoDHN0.Text = dh.CoDHN;
+            //        this.txtViTriCMP.Text = dh.ViTriCMP;
+            //        this.txtHieuDHN0.Text = dh.Hieu;
+            //        this.txtThietBi.Text = dh.ThietBi;
+            //        //   this.txtPinNguon.Text = dh.PinNguon;
+            //        this.txtSoSim.Text = dh.SoSIM;
+            //        this.txtTinhTrangDHT.Text = dh.TinhTrangDH;
+            //        this.txtTinhTrangBlogger.Text = dh.TinhTrangBlogger;
+            //        this.txtTinhTrangPRV.Text = dh.TinhTrangPRV;
+            //        prv.SelectedValue = dh.PRV.ToString();
+            //        hamdht.SelectedValue = dh.HamDHT.ToString();
+            //        cmpPinNguon.SelectedValue = dh.PinNguon.ToString();
+            //        txtSoSim.Text = dh.SoSIM;
+            //        this.imagePath.Value = dh.Img;
+            //        Session["imgfile"] = dh.Img;
+
+            //        loadGhiChu();
+            //    }
+            //}
+            //catch (Exception)
+            //{
+
+
+            //}
+
+        }
+
+        protected void bt_Click(object sender, EventArgs e)
+        {
+            value = listDMA.SelectedValue.ToString();
             if (RadioButtonList1.SelectedValue == "1")
             { getLuuLuong(); }
             if (RadioButtonList1.SelectedValue == "2")
