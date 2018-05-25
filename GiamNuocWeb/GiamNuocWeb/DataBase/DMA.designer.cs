@@ -39,6 +39,9 @@ namespace GiamNuocWeb.DataBase
     partial void Insertg_ThongTinDHT(g_ThongTinDHT instance);
     partial void Updateg_ThongTinDHT(g_ThongTinDHT instance);
     partial void Deleteg_ThongTinDHT(g_ThongTinDHT instance);
+    partial void Insertg_LabelDMA(g_LabelDMA instance);
+    partial void Updateg_LabelDMA(g_LabelDMA instance);
+    partial void Deleteg_LabelDMA(g_LabelDMA instance);
     #endregion
 		
 		public DMADataContext() : 
@@ -92,6 +95,22 @@ namespace GiamNuocWeb.DataBase
 			get
 			{
 				return this.GetTable<g_ThongTinDHT>();
+			}
+		}
+		
+		public System.Data.Linq.Table<w_SanLuongTM> w_SanLuongTMs
+		{
+			get
+			{
+				return this.GetTable<w_SanLuongTM>();
+			}
+		}
+		
+		public System.Data.Linq.Table<g_LabelDMA> g_LabelDMAs
+		{
+			get
+			{
+				return this.GetTable<g_LabelDMA>();
 			}
 		}
 	}
@@ -1457,6 +1476,203 @@ namespace GiamNuocWeb.DataBase
 					this._vCMP = value;
 					this.SendPropertyChanged("vCMP");
 					this.OnvCMPChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.w_SanLuongTM")]
+	public partial class w_SanLuongTM
+	{
+		
+		private System.DateTime _TimeStamp;
+		
+		private System.Nullable<double> _TONGTT;
+		
+		private System.Nullable<double> _TANGGIAM;
+		
+		public w_SanLuongTM()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeStamp", DbType="DateTime NOT NULL")]
+		public System.DateTime TimeStamp
+		{
+			get
+			{
+				return this._TimeStamp;
+			}
+			set
+			{
+				if ((this._TimeStamp != value))
+				{
+					this._TimeStamp = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TONGTT", DbType="Float")]
+		public System.Nullable<double> TONGTT
+		{
+			get
+			{
+				return this._TONGTT;
+			}
+			set
+			{
+				if ((this._TONGTT != value))
+				{
+					this._TONGTT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TANGGIAM", DbType="Float")]
+		public System.Nullable<double> TANGGIAM
+		{
+			get
+			{
+				return this._TANGGIAM;
+			}
+			set
+			{
+				if ((this._TANGGIAM != value))
+				{
+					this._TANGGIAM = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.g_LabelDMA")]
+	public partial class g_LabelDMA : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaDMA;
+		
+		private string _Lat;
+		
+		private string _Lng;
+		
+		private System.Nullable<int> _NhomDoBe;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaDMAChanging(string value);
+    partial void OnMaDMAChanged();
+    partial void OnLatChanging(string value);
+    partial void OnLatChanged();
+    partial void OnLngChanging(string value);
+    partial void OnLngChanged();
+    partial void OnNhomDoBeChanging(System.Nullable<int> value);
+    partial void OnNhomDoBeChanged();
+    #endregion
+		
+		public g_LabelDMA()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDMA", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaDMA
+		{
+			get
+			{
+				return this._MaDMA;
+			}
+			set
+			{
+				if ((this._MaDMA != value))
+				{
+					this.OnMaDMAChanging(value);
+					this.SendPropertyChanging();
+					this._MaDMA = value;
+					this.SendPropertyChanged("MaDMA");
+					this.OnMaDMAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lat", DbType="NVarChar(100)")]
+		public string Lat
+		{
+			get
+			{
+				return this._Lat;
+			}
+			set
+			{
+				if ((this._Lat != value))
+				{
+					this.OnLatChanging(value);
+					this.SendPropertyChanging();
+					this._Lat = value;
+					this.SendPropertyChanged("Lat");
+					this.OnLatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lng", DbType="NVarChar(100)")]
+		public string Lng
+		{
+			get
+			{
+				return this._Lng;
+			}
+			set
+			{
+				if ((this._Lng != value))
+				{
+					this.OnLngChanging(value);
+					this.SendPropertyChanging();
+					this._Lng = value;
+					this.SendPropertyChanged("Lng");
+					this.OnLngChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NhomDoBe", DbType="Int")]
+		public System.Nullable<int> NhomDoBe
+		{
+			get
+			{
+				return this._NhomDoBe;
+			}
+			set
+			{
+				if ((this._NhomDoBe != value))
+				{
+					this.OnNhomDoBeChanging(value);
+					this.SendPropertyChanging();
+					this._NhomDoBe = value;
+					this.SendPropertyChanged("NhomDoBe");
+					this.OnNhomDoBeChanged();
 				}
 			}
 		}

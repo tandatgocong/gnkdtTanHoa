@@ -50,6 +50,7 @@
             this.btCopyData = new System.Windows.Forms.Button();
             this.btSanLuong = new System.Windows.Forms.Button();
             this.btupdateVa = new System.Windows.Forms.Button();
+            this.btTachMang = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -231,7 +232,7 @@
             // 
             // btSanLuong
             // 
-            this.btSanLuong.Location = new System.Drawing.Point(465, 234);
+            this.btSanLuong.Location = new System.Drawing.Point(329, 234);
             this.btSanLuong.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btSanLuong.Name = "btSanLuong";
             this.btSanLuong.Size = new System.Drawing.Size(226, 34);
@@ -242,7 +243,7 @@
             // 
             // btupdateVa
             // 
-            this.btupdateVa.Location = new System.Drawing.Point(378, 234);
+            this.btupdateVa.Location = new System.Drawing.Point(242, 234);
             this.btupdateVa.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btupdateVa.Name = "btupdateVa";
             this.btupdateVa.Size = new System.Drawing.Size(75, 34);
@@ -251,12 +252,24 @@
             this.btupdateVa.UseVisualStyleBackColor = true;
             this.btupdateVa.Click += new System.EventHandler(this.btupdateVa_Click);
             // 
+            // btTachMang
+            // 
+            this.btTachMang.Location = new System.Drawing.Point(578, 234);
+            this.btTachMang.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btTachMang.Name = "btTachMang";
+            this.btTachMang.Size = new System.Drawing.Size(75, 34);
+            this.btTachMang.TabIndex = 20;
+            this.btTachMang.Text = "TM";
+            this.btTachMang.UseVisualStyleBackColor = true;
+            this.btTachMang.Click += new System.EventHandler(this.btTachMang_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(784, 307);
+            this.Controls.Add(this.btTachMang);
             this.Controls.Add(this.btupdateVa);
             this.Controls.Add(this.btSanLuong);
             this.Controls.Add(this.btCopyData);
@@ -309,6 +322,7 @@
         private System.Windows.Forms.Button btCopyData;
         private System.Windows.Forms.Button btSanLuong;
         private System.Windows.Forms.Button btupdateVa;
+        private System.Windows.Forms.Button btTachMang;
     }
 }
 

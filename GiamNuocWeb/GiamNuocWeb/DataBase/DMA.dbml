@@ -65,4 +65,19 @@
       <Column Name="vCMP" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.w_SanLuongTM" Member="w_SanLuongTMs">
+    <Type Name="w_SanLuongTM">
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TONGTT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TANGGIAM" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.g_LabelDMA" Member="g_LabelDMAs">
+    <Type Name="g_LabelDMA">
+      <Column Name="MaDMA" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Lat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Lng" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NhomDoBe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

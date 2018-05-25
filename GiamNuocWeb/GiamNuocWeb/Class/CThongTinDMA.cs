@@ -55,6 +55,12 @@ namespace GiamNuocWeb.Class
             return q.ToList();
         }
 
+        public static List<g_LabelDMA> getThongTinDHT_DB()
+        {
+            var q = from p in db.g_LabelDMAs orderby p.MaDMA ascending select p;
+            return q.ToList();
+        }
+
         public static g_ThongTinDHT getDHTByMaDMA(string ma)
         {
             var q = from p in db.g_ThongTinDHTs where p.MaDMA==ma   select p;

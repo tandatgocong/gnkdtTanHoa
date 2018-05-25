@@ -30,7 +30,7 @@ namespace PMACData
         }
         public void getTimeDatabase()
         {
-            //db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, db.t_Channel_Configurations);
+            db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, db.t_Channel_Configurations);
             var q = from query in db.t_Channel_Configurations orderby query.TimeStamp descending select query;
             this.lbDatabase.Text = q.First().TimeStamp.Value.ToString("G");
 
@@ -78,20 +78,24 @@ namespace PMACData
 
             DateTime tNow = DateTime.Now;
 
-            if (tNow.Hour % 2 == 0 && tNow.Minute == 40 && tNow.Second == 0)
+            if (tNow.Hour % 2 == 0 && tNow.Minute == 0 && tNow.Second == 0)
             {
                 stop.PerformClick();
             }
 
-            if (tNow.Hour % 2 == 0 && tNow.Minute == 15 && tNow.Second == 0)
+            if (tNow.Hour % 2 == 0 && tNow.Minute == 10 && tNow.Second == 0)
             {
-                start.PerformClick();
+               // start.PerformClick();
                 btCopy.PerformClick();
                 btCopyData.PerformClick();
 
                 //  start.PerformClick();
                 //  getTimeDatabase();
                 stasusLabel.Text = stasusLabel.Text + "__" + tNow.ToString("T");
+            }
+            if (tNow.Hour % 2 == 0 && tNow.Minute == 15 && tNow.Second == 0)
+            {
+                start.PerformClick();
             }
 
             if (tNow.Hour % 2 == 0 && tNow.Minute == 30 && tNow.Second == 0)
@@ -100,24 +104,23 @@ namespace PMACData
                 getTimeDatabase();
             }
 
-
-           
-
             //if (tNow.Minute % 10==0 && tNow.Second == 0 && lbStatus.Text.Equals("Stop"))
             //{
             //    start.PerformClick();
             //}
 
-            if (tNow.Minute % 10 == 0 && tNow.Second == 0)
-            {
-                getTimeDatabase();
-            }
-            if (tNow.Hour == 8 && tNow.Minute == 20 && tNow.Second == 0)
-            {
+            //if (tNow.Minute % 10 == 0 && tNow.Second == 0)
+            //{
+            //    getTimeDatabase();
+            //}
 
+            if (tNow.Hour == 8 && tNow.Minute == 30 && tNow.Second == 0)
+            {
                 DateTime t = DateTime.Now;
                 UpdateSanLuongDHT(t);
                 UpdateSanLuongNRW(t);
+                UpdateSanLuongDHN_TM(t);
+                UpdateSanLuongDHN_TM_F2(t);
             }
 
 
@@ -198,6 +201,7 @@ namespace PMACData
             }
             catch (Exception ex)
             {
+              //  MessageBox.Show(this, ex.Message);
                 // log.Error("LinQConnection ExecuteCommand : " + sql);
                 //   log.Error("LinQConnection ExecuteCommand : " + ex.Message);
             }
@@ -205,13 +209,50 @@ namespace PMACData
             {
                 db.Connection.Close();
             }
-            db.SubmitChanges();
+           // db.SubmitChanges();
             return result;
         }
 
+        public int ExecuteCommand_No(string sql)
+        {
+            DataBaseDataContext db = new DataBaseDataContext();
+            int result = 0;
+            try
+            {
+                SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToInt32(cmd.ExecuteNonQuery());
+                conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                //  MessageBox.Show(this, ex.Message);
+                // log.Error("LinQConnection ExecuteCommand : " + sql);
+                //   log.Error("LinQConnection ExecuteCommand : " + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+                 
+            }
+            // db.SubmitChanges();
+            return result;
+        }
+
+
+
         public void UpdateSanLuongDHT(DateTime d)
         {
-            string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*    FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE  IndexTimeStamp is not null and REPLACE( LEFT([Description],6),' ','') <> ''  order by [Description] asc ";
+            //string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*    FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE  IndexTimeStamp is not null and REPLACE( LEFT([Description],6),' ','') <> ''  order by [Description] asc ";
+            string sql = " SELECT *   FROM [tanhoa].[dbo].[g_ThongTinDHT] where STT <= 102 ";
 
             //string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*  FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE ChannelId='20238_02'  order by MaDMA";
             DataTable table = getDataTable(sql);
@@ -225,7 +266,7 @@ namespace PMACData
 
                 DataTable t1 = getDataTable(SQL);
 
-                double csMoi = -1.0;
+                double csMoi = 0.0;
                 if (t1.Rows.Count != 0)
                     try
                     {
@@ -242,7 +283,7 @@ namespace PMACData
 
                 DataTable t2 = getDataTable(SQL2);
 
-                double csCu = -1.0;
+                double csCu = 0.0;
                 if (t2.Rows.Count != 0)
                     try
                     {
@@ -264,7 +305,8 @@ namespace PMACData
 
         public void UpdateSanLuongNRW(DateTime d)
         {
-            string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*    FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE  IndexTimeStamp is not null and REPLACE( LEFT([Description],6),' ','') <> ''  order by [Description] asc ";
+           // string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*    FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE  IndexTimeStamp is not null and REPLACE( LEFT([Description],6),' ','') <> ''  order by [Description] asc ";
+            string sql = " SELECT *   FROM [tanhoa].[dbo].[g_ThongTinDHT] where STT <= 102 ";
 
             //string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*  FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE ChannelId='20238_02'  order by MaDMA";
             DataTable table = getDataTable(sql);
@@ -278,7 +320,7 @@ namespace PMACData
 
                 DataTable t1 = getDataTable(SQL);
 
-                double csMoi = -1.0;
+                double csMoi = 0.0;
                 if (t1.Rows.Count != 0)
                     try
                     {
@@ -296,7 +338,7 @@ namespace PMACData
 
                 DataTable t2 = getDataTable(SQL2);
 
-                double csCu = -1.0;
+                double csCu = 0.0;
                 if (t2.Rows.Count != 0)
                     try
                     {
@@ -317,6 +359,158 @@ namespace PMACData
         }
 
 
+        public void UpdateSanLuongDHN_TM(DateTime d)
+        {
+            //string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*    FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE  IndexTimeStamp is not null and REPLACE( LEFT([Description],6),' ','') <> ''  order by [Description] asc ";
+            string sql = " SELECT *   FROM [tanhoa].[dbo].[g_ThongTinDHTM]  ";
+
+            //string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*  FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE ChannelId='20238_02'  order by MaDMA";
+            DataTable table = getDataTable(sql);
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                string tbName = "t_Index_Logger_" + table.Rows[i]["ChannelFlow1"];
+                string ngay = d.ToString("yyyy-MM-dd") + " 07:00:00:000";
+                string maDMA = table.Rows[i]["MaDH"] + "";
+                string stt = table.Rows[i]["STT"] + "";
+
+                string SQL = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
+
+                DataTable t1 = getDataTable(SQL);
+
+                double csMoi = 0.0;
+                if (t1.Rows.Count != 0)
+                    try
+                    {
+                        csMoi = double.Parse(t1.Rows[0][0].ToString());
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+
+                string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:00:00:000";
+
+                string SQL2 = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
+
+                DataTable t2 = getDataTable(SQL2);
+
+                double csCu = 0.0;
+                if (t2.Rows.Count != 0)
+                    try
+                    {
+                        csCu = double.Parse(t2.Rows[0][0].ToString());
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+
+                string sqlInsert = "INSERT INTO g_SanLuongTM VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + (Math.Round(csMoi) - Math.Round(csCu)) + ",NULL,NULL,NULL," + (Math.Round(csMoi) - Math.Round(csCu)) + ",NULL," + stt + ")";
+                string sqlUpdate = "UPDATE  g_SanLuongTM SET [CSCU] = " + Math.Round(csCu) + " ,[CSMOI] = " + Math.Round(csMoi) + ",[TIEUTHU] = " + (Math.Round(csMoi) - Math.Round(csCu)) + ",TONGTT= " + (Math.Round(csMoi) - Math.Round(csCu)) + " WHERE [TimeStamp]='" + ngay + "' AND [MaDH]='" + maDMA + "'";
+
+                if (ExecuteCommand(sqlInsert) == 0)
+                    ExecuteCommand(sqlUpdate);
+                //listBox1.Items.Add(maDMA + "__" + Math.Round(csCu) + "___" + Math.Round(csMoi));
+            }
+        }
+
+
+        public void UpdateSanLuongDHN_TM_F2(DateTime d)
+        {
+            //string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*    FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE  IndexTimeStamp is not null and REPLACE( LEFT([Description],6),' ','') <> ''  order by [Description] asc ";
+            string sql = " SELECT *   FROM [tanhoa].[dbo].[g_ThongTinDHTM]  ";
+            string ngay = d.ToString("yyyy-MM-dd") + " 07:00:00:000";
+            string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:00:00:000";
+            //string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*  FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE ChannelId='20238_02'  order by MaDMA";
+            DataTable table = getDataTable(sql);
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                string tbName = "t_Index_Logger_" + table.Rows[i]["ChannelFlow2"];
+
+                string maDMA = table.Rows[i]["MaDH"] + "";
+
+                string SQL = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
+
+                DataTable t1 = getDataTable(SQL);
+
+                double csMoi = 0.0;
+                if (t1.Rows.Count != 0)
+                    try
+                    {
+                        csMoi = double.Parse(t1.Rows[0][0].ToString());
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                string SQL2 = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
+
+                DataTable t2 = getDataTable(SQL2);
+
+                double csCu = 0.0;
+                if (t2.Rows.Count != 0)
+                    try
+                    {
+                        csCu = double.Parse(t2.Rows[0][0].ToString());
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+
+                //string sqlInsert = "INSERT INTO g_SanLuongTM VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + (Math.Round(csMoi) - Math.Round(csCu)) + ",0.0)";
+                string sqlUpdate = "UPDATE  g_SanLuongTM SET [CSCUF2] = " + Math.Round(csCu) + " ,[CSMOIF2] = " + Math.Round(csMoi) + ",[TIEUTHUF2] = " + (Math.Round(csMoi) - Math.Round(csCu)) + " WHERE [TimeStamp]='" + ngay + "' AND [MaDH]='" + maDMA + "'";
+
+                // if (ExecuteCommand(sqlInsert) == 0)
+                ExecuteCommand(sqlUpdate);
+
+                //listBox1.Items.Add(maDMA + "__" + Math.Round(csCu) + "___" + Math.Round(csMoi));
+            }
+
+            string sqlUpdate2 = " UPDATE [tanhoa].[dbo].[g_SanLuongTM] SET TONGTT= TIEUTHU+(-TIEUTHUF2) WHERE TIEUTHU <> TIEUTHUF2 AND [TimeStamp]='" + ngay + "'";
+            ExecuteCommand_No(sqlUpdate2);
+
+            string sqlUpdate3 = "UPDATE [tanhoa].[dbo].[g_SanLuongTM] SET TANGGIAM=(TONGTT-T2.Tt) FROM (SELECT maDH, TONGTT AS Tt FROM  g_SanLuongTM where [TimeStamp] ='" + ngay2 + "' )  as T2   where g_SanLuongTM.MaDH=T2.maDH AND [TimeStamp] ='" + ngay + "' ";
+            ExecuteCommand_No(sqlUpdate3);
+        }
+
+        public void ExecuteStoredProcedure(DateTime d)
+        {
+            string ngay = d.ToString("yyyy-MM-dd") + " 07:00:00:000";
+            string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:00:00:000";
+            DataBaseDataContext db = new DataBaseDataContext();
+            SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+            try
+            {
+
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE_TANGGIAM", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter _ky = cmd.Parameters.Add("@D1", SqlDbType.VarChar);
+                _ky.Direction = ParameterDirection.Input;
+                _ky.Value = ngay;
+
+                SqlParameter _nam = cmd.Parameters.Add("@D2", SqlDbType.VarChar);
+                _nam.Direction = ParameterDirection.Input;
+                _nam.Value = ngay2;
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+               // log.Error("LinQConnection getDataTable" + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         private void btCopyData_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("pmacServer.bat");
@@ -326,12 +520,12 @@ namespace PMACData
         {
             DateTime t = DateTime.Now;
 
-            for (int i = 0; i < 5; i++)
-            {
-                UpdateSanLuongNRW(t);
+            //for (int i = 0; i < 11; i++)
+            //{
+               // UpdateSanLuongNRW(t);
                 UpdateSanLuongDHT(t);
-                t = t.Date.AddDays(-1);
-            }
+                //t = t.Date.AddDays(-1);
+            //}
         }
 
         public void UpdateValue()
@@ -382,6 +576,20 @@ namespace PMACData
         private void btupdateVa_Click(object sender, EventArgs e)
         {
             UpdateValue();
+        }
+
+        private void btTachMang_Click(object sender, EventArgs e)
+        {
+            DateTime t = DateTime.Now;
+
+            //for (int i = 0; i < 3; i++)
+            //{
+                UpdateSanLuongDHN_TM(t);
+                UpdateSanLuongDHN_TM_F2(t);
+               // ExecuteStoredProcedure(t);
+                t = t.Date.AddDays(-1);
+            //}
+         
         }
     }
 }

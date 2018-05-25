@@ -20,5 +20,17 @@
         <elementListCompartment Id="31787efe-ac3f-4c77-a220-4bfcf7123dd9" absoluteBounds="5.515, 3.46, 1.9700000000000002, 6.2883097330729161" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="57c791b3-9d1a-453f-93c8-2f03e5586dec" absoluteBounds="1.5, 3.125, 2, 1.26050048828125">
+      <DataClassMoniker Name="/DMADataContext/w_SanLuongTM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cdd66b5c-62d5-4384-9cb8-c406d1a2e9f9" absoluteBounds="1.5149999999999997, 3.585, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f84c7229-101e-4871-867d-a9df0767b158" absoluteBounds="8.625, 3.25, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/DMADataContext/g_LabelDMA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11659335-bbb7-4c0c-9e86-38d03d33338c" absoluteBounds="8.64, 3.71, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
