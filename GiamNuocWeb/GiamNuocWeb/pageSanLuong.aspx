@@ -25,13 +25,19 @@
 <div class="title_page"><a href="Home.aspx" class="active">&nbsp;<img src="Image/Home2.png" />&nbsp;</a>
 <asp:Label ID="title" runat="server" Text="Sản Lượng đồng hồ tổng">
 </asp:Label></div>
-<table border="1" style="margin-top:10px;">
+
+<asp:Button ID="bt92dh" CssClass="button" runat="server" Text="92 ĐH DMA" 
+        onclick="bt92dh_Click"   />
+ <asp:Button ID="bt49dh" CssClass="button" runat="server" Text="49 ĐH Tách mạng" 
+        onclick="bt49dh_Click"   />
+<asp:Panel ID="Panel92" runat="server" Visible=true>
+    <table border="1" style="margin-top:10px;">
     <tr><td class="style1">Mã DMA : </td>
     <td><div>
        <ff:DropDownCheckBoxes ID="DropDownDMA" runat="server" Font-Size="13">
             <Style DropDownBoxBoxHeight="150" DropDownBoxBoxWidth="150" 
                 SelectBoxWidth="145" />
-        </ff:DropDownCheckBoxes>      
+        </ff:DropDownCheckBoxes>    
         </div>
     </td>
      </tr>
@@ -39,7 +45,7 @@
     <tr><td class="style1">Đến Ngày </td><td><asp:TextBox ID="tDenNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
     <tr><td class="style1"><asp:CheckBox ID="check" runat="server" Text="NRW" /></td><td><asp:Button ID="Button1" CssClass="button" runat="server" Text="&nbsp;Xem&nbsp;" OnClick="bt_Click" />
         </td></tr>
-</table>
+    </table>
 
 <table border="1" style="margin-top:5px;">
     <tr>
@@ -58,5 +64,21 @@
     </td>
     </tr>
   </table>
+
+    </asp:Panel>
+
+
+    <asp:Panel ID="Panel49" runat="server" Visible=false Width="700px">
+     <table border="1" style="margin-top:10px;">
+        <tr ><td class="style1">Từ Ngày  </td><td><asp:TextBox ID="tnNgay49" runat="server" TextMode="Date"></asp:TextBox></td></tr>
+        <tr><td class="style1">Đến Ngày </td><td><asp:TextBox ID="dnNgay49" runat="server" TextMode="Date"></asp:TextBox></td></tr>
+        <tr><td class="style1"></td><td><asp:Button ID="Button2" CssClass="button" runat="server" Text="&nbsp;Xem&nbsp;" OnClick="bt49_Click" />
+            </td></tr>
+      </table>
+         <rsweb:ReportViewer Width="1000" Height="700px" ID="ReportViewer2" runat="server">
+         </rsweb:ReportViewer>
+
+    </asp:Panel>
+
 </asp:Content>
 

@@ -123,7 +123,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>0.80208in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.30208in</Width>
@@ -354,7 +354,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -388,7 +387,7 @@
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontWeight>Bold</FontWeight>
-                              <Format>dd/MM/yyyy</Format>
+                              <Format>dd/MM</Format>
                               <Color>#465678</Color>
                             </Style>
                           </TextRun>
@@ -473,7 +472,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>1in</Size>
+                <Size>0.45833in</Size>
                 <CellContents>
                   <Textbox Name="STT">
                     <CanGrow>true</CanGrow>
@@ -523,7 +522,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>1in</Size>
+                    <Size>0.77083in</Size>
                     <CellContents>
                       <Textbox Name="MaDH">
                         <CanGrow>true</CanGrow>
@@ -572,7 +571,7 @@
             </TablixMember>
             <TablixMember>
               <TablixHeader>
-                <Size>1in</Size>
+                <Size>0.45833in</Size>
                 <CellContents>
                   <Textbox Name="Textbox13">
                     <CanGrow>true</CanGrow>
@@ -612,7 +611,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>1in</Size>
+                    <Size>0.77083in</Size>
                     <CellContents>
                       <Textbox Name="Textbox14">
                         <CanGrow>true</CanGrow>
@@ -659,18 +658,54 @@
         <Top>0.5625in</Top>
         <Left>0.125in</Left>
         <Height>1.0625in</Height>
-        <Width>4.30208in</Width>
+        <Width>3.33333in</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>SẢN LƯỢNG ĐỒNG HỒ BÁN SỈ</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.15292in</Top>
+        <Height>0.25in</Height>
+        <Width>5.65292in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>1.76042in</Height>
     <Style />
   </Body>
-  <Width>4.42708in</Width>
+  <Width>5.82291in</Width>
   <Page>
     <PageHeight>36in</PageHeight>
     <PageWidth>8.27in</PageWidth>

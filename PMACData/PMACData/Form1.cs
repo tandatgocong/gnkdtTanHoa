@@ -262,7 +262,7 @@ namespace PMACData
                 string ngay = d.ToString("yyyy-MM-dd") + " 07:00:00:000";
                 string maDMA = table.Rows[i]["MaDMA"] + "";
 
-                string SQL = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
+                string SQL = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
 
                 DataTable t1 = getDataTable(SQL);
 
@@ -279,7 +279,7 @@ namespace PMACData
 
                 string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:00:00:000";
 
-                string SQL2 = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
+                string SQL2 = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
 
                 DataTable t2 = getDataTable(SQL2);
 
@@ -316,7 +316,7 @@ namespace PMACData
                 string ngay = d.ToString("yyyy-MM-dd") + " 04:00:00:000";
                 string maDMA = table.Rows[i]["MaDMA"] + "";
 
-                string SQL = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
+                string SQL = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
 
                 DataTable t1 = getDataTable(SQL);
 
@@ -334,7 +334,7 @@ namespace PMACData
 
                 string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 23:00:00:000";
 
-                string SQL2 = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
+                string SQL2 = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
 
                 DataTable t2 = getDataTable(SQL2);
 
@@ -373,7 +373,7 @@ namespace PMACData
                 string maDMA = table.Rows[i]["MaDH"] + "";
                 string stt = table.Rows[i]["STT"] + "";
 
-                string SQL = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
+                string SQL = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
 
                 DataTable t1 = getDataTable(SQL);
 
@@ -390,7 +390,7 @@ namespace PMACData
 
                 string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:00:00:000";
 
-                string SQL2 = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
+                string SQL2 = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
 
                 DataTable t2 = getDataTable(SQL2);
 
@@ -404,9 +404,13 @@ namespace PMACData
                     {
 
                     }
+                double tieuthu=csMoi-csCu;
+                if (csMoi == 0.0)
+                    tieuthu = 0;
 
-                string sqlInsert = "INSERT INTO g_SanLuongTM VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + (Math.Round(csMoi) - Math.Round(csCu)) + ",NULL,NULL,NULL," + (Math.Round(csMoi) - Math.Round(csCu)) + ",NULL," + stt + ")";
-                string sqlUpdate = "UPDATE  g_SanLuongTM SET [CSCU] = " + Math.Round(csCu) + " ,[CSMOI] = " + Math.Round(csMoi) + ",[TIEUTHU] = " + (Math.Round(csMoi) - Math.Round(csCu)) + ",TONGTT= " + (Math.Round(csMoi) - Math.Round(csCu)) + " WHERE [TimeStamp]='" + ngay + "' AND [MaDH]='" + maDMA + "'";
+
+                string sqlInsert = "INSERT INTO g_SanLuongTM VALUES('" + ngay + "','" + maDMA + "'," + csCu + "," + csMoi + "," + tieuthu + ",NULL,NULL,NULL," + tieuthu + ",NULL," + stt + ")";
+                string sqlUpdate = "UPDATE  g_SanLuongTM SET [CSCU] = " + csCu + " ,[CSMOI] = " + csMoi + ",[TIEUTHU] = " + tieuthu + ",TONGTT= " + tieuthu + " WHERE [TimeStamp]='" + ngay + "' AND [MaDH]='" + maDMA + "'";
 
                 if (ExecuteCommand(sqlInsert) == 0)
                     ExecuteCommand(sqlUpdate);
@@ -429,7 +433,7 @@ namespace PMACData
 
                 string maDMA = table.Rows[i]["MaDH"] + "";
 
-                string SQL = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
+                string SQL = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
 
                 DataTable t1 = getDataTable(SQL);
 
@@ -443,7 +447,7 @@ namespace PMACData
                     {
 
                     }
-                string SQL2 = "SELECT Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
+                string SQL2 = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
 
                 DataTable t2 = getDataTable(SQL2);
 
@@ -457,9 +461,14 @@ namespace PMACData
                     {
 
                     }
+          
+                double tieuthu = csMoi - csCu;
+                if (csMoi == 0.0)
+                    tieuthu = 0;
+
 
                 //string sqlInsert = "INSERT INTO g_SanLuongTM VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + (Math.Round(csMoi) - Math.Round(csCu)) + ",0.0)";
-                string sqlUpdate = "UPDATE  g_SanLuongTM SET [CSCUF2] = " + Math.Round(csCu) + " ,[CSMOIF2] = " + Math.Round(csMoi) + ",[TIEUTHUF2] = " + (Math.Round(csMoi) - Math.Round(csCu)) + " WHERE [TimeStamp]='" + ngay + "' AND [MaDH]='" + maDMA + "'";
+                string sqlUpdate = "UPDATE  g_SanLuongTM SET [CSCUF2] = " + csCu + " ,[CSMOIF2] = " + csMoi + ",[TIEUTHUF2] = " + tieuthu + " WHERE [TimeStamp]='" + ngay + "' AND [MaDH]='" + maDMA + "'";
 
                 // if (ExecuteCommand(sqlInsert) == 0)
                 ExecuteCommand(sqlUpdate);
@@ -520,12 +529,12 @@ namespace PMACData
         {
             DateTime t = DateTime.Now;
 
-            //for (int i = 0; i < 11; i++)
-            //{
-               // UpdateSanLuongNRW(t);
+            for (int i = 0; i < 5; i++)
+            {
+                UpdateSanLuongNRW(t);
                 UpdateSanLuongDHT(t);
-                //t = t.Date.AddDays(-1);
-            //}
+                t = t.Date.AddDays(-1);
+            }
         }
 
         public void UpdateValue()
@@ -582,13 +591,13 @@ namespace PMACData
         {
             DateTime t = DateTime.Now;
 
-            //for (int i = 0; i < 3; i++)
-            //{
+            for (int i = 0; i < 3; i++)
+            {
                 UpdateSanLuongDHN_TM(t);
                 UpdateSanLuongDHN_TM_F2(t);
                // ExecuteStoredProcedure(t);
                 t = t.Date.AddDays(-1);
-            //}
+            }
          
         }
     }
