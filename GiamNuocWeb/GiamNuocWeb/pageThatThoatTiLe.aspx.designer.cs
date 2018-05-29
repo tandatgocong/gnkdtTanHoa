@@ -10,52 +10,16 @@
 namespace GiamNuocWeb {
     
     
-    public partial class pageSanLuong {
+    public partial class pageThatThoatTiLe {
         
         /// <summary>
-        /// title control.
+        /// listDMA control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label title;
-        
-        /// <summary>
-        /// DropDownDMA control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Saplin.Controls.DropDownCheckBoxes DropDownDMA;
-        
-        /// <summary>
-        /// tTuNgay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tTuNgay;
-        
-        /// <summary>
-        /// tDenNgay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tDenNgay;
-        
-        /// <summary>
-        /// check control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox check;
+        protected global::System.Web.UI.WebControls.DropDownList listDMA;
         
         /// <summary>
         /// Button1 control.
@@ -65,6 +29,15 @@ namespace GiamNuocWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// tTuNgay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tTuNgay;
         
         /// <summary>
         /// ScriptManager1 control.

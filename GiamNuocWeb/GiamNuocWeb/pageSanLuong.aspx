@@ -19,9 +19,9 @@
         }
     
   </style>
-                  <div class="dhnLoi">
+              <%--    <div class="dhnLoi">
                  <marquee ><asp:Label ID="Label1" runat="server" Text="Tổi"></asp:Label></marquee>
-              </div> 
+              </div> --%>
 <div class="title_page"><a href="Home.aspx" class="active">&nbsp;<img src="Image/Home2.png" />&nbsp;</a>
 <asp:Label ID="title" runat="server" Text="Sản Lượng đồng hồ tổng">
 </asp:Label></div>

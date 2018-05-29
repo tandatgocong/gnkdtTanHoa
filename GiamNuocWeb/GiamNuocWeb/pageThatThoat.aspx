@@ -104,16 +104,16 @@
     </style>
 
   <body>
-  <table><tr><td>fdsa</td></tr></table>
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+   <asp:Panel ID="pBieuDoThatThoat" runat="server">
+         <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map" style="width: 100%; height:82vh"></div>
-     <div class=box>
+    <div class=box>
      <table style="text-align:center">
             <tr>
                 <td style="background-color:#00ffff; color:White">
                    < 10%&nbsp;</td>                 
                 <td style="color:Blue; border-bottom: 1px ">
-                    &nbsp;SL: 20</td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td style="background-color:#fce5cd; color:White">
@@ -166,7 +166,7 @@
             var infowindow;
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: latlng,
-                zoom: 15,
+                zoom: 14,
                 mapTypeId: 'roadmap'
             });
 
@@ -320,6 +320,9 @@
                 </script>
     
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU&libraries=places&callback=initAutocomplete"         async defer></script>
+ 
+   </asp:Panel>
+   
   </body>
 
 </asp:Content>

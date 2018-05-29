@@ -23,8 +23,8 @@ namespace GiamNuocWeb
         public void Load()
         {
             getLoadDMA();
-            LoadApLuc("");
-            LoadLuuLuong("");
+            //LoadApLuc("");
+            //LoadLuuLuong("");
         }
         public void LoadApLuc(string maDMA)
         {

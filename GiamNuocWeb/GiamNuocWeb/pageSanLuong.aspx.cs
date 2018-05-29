@@ -14,7 +14,7 @@ namespace GiamNuocWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Label1.Text = CThongTinDMA.getDHTLoi();
+         //   this.Label1.Text = CThongTinDMA.getDHTLoi();
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;

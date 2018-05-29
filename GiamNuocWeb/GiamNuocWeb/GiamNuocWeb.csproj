@@ -193,6 +193,7 @@
     <Content Include="pageSanLuong.aspx" />
     <Content Include="pageThatThoat.aspx" />
     <Content Include="pageThatThoatSanLuong.aspx" />
+    <Content Include="pageThatThoatTiLe.aspx" />
     <Content Include="twocolumn2.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -233,6 +234,13 @@
     </Compile>
     <Compile Include="pageThatThoatSanLuong.aspx.designer.cs">
       <DependentUpon>pageThatThoatSanLuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pageThatThoatTiLe.aspx.cs">
+      <DependentUpon>pageThatThoatTiLe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageThatThoatTiLe.aspx.designer.cs">
+      <DependentUpon>pageThatThoatTiLe.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -385,6 +393,7 @@
     <EmbeddedResource Include="rpLuLuongByGio.rdlc" />
     <EmbeddedResource Include="rpSanLuong.rdlc" />
     <EmbeddedResource Include="rpSanLuongDHT.rdlc" />
+    <EmbeddedResource Include="rpThatThoatTiLe.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FileUpload\" />
@@ -397,7 +406,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2730</DevelopmentServerPort>
+          <DevelopmentServerPort>5596</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

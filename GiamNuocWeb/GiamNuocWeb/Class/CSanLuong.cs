@@ -74,6 +74,29 @@ namespace GiamNuocWeb.Class
             return dsemp;
         }
 
+        public static DataSet getThatThoatTiLe(int record, string dma)
+        {
+            dsDma dsemp = new dsDma();
+            try
+            {
+
+                DataTable tbLuuLuong = dsemp.g_LuuLuongDHT;
+                string sql = "SELECT TOP(" + record + ") [TimeStamp],  MaDMA, TiLe  FROM [tanhoa].[dbo].[g_ThatThoatDMA] WHERE MaDMA LIKE '%" + dma + "%' AND TiLe <> '' ORDER BY [TimeStamp] DESC  ";
+                // DataTable tb = LinQConnection.getDataTable(sql);
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                adapter.Fill(dsemp, "g_ThatThoatDMA");
+
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+
+            return dsemp;
+        }
+
+
 
     }
 }

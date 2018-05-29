@@ -98,7 +98,7 @@
            AutoPostBack="True">
                         </asp:DropDownList>
                     </div></td><td>
-                        <asp:CheckBox ID="chekApLuc" runat="server" Text="Áp Lực" AutoPostBack="True" 
+                        <asp:CheckBox ID="chekApLuc" runat="server" Text="Áp Lực CMP" AutoPostBack="True" 
                             oncheckedchanged="chekApLuc_CheckedChanged" /> </td><td>
                         <asp:CheckBox ID="chekLuuLuong" runat="server" Text="Lưu Lượng" 
                             AutoPostBack="True" oncheckedchanged="chekLuuLuong_CheckedChanged" /> </td></tr></table> </div>
