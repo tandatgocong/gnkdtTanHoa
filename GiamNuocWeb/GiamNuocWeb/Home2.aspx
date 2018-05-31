@@ -101,7 +101,7 @@
   <body>
   <table><tr><td>fdsa</td></tr></table>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-     <div id="map" style="width: 100%; height:80vh"></div>
+     <div id="map" style="width: 100%; height:75vh"></div>
 
     <script>
         var lagx;

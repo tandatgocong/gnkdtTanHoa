@@ -130,6 +130,33 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_DiemBeTableAdapter" GeneratorDataComponentClassName="v_DiemBeTableAdapter" Name="v_DiemBe" UserDataComponentName="v_DiemBeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="tanhoaConnectionString (Web.config)" DbObjectName="tanhoa.dbo.v_DiemBe" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TenNHom, NgayDo, NgaySua, SoNha, Duong, DMA, TinhTrang, LoaiDiemBe, OngBe, DVTC, NguyenNhan, GhiChu FROM dbo.v_DiemBe</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TenNHom" DataSetColumn="TenNHom" />
+              <Mapping SourceColumn="NgayDo" DataSetColumn="NgayDo" />
+              <Mapping SourceColumn="NgaySua" DataSetColumn="NgaySua" />
+              <Mapping SourceColumn="SoNha" DataSetColumn="SoNha" />
+              <Mapping SourceColumn="Duong" DataSetColumn="Duong" />
+              <Mapping SourceColumn="DMA" DataSetColumn="DMA" />
+              <Mapping SourceColumn="TinhTrang" DataSetColumn="TinhTrang" />
+              <Mapping SourceColumn="LoaiDiemBe" DataSetColumn="LoaiDiemBe" />
+              <Mapping SourceColumn="OngBe" DataSetColumn="OngBe" />
+              <Mapping SourceColumn="DVTC" DataSetColumn="DVTC" />
+              <Mapping SourceColumn="NguyenNhan" DataSetColumn="NguyenNhan" />
+              <Mapping SourceColumn="GhiChu" DataSetColumn="GhiChu" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -138,7 +165,7 @@
   <xs:element name="dsDma" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDma" msprop:Generator_UserDSName="dsDma">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="g_SanLuongDHT" msprop:Generator_TableClassName="g_SanLuongDHTDataTable" msprop:Generator_TableVarName="tableg_SanLuongDHT" msprop:Generator_RowChangedName="g_SanLuongDHTRowChanged" msprop:Generator_TablePropName="g_SanLuongDHT" msprop:Generator_RowDeletingName="g_SanLuongDHTRowDeleting" msprop:Generator_RowChangingName="g_SanLuongDHTRowChanging" msprop:Generator_RowEvHandlerName="g_SanLuongDHTRowChangeEventHandler" msprop:Generator_RowDeletedName="g_SanLuongDHTRowDeleted" msprop:Generator_RowClassName="g_SanLuongDHTRow" msprop:Generator_UserTableName="g_SanLuongDHT" msprop:Generator_RowEvArgName="g_SanLuongDHTRowChangeEvent">
+        <xs:element name="g_SanLuongDHT" msprop:Generator_TableClassName="g_SanLuongDHTDataTable" msprop:Generator_TableVarName="tableg_SanLuongDHT" msprop:Generator_TablePropName="g_SanLuongDHT" msprop:Generator_RowDeletingName="g_SanLuongDHTRowDeleting" msprop:Generator_RowChangingName="g_SanLuongDHTRowChanging" msprop:Generator_RowEvHandlerName="g_SanLuongDHTRowChangeEventHandler" msprop:Generator_RowDeletedName="g_SanLuongDHTRowDeleted" msprop:Generator_UserTableName="g_SanLuongDHT" msprop:Generator_RowChangedName="g_SanLuongDHTRowChanged" msprop:Generator_RowEvArgName="g_SanLuongDHTRowChangeEvent" msprop:Generator_RowClassName="g_SanLuongDHTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TimeStamp" msprop:Generator_ColumnVarNameInTable="columnTimeStamp" msprop:Generator_ColumnPropNameInRow="TimeStamp" msprop:Generator_ColumnPropNameInTable="TimeStampColumn" msprop:Generator_UserColumnName="TimeStamp" type="xs:dateTime" />
@@ -155,7 +182,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="g_LuuLuongDHT" msprop:Generator_TableClassName="g_LuuLuongDHTDataTable" msprop:Generator_TableVarName="tableg_LuuLuongDHT" msprop:Generator_RowChangedName="g_LuuLuongDHTRowChanged" msprop:Generator_TablePropName="g_LuuLuongDHT" msprop:Generator_RowDeletingName="g_LuuLuongDHTRowDeleting" msprop:Generator_RowChangingName="g_LuuLuongDHTRowChanging" msprop:Generator_RowEvHandlerName="g_LuuLuongDHTRowChangeEventHandler" msprop:Generator_RowDeletedName="g_LuuLuongDHTRowDeleted" msprop:Generator_RowClassName="g_LuuLuongDHTRow" msprop:Generator_UserTableName="g_LuuLuongDHT" msprop:Generator_RowEvArgName="g_LuuLuongDHTRowChangeEvent">
+        <xs:element name="g_LuuLuongDHT" msprop:Generator_TableClassName="g_LuuLuongDHTDataTable" msprop:Generator_TableVarName="tableg_LuuLuongDHT" msprop:Generator_TablePropName="g_LuuLuongDHT" msprop:Generator_RowDeletingName="g_LuuLuongDHTRowDeleting" msprop:Generator_RowChangingName="g_LuuLuongDHTRowChanging" msprop:Generator_RowEvHandlerName="g_LuuLuongDHTRowChangeEventHandler" msprop:Generator_RowDeletedName="g_LuuLuongDHTRowDeleted" msprop:Generator_UserTableName="g_LuuLuongDHT" msprop:Generator_RowChangedName="g_LuuLuongDHTRowChanged" msprop:Generator_RowEvArgName="g_LuuLuongDHTRowChangeEvent" msprop:Generator_RowClassName="g_LuuLuongDHTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NGAY" msprop:Generator_ColumnVarNameInTable="columnNGAY" msprop:Generator_ColumnPropNameInRow="NGAY" msprop:Generator_ColumnPropNameInTable="NGAYColumn" msprop:Generator_UserColumnName="NGAY" type="xs:dateTime" minOccurs="0" />
@@ -165,7 +192,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="w_SanLuongTM" msprop:Generator_TableClassName="w_SanLuongTMDataTable" msprop:Generator_TableVarName="tablew_SanLuongTM" msprop:Generator_RowChangedName="w_SanLuongTMRowChanged" msprop:Generator_TablePropName="w_SanLuongTM" msprop:Generator_RowDeletingName="w_SanLuongTMRowDeleting" msprop:Generator_RowChangingName="w_SanLuongTMRowChanging" msprop:Generator_RowEvHandlerName="w_SanLuongTMRowChangeEventHandler" msprop:Generator_RowDeletedName="w_SanLuongTMRowDeleted" msprop:Generator_RowClassName="w_SanLuongTMRow" msprop:Generator_UserTableName="w_SanLuongTM" msprop:Generator_RowEvArgName="w_SanLuongTMRowChangeEvent">
+        <xs:element name="w_SanLuongTM" msprop:Generator_TableClassName="w_SanLuongTMDataTable" msprop:Generator_TableVarName="tablew_SanLuongTM" msprop:Generator_TablePropName="w_SanLuongTM" msprop:Generator_RowDeletingName="w_SanLuongTMRowDeleting" msprop:Generator_RowChangingName="w_SanLuongTMRowChanging" msprop:Generator_RowEvHandlerName="w_SanLuongTMRowChangeEventHandler" msprop:Generator_RowDeletedName="w_SanLuongTMRowDeleted" msprop:Generator_UserTableName="w_SanLuongTM" msprop:Generator_RowChangedName="w_SanLuongTMRowChanged" msprop:Generator_RowEvArgName="w_SanLuongTMRowChangeEvent" msprop:Generator_RowClassName="w_SanLuongTMRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TimeStamp" msprop:Generator_ColumnVarNameInTable="columnTimeStamp" msprop:Generator_ColumnPropNameInRow="TimeStamp" msprop:Generator_ColumnPropNameInTable="TimeStampColumn" msprop:Generator_UserColumnName="TimeStamp" type="xs:dateTime" />
@@ -182,7 +209,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="g_ThatThoatDMA" msprop:Generator_TableClassName="g_ThatThoatDMADataTable" msprop:Generator_TableVarName="tableg_ThatThoatDMA" msprop:Generator_TablePropName="g_ThatThoatDMA" msprop:Generator_RowDeletingName="g_ThatThoatDMARowDeleting" msprop:Generator_RowChangingName="g_ThatThoatDMARowChanging" msprop:Generator_RowEvHandlerName="g_ThatThoatDMARowChangeEventHandler" msprop:Generator_RowDeletedName="g_ThatThoatDMARowDeleted" msprop:Generator_UserTableName="g_ThatThoatDMA" msprop:Generator_RowChangedName="g_ThatThoatDMARowChanged" msprop:Generator_RowEvArgName="g_ThatThoatDMARowChangeEvent" msprop:Generator_RowClassName="g_ThatThoatDMARow">
+        <xs:element name="g_ThatThoatDMA" msprop:Generator_TableClassName="g_ThatThoatDMADataTable" msprop:Generator_TableVarName="tableg_ThatThoatDMA" msprop:Generator_RowChangedName="g_ThatThoatDMARowChanged" msprop:Generator_TablePropName="g_ThatThoatDMA" msprop:Generator_RowDeletingName="g_ThatThoatDMARowDeleting" msprop:Generator_RowChangingName="g_ThatThoatDMARowChanging" msprop:Generator_RowEvHandlerName="g_ThatThoatDMARowChangeEventHandler" msprop:Generator_RowDeletedName="g_ThatThoatDMARowDeleted" msprop:Generator_RowClassName="g_ThatThoatDMARow" msprop:Generator_UserTableName="g_ThatThoatDMA" msprop:Generator_RowEvArgName="g_ThatThoatDMARowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TimeStamp" msprop:Generator_ColumnVarNameInTable="columnTimeStamp" msprop:Generator_ColumnPropNameInRow="TimeStamp" msprop:Generator_ColumnPropNameInTable="TimeStampColumn" msprop:Generator_UserColumnName="TimeStamp" type="xs:dateTime" />
@@ -197,6 +224,84 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="v_DiemBe" msprop:Generator_TableClassName="v_DiemBeDataTable" msprop:Generator_TableVarName="tablev_DiemBe" msprop:Generator_TablePropName="v_DiemBe" msprop:Generator_RowDeletingName="v_DiemBeRowDeleting" msprop:Generator_RowChangingName="v_DiemBeRowChanging" msprop:Generator_RowEvHandlerName="v_DiemBeRowChangeEventHandler" msprop:Generator_RowDeletedName="v_DiemBeRowDeleted" msprop:Generator_UserTableName="v_DiemBe" msprop:Generator_RowChangedName="v_DiemBeRowChanged" msprop:Generator_RowEvArgName="v_DiemBeRowChangeEvent" msprop:Generator_RowClassName="v_DiemBeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TenNHom" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTenNHom" msprop:Generator_ColumnPropNameInRow="TenNHom" msprop:Generator_ColumnPropNameInTable="TenNHomColumn" msprop:Generator_UserColumnName="TenNHom" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NgayDo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNgayDo" msprop:Generator_ColumnPropNameInRow="NgayDo" msprop:Generator_ColumnPropNameInTable="NgayDoColumn" msprop:Generator_UserColumnName="NgayDo" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NgaySua" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNgaySua" msprop:Generator_ColumnPropNameInRow="NgaySua" msprop:Generator_ColumnPropNameInTable="NgaySuaColumn" msprop:Generator_UserColumnName="NgaySua" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SoNha" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSoNha" msprop:Generator_ColumnPropNameInRow="SoNha" msprop:Generator_ColumnPropNameInTable="SoNhaColumn" msprop:Generator_UserColumnName="SoNha" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Duong" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDuong" msprop:Generator_ColumnPropNameInRow="Duong" msprop:Generator_ColumnPropNameInTable="DuongColumn" msprop:Generator_UserColumnName="Duong" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DMA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDMA" msprop:Generator_ColumnPropNameInRow="DMA" msprop:Generator_ColumnPropNameInTable="DMAColumn" msprop:Generator_UserColumnName="DMA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TinhTrang" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTinhTrang" msprop:Generator_ColumnPropNameInRow="TinhTrang" msprop:Generator_ColumnPropNameInTable="TinhTrangColumn" msprop:Generator_UserColumnName="TinhTrang" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LoaiDiemBe" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLoaiDiemBe" msprop:Generator_ColumnPropNameInRow="LoaiDiemBe" msprop:Generator_ColumnPropNameInTable="LoaiDiemBeColumn" msprop:Generator_UserColumnName="LoaiDiemBe" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OngBe" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOngBe" msprop:Generator_ColumnPropNameInRow="OngBe" msprop:Generator_ColumnPropNameInTable="OngBeColumn" msprop:Generator_UserColumnName="OngBe" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DVTC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDVTC" msprop:Generator_ColumnPropNameInRow="DVTC" msprop:Generator_ColumnPropNameInTable="DVTCColumn" msprop:Generator_UserColumnName="DVTC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NguyenNhan" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNguyenNhan" msprop:Generator_ColumnPropNameInRow="NguyenNhan" msprop:Generator_ColumnPropNameInTable="NguyenNhanColumn" msprop:Generator_UserColumnName="NguyenNhan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GhiChu" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGhiChu" msprop:Generator_ColumnPropNameInRow="GhiChu" msprop:Generator_ColumnPropNameInTable="GhiChuColumn" msprop:Generator_UserColumnName="GhiChu" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

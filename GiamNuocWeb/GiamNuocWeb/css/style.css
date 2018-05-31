@@ -343,6 +343,18 @@
        
         margin-bottom:5px;
     }
+    	
+    div.dhnLoi2 {
+        background:#999999;       
+        color: #ffffff;
+        font-family: Tahoma,Arial,Helvetica,sans-serif;
+        font-size: 16px;
+        font-weight: bold;      
+        padding: 5px 0;
+       
+        margin-bottom:5px;
+    }
+    
     
 	div.title_page {
         border-bottom: 2px solid #663300;

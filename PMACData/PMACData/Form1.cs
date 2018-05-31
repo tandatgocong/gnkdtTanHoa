@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace PMACData
 {
@@ -85,7 +86,7 @@ namespace PMACData
 
             if (tNow.Hour % 2 == 0 && tNow.Minute == 15 && tNow.Second == 0)
             {
-               // start.PerformClick();
+                // start.PerformClick();
                 btCopy.PerformClick();
                 btCopyData.PerformClick();
 
@@ -124,7 +125,12 @@ namespace PMACData
             }
 
 
-            // tieng
+            // Update nhom do be 5g sang hang hang
+            if (tNow.Hour == 5 && tNow.Minute == 0)
+            {
+
+                ThemNhomDoBe();
+            }
         }
 
         private void btCopy_Click(object sender, EventArgs e)
@@ -581,7 +587,6 @@ namespace PMACData
                 //listBox1.Items.Add(maDMA + "__" + Math.Round(csCu) + "___" + Math.Round(csMoi));
             }
         }
-
         private void btupdateVa_Click(object sender, EventArgs e)
         {
             UpdateValue();
@@ -591,7 +596,7 @@ namespace PMACData
         {
             DateTime t = DateTime.Now;
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 10; i++)
             {
                 UpdateSanLuongDHN_TM(t);
                 UpdateSanLuongDHN_TM_F2(t);
@@ -600,5 +605,50 @@ namespace PMACData
             }
          
         }
+
+        private void btDoBe_Click(object sender, EventArgs e)
+        {
+            ThemNhomDoBe();
+        }
+
+
+        public void ThemNhomDoBe()
+        {
+            ExecuteCommand("UPDATE g_LabelDMA SET NhomDoBe='', IDNhom=''  ");
+            ExecuteCommand("DELETE FROM  g_NhomDoBe ");
+          
+            ExecuteCommand("INSERT INTO g_NhomDoBe VALUES (0,N'Tất cả',N' ',N'  ') ");
+
+            string connectionString = ConfigurationManager.ConnectionStrings["Database1_beConnectionString"].ConnectionString;
+            string sql = "SELECT * FROM T_NhomDoBe  ";
+            DataTable tb = OledbConnection.getDataTable(connectionString, sql);
+
+            for (int i = 0; i < tb.Rows.Count; i++)
+            {
+                string id = tb.Rows[i]["ID"].ToString();
+                string tennhom = tb.Rows[i]["TenNhom"].ToString();
+                string _A = tb.Rows[i]["A"].ToString();
+                string _B = tb.Rows[i]["B"].ToString();
+
+                ExecuteCommand("INSERT INTO g_NhomDoBe VALUES (" + id + ",N'" + tennhom + "',N'" + _A + "',N'" + _B + "') ");
+                try
+                {
+                    string sql2 = "SELECT t2.DMA FROM T_DMADoBe t1,T_DMA t2 WHERE t1.DMA= t2.ID AND Nhom=" + id + " ORDER BY NgayBatDau DESC  ";
+
+                    DataTable tb2 = OledbConnection.getDataTable(connectionString, sql2);
+
+
+                    ExecuteCommand("UPDATE g_LabelDMA SET IDNhom=" + id + ", NhomDoBe=N'" + tennhom + "' WHERE MaDMA='" + tb2.Rows[0]["DMA"].ToString() + "' ");
+                }
+                catch (Exception ex)
+                {
+
+                }
+
+
+            }
+
+        }
+
     }
 }

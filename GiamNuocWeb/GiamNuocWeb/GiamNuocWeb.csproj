@@ -65,6 +65,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database1_be.accdb" />
     <Content Include="Error.aspx" />
     <Content Include="Home2.aspx" />
     <Content Include="css\animate.css" />
@@ -207,6 +208,12 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\OledbConnection.cs" />
+    <Compile Include="DoBe.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoBe.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -372,6 +379,17 @@
     <None Include="DmaDataSet.xss">
       <DependentUpon>DmaDataSet.xsd</DependentUpon>
     </None>
+    <None Include="DoBe.xsc">
+      <DependentUpon>DoBe.xsd</DependentUpon>
+    </None>
+    <None Include="DoBe.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoBe.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DoBe.xss">
+      <DependentUpon>DoBe.xsd</DependentUpon>
+    </None>
     <None Include="fonts\fontawesome-webfont.eot" />
     <None Include="fonts\fontawesome-webfont.ttf" />
     <None Include="fonts\fontawesome-webfont.woff" />
@@ -394,6 +412,7 @@
     <EmbeddedResource Include="rpSanLuong.rdlc" />
     <EmbeddedResource Include="rpSanLuongDHT.rdlc" />
     <EmbeddedResource Include="rpThatThoatTiLe.rdlc" />
+    <EmbeddedResource Include="rpTongKeDiemBe.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FileUpload\" />

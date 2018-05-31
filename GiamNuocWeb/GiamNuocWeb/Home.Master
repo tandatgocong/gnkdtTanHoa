@@ -38,10 +38,10 @@
 						<li id="HOME" class="active" ><a href="Home.aspx" class="active">Home</a></li>
                         <li id="Li2"   ><a href="Home2.aspx" class="active">Add</a></li>
                         <li id="DHT"><a href="pageDongHoTong.aspx" class="active">Đồng Hồ DMA</a></li>
-                        <li id="THATTHOAT" ><a href="pageThatThoat.aspx">Thất Thoát</a></li>
 						<li id="SANLUONG" ><a href="pageSanLuong.aspx">Sản Lượng</a></li>
 						<li id="LUULUONG" ><a href="pageLuuLuong.aspx">Lưu lượng</a></li>
 						<li id="APLUC" ><a href="pageApLuc.aspx">Áp Lực</a></li>
+                        <li id="THATTHOAT" ><a href="pageThatThoat.aspx">Thất Thoát</a></li>
                         <li id="DOBE" ><a href="pageDoBe.aspx">Dò Bể</a></li>
                         <li id="Li1" ><a href="pageLogin.aspx">Đăng nhập</a></li>
 					</ul>

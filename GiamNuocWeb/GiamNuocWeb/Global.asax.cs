@@ -25,7 +25,7 @@ namespace GiamNuocWeb
             Session["zoom"] = 15;
             Session["center"] = "10.801433295748337, 106.65252816547981";
             Session["sanluong"] = null;
-            Session["dobe"] = "";
+            Session["dobe"] = " ";
             Session["maps"] = "";
             
         }

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageDoBe.aspx.cs" Inherits="GiamNuocWeb.pageDoBe" %>
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="css/StyleSheet.css" rel="stylesheet" type="text/css" />
   <script language="javascript" type="text/javascript">
@@ -100,10 +101,54 @@
             color:Red;
    
         }
+    .style1
+    {
+        height: 35px;
+    }
+    .style2
+    {
+        height: 38px;
+    }
     </style>
 
   <body>
-  <div class="dhnLoi">
+  <div class="dhnLoi2">
+  
+      <asp:RadioButtonList ID="radioCheck" runat="server" 
+          RepeatDirection="Horizontal" AutoPostBack="True" 
+          onselectedindexchanged="radioCheck_SelectedIndexChanged">
+          <asp:ListItem Value="0" Selected="True">Tổng Kết Điểm Bể</asp:ListItem>
+          <asp:ListItem Value="1">Báo Bể</asp:ListItem>
+      </asp:RadioButtonList>
+  
+  </div>
+  <asp:Panel ID="panelTongKet" runat="server">
+     <div class="title_page2"> NHÓM DÒ BỂ  : 
+                        <asp:DropDownList ID="cbNhomDoBe" runat="server" Height="34px" 
+           Width="144px"  
+           AutoPostBack="True" onselectedindexchanged="cbNhomDoBe_SelectedIndexChanged">
+                        </asp:DropDownList>
+   </div>
+    <table border="1" style="margin-top:10px;">
+            <tr ><td class="style1">Từ Ngày  </td><td><asp:TextBox ID="tTuNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
+            <tr><td class="style1">Đến Ngày </td><td><asp:TextBox ID="tDenNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
+            <tr><td class="style2"></td><td class="style2"><asp:Button ID="Button1" CssClass="button" 
+                    runat="server" Text="&nbsp;Xem&nbsp;" onclick="Button1_Click" />
+                </td></tr>
+    </table>
+
+      
+
+                      <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+           <rsweb:ReportViewer Width="100%" ID="ReportViewer1" runat="server">
+         </rsweb:ReportViewer>
+   
+      </asp:Panel>
+
+       <asp:Panel ID="panelDiemBe" runat="server" Visible=false>
+       
+     <div class="dhnLoi">
    <table><tr><td> <div class="title_page2"> DMA : 
                         <asp:DropDownList ID="listDMA" runat="server" Height="24px" 
            Width="67px" onselectedindexchanged="listDMA_SelectedIndexChanged" 
@@ -114,8 +159,8 @@
   </div>
 
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <div id="map" style="width: 100%; height:82vh"></div>
-     <div class="box">
+    <div id="map" style="width: 100%; height:75vh"></div>
+    <%-- <div class="box">
      <table border="1" style="text-align:center" class=table_list >
             <tr class=head>
                 <td>STT</td><td style="width:250px;">Vị Trí Bể</td><td style="width:100px;">Loại Bể</td><td style="width:100px;">Tình Trạng</td><td style="width:200px;">Ghi Chú</td>
@@ -130,9 +175,9 @@
                 <td>3</td><td>14/3 Nguyễn Văn Dương </td><td>Bể Ngầm</td><td>Chưa sửa</td><td> </td>
             </tr>
             
-        </table>
+        </table>--%>
      </div>
-    <script>
+     <script>
         var lagx;
         var lagy;
         // This example adds a search box to a map, using the Google Place Autocomplete
@@ -159,7 +204,7 @@
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;' >Loại</td> <td><select id='loai'>" +
                          "<option value='01' SELECTED> DHT </option>" +
                          "<option value='02' > CMP </option>" +
-                          "</select> </td></tr>" +
+                         "</select> </td></tr>" +
                          "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>DMA</td> <td><select id='madma'>" +
                          "<option value='01-01' SELECTED>01-01</option>" + "<option value='01-02'>01-02</option>" + "<option value='01-03'>01-03</option>" + "<option value='01-04'>01-04</option>" +
                          "<option value='02-01'>02-01</option>" + "<option value='02-02'>02-02</option>" + "<option value='02-03'>02-03</option>" + "<option value='02-04'>02-04</option>" + "<option value='02-05'>02-05</option>" +
@@ -316,7 +361,10 @@
     }
                 </script>
     
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU&libraries=places&callback=initAutocomplete"         async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU&libraries=places&callback=initAutocomplete"         async defer></script>
+  
+      </asp:Panel>
+
   </body>
 
 </asp:Content>

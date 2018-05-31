@@ -48,9 +48,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
             this.btCopyData = new System.Windows.Forms.Button();
-            this.btSanLuong = new System.Windows.Forms.Button();
             this.btupdateVa = new System.Windows.Forms.Button();
             this.btTachMang = new System.Windows.Forms.Button();
+            this.btSanLuong = new System.Windows.Forms.Button();
+            this.btDoBe = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -230,17 +231,6 @@
             this.btCopyData.UseVisualStyleBackColor = true;
             this.btCopyData.Click += new System.EventHandler(this.btCopyData_Click);
             // 
-            // btSanLuong
-            // 
-            this.btSanLuong.Location = new System.Drawing.Point(329, 234);
-            this.btSanLuong.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btSanLuong.Name = "btSanLuong";
-            this.btSanLuong.Size = new System.Drawing.Size(226, 34);
-            this.btSanLuong.TabIndex = 18;
-            this.btSanLuong.Text = "Update SẢN LƯỢNG";
-            this.btSanLuong.UseVisualStyleBackColor = true;
-            this.btSanLuong.Click += new System.EventHandler(this.btSanLuong_Click);
-            // 
             // btupdateVa
             // 
             this.btupdateVa.Location = new System.Drawing.Point(242, 234);
@@ -263,6 +253,28 @@
             this.btTachMang.UseVisualStyleBackColor = true;
             this.btTachMang.Click += new System.EventHandler(this.btTachMang_Click);
             // 
+            // btSanLuong
+            // 
+            this.btSanLuong.Location = new System.Drawing.Point(329, 234);
+            this.btSanLuong.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btSanLuong.Name = "btSanLuong";
+            this.btSanLuong.Size = new System.Drawing.Size(117, 34);
+            this.btSanLuong.TabIndex = 18;
+            this.btSanLuong.Text = "Sản Lượng";
+            this.btSanLuong.UseVisualStyleBackColor = true;
+            this.btSanLuong.Click += new System.EventHandler(this.btSanLuong_Click);
+            // 
+            // btDoBe
+            // 
+            this.btDoBe.Location = new System.Drawing.Point(449, 234);
+            this.btDoBe.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btDoBe.Name = "btDoBe";
+            this.btDoBe.Size = new System.Drawing.Size(117, 34);
+            this.btDoBe.TabIndex = 18;
+            this.btDoBe.Text = "Dò Bể";
+            this.btDoBe.UseVisualStyleBackColor = true;
+            this.btDoBe.Click += new System.EventHandler(this.btDoBe_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -271,6 +283,7 @@
             this.ClientSize = new System.Drawing.Size(784, 307);
             this.Controls.Add(this.btTachMang);
             this.Controls.Add(this.btupdateVa);
+            this.Controls.Add(this.btDoBe);
             this.Controls.Add(this.btSanLuong);
             this.Controls.Add(this.btCopyData);
             this.Controls.Add(this.btExit);
@@ -320,9 +333,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.Button btCopyData;
-        private System.Windows.Forms.Button btSanLuong;
         private System.Windows.Forms.Button btupdateVa;
         private System.Windows.Forms.Button btTachMang;
+        private System.Windows.Forms.Button btSanLuong;
+        private System.Windows.Forms.Button btDoBe;
     }
 }
 

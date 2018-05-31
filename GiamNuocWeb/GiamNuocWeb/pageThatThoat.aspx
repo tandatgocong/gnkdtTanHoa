@@ -106,7 +106,7 @@
   <body>
    <asp:Panel ID="pBieuDoThatThoat" runat="server">
          <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <div id="map" style="width: 100%; height:82vh"></div>
+    <div id="map" style="width: 100%; height:75vh"></div>
     <div class=box>
      <table style="text-align:center">
             <tr>
@@ -219,7 +219,7 @@
                                     strokeWeight: 1,
                                     scale: 2
                                 }, 
-                              label: {text: lb, color: "Red", fontWeight: "bold",fontSize: "11px"},
+                              label: {text: lb, color: "Red", fontWeight: "bold",fontSize: "13px"},
 				              map: map,
 				              title: name<%=f%>
 				              });

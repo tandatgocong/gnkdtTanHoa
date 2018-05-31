@@ -30,7 +30,7 @@
         onclick="bt92dh_Click"   />
  <asp:Button ID="bt49dh" CssClass="button" runat="server" Text="49 ĐH Tách mạng" 
         onclick="bt49dh_Click"   />
-<asp:Panel ID="Panel92" runat="server" Visible=true>
+<asp:Panel ID="Panel92" runat="server" Visible=true Width="100%">
     <table border="1" style="margin-top:10px;">
     <tr><td class="style1">Mã DMA : </td>
     <td><div>
@@ -68,14 +68,14 @@
     </asp:Panel>
 
 
-    <asp:Panel ID="Panel49" runat="server" Visible=false Width="700px">
+    <asp:Panel ID="Panel49" runat="server" Visible=false Width="100%">
      <table border="1" style="margin-top:10px;">
         <tr ><td class="style1">Từ Ngày  </td><td><asp:TextBox ID="tnNgay49" runat="server" TextMode="Date"></asp:TextBox></td></tr>
         <tr><td class="style1">Đến Ngày </td><td><asp:TextBox ID="dnNgay49" runat="server" TextMode="Date"></asp:TextBox></td></tr>
         <tr><td class="style1"></td><td><asp:Button ID="Button2" CssClass="button" runat="server" Text="&nbsp;Xem&nbsp;" OnClick="bt49_Click" />
             </td></tr>
       </table>
-         <rsweb:ReportViewer Width="1000" Height="700px" ID="ReportViewer2" runat="server">
+         <rsweb:ReportViewer Width="100%" Height="700px" ID="ReportViewer2" runat="server">
          </rsweb:ReportViewer>
 
     </asp:Panel>
