@@ -20,8 +20,8 @@ namespace GiamNuocWeb
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
-            //this.tTuNgay.Text = DateTime.Now.ToString("MM/dd/yyyy");
-            //this.tDenNgay.Text = DateTime.Now.ToString("MM/dd/yyyy");
+            this.tTuNgay.Text = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd");
+            this.tDenNgay.Text = DateTime.Now.ToString("yyyy-MM-dd");
             getLoadDMA();
             //   getSanLuong();
         }

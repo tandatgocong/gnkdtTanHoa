@@ -418,8 +418,8 @@ namespace PMACData
                     tieuthu = double.Parse(cs);
 
 
-                string sqlInsert = "INSERT INTO g_SanLuongNRW VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + (Math.Round(csMoi) - Math.Round(csCu)) + ")";
-                string sqlUpdate = "UPDATE  g_SanLuongNRW SET [CSCU] = " + Math.Round(csCu) + " ,[CSMOI] = " + Math.Round(csMoi) + ",[TIEUTHU] = " + (Math.Round(csMoi) - Math.Round(csCu)) + " WHERE [TimeStamp]='" + ngay + "' AND [MaDMA]='" + maDMA + "'";
+                string sqlInsert = "INSERT INTO g_SanLuongNRW VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + tieuthu + ")";
+                string sqlUpdate = "UPDATE  g_SanLuongNRW SET [CSCU] = " + Math.Round(csCu) + " ,[CSMOI] = " + Math.Round(csMoi) + ",[TIEUTHU] = " + tieuthu + " WHERE [TimeStamp]='" + ngay + "' AND [MaDMA]='" + maDMA + "'";
 
                 if (ExecuteCommand(sqlInsert) == 0)
                     ExecuteCommand(sqlUpdate);
@@ -634,11 +634,11 @@ namespace PMACData
         {
             DateTime t = DateTime.Now;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 30; i++)
             {
                 UpdateSanLuongNRW(t);
-                UpdateSanLuongDHT(t);
-                t = t.Date.AddDays(-1);
+                //UpdateSanLuongDHT(t);
+                 t = t.Date.AddDays(-1);
             }
         }
 

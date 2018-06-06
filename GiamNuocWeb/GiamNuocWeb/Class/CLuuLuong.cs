@@ -29,7 +29,7 @@ namespace GiamNuocWeb.Class
                     string ChannelId = tb.Rows[i]["ChannelId"].ToString();
                     string _maDMA = tb.Rows[i]["MaDMA"].ToString();
 
-                    string query = " select '" + _maDMA + "' as MaDMA,'' AS GIO, convert(date,[TimeStamp],103) as  NGAY, ROUND(AVG(Value),2) as Value  ";
+                    string query = " select '" + _maDMA + "' as MaDMA,'0' AS GIO, convert(date,[TimeStamp],103) as  NGAY, ROUND(AVG(Value),2) as Value  ";
                     query += "  from t_Data_Logger_" + ChannelId + " WHERE convert(date,[TimeStamp],101) BETWEEN CONVERT(datetime,'" + tNgay + "',101) AND CONVERT(datetime,'" + dNgay + "',101)  group by convert(date,[TimeStamp],103) order by [NGAY] desc";
 
                    
