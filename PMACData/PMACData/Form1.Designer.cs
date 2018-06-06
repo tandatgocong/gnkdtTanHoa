@@ -52,6 +52,7 @@
             this.btTachMang = new System.Windows.Forms.Button();
             this.btSanLuong = new System.Windows.Forms.Button();
             this.btDoBe = new System.Windows.Forms.Button();
+            this.btBackup = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -187,9 +188,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stasusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 285);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 297);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(784, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(829, 22);
             this.statusStrip1.TabIndex = 14;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -222,7 +223,7 @@
             // 
             // btCopyData
             // 
-            this.btCopyData.Location = new System.Drawing.Point(695, 234);
+            this.btCopyData.Location = new System.Drawing.Point(611, 232);
             this.btCopyData.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btCopyData.Name = "btCopyData";
             this.btCopyData.Size = new System.Drawing.Size(75, 34);
@@ -233,7 +234,7 @@
             // 
             // btupdateVa
             // 
-            this.btupdateVa.Location = new System.Drawing.Point(242, 234);
+            this.btupdateVa.Location = new System.Drawing.Point(197, 232);
             this.btupdateVa.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btupdateVa.Name = "btupdateVa";
             this.btupdateVa.Size = new System.Drawing.Size(75, 34);
@@ -244,7 +245,7 @@
             // 
             // btTachMang
             // 
-            this.btTachMang.Location = new System.Drawing.Point(578, 234);
+            this.btTachMang.Location = new System.Drawing.Point(533, 232);
             this.btTachMang.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btTachMang.Name = "btTachMang";
             this.btTachMang.Size = new System.Drawing.Size(75, 34);
@@ -255,7 +256,7 @@
             // 
             // btSanLuong
             // 
-            this.btSanLuong.Location = new System.Drawing.Point(329, 234);
+            this.btSanLuong.Location = new System.Drawing.Point(284, 232);
             this.btSanLuong.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btSanLuong.Name = "btSanLuong";
             this.btSanLuong.Size = new System.Drawing.Size(117, 34);
@@ -266,7 +267,7 @@
             // 
             // btDoBe
             // 
-            this.btDoBe.Location = new System.Drawing.Point(449, 234);
+            this.btDoBe.Location = new System.Drawing.Point(404, 232);
             this.btDoBe.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btDoBe.Name = "btDoBe";
             this.btDoBe.Size = new System.Drawing.Size(117, 34);
@@ -275,12 +276,24 @@
             this.btDoBe.UseVisualStyleBackColor = true;
             this.btDoBe.Click += new System.EventHandler(this.btDoBe_Click);
             // 
+            // btBackup
+            // 
+            this.btBackup.Location = new System.Drawing.Point(694, 232);
+            this.btBackup.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btBackup.Name = "btBackup";
+            this.btBackup.Size = new System.Drawing.Size(89, 34);
+            this.btBackup.TabIndex = 21;
+            this.btBackup.Text = "Backup";
+            this.btBackup.UseVisualStyleBackColor = true;
+            this.btBackup.Click += new System.EventHandler(this.btBackup_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(784, 307);
+            this.ClientSize = new System.Drawing.Size(829, 319);
+            this.Controls.Add(this.btBackup);
             this.Controls.Add(this.btTachMang);
             this.Controls.Add(this.btupdateVa);
             this.Controls.Add(this.btDoBe);
@@ -337,6 +350,7 @@
         private System.Windows.Forms.Button btTachMang;
         private System.Windows.Forms.Button btSanLuong;
         private System.Windows.Forms.Button btDoBe;
+        private System.Windows.Forms.Button btBackup;
     }
 }
 

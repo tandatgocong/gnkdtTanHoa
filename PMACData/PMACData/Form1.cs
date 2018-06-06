@@ -124,6 +124,10 @@ namespace PMACData
                 UpdateSanLuongDHN_TM_F2(t);
             }
 
+            if (tNow.Hour == 5 && tNow.Minute == 30 && tNow.Second == 0)
+            {
+                System.Diagnostics.Process.Start("GNKDT.BAT");
+            }
 
             // Update nhom do be 5g sang hang hang
             if (tNow.Hour == 5 && tNow.Minute == 0)
@@ -744,11 +748,12 @@ namespace PMACData
                 {
 
                 }
-
-
             }
-
         }
 
+        private void btBackup_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("GNKDT.BAT");
+        }
     }
 }

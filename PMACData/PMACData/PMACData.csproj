@@ -87,6 +87,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Lib\GNKDT.BAT" />
     <None Include="Lib\ON.BAT" />
     <None Include="DataBase.dbml.layout">
       <DependentUpon>DataBase.dbml</DependentUpon>
