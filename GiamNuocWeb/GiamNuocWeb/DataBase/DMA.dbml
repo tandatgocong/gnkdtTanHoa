@@ -80,4 +80,20 @@
       <Column Name="NhomDoBe" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.g_ThongTinDHTM" Member="g_ThongTinDHTMs">
+    <Type Name="g_ThongTinDHTM">
+      <Column Name="STT" Type="System.Double" DbType="Float NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HIEU" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaDH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DMA" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Channel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ChannelInlet" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ChannelFlow1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ChannelFlow2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TrungBinh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="avg" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

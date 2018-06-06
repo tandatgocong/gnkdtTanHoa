@@ -17,8 +17,7 @@ namespace GiamNuocWeb
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
-
-            PageLoad();
+           // PageLoad();
         }
         public void LoadData()
         {
@@ -86,23 +85,23 @@ namespace GiamNuocWeb
             Session["arrTitle"] = arrTitle;
         }
 
-        void PageLoad()
-        {
-            string tn = "05/22/2018";
-            string dn = "05/25/2018";
-            ReportViewer1.ProcessingMode = ProcessingMode.Local;
-            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpSanLuongDHT.rdlc");
-            DataTable dtTable = CSanLuong.getLuuLuongDHTM(tn, dn).Tables["w_SanLuongTM"];
+        //void PageLoad()
+        //{
+        //    string tn = "05/22/2018";
+        //    string dn = "05/25/2018";
+        //    ReportViewer1.ProcessingMode = ProcessingMode.Local;
+        //    ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpSanLuongDHT.rdlc");
+        //    DataTable dtTable = CSanLuong.getLuuLuongDHTM("", tn, dn).Tables["w_SanLuongTM"];
 
-          //  ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h)  ĐỒNG HỒ TỔNG DMA NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy"));
-          //  this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
-          // 
-          ////  dtTable.DefaultView.Sort = "STT ASC";
+        //    ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h)  ĐỒNG HỒ TỔNG DMA NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy"));
+        //    this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
 
-            ReportDataSource rds = new ReportDataSource("w_SanLuongTM", dtTable);
-            ReportViewer1.LocalReport.DataSources.Clear();
-            ReportViewer1.LocalReport.DataSources.Add(rds);
-        }
+        //    //  dtTable.DefaultView.Sort = "STT ASC";
+
+        //    ReportDataSource rds = new ReportDataSource("w_SanLuongTM", dtTable);
+        //    ReportViewer1.LocalReport.DataSources.Clear();
+        //    ReportViewer1.LocalReport.DataSources.Add(rds);
+        //}
     
     }
 }

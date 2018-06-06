@@ -219,6 +219,38 @@ namespace PMACData
             return result;
         }
 
+        public double ExecuteScalarCommand(string sql)
+        {
+            double result = 0.0;
+            try
+            {
+                SqlConnection conn = new SqlConnection(db.Connection.ConnectionString);
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                result = Convert.ToDouble(cmd.ExecuteScalar());
+                conn.Close();
+                db.Connection.Close();
+                db.SubmitChanges();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                //  MessageBox.Show(this, ex.Message);
+                // log.Error("LinQConnection ExecuteCommand : " + sql);
+                //   log.Error("LinQConnection ExecuteCommand : " + ex.Message);
+            }
+            finally
+            {
+                db.Connection.Close();
+            }
+            // db.SubmitChanges();
+            return result;
+        }
+
         public int ExecuteCommand_No(string sql)
         {
             DataBaseDataContext db = new DataBaseDataContext();
@@ -264,44 +296,59 @@ namespace PMACData
             DataTable table = getDataTable(sql);
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                string tbName = "t_Index_Logger_" + table.Rows[i]["ChannelId"];
+                string tinhtrang = table.Rows[i]["StatusDHT"] + "";
+                string cs = table.Rows[i]["TieuThuLoi"] + ""; 
+
+                string tbName = "t_Data_Logger_" + table.Rows[i]["ChannelId"];
+                
                 string ngay = d.ToString("yyyy-MM-dd") + " 07:00:00:000";
+                string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:05:00:000";
                 string maDMA = table.Rows[i]["MaDMA"] + "";
-
-                string SQL = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
-
-                DataTable t1 = getDataTable(SQL);
-
-                double csMoi = 0.0;
-                if (t1.Rows.Count != 0)
-                    try
-                    {
-                        csMoi = double.Parse(t1.Rows[0][0].ToString());
-                    }
-                    catch (Exception)
-                    {
-
-                    }
-
-                string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:00:00:000";
-
-                string SQL2 = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
-
-                DataTable t2 = getDataTable(SQL2);
-
                 double csCu = 0.0;
-                if (t2.Rows.Count != 0)
-                    try
-                    {
-                        csCu = double.Parse(t2.Rows[0][0].ToString());
-                    }
-                    catch (Exception)
-                    {
+                double csMoi = 0.0;
 
-                    }
+                //string SQL = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
 
-                string sqlInsert = "INSERT INTO g_SanLuongDHT VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + (Math.Round(csMoi) - Math.Round(csCu)) + ")";
-                string sqlUpdate = "UPDATE  g_SanLuongDHT SET [CSCU] = " + Math.Round(csCu) + " ,[CSMOI] = " + Math.Round(csMoi) + ",[TIEUTHU] = " + (Math.Round(csMoi) - Math.Round(csCu)) + " WHERE [TimeStamp]='" + ngay + "' AND [MaDMA]='" + maDMA + "'";
+                //DataTable t1 = getDataTable(SQL);
+
+               
+                //if (t1.Rows.Count != 0)
+                //    try
+                //    {
+                //        csMoi = double.Parse(t1.Rows[0][0].ToString());
+                //    }
+                //    catch (Exception)
+                //    {
+
+                //    }
+
+                //string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:05:00:000";
+
+                //string SQL2 = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
+
+                //DataTable t2 = getDataTable(SQL2);
+
+                
+                //if (t2.Rows.Count != 0)
+                //    try
+                //    {
+                //        csCu = double.Parse(t2.Rows[0][0].ToString());
+                //    }
+                //    catch (Exception)
+                //    {
+
+                //    }
+                double tieuthu = 0.0;
+
+                string SQL = "SELECT AVG(Value)*24 AS Value FROM " + tbName + " WHERE [TimeStamp] BETWEEN '" + ngay2 + "' AND '" + ngay + "'";
+
+                tieuthu = ExecuteScalarCommand(SQL);
+
+                if (tinhtrang.Equals("0") || tinhtrang.Equals("") || tinhtrang.Equals("False"))
+                    tieuthu = double.Parse(cs);
+
+                string sqlInsert = "INSERT INTO g_SanLuongDHT VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + tieuthu + ")";
+                string sqlUpdate = "UPDATE  g_SanLuongDHT SET [CSCU] = " + Math.Round(csCu) + " ,[CSMOI] = " + Math.Round(csMoi) + ",[TIEUTHU] = " + tieuthu + " WHERE [TimeStamp]='" + ngay + "' AND [MaDMA]='" + maDMA + "'";
 
                 if (ExecuteCommand(sqlInsert) == 0)
                     ExecuteCommand(sqlUpdate);
@@ -318,42 +365,58 @@ namespace PMACData
             DataTable table = getDataTable(sql);
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                string tbName = "t_Index_Logger_" + table.Rows[i]["ChannelId"];
+                string tinhtrang = table.Rows[i]["StatusDHT"] + "";
+                string cs = table.Rows[i]["TieuThuLoi"] + ""; 
+
+                string tbName = "t_Data_Logger_" + table.Rows[i]["ChannelId"];
                 string ngay = d.ToString("yyyy-MM-dd") + " 04:00:00:000";
+                string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 23:05:00:000";
                 string maDMA = table.Rows[i]["MaDMA"] + "";
-
-                string SQL = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
-
-                DataTable t1 = getDataTable(SQL);
-
                 double csMoi = 0.0;
-                if (t1.Rows.Count != 0)
-                    try
-                    {
-                        csMoi = double.Parse(t1.Rows[0][0].ToString());
-                    }
-                    catch (Exception)
-                    {
-
-                    }
-
-
-                string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 23:00:00:000";
-
-                string SQL2 = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
-
-                DataTable t2 = getDataTable(SQL2);
-
                 double csCu = 0.0;
-                if (t2.Rows.Count != 0)
-                    try
-                    {
-                        csCu = double.Parse(t2.Rows[0][0].ToString());
-                    }
-                    catch (Exception)
-                    {
 
-                    }
+                //string SQL = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
+
+                //DataTable t1 = getDataTable(SQL);
+
+              
+                //if (t1.Rows.Count != 0)
+                //    try
+                //    {
+                //        csMoi = double.Parse(t1.Rows[0][0].ToString());
+                //    }
+                //    catch (Exception)
+                //    {
+
+                //    }
+
+
+                //string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 23:00:00:000";
+
+                //string SQL2 = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
+
+                //DataTable t2 = getDataTable(SQL2);
+
+              
+                //if (t2.Rows.Count != 0)
+                //    try
+                //    {
+                //        csCu = double.Parse(t2.Rows[0][0].ToString());
+                //    }
+                //    catch (Exception)
+                //    {
+
+                //    }
+
+                double tieuthu = 0.0;
+
+                string SQL = "SELECT AVG(Value)*24 AS Value FROM " + tbName + " WHERE [TimeStamp] BETWEEN '" + ngay2 + "' AND '" + ngay + "'";
+
+                tieuthu = ExecuteScalarCommand(SQL);
+               
+                if (tinhtrang.Equals("0") || tinhtrang.Equals(""))
+                    tieuthu = double.Parse(cs);
+
 
                 string sqlInsert = "INSERT INTO g_SanLuongNRW VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + (Math.Round(csMoi) - Math.Round(csCu)) + ")";
                 string sqlUpdate = "UPDATE  g_SanLuongNRW SET [CSCU] = " + Math.Round(csCu) + " ,[CSMOI] = " + Math.Round(csMoi) + ",[TIEUTHU] = " + (Math.Round(csMoi) - Math.Round(csCu)) + " WHERE [TimeStamp]='" + ngay + "' AND [MaDMA]='" + maDMA + "'";
@@ -374,48 +437,65 @@ namespace PMACData
             DataTable table = getDataTable(sql);
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                string tbName = "t_Index_Logger_" + table.Rows[i]["ChannelFlow1"];
+                string channel = table.Rows[i]["ChannelFlow1"].ToString();
+                string tbName = "t_Data_Logger_" + channel;
                 string ngay = d.ToString("yyyy-MM-dd") + " 07:00:00:000";
+                string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:05:00:000";
                 string maDMA = table.Rows[i]["MaDH"] + "";
                 string stt = table.Rows[i]["STT"] + "";
-
-                string SQL = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
-
-                DataTable t1 = getDataTable(SQL);
-
                 double csMoi = 0.0;
-                if (t1.Rows.Count != 0)
-                    try
-                    {
-                        csMoi = double.Parse(t1.Rows[0][0].ToString());
-                    }
-                    catch (Exception)
-                    {
-
-                    }
-
-                string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:00:00:000";
-
-                string SQL2 = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
-
-                DataTable t2 = getDataTable(SQL2);
-
                 double csCu = 0.0;
-                if (t2.Rows.Count != 0)
-                    try
-                    {
-                        csCu = double.Parse(t2.Rows[0][0].ToString());
-                    }
-                    catch (Exception)
-                    {
+               
+                //if(channel.Length==8)
+                //    ngay = d.ToString("yyyy-MM-dd") + " 07:05:00:000";
+               
 
-                    }
-                double tieuthu=csMoi-csCu;
-                if (csMoi == 0.0)
-                    tieuthu = 0;
+                //string SQL = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
+
+                //DataTable t1 = getDataTable(SQL);
+
+                //double csMoi = 0.0;
+                //if (t1.Rows.Count != 0)
+                //    try
+                //    {
+                //        csMoi = double.Parse(t1.Rows[0][0].ToString());
+                //    }
+                //    catch (Exception)
+                //    {
+
+                //    }
+
+                
+                //string SQL2 = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
+
+                //DataTable t2 = getDataTable(SQL2);
+
+                //
+                //if (t2.Rows.Count != 0)
+                //    try
+                //    {
+                //        csCu = double.Parse(t2.Rows[0][0].ToString());
+                //    }
+                //    catch (Exception)
+                //    {
+
+                //    }
+                double tieuthu = csMoi - csCu;
+                //if (csMoi == 0.0)
+                //    tieuthu = 0;
+
+                string SQL = "SELECT AVG(Value)*24 AS Value FROM " + tbName + " WHERE [TimeStamp] BETWEEN '" + ngay2 + "' AND '" + ngay + "'";
+                
+                tieuthu = ExecuteScalarCommand(SQL);
+                //DataTable t1 = getDataTable(SQL);
 
 
-                string sqlInsert = "INSERT INTO g_SanLuongTM VALUES('" + ngay + "','" + maDMA + "'," + csCu + "," + csMoi + "," + tieuthu + ",NULL,NULL,NULL," + tieuthu + ",NULL," + stt + ")";
+                if (maDMA.Equals("pt2027") || maDMA.Equals("pt2032") || maDMA.Equals("th2001") || maDMA.Equals("th2003"))
+                {
+                    tieuthu = tieuthu * (-1);
+                }
+
+                string sqlInsert = "INSERT INTO g_SanLuongTM VALUES('" + ngay + "','" + maDMA + "'," + csCu + "," + csMoi + "," + tieuthu + ",NULL,NULL,NULL," + tieuthu + ",0," + stt + ")";
                 string sqlUpdate = "UPDATE  g_SanLuongTM SET [CSCU] = " + csCu + " ,[CSMOI] = " + csMoi + ",[TIEUTHU] = " + tieuthu + ",TONGTT= " + tieuthu + " WHERE [TimeStamp]='" + ngay + "' AND [MaDH]='" + maDMA + "'";
 
                 if (ExecuteCommand(sqlInsert) == 0)
@@ -430,49 +510,63 @@ namespace PMACData
             //string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*    FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE  IndexTimeStamp is not null and REPLACE( LEFT([Description],6),' ','') <> ''  order by [Description] asc ";
             string sql = " SELECT *   FROM [tanhoa].[dbo].[g_ThongTinDHTM]  ";
             string ngay = d.ToString("yyyy-MM-dd") + " 07:00:00:000";
-            string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:00:00:000";
+            string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:05:00:000";
             //string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*  FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE ChannelId='20238_02'  order by MaDMA";
             DataTable table = getDataTable(sql);
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                string tbName = "t_Index_Logger_" + table.Rows[i]["ChannelFlow2"];
-
+               // string tbName = "t_Index_Logger_" + table.Rows[i]["ChannelFlow2"];
                 string maDMA = table.Rows[i]["MaDH"] + "";
-
-                string SQL = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
-
-                DataTable t1 = getDataTable(SQL);
-
+                string channel = table.Rows[i]["ChannelFlow2"].ToString();
+                string tbName = "t_Data_Logger_" + channel;
+                //string ngay = d.ToString("yyyy-MM-dd") + " 07:05:00:000";
+                //string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:00:00:000";
+              //  string maDMA = table.Rows[i]["MaDH"] + "";
+                string stt = table.Rows[i]["STT"] + "";
                 double csMoi = 0.0;
-                if (t1.Rows.Count != 0)
-                    try
-                    {
-                        csMoi = double.Parse(t1.Rows[0][0].ToString());
-                    }
-                    catch (Exception)
-                    {
-
-                    }
-                string SQL2 = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
-
-                DataTable t2 = getDataTable(SQL2);
-
                 double csCu = 0.0;
-                if (t2.Rows.Count != 0)
-                    try
-                    {
-                        csCu = double.Parse(t2.Rows[0][0].ToString());
-                    }
-                    catch (Exception)
-                    {
 
-                    }
+                //string SQL = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
+                //DataTable t1 = getDataTable(SQL);
+                //double csMoi = 0.0;
+                //if (t1.Rows.Count != 0)
+                //    try
+                //    {
+                //        csMoi = double.Parse(t1.Rows[0][0].ToString());
+                //    }
+                //    catch (Exception)
+                //    {
+
+                //    }
+                //string SQL2 = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
+
+                //DataTable t2 = getDataTable(SQL2);
+
+                //double csCu = 0.0;
+                //if (t2.Rows.Count != 0)
+                //    try
+                //    {
+                //        csCu = double.Parse(t2.Rows[0][0].ToString());
+                //    }
+                //    catch (Exception)
+                //    {
+
+                //    }
           
                 double tieuthu = csMoi - csCu;
-                if (csMoi == 0.0)
-                    tieuthu = 0;
+                //if (csMoi == 0.0)
+                //    tieuthu = 0;
+
+                string SQL = "SELECT AVG(Value)*24 AS Value FROM " + tbName + " WHERE [TimeStamp] BETWEEN '" + ngay2 + "' AND '" + ngay + "'";
+
+                tieuthu = ExecuteScalarCommand(SQL);
 
 
+
+                if (maDMA.Equals("pt2027") ||maDMA.Equals("pt2032") ||maDMA.Equals("th2001") ||maDMA.Equals("th2003") )
+                {
+                    tieuthu = tieuthu * (-1);
+                }
                 //string sqlInsert = "INSERT INTO g_SanLuongTM VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + (Math.Round(csMoi) - Math.Round(csCu)) + ",0.0)";
                 string sqlUpdate = "UPDATE  g_SanLuongTM SET [CSCUF2] = " + csCu + " ,[CSMOIF2] = " + csMoi + ",[TIEUTHUF2] = " + tieuthu + " WHERE [TimeStamp]='" + ngay + "' AND [MaDH]='" + maDMA + "'";
 
@@ -485,8 +579,13 @@ namespace PMACData
             string sqlUpdate2 = " UPDATE [tanhoa].[dbo].[g_SanLuongTM] SET TONGTT= TIEUTHU+(-TIEUTHUF2) WHERE TIEUTHU <> TIEUTHUF2 AND [TimeStamp]='" + ngay + "'";
             ExecuteCommand_No(sqlUpdate2);
 
-            string sqlUpdate3 = "UPDATE [tanhoa].[dbo].[g_SanLuongTM] SET TANGGIAM=(TONGTT-T2.Tt) FROM (SELECT maDH, TONGTT AS Tt FROM  g_SanLuongTM where [TimeStamp] ='" + ngay2 + "' )  as T2   where g_SanLuongTM.MaDH=T2.maDH AND [TimeStamp] ='" + ngay + "' ";
+            string sqlUpdate3 = "UPDATE [tanhoa].[dbo].[g_SanLuongTM] SET TANGGIAM=(TONGTT-T2.Tt) FROM (SELECT maDH, TONGTT AS Tt FROM  g_SanLuongTM where [TimeStamp] ='" + (d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:00:00:000") + "' )  as T2   where g_SanLuongTM.MaDH=T2.maDH AND [TimeStamp] ='" + ngay + "' ";
             ExecuteCommand_No(sqlUpdate3);
+
+            string sqlUpdate5 = "  UPDATE [tanhoa].[dbo].[g_SanLuongTM] SET TONGTT= T1.TT,TANGGIAM=0 FROM (select  MaDH, [avg] as TT from g_ThongTinDHTM where TrungBinh='True') AS T1 WHERE g_SanLuongTM.MaDH=T1.MaDH AND [TimeStamp]='" + ngay + "' ";
+
+            ExecuteCommand_No(sqlUpdate5);
+
         }
 
         public void ExecuteStoredProcedure(DateTime d)
@@ -595,13 +694,14 @@ namespace PMACData
         private void btTachMang_Click(object sender, EventArgs e)
         {
             DateTime t = DateTime.Now;
+            t= t.Date.AddDays(-20);
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 21; i++)
             {
                 UpdateSanLuongDHN_TM(t);
                 UpdateSanLuongDHN_TM_F2(t);
-               // ExecuteStoredProcedure(t);
-                t = t.Date.AddDays(-1);
+                //ExecuteStoredProcedure(t);
+                t = t.Date.AddDays(1);
             }
          
         }
@@ -620,7 +720,7 @@ namespace PMACData
             ExecuteCommand("INSERT INTO g_NhomDoBe VALUES (0,N'Tất cả',N' ',N'  ') ");
 
             string connectionString = ConfigurationManager.ConnectionStrings["Database1_beConnectionString"].ConnectionString;
-            string sql = "SELECT * FROM T_NhomDoBe  ";
+            string sql = "SELECT * FROM T_NhomDoBe WHERE TinhTrang=True ";
             DataTable tb = OledbConnection.getDataTable(connectionString, sql);
 
             for (int i = 0; i < tb.Rows.Count; i++)

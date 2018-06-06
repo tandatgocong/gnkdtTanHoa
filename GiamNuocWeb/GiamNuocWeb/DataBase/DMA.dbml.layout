@@ -32,5 +32,11 @@
         <elementListCompartment Id="11659335-bbb7-4c0c-9e86-38d03d33338c" absoluteBounds="8.64, 3.71, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="3a4b4249-c194-4ca0-b6cd-8f4d4ede20a3" absoluteBounds="5.375, 1.625, 2, 2.73962646484375">
+      <DataClassMoniker Name="/DMADataContext/g_ThongTinDHTM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8ce05c27-738d-4f39-906e-83564c899698" absoluteBounds="5.39, 2.085, 1.9700000000000002, 2.17962646484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

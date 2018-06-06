@@ -42,6 +42,9 @@ namespace GiamNuocWeb.DataBase
     partial void Insertg_LabelDMA(g_LabelDMA instance);
     partial void Updateg_LabelDMA(g_LabelDMA instance);
     partial void Deleteg_LabelDMA(g_LabelDMA instance);
+    partial void Insertg_ThongTinDHTM(g_ThongTinDHTM instance);
+    partial void Updateg_ThongTinDHTM(g_ThongTinDHTM instance);
+    partial void Deleteg_ThongTinDHTM(g_ThongTinDHTM instance);
     #endregion
 		
 		public DMADataContext() : 
@@ -111,6 +114,14 @@ namespace GiamNuocWeb.DataBase
 			get
 			{
 				return this.GetTable<g_LabelDMA>();
+			}
+		}
+		
+		public System.Data.Linq.Table<g_ThongTinDHTM> g_ThongTinDHTMs
+		{
+			get
+			{
+				return this.GetTable<g_ThongTinDHTM>();
 			}
 		}
 	}
@@ -1673,6 +1684,332 @@ namespace GiamNuocWeb.DataBase
 					this._NhomDoBe = value;
 					this.SendPropertyChanged("NhomDoBe");
 					this.OnNhomDoBeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.g_ThongTinDHTM")]
+	public partial class g_ThongTinDHTM : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private double _STT;
+		
+		private string _HIEU;
+		
+		private System.Nullable<double> _CO;
+		
+		private string _MaDH;
+		
+		private string _DiaChi;
+		
+		private string _DMA;
+		
+		private string _Channel;
+		
+		private string _ChannelInlet;
+		
+		private string _ChannelFlow1;
+		
+		private string _ChannelFlow2;
+		
+		private bool _TrungBinh;
+		
+		private System.Nullable<double> _avg;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSTTChanging(double value);
+    partial void OnSTTChanged();
+    partial void OnHIEUChanging(string value);
+    partial void OnHIEUChanged();
+    partial void OnCOChanging(System.Nullable<double> value);
+    partial void OnCOChanged();
+    partial void OnMaDHChanging(string value);
+    partial void OnMaDHChanged();
+    partial void OnDiaChiChanging(string value);
+    partial void OnDiaChiChanged();
+    partial void OnDMAChanging(string value);
+    partial void OnDMAChanged();
+    partial void OnChannelChanging(string value);
+    partial void OnChannelChanged();
+    partial void OnChannelInletChanging(string value);
+    partial void OnChannelInletChanged();
+    partial void OnChannelFlow1Changing(string value);
+    partial void OnChannelFlow1Changed();
+    partial void OnChannelFlow2Changing(string value);
+    partial void OnChannelFlow2Changed();
+    partial void OnTrungBinhChanging(bool value);
+    partial void OnTrungBinhChanged();
+    partial void OnavgChanging(System.Nullable<double> value);
+    partial void OnavgChanged();
+    #endregion
+		
+		public g_ThongTinDHTM()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", DbType="Float NOT NULL", IsPrimaryKey=true)]
+		public double STT
+		{
+			get
+			{
+				return this._STT;
+			}
+			set
+			{
+				if ((this._STT != value))
+				{
+					this.OnSTTChanging(value);
+					this.SendPropertyChanging();
+					this._STT = value;
+					this.SendPropertyChanged("STT");
+					this.OnSTTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HIEU", DbType="NVarChar(255)")]
+		public string HIEU
+		{
+			get
+			{
+				return this._HIEU;
+			}
+			set
+			{
+				if ((this._HIEU != value))
+				{
+					this.OnHIEUChanging(value);
+					this.SendPropertyChanging();
+					this._HIEU = value;
+					this.SendPropertyChanged("HIEU");
+					this.OnHIEUChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CO", DbType="Float")]
+		public System.Nullable<double> CO
+		{
+			get
+			{
+				return this._CO;
+			}
+			set
+			{
+				if ((this._CO != value))
+				{
+					this.OnCOChanging(value);
+					this.SendPropertyChanging();
+					this._CO = value;
+					this.SendPropertyChanged("CO");
+					this.OnCOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDH", DbType="NVarChar(255)")]
+		public string MaDH
+		{
+			get
+			{
+				return this._MaDH;
+			}
+			set
+			{
+				if ((this._MaDH != value))
+				{
+					this.OnMaDHChanging(value);
+					this.SendPropertyChanging();
+					this._MaDH = value;
+					this.SendPropertyChanged("MaDH");
+					this.OnMaDHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(255)")]
+		public string DiaChi
+		{
+			get
+			{
+				return this._DiaChi;
+			}
+			set
+			{
+				if ((this._DiaChi != value))
+				{
+					this.OnDiaChiChanging(value);
+					this.SendPropertyChanging();
+					this._DiaChi = value;
+					this.SendPropertyChanged("DiaChi");
+					this.OnDiaChiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DMA", DbType="NVarChar(255)")]
+		public string DMA
+		{
+			get
+			{
+				return this._DMA;
+			}
+			set
+			{
+				if ((this._DMA != value))
+				{
+					this.OnDMAChanging(value);
+					this.SendPropertyChanging();
+					this._DMA = value;
+					this.SendPropertyChanged("DMA");
+					this.OnDMAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Channel", DbType="NVarChar(255)")]
+		public string Channel
+		{
+			get
+			{
+				return this._Channel;
+			}
+			set
+			{
+				if ((this._Channel != value))
+				{
+					this.OnChannelChanging(value);
+					this.SendPropertyChanging();
+					this._Channel = value;
+					this.SendPropertyChanged("Channel");
+					this.OnChannelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChannelInlet", DbType="NVarChar(255)")]
+		public string ChannelInlet
+		{
+			get
+			{
+				return this._ChannelInlet;
+			}
+			set
+			{
+				if ((this._ChannelInlet != value))
+				{
+					this.OnChannelInletChanging(value);
+					this.SendPropertyChanging();
+					this._ChannelInlet = value;
+					this.SendPropertyChanged("ChannelInlet");
+					this.OnChannelInletChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChannelFlow1", DbType="NVarChar(255)")]
+		public string ChannelFlow1
+		{
+			get
+			{
+				return this._ChannelFlow1;
+			}
+			set
+			{
+				if ((this._ChannelFlow1 != value))
+				{
+					this.OnChannelFlow1Changing(value);
+					this.SendPropertyChanging();
+					this._ChannelFlow1 = value;
+					this.SendPropertyChanged("ChannelFlow1");
+					this.OnChannelFlow1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChannelFlow2", DbType="NVarChar(255)")]
+		public string ChannelFlow2
+		{
+			get
+			{
+				return this._ChannelFlow2;
+			}
+			set
+			{
+				if ((this._ChannelFlow2 != value))
+				{
+					this.OnChannelFlow2Changing(value);
+					this.SendPropertyChanging();
+					this._ChannelFlow2 = value;
+					this.SendPropertyChanged("ChannelFlow2");
+					this.OnChannelFlow2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrungBinh", DbType="Bit NOT NULL")]
+		public bool TrungBinh
+		{
+			get
+			{
+				return this._TrungBinh;
+			}
+			set
+			{
+				if ((this._TrungBinh != value))
+				{
+					this.OnTrungBinhChanging(value);
+					this.SendPropertyChanging();
+					this._TrungBinh = value;
+					this.SendPropertyChanged("TrungBinh");
+					this.OnTrungBinhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_avg", DbType="Float")]
+		public System.Nullable<double> avg
+		{
+			get
+			{
+				return this._avg;
+			}
+			set
+			{
+				if ((this._avg != value))
+				{
+					this.OnavgChanging(value);
+					this.SendPropertyChanging();
+					this._avg = value;
+					this.SendPropertyChanged("avg");
+					this.OnavgChanged();
 				}
 			}
 		}

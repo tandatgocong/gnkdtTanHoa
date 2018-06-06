@@ -37,7 +37,7 @@
        <ff:DropDownCheckBoxes ID="DropDownDMA" runat="server" Font-Size="13">
             <Style DropDownBoxBoxHeight="150" DropDownBoxBoxWidth="150" 
                 SelectBoxWidth="145" />
-        </ff:DropDownCheckBoxes>    
+        </ff:DropDownCheckBoxes>
         </div>
     </td>
      </tr>
@@ -72,12 +72,16 @@
      <table border="1" style="margin-top:10px;">
         <tr ><td class="style1">Từ Ngày  </td><td><asp:TextBox ID="tnNgay49" runat="server" TextMode="Date"></asp:TextBox></td></tr>
         <tr><td class="style1">Đến Ngày </td><td><asp:TextBox ID="dnNgay49" runat="server" TextMode="Date"></asp:TextBox></td></tr>
-        <tr><td class="style1"></td><td><asp:Button ID="Button2" CssClass="button" runat="server" Text="&nbsp;Xem&nbsp;" OnClick="bt49_Click" />
+        <tr><td class="style1"><asp:Button ID="Button2" CssClass="button" runat="server" Text="&nbsp;Xem&nbsp;" OnClick="bt49_Click" /></td><td>
+            &nbsp;&nbsp;
+            <asp:DropDownList ID="dropTachMang" runat="server" Height="18px" 
+                onselectedindexchanged="dropTachMang_SelectedIndexChanged" Width="122px" 
+                AutoPostBack="True">
+            </asp:DropDownList>
             </td></tr>
       </table>
          <rsweb:ReportViewer Width="100%" Height="700px" ID="ReportViewer2" runat="server">
-         </rsweb:ReportViewer>
-
+         </rsweb:ReportViewer>        
     </asp:Panel>
 
 </asp:Content>

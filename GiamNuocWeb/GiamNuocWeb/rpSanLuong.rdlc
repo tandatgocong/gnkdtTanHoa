@@ -120,6 +120,7 @@
                               <Value>=Sum(Fields!TIEUTHU.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
+                                <Format>#,0</Format>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
@@ -140,7 +141,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -156,6 +156,7 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>#,0</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -196,6 +197,7 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>#,0</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -231,6 +233,7 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>#,0</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -251,6 +254,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>

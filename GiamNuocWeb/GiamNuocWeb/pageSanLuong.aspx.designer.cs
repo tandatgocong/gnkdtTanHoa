@@ -148,6 +148,15 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
+        /// dropTachMang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropTachMang;
+        
+        /// <summary>
         /// ReportViewer2 control.
         /// </summary>
         /// <remarks>

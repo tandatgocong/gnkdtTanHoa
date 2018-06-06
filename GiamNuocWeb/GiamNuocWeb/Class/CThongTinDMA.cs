@@ -43,6 +43,20 @@ namespace GiamNuocWeb.Class
             var q = from p in db.g_ThongTinDHTs where p.StatusDHT == true orderby p.STT ascending select p;
             return q.ToList();
         }
+
+        public static List<g_ThongTinDHTM> getDongHoTachMang()
+        {
+            var q = from p in db.g_ThongTinDHTMs  orderby p.STT ascending select p;
+            return q.ToList();
+        }
+
+        public static g_ThongTinDHTM getDongHoTachMang(string madh)
+        {
+            var q = from p in db.g_ThongTinDHTMs where p.MaDH==madh orderby p.STT ascending select p;
+            return q.SingleOrDefault();
+        }
+
+
         public static List<g_ThongTinDHT> getCMPHoatDong()
         {
             var q = from p in db.g_ThongTinDHTs where p.StatusCMP =="1" orderby p.STT ascending select p;
