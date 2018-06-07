@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using GiamNuocWeb.Class;
 using System.Configuration;
+using Microsoft.Reporting.WebForms;
 
 namespace GiamNuocWeb
 {
@@ -17,16 +18,54 @@ namespace GiamNuocWeb
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
-            Load();
+            LoadBieuDo();
             
         }
-        void Load()
+        void LoadBieuDo()
         {
 
             string sql = "SELECT CASE WHEN NhomDoBe='' THEN  MaDMA ELSE NhomDoBe END AS MaDMA, Lat, Lng, NhomDoBe, maps FROM g_LabelDMA   ";
             DataTable tb = LinQConnection.getDataTable(sql);
             Session["dsDHtt"] = tb;
         }
+        void LoadTiLe()
+        {
+            string sql = " SELECT TOP(92) [TimeStamp], [STT],A.[MaDMA],[QI],[QM],[Sucxa],[NRW] ,[TiLe] ,[MNF] ,[DiemBeTon] ,[TinhTrang],B.NhomDoBe  FROM [tanhoa].[dbo].[g_ThatThoatDMA] A  LEFT JOIN [tanhoa].[dbo].[g_LabelDMA] B  ON A.MaDMA=B.MaDMA  ORDER BY [TimeStamp] DESC, STT ASC ";
+            DataTable tb = LinQConnection.getDataTable(sql);
+
+            ReportViewer1.ProcessingMode = ProcessingMode.Local;
+            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpThatThoatTuan.rdlc");
+            DataTable dtTable = LinQConnection.getDataTable(sql);
+
+            //  ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h)  ĐỒNG HỒ TỔNG DMA NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy"));
+            //  this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
+            // 
+            ////  dtTable.DefaultView.Sort = "STT ASC";
+
+            ReportDataSource rds = new ReportDataSource("g_ThatThoatDMA", dtTable);
+            ReportViewer1.LocalReport.DataSources.Clear();
+            ReportViewer1.LocalReport.DataSources.Add(rds);
+
+
+
+        }
+        protected void radioCheck_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (radioCheck.SelectedValue == "0")
+            {
+                pBieuDoThatThoat.Visible = true;
+                pTiLeThatThoat.Visible = false;
+                LoadBieuDo();
+            }
+            if (radioCheck.SelectedValue == "1")
+            {
+                pBieuDoThatThoat.Visible = false;
+                pTiLeThatThoat.Visible = true;
+                LoadTiLe();
+            }
+
+        }
+
        
     }
 }

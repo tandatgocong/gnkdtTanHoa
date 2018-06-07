@@ -16,12 +16,60 @@
           <DataField>TimeStamp</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
+        <Field Name="STT">
+          <DataField>STT</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
         <Field Name="MaDMA">
           <DataField>MaDMA</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="QI">
+          <DataField>QI</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="QM">
+          <DataField>QM</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Sucxa">
+          <DataField>Sucxa</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="NRW">
+          <DataField>NRW</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
         <Field Name="TiLe">
           <DataField>TiLe</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MNF">
+          <DataField>MNF</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="DiemBeTon">
+          <DataField>DiemBeTon</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="AvgP">
+          <DataField>AvgP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Conn">
+          <DataField>Conn</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PRV">
+          <DataField>PRV</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TinhTrang">
+          <DataField>TinhTrang</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NhomDoBe">
+          <DataField>NhomDoBe</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -106,9 +154,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TiLe.Value</Value>
+                              <Value>=Fields!TiLe.Value*100</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
+                                <Format>0.00;(0.00)</Format>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
@@ -132,7 +181,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>

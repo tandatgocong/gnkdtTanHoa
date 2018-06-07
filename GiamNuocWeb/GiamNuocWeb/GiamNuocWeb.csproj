@@ -414,6 +414,7 @@
     <EmbeddedResource Include="rpSanLuong.rdlc" />
     <EmbeddedResource Include="rpSanLuongDHT.rdlc" />
     <EmbeddedResource Include="rpThatThoatTiLe.rdlc" />
+    <EmbeddedResource Include="rpThatThoatTuan.rdlc" />
     <EmbeddedResource Include="rpTongKeDiemBe.rdlc" />
   </ItemGroup>
   <ItemGroup>
