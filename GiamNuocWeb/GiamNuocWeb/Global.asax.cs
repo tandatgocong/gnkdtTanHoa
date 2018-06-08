@@ -27,6 +27,9 @@ namespace GiamNuocWeb
             Session["sanluong"] = null;
             Session["dobe"] = " ";
             Session["maps"] = "";
+            Session["page"] = "Home.aspx";
+            Session["manhom"] = "";
+            Session["tennhom"] = "";
             
         }
 
@@ -52,7 +55,7 @@ namespace GiamNuocWeb
 
         protected void Application_End(object sender, EventArgs e)
         {
-
+            Session["login"] = null;
         }
     }
 }

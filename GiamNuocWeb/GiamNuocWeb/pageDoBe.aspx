@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageDoBe.aspx.cs" Inherits="GiamNuocWeb.pageDoBe" %>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="css/StyleSheet.css" rel="stylesheet" type="text/css" />
   <script language="javascript" type="text/javascript">
@@ -9,7 +12,7 @@
       window.document.getElementById("APLUC").className = "";
       window.document.getElementById("DHT").className = "";
       window.document.getElementById("THATTHOAT").className = ""; 
-      window.document.getElementById("DOBE").className = "active"; 
+      window.document.getElementById("DOBE").className = "active";  
   </script>
 
 <style>
@@ -117,12 +120,12 @@
       <asp:RadioButtonList ID="radioCheck" runat="server" 
           RepeatDirection="Horizontal" AutoPostBack="True" 
           onselectedindexchanged="radioCheck_SelectedIndexChanged">
-          <asp:ListItem Value="0" Selected="True">Tổng Kết Điểm Bể</asp:ListItem>
-          <asp:ListItem Value="1">Báo Bể</asp:ListItem>
+          <asp:ListItem Value="0" >Tổng Kết Điểm Bể</asp:ListItem>
+          <asp:ListItem Value="1" Selected="True">Báo Bể</asp:ListItem>
       </asp:RadioButtonList>
   
   </div>
-  <asp:Panel ID="panelTongKet" runat="server">
+  <asp:Panel ID="panelTongKet" runat="server"  Visible=false>
      <div class="title_page2"> NHÓM DÒ BỂ  : 
                         <asp:DropDownList ID="cbNhomDoBe" runat="server" Height="34px" 
            Width="144px"  
@@ -146,7 +149,7 @@
    
       </asp:Panel>
 
-       <asp:Panel ID="panelDiemBe" runat="server" Visible=false>
+       <asp:Panel ID="panelDiemBe" runat="server">
        
      <div class="dhnLoi">
    <table><tr><td> <div class="title_page2"> DMA : 
@@ -154,7 +157,19 @@
            Width="67px" onselectedindexchanged="listDMA_SelectedIndexChanged" 
            AutoPostBack="True">
                         </asp:DropDownList>
-                    </div></td></tr>
+                    </div></td>
+                    <td> 
+                    <%if (Session["login"] == null)
+                      { %>
+                     <asp:Button ID="Button2" runat="server"  Text="Đăng Nhập" Width="114px" 
+                    onclick="login_Click" CssClass="button" Height="30px"/>
+                    <%}
+                      else {
+                          Response.Write(Session["tennhom"].ToString());
+                    }
+        %>
+                    
+                    </td></tr>
     </table>
   </div>
 
@@ -199,33 +214,39 @@
             });
 
             ////////////////////////
+              <%if (Session["login"] != null)
+              { %>
+
             infowindow = new google.maps.InfoWindow();
             var html = " <meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><div class='title_page'>Nhập Điểm Bể  </div> <br/> <table  >" +
-                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;' >Loại</td> <td><select id='loai'>" +
-                         "<option value='01' SELECTED> DHT </option>" +
-                         "<option value='02' > CMP </option>" +
+                         "<tr style=' height: 25px;' valign='middle'><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:60px;' >Loại Bể: </td> <td><select  style='width:100px;' id='loai'>" +
+                         "<option value='1' SELECTED> Bể ngầm</option>" +
+                         "<option value='2' > Bể Nổi </option>" +
                          "</select> </td></tr>" +
-                         "<tr style=' height: 30px; '><td style='border-bottom:1px; border-bottom-style:dotted; hight:100px; width:80px;'>DMA</td> <td><select id='madma'>" +
-                         "<option value='01-01' SELECTED>01-01</option>" + "<option value='01-02'>01-02</option>" + "<option value='01-03'>01-03</option>" + "<option value='01-04'>01-04</option>" +
-                         "<option value='02-01'>02-01</option>" + "<option value='02-02'>02-02</option>" + "<option value='02-03'>02-03</option>" + "<option value='02-04'>02-04</option>" + "<option value='02-05'>02-05</option>" +
-                         "<option value='02-06'>02-06</option>" + "<option value='03-01'>03-01</option>" + "<option value='03-02'>03-02</option>" + "<option value='03-03'>03-03</option>" + "<option value='03-04'>03-04</option>" +
-                         "<option value='03-05'>03-05</option>" + "<option value='03-06'>03-06</option>" + "<option value='03-07'>03-07</option>" + "<option value='03-08'>03-08</option>" + "<option value='03-09'>03-09</option>" +
-                         "<option value='03-10'>03-10</option>" + "<option value='03-11'>03-11</option>" + "<option value='03-12'>03-12</option>" + "<option value='03-13'>03-13</option>" + "<option value='03-14'>03-14</option>" +
-                         "<option value='04-01'>04-01</option>" + "<option value='04-02'>04-02</option>" + "<option value='04-03'>04-03</option>" + "<option value='04-04'>04-04</option>" + "<option value='04-05'>04-05</option>" +
-                         "<option value='04-06'>04-06</option>" + "<option value='04-07'>04-07</option>" + "<option value='06-01'>06-01</option>" + "<option value='06-01A'>06-01A</option>" + "<option value='06-02'>06-02</option>" +
-                         "<option value='06-03'>06-03</option>" + "<option value='06-04'>06-04</option>" + "<option value='07-01'>07-01</option>" + "<option value='07-02'>07-02</option>" + "<option value='07-03'>07-03</option>" +
-                         "<option value='07-04'>07-04</option>" + "<option value='07-05'>07-05</option>" + "<option value='07-06'>07-06</option>" + "<option value='07-07'>07-07</option>" + "<option value='07-08'>07-08</option>" +
-                         "<option value='07-09'>07-09</option>" + "<option value='07-09A'>07-09A</option>" + "<option value='07-10'>07-10</option>" + "<option value='08-01'>08-01</option>" + "<option value='08-02'>08-02</option>" +
-                         "<option value='08-03'>08-03</option>" + "<option value='08-04'>08-04</option>" + "<option value='08-05'>08-05</option>" + "<option value='08-06'>08-06</option>" + "<option value='08-07'>08-07</option>" +
-                         "<option value='08-08'>08-08</option>" + "<option value='08-09'>08-09</option>" + "<option value='08-10'>08-10</option>" + "<option value='08-11'>08-11</option>" + "<option value='08-12'>08-12</option>" +
-                         "<option value='09-01'>09-01</option>" + "<option value='09-01A'>09-01A</option>" + "<option value='09-02'>09-02</option>" + "<option value='09-03'>09-03 </option>" + "<option value='09-04'>09-04</option>" +
-                         "<option value='09-05'>09-05</option>" + "<option value='09-06'>09-06</option>" + "<option value='10-01'>10-01</option>" + "<option value='10-02'>10-02</option>" + "<option value='10-03'>10-03</option>" +
-                         "<option value='10-04'>10-04</option>" + "<option value='10-05'>10-05</option>" + "<option value='10-06'>10-06</option>" + "<option value='10-07'>10-07</option>" + "<option value='11-01'>11-01</option>" +
-                         "<option value='11-02'>11-02</option>" + "<option value='11-03 '>11-03 </option>" + "<option value='11-04'>11-04</option>" + "<option value='11-05'>11-05</option>" + "<option value='11-06'>11-06</option>" +
-                         "<option value='11-07'>11-07</option>" + "<option value='11-08'>11-08</option>" + "<option value='11-09'>11-09</option>" + "<option value='11-10'>11-10</option>" + "<option value='11-11'>11-11</option>" +
-                         "<option value='11-12'>11-12</option>" + "<option value='11-13'>11-13</option>" + "<option value='11-14'>11-14</option>" + "<option value='11-15'>11-15</option>" + "<option value='12-01'>12-01</option>" +
-                         "<option value='12-02'>12-02</option>" + "<option value='12-03'>12-03</option>" + "<option value='12-04'>12-04</option>" + "<option value='12-05'>12-05</option>" +
+                         "<tr style='height:25px; '  valign='middle'><td style='border-bottom:1px; border-bottom-style:dotted;width:60px;' >Ống Bể: </td> <td><select style='width:100px;'  id='ong'>" +
+                         "<option value='1' SELECTED> Ống ngánh </option>" +
+                         "<option value='2' > Ống cái </option>" +
                          "</select> </td></tr>" +
+                         "<tr style=' height: 25px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:60px;'>DMA</td> <td><select  style='width:100px;' id='madma'>" +
+                          <% 
+                        int f=1;
+                        DataTable   table = new DataTable();
+                           if(Session["dsDHTong"]!=null)
+                           {
+                            table = (DataTable)Session["dsDHTong"];
+                            for(int j=0;j<table.Rows.Count;j++)
+                            {
+                                if(table.Rows[j]["IDNhom"]+""==Session["manhom"]+"")
+                                {%>"<option value='<%=table.Rows[j]["STT"]%>' SELECTED><%=table.Rows[j]["MaDMA"]%></option>" +<%}
+                                else{
+                                %>"<option value='<%=table.Rows[j]["STT"]%>'><%=table.Rows[j]["MaDMA"]%></option>" +<%
+                                }
+                            }
+                        }%>
+                         "</select> </td></tr>" +
+                         "<tr style=' height: 25px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:60px;'>Số Nhà</td> <td> <input type='text' id='sonha'/> </td></tr>" +
+                         "<tr style=' height: 25px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:60px;'>Đường</td> <td> <input type='text' id='duong'/> </td></tr>" +
+                         "<tr style=' height: 25px; '><td style='border-bottom:1px; border-bottom-style:dotted; width:60px;'>Ghi Chú</td> <td style='border-bottom:1px; border-bottom-style:dotted; width:60px;'> <input type='text' id='ghichu'/> </td></tr>" +
                          "<tr style=' height: 30px; '><td style='hight:100px; width:80px;'></td><td><input type='button' class='button' value='Save' onclick='save()'/></td></tr></table>";
 
             infowindow = new google.maps.InfoWindow({
@@ -244,7 +265,7 @@
                 });
             });
 
-
+            <%} %>
 
             ////////////////////
 
@@ -359,6 +380,24 @@
             });
             
     }
+             function save() {  
+                   var madma = document.getElementById("madma").value;
+                   var loai = document.getElementById("loai").value;
+                   var ong = document.getElementById("ong").value;
+                   var sonha = document.getElementById("sonha").value;
+                   var duong = document.getElementById("duong").value;
+                   var ghichu = document.getElementById("ghichu").value;
+                   
+                   var newUrl="pageAddDiemBe.aspx?lat="+lagx+ "&lng=" + lagy+ "&madma=" + madma + "&loai=" + loai+ "&ong=" + ong + "&sonha=" + sonha+ "&duong=" + duong + "&ghichu=" + ghichu ; 
+                   // alert(latlng);
+                   document.location.href = newUrl;
+                                    
+                   // var newUrl="addBaoBee.aspx?lat="+lagx+ "&lng=" + lagy ;
+                   // alert(latlng);
+                   //document.location.href = newUrl;
+                      
+              }
+
                 </script>
     
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU&libraries=places&callback=initAutocomplete"         async defer></script>

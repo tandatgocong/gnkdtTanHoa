@@ -87,6 +87,8 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="bin\Debug\DoBeCopy.bat" />
+    <None Include="Lib\DoBeCopy.bat" />
     <None Include="Lib\GNKDT.BAT" />
     <None Include="Lib\ON.BAT" />
     <None Include="DataBase.dbml.layout">
@@ -129,9 +131,7 @@
   <ItemGroup>
     <Content Include="rstrui.exe_I009b_0409.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Debug\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
       <Visible>False</Visible>

@@ -33,12 +33,12 @@ namespace GiamNuocWeb
         }
         public void getLoadDMA()
         {
-            DataTable tb = LinQConnection.getDataTable("SELECT [MaDMA],([Lat]+','+[Lng]) AS CENTER FROM [tanhoa].[dbo].[g_LabelDMA] ");
+            DataTable tb = LinQConnection.getDataTable("SELECT *,([Lat]+','+[Lng]) AS CENTER FROM [tanhoa].[dbo].[g_LabelDMA] ");
             listDMA.DataSource = tb;
             listDMA.DataValueField = "MaDMA";
             listDMA.DataTextField = "MaDMA";
             listDMA.DataBind();
-
+            Session["dsDHTong"] = tb;
         }
         public void getNhomDoBe()
         {
@@ -60,7 +60,7 @@ namespace GiamNuocWeb
                     Session["dobe"] = tb.Rows[0]["NhomDoBe"].ToString();
                     Session["center"] = tb.Rows[0]["CENTER"].ToString();
                 }
-
+             
 
 
             }
@@ -96,7 +96,8 @@ namespace GiamNuocWeb
             sql += " WHERE db.Nhom= nb.ID AND db.DMA=dma.ID AND ";
             sql += " (db.NgayDo) >= #" + tn + "# AND (db.NgayDo) <#" + dn + "# ";
             if(cbNhomDoBe.SelectedValue!="0")
-                sql += "  AND db.Nhom=" + cbNhomDoBe.SelectedValue.ToString() + ";";
+                sql += "  AND db.Nhom=" + cbNhomDoBe.SelectedValue.ToString() + " ";
+            sql += " Order by db.NgayDo ASC";
             DataTable tb = OledbConnection.getDataTable(connectionString, sql);
 
             ReportViewer1.ProcessingMode = ProcessingMode.Local;
@@ -130,6 +131,21 @@ namespace GiamNuocWeb
         protected void Button1_Click(object sender, EventArgs e)
         {
             getDiemBe();
+        }
+
+        protected void login_Click(object sender, EventArgs e)
+        {
+            Session["page"] = "pageDoBe.aspx";
+            Response.Redirect("pageLogin.aspx");
+            //if (UserLogin(this.txtusername.Text, this.txtpassword.Text) == true)
+            //{
+            //    if (Session["page"] == null)
+            //        Response.Redirect("Home.aspx");
+            //    else
+            //        Response.Redirect(Session["page"].ToString());
+            //}
+            //else
+            //    this.mess.Visible = true;
         }
     }
 }

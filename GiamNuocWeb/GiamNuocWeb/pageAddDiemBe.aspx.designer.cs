@@ -10,24 +10,24 @@
 namespace GiamNuocWeb {
     
     
-    public partial class pageThatThoatSanLuong {
+    public partial class pageAddDiemBe {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ReportViewer1 control.
+        /// lbThanhCong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
+        protected global::System.Web.UI.WebControls.Label lbThanhCong;
     }
 }

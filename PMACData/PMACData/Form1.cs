@@ -129,6 +129,12 @@ namespace PMACData
                 System.Diagnostics.Process.Start("GNKDT.BAT");
             }
 
+
+            if (tNow.Minute % 15 == 0 && tNow.Second == 0)
+            {
+                System.Diagnostics.Process.Start("DoBeCopy.bat");
+            }
+
             // Update nhom do be 5g sang hang hang
             if (tNow.Hour == 5 && tNow.Minute == 0)
             {

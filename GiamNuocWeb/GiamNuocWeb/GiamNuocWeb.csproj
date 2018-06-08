@@ -185,6 +185,7 @@
     <Content Include="Lib\Microsoft.Office.Interop.Excel.dll" />
     <Content Include="Lib\String_Indentity.dll" />
     <Content Include="Lib\String_Indentity_.dll" />
+    <Content Include="pageAddDiemBe.aspx" />
     <Content Include="pageAddLocaiton.aspx" />
     <Content Include="pageApLuc.aspx" />
     <Content Include="pageChart.aspx" />
@@ -194,7 +195,6 @@
     <Content Include="pageLuuLuong.aspx" />
     <Content Include="pageSanLuong.aspx" />
     <Content Include="pageThatThoat.aspx" />
-    <Content Include="pageThatThoatSanLuong.aspx" />
     <Content Include="pageThatThoatTiLe.aspx" />
     <Content Include="twocolumn2.html" />
     <Content Include="Web.config">
@@ -222,6 +222,13 @@
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pageAddDiemBe.aspx.cs">
+      <DependentUpon>pageAddDiemBe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageAddDiemBe.aspx.designer.cs">
+      <DependentUpon>pageAddDiemBe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pageChart.aspx.cs">
       <DependentUpon>pageChart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -235,13 +242,6 @@
     </Compile>
     <Compile Include="pageDoBe.aspx.designer.cs">
       <DependentUpon>pageDoBe.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pageThatThoatSanLuong.aspx.cs">
-      <DependentUpon>pageThatThoatSanLuong.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pageThatThoatSanLuong.aspx.designer.cs">
-      <DependentUpon>pageThatThoatSanLuong.aspx</DependentUpon>
     </Compile>
     <Compile Include="pageThatThoatTiLe.aspx.cs">
       <DependentUpon>pageThatThoatTiLe.aspx</DependentUpon>
@@ -362,6 +362,7 @@
       <DependentUpon>pageThatThoat.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="App_Data\DoBeCopy.bat" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataBase\DMA.dbml">
@@ -391,6 +392,7 @@
     <None Include="DoBe.xss">
       <DependentUpon>DoBe.xsd</DependentUpon>
     </None>
+    <None Include="DoBeCopy.bat" />
     <None Include="fonts\fontawesome-webfont.eot" />
     <None Include="fonts\fontawesome-webfont.ttf" />
     <None Include="fonts\fontawesome-webfont.woff" />

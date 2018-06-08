@@ -30,7 +30,7 @@ namespace GiamNuocWeb
         }
         void LoadTiLe()
         {
-            string sql = " SELECT TOP(92) [TimeStamp], [STT],A.[MaDMA],[QI],[QM],[Sucxa],[NRW] ,[TiLe] ,[MNF] ,[DiemBeTon] ,[TinhTrang],B.NhomDoBe  FROM [tanhoa].[dbo].[g_ThatThoatDMA] A  LEFT JOIN [tanhoa].[dbo].[g_LabelDMA] B  ON A.MaDMA=B.MaDMA  ORDER BY [TimeStamp] DESC, STT ASC ";
+            string sql = " SELECT TOP(92) [TimeStamp], [STT],A.[MaDMA],[QI],[QM],[Sucxa],[NRW] ,[TiLe] ,[MNF] ,[DiemBeTon] ,[TinhTrang],B.NhomDoBe  FROM [tanhoa].[dbo].[g_ThatThoatDMA] A  LEFT JOIN [tanhoa].[dbo].[g_LabelDMA] B  ON A.MaDMA=B.MaDMA AND A.TiLe is not null  ORDER BY [TimeStamp] DESC, STT ASC ";
             DataTable tb = LinQConnection.getDataTable(sql);
 
             ReportViewer1.ProcessingMode = ProcessingMode.Local;
