@@ -130,7 +130,7 @@ namespace PMACData
             }
 
 
-            if (tNow.Minute % 15 == 0 && tNow.Second == 0)
+            if (tNow.Minute % 30 == 0 && tNow.Second == 0)
             {
                 System.Diagnostics.Process.Start("DoBeCopy.bat");
             }
@@ -644,7 +644,7 @@ namespace PMACData
         {
             DateTime t = DateTime.Now;
 
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 3; i++)
             {
                 UpdateSanLuongNRW(t);
                 //UpdateSanLuongDHT(t);
@@ -703,10 +703,11 @@ namespace PMACData
 
         private void btTachMang_Click(object sender, EventArgs e)
         {
+            int ti = 3;
             DateTime t = DateTime.Now;
-            t= t.Date.AddDays(-20);
+            t = t.Date.AddDays(-ti);
 
-            for (int i = 0; i < 21; i++)
+            for (int i = 0; i <= ti; i++)
             {
                 UpdateSanLuongDHN_TM(t);
                 UpdateSanLuongDHN_TM_F2(t);

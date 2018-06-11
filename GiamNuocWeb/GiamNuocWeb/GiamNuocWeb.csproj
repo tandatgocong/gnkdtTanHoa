@@ -362,7 +362,6 @@
       <DependentUpon>pageThatThoat.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="App_Data\DoBeCopy.bat" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataBase\DMA.dbml">

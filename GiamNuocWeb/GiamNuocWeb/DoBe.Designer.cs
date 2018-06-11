@@ -307,6 +307,10 @@ namespace GiamNuocWeb {
             
             private global::System.Data.DataColumn columnDinhMuc;
             
+            private global::System.Data.DataColumn columnBaoDienThoai;
+            
+            private global::System.Data.DataColumn columnStatus;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public T_DiemBeDataTable() {
@@ -454,6 +458,22 @@ namespace GiamNuocWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BaoDienThoaiColumn {
+                get {
+                    return this.columnBaoDienThoai;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StatusColumn {
+                get {
+                    return this.columnStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -489,7 +509,7 @@ namespace GiamNuocWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public T_DiemBeRow AddT_DiemBeRow(int Nhom, System.DateTime NgayDo, System.DateTime NgaySua, string SoNha, string Duong, int DMA, int TinhTrang, int LoaiDiemBe, int OngBe, int DVTC, string NguyenNhan, string GhiChu, bool DinhMuc) {
+            public T_DiemBeRow AddT_DiemBeRow(int Nhom, System.DateTime NgayDo, System.DateTime NgaySua, string SoNha, string Duong, int DMA, int TinhTrang, int LoaiDiemBe, int OngBe, int DVTC, string NguyenNhan, string GhiChu, bool DinhMuc, bool BaoDienThoai, bool Status) {
                 T_DiemBeRow rowT_DiemBeRow = ((T_DiemBeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -505,7 +525,9 @@ namespace GiamNuocWeb {
                         DVTC,
                         NguyenNhan,
                         GhiChu,
-                        DinhMuc};
+                        DinhMuc,
+                        BaoDienThoai,
+                        Status};
                 rowT_DiemBeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowT_DiemBeRow);
                 return rowT_DiemBeRow;
@@ -549,6 +571,8 @@ namespace GiamNuocWeb {
                 this.columnNguyenNhan = base.Columns["NguyenNhan"];
                 this.columnGhiChu = base.Columns["GhiChu"];
                 this.columnDinhMuc = base.Columns["DinhMuc"];
+                this.columnBaoDienThoai = base.Columns["BaoDienThoai"];
+                this.columnStatus = base.Columns["Status"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -582,6 +606,10 @@ namespace GiamNuocWeb {
                 base.Columns.Add(this.columnGhiChu);
                 this.columnDinhMuc = new global::System.Data.DataColumn("DinhMuc", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDinhMuc);
+                this.columnBaoDienThoai = new global::System.Data.DataColumn("BaoDienThoai", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBaoDienThoai);
+                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -954,6 +982,38 @@ namespace GiamNuocWeb {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool BaoDienThoai {
+                get {
+                    try {
+                        return ((bool)(this[this.tableT_DiemBe.BaoDienThoaiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BaoDienThoai\' in table \'T_DiemBe\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableT_DiemBe.BaoDienThoaiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Status {
+                get {
+                    try {
+                        return ((bool)(this[this.tableT_DiemBe.StatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Status\' in table \'T_DiemBe\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableT_DiemBe.StatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNhomNull() {
                 return this.IsNull(this.tableT_DiemBe.NhomColumn);
             }
@@ -1106,6 +1166,30 @@ namespace GiamNuocWeb {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDinhMucNull() {
                 this[this.tableT_DiemBe.DinhMucColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBaoDienThoaiNull() {
+                return this.IsNull(this.tableT_DiemBe.BaoDienThoaiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBaoDienThoaiNull() {
+                this[this.tableT_DiemBe.BaoDienThoaiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStatusNull() {
+                return this.IsNull(this.tableT_DiemBe.StatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStatusNull() {
+                this[this.tableT_DiemBe.StatusColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1282,6 +1366,8 @@ namespace GiamNuocWeb.DoBeTableAdapters {
             tableMapping.ColumnMappings.Add("NguyenNhan", "NguyenNhan");
             tableMapping.ColumnMappings.Add("GhiChu", "GhiChu");
             tableMapping.ColumnMappings.Add("DinhMuc", "DinhMuc");
+            tableMapping.ColumnMappings.Add("BaoDienThoai", "BaoDienThoai");
+            tableMapping.ColumnMappings.Add("Status", "Status");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -1291,8 +1377,8 @@ namespace GiamNuocWeb.DoBeTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `T_DiemBe` (`Nhom`, `NgayDo`, `NgaySua`, `SoNha`, `Duong`, `DMA`, `Ti" +
-                "nhTrang`, `LoaiDiemBe`, `OngBe`, `DVTC`, `NguyenNhan`, `GhiChu`, `DinhMuc`) VALU" +
-                "ES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "nhTrang`, `LoaiDiemBe`, `OngBe`, `DVTC`, `NguyenNhan`, `GhiChu`, `DinhMuc`, `Bao" +
+                "DienThoai`, `Status`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Nhom", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nhom", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NgayDo", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayDo", global::System.Data.DataRowVersion.Current, false, null));
@@ -1307,11 +1393,11 @@ namespace GiamNuocWeb.DoBeTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NguyenNhan", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NguyenNhan", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("GhiChu", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "GhiChu", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DinhMuc", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DinhMuc", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BaoDienThoai", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BaoDienThoai", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Status", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Status", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `T_DiemBe` SET `Nhom` = ?, `NgayDo` = ?, `NgaySua` = ?, `SoNha` = ?, `Duon" +
-                "g` = ?, `DMA` = ?, `TinhTrang` = ?, `LoaiDiemBe` = ?, `OngBe` = ?, `DVTC` = ?, `" +
-                "NguyenNhan` = ?, `GhiChu` = ?, `DinhMuc` = ? WHERE ((`ID` = ?))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `T_DiemBe` SET `Nhom` = ?, `NgayDo` = ?, `NgaySua` = ?, `SoNha` = ?, `Duong` = ?, `DMA` = ?, `TinhTrang` = ?, `LoaiDiemBe` = ?, `OngBe` = ?, `DVTC` = ?, `NguyenNhan` = ?, `GhiChu` = ?, `DinhMuc` = ?, `BaoDienThoai` = ?, `Status` = ? WHERE ((`ID` = ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Nhom", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nhom", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NgayDo", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NgayDo", global::System.Data.DataRowVersion.Current, false, null));
@@ -1326,6 +1412,8 @@ namespace GiamNuocWeb.DoBeTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NguyenNhan", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NguyenNhan", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("GhiChu", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "GhiChu", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DinhMuc", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DinhMuc", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BaoDienThoai", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BaoDienThoai", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Status", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Status", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ID", global::System.Data.DataRowVersion.Original, false, null));
         }
         
@@ -1333,7 +1421,7 @@ namespace GiamNuocWeb.DoBeTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Database1_beConnectionString1"].ConnectionString;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Database1_beConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1343,7 +1431,7 @@ namespace GiamNuocWeb.DoBeTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, Nhom, NgayDo, NgaySua, SoNha, Duong, DMA, TinhTrang, LoaiDiemBe, OngBe" +
-                ", DVTC, NguyenNhan, GhiChu, DinhMuc FROM T_DiemBe";
+                ", DVTC, NguyenNhan, GhiChu, DinhMuc, BaoDienThoai, Status FROM T_DiemBe";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1426,7 +1514,7 @@ namespace GiamNuocWeb.DoBeTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> Nhom, global::System.Nullable<global::System.DateTime> NgayDo, global::System.Nullable<global::System.DateTime> NgaySua, string SoNha, string Duong, int DMA, int TinhTrang, global::System.Nullable<int> LoaiDiemBe, global::System.Nullable<int> OngBe, global::System.Nullable<int> DVTC, string NguyenNhan, string GhiChu, bool DinhMuc) {
+        public virtual int Insert(global::System.Nullable<int> Nhom, global::System.Nullable<global::System.DateTime> NgayDo, global::System.Nullable<global::System.DateTime> NgaySua, string SoNha, string Duong, int DMA, int TinhTrang, global::System.Nullable<int> LoaiDiemBe, global::System.Nullable<int> OngBe, global::System.Nullable<int> DVTC, string NguyenNhan, string GhiChu, bool DinhMuc, bool BaoDienThoai, bool Status) {
             if ((Nhom.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Nhom.Value));
             }
@@ -1490,6 +1578,8 @@ namespace GiamNuocWeb.DoBeTableAdapters {
                 this.Adapter.InsertCommand.Parameters[11].Value = ((string)(GhiChu));
             }
             this.Adapter.InsertCommand.Parameters[12].Value = ((bool)(DinhMuc));
+            this.Adapter.InsertCommand.Parameters[13].Value = ((bool)(BaoDienThoai));
+            this.Adapter.InsertCommand.Parameters[14].Value = ((bool)(Status));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1510,7 +1600,23 @@ namespace GiamNuocWeb.DoBeTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Nhom, global::System.Nullable<global::System.DateTime> NgayDo, global::System.Nullable<global::System.DateTime> NgaySua, string SoNha, string Duong, int DMA, int TinhTrang, global::System.Nullable<int> LoaiDiemBe, global::System.Nullable<int> OngBe, global::System.Nullable<int> DVTC, string NguyenNhan, string GhiChu, bool DinhMuc, int Original_ID) {
+        public virtual int Update(
+                    global::System.Nullable<int> Nhom, 
+                    global::System.Nullable<global::System.DateTime> NgayDo, 
+                    global::System.Nullable<global::System.DateTime> NgaySua, 
+                    string SoNha, 
+                    string Duong, 
+                    int DMA, 
+                    int TinhTrang, 
+                    global::System.Nullable<int> LoaiDiemBe, 
+                    global::System.Nullable<int> OngBe, 
+                    global::System.Nullable<int> DVTC, 
+                    string NguyenNhan, 
+                    string GhiChu, 
+                    bool DinhMuc, 
+                    bool BaoDienThoai, 
+                    bool Status, 
+                    int Original_ID) {
             if ((Nhom.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Nhom.Value));
             }
@@ -1574,7 +1680,9 @@ namespace GiamNuocWeb.DoBeTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(GhiChu));
             }
             this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(DinhMuc));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(BaoDienThoai));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Status));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

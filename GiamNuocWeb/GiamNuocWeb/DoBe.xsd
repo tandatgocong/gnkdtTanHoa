@@ -2,15 +2,16 @@
 <xs:schema id="DoBe" targetNamespace="http://tempuri.org/DoBe.xsd" xmlns:mstns="http://tempuri.org/DoBe.xsd" xmlns="http://tempuri.org/DoBe.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="Database1_beConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Database1_beConnectionString (Web.config)" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.Database1_beConnectionString.ConnectionString" Provider="System.Data.OleDb" />
-          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="Database1_beConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Database1_beConnectionString1 (Web.config)" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.Database1_beConnectionString1.ConnectionString" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="Database1_beConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="Database1_beConnectionString1 (Web.config)" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.Database1_beConnectionString1.ConnectionString" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="Database1_beConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Database1_beConnectionString (Web.config)" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.Database1_beConnectionString.ConnectionString" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="T_DiemBeTableAdapter" GeneratorDataComponentClassName="T_DiemBeTableAdapter" Name="T_DiemBe" UserDataComponentName="T_DiemBeTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Database1_beConnectionString1 (Web.config)" DbObjectName="T_DiemBe" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Database1_beConnectionString (Web.config)" DbObjectName="T_DiemBe" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `T_DiemBe` WHERE ((`ID` = ?))</CommandText>
@@ -21,7 +22,7 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `T_DiemBe` (`Nhom`, `NgayDo`, `NgaySua`, `SoNha`, `Duong`, `DMA`, `TinhTrang`, `LoaiDiemBe`, `OngBe`, `DVTC`, `NguyenNhan`, `GhiChu`, `DinhMuc`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <CommandText>INSERT INTO `T_DiemBe` (`Nhom`, `NgayDo`, `NgaySua`, `SoNha`, `Duong`, `DMA`, `TinhTrang`, `LoaiDiemBe`, `OngBe`, `DVTC`, `NguyenNhan`, `GhiChu`, `DinhMuc`, `BaoDienThoai`, `Status`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Nhom" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Nhom" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="NgayDo" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NgayDo" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -36,18 +37,20 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="NguyenNhan" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="NguyenNhan" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GhiChu" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GhiChu" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="DinhMuc" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="DinhMuc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="BaoDienThoai" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="BaoDienThoai" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Status" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, Nhom, NgayDo, NgaySua, SoNha, Duong, DMA, TinhTrang, LoaiDiemBe, OngBe, DVTC, NguyenNhan, GhiChu, DinhMuc FROM T_DiemBe</CommandText>
+                    <CommandText>SELECT ID, Nhom, NgayDo, NgaySua, SoNha, Duong, DMA, TinhTrang, LoaiDiemBe, OngBe, DVTC, NguyenNhan, GhiChu, DinhMuc, BaoDienThoai, Status FROM T_DiemBe</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `T_DiemBe` SET `Nhom` = ?, `NgayDo` = ?, `NgaySua` = ?, `SoNha` = ?, `Duong` = ?, `DMA` = ?, `TinhTrang` = ?, `LoaiDiemBe` = ?, `OngBe` = ?, `DVTC` = ?, `NguyenNhan` = ?, `GhiChu` = ?, `DinhMuc` = ? WHERE ((`ID` = ?))</CommandText>
+                    <CommandText>UPDATE `T_DiemBe` SET `Nhom` = ?, `NgayDo` = ?, `NgaySua` = ?, `SoNha` = ?, `Duong` = ?, `DMA` = ?, `TinhTrang` = ?, `LoaiDiemBe` = ?, `OngBe` = ?, `DVTC` = ?, `NguyenNhan` = ?, `GhiChu` = ?, `DinhMuc` = ?, `BaoDienThoai` = ?, `Status` = ? WHERE ((`ID` = ?))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Nhom" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Nhom" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="NgayDo" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NgayDo" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -62,6 +65,8 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="NguyenNhan" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="NguyenNhan" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="GhiChu" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="GhiChu" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="DinhMuc" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="DinhMuc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="BaoDienThoai" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="BaoDienThoai" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Status" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
@@ -83,6 +88,8 @@
               <Mapping SourceColumn="NguyenNhan" DataSetColumn="NguyenNhan" />
               <Mapping SourceColumn="GhiChu" DataSetColumn="GhiChu" />
               <Mapping SourceColumn="DinhMuc" DataSetColumn="DinhMuc" />
+              <Mapping SourceColumn="BaoDienThoai" DataSetColumn="BaoDienThoai" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -135,6 +142,8 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="DinhMuc" msprop:Generator_ColumnVarNameInTable="columnDinhMuc" msprop:Generator_ColumnPropNameInRow="DinhMuc" msprop:Generator_ColumnPropNameInTable="DinhMucColumn" msprop:Generator_UserColumnName="DinhMuc" type="xs:boolean" minOccurs="0" />
+              <xs:element name="BaoDienThoai" msprop:Generator_ColumnVarNameInTable="columnBaoDienThoai" msprop:Generator_ColumnPropNameInRow="BaoDienThoai" msprop:Generator_ColumnPropNameInTable="BaoDienThoaiColumn" msprop:Generator_UserColumnName="BaoDienThoai" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
