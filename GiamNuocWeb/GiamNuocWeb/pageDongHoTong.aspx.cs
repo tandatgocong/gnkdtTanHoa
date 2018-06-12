@@ -15,7 +15,8 @@ namespace GiamNuocWeb
 {
     public partial class pageDongHoTong : System.Web.UI.Page
     {
-        static g_ThongTinDHT dh;
+       // static g_ThongTinDHT dh;
+        string imgpath;
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -48,7 +49,7 @@ namespace GiamNuocWeb
         protected void btSearch_Click(object sender, EventArgs e)
         {
             string madma = listDMA.SelectedValue.ToString();
-            //dh = CThongTinDMA.getDHTByMaDMA(madma);
+            g_ThongTinDHT dh = CThongTinDMA.getDHTByMaDMA(madma);
             try
             {
                 if (dh != null)
@@ -132,7 +133,7 @@ namespace GiamNuocWeb
             {
                 lbThanhCong.Text = "";
                 string madma = listDMA.SelectedValue.ToString();
-                dh = CThongTinDMA.getDHTByMaDMA(madma);
+                g_ThongTinDHT dh = CThongTinDMA.getDHTByMaDMA(madma);
                 if (dh != null)
                 {
                     this.txtViTri.Text = dh.ViTri;
@@ -164,7 +165,7 @@ namespace GiamNuocWeb
             }
             
         }
-        string imgpath = "";
+      
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (FileUpload1.HasFile)

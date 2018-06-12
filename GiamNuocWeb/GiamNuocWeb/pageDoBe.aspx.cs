@@ -94,7 +94,7 @@ namespace GiamNuocWeb
             string sql = " SELECT nb.TenNHom, db.NgayDo, db.NgaySua, db.SoNha, db.Duong, dma.DMA, db.TinhTrang, db.LoaiDiemBe, db.OngBe, db.DVTC, db.NguyenNhan, db.GhiChu ";
             sql += " FROM T_DiemBe AS db, T_NhomDoBe AS nb, T_DMA AS dma ";
             sql += " WHERE db.Nhom= nb.ID AND db.DMA=dma.ID AND ";
-            sql += " (db.NgayDo) >= #" + tn + "# AND (db.NgayDo) <#" + dn + "# ";
+            sql += " (db.NgayDo) >= #" + tn + "# AND (db.NgayDo) <=#" + dn + "# ";
             if(cbNhomDoBe.SelectedValue!="0")
                 sql += "  AND db.Nhom=" + cbNhomDoBe.SelectedValue.ToString() + " ";
             sql += " Order by db.NgayDo ASC";

@@ -144,7 +144,7 @@
 
                       <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-           <rsweb:ReportViewer Width="100%" ID="ReportViewer1" runat="server">
+           <rsweb:ReportViewer Width="100%" Height="600px" ID="ReportViewer1" runat="server">
          </rsweb:ReportViewer>
    
       </asp:Panel>
@@ -317,6 +317,40 @@
             */
 
                   
+                  
+               // Try HTML5 geolocation.
+             var infoWindow = new google.maps.InfoWindow({map: map});
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(function(position) {
+                 
+                 var latlng99999 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+                 var icon_='/Image/nursery.png';
+                 var marker99999= new google.maps.Marker({
+				              position: latlng99999, 
+                              icon: icon_, 
+				              map: map 
+				              });
+                           
+                marker99999.setMap(map);
+                var  infowindow99999 = new google.maps.InfoWindow();
+                var iwContent="<table border=1 cellpadding=0 cellspacing=0> "; 
+                    iwContent+="<tr><td> Location </td></tr> ";
+                    iwContent+="</table>";
+                infowindow99999.setContent(iwContent);
+                infowindow99999.open(map,marker99999);
+
+                map.setCenter(marker99999.getPosition());
+                  }, function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                  });
+                } else {
+                  // Browser doesn't support Geolocation
+                  handleLocationError(false, infoWindow, map.getCenter());
+                }
+
+
+
              
             // Create the search box and link it to the UI element.
             var input = document.getElementById('pac-input');
