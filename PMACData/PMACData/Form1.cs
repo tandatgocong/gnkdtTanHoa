@@ -380,7 +380,7 @@ namespace PMACData
 
                 string tbName = "t_Data_Logger_" + table.Rows[i]["ChannelId"];
                 string ngay = d.ToString("yyyy-MM-dd") + " 04:00:00:000";
-                string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 23:05:00:000";
+                string ngay2 = d.ToString("yyyy-MM-dd") + " 00:05:00:000";
                 string maDMA = table.Rows[i]["MaDMA"] + "";
                 double csMoi = 0.0;
                 double csCu = 0.0;
@@ -644,10 +644,10 @@ namespace PMACData
         {
             DateTime t = DateTime.Now;
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i <=5; i++)
             {
                 UpdateSanLuongNRW(t);
-                //UpdateSanLuongDHT(t);
+                UpdateSanLuongDHT(t);
                  t = t.Date.AddDays(-1);
             }
         }
@@ -761,6 +761,91 @@ namespace PMACData
         private void btBackup_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("GNKDT.BAT");
+        }
+
+        public void UpdateLuuLuongNRW(DateTime d)
+        {
+            // string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*    FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE  IndexTimeStamp is not null and REPLACE( LEFT([Description],6),' ','') <> ''  order by [Description] asc ";
+            string sql = " SELECT *   FROM [tanhoa].[dbo].[g_ThongTinDHT] where STT <= 102 ";
+
+            //string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*  FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE ChannelId='20238_02'  order by MaDMA";
+            DataTable table = getDataTable(sql);
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                string tinhtrang = table.Rows[i]["StatusDHT"] + "";
+                string cs = table.Rows[i]["TieuThuLoi"] + "";
+
+                string tbName = "t_Data_Logger_" + table.Rows[i]["ChannelId"];
+                string ngay = d.ToString("yyyy-MM-dd") + " 04:00:00:000";
+                string ngay2 = d.ToString("yyyy-MM-dd") + " 00:05:00:000";
+                string maDMA = table.Rows[i]["MaDMA"] + "";
+                double csMoi = 0.0;
+                double csCu = 0.0;
+
+                //string SQL = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay + "'";
+
+                //DataTable t1 = getDataTable(SQL);
+
+
+                //if (t1.Rows.Count != 0)
+                //    try
+                //    {
+                //        csMoi = double.Parse(t1.Rows[0][0].ToString());
+                //    }
+                //    catch (Exception)
+                //    {
+
+                //    }
+
+
+                //string ngay2 = d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 23:00:00:000";
+
+                //string SQL2 = "SELECT ROUND(Value,0) AS Value FROM " + tbName + " WHERE [TimeStamp]='" + ngay2 + "'";
+
+                //DataTable t2 = getDataTable(SQL2);
+
+
+                //if (t2.Rows.Count != 0)
+                //    try
+                //    {
+                //        csCu = double.Parse(t2.Rows[0][0].ToString());
+                //    }
+                //    catch (Exception)
+                //    {
+
+                //    }
+
+                double tieuthu = 0.0;
+
+                string SQL = "SELECT AVG(Value) AS Value FROM " + tbName + " WHERE [TimeStamp] BETWEEN '" + ngay2 + "' AND '" + ngay + "'";
+
+                tieuthu = ExecuteScalarCommand(SQL);
+
+                if (tinhtrang.Equals("0") || tinhtrang.Equals(""))
+                    tieuthu = double.Parse(cs);
+
+
+                string sqlInsert = "INSERT INTO g_LuuLuongNRW VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + tieuthu + ")";
+                string sqlUpdate = "UPDATE  g_LuuLuongNRW SET [CSCU] = " + Math.Round(csCu) + " ,[CSMOI] = " + Math.Round(csMoi) + ",[TIEUTHU] = " + tieuthu + " WHERE [TimeStamp]='" + ngay + "' AND [MaDMA]='" + maDMA + "'";
+
+                if (ExecuteCommand(sqlInsert) == 0)
+                    ExecuteCommand(sqlUpdate);
+                //listBox1.Items.Add(maDMA + "__" + Math.Round(csCu) + "___" + Math.Round(csMoi));
+            }
+        }
+
+        private void btLuuLuong_Click(object sender, EventArgs e)
+        {
+            int ti = 30;
+            DateTime t = DateTime.Now;
+      //      t = t.Date.AddDays(-ti);
+
+            for (int i = 0; i <= ti; i++)
+            {
+                UpdateLuuLuongNRW(t);
+                //ExecuteStoredProcedure(t);
+                t = t.Date.AddDays(-1);
+            }
         }
     }
 }

@@ -54,6 +54,28 @@ namespace GiamNuocWeb.Class
 
             return dsemp;
         }
+        public static DataSet getLuuLuongTheoNgayNRW(string madma, string tNgay, string dNgay)
+        {
+            dsDma dsemp = new dsDma();
+            try
+            {
+
+                DataTable tbLuuLuong = dsemp.g_LuuLuongDHT;
+                string sql = " select MaDMA,'0' AS GIO, convert(date,[TimeStamp],103) as  NGAY, ROUND(TIEUTHU,2) AS Value FROM g_LuuLuongNRW";
+                sql += " where  MaDMA IN (" + madma + ") AND convert(date,[TimeStamp],101) BETWEEN CONVERT(datetime,'" + tNgay + "',101) AND CONVERT(datetime,'" + dNgay + "',101)  ";
+                sql += " order by [TimeStamp] asc, MaDMA asc ";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+                adapter.Fill(dsemp, "g_LuuLuongDHT");
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+            }
+
+            return dsemp;
+        }
 
         public static DataSet getLuuLuongTheoGio(string madma, string tNgay, string dNgay)
         {

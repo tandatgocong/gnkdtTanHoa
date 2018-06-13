@@ -53,6 +53,7 @@
             this.btSanLuong = new System.Windows.Forms.Button();
             this.btDoBe = new System.Windows.Forms.Button();
             this.btBackup = new System.Windows.Forms.Button();
+            this.btLuuLuong = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -188,9 +189,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stasusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 297);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 332);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(829, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(956, 22);
             this.statusStrip1.TabIndex = 14;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -287,12 +288,24 @@
             this.btBackup.UseVisualStyleBackColor = true;
             this.btBackup.Click += new System.EventHandler(this.btBackup_Click);
             // 
+            // btLuuLuong
+            // 
+            this.btLuuLuong.Location = new System.Drawing.Point(611, 276);
+            this.btLuuLuong.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btLuuLuong.Name = "btLuuLuong";
+            this.btLuuLuong.Size = new System.Drawing.Size(117, 34);
+            this.btLuuLuong.TabIndex = 22;
+            this.btLuuLuong.Text = "Lưu Lượng";
+            this.btLuuLuong.UseVisualStyleBackColor = true;
+            this.btLuuLuong.Click += new System.EventHandler(this.btLuuLuong_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(829, 319);
+            this.ClientSize = new System.Drawing.Size(956, 354);
+            this.Controls.Add(this.btLuuLuong);
             this.Controls.Add(this.btBackup);
             this.Controls.Add(this.btTachMang);
             this.Controls.Add(this.btupdateVa);
@@ -351,6 +364,7 @@
         private System.Windows.Forms.Button btSanLuong;
         private System.Windows.Forms.Button btDoBe;
         private System.Windows.Forms.Button btBackup;
+        private System.Windows.Forms.Button btLuuLuong;
     }
 }
 

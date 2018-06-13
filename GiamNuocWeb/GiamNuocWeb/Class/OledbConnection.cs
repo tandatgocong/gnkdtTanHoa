@@ -14,12 +14,13 @@ namespace GiamNuocWeb.Class
 
         public static int ExecuteCommand(string connectionSting, string sql)
         {
+            int result = 0;
             OleDbConnection objConnection = new OleDbConnection(connectionSting);
             try
             {
                 objConnection.Open();
                 OleDbCommand objCmd = new OleDbCommand(sql, objConnection);
-                return objCmd.ExecuteNonQuery();
+                result = objCmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -29,20 +30,19 @@ namespace GiamNuocWeb.Class
             {
                 objConnection.Close();
             }
-            return 0;
+            return result;
         }
-        
+
 
         public static DataTable getDataTable(string connectionSting, string sql)
         {
-
+            log.Error(connectionSting);
+            DataTable table = new DataTable();
             OleDbConnection conn = new OleDbConnection(connectionSting);
             try
             {
                 OleDbDataAdapter dataAdapter = new OleDbDataAdapter(sql, conn);
-                DataTable table = new DataTable();
                 dataAdapter.Fill(table);
-                return table;
             }
             catch (Exception ex)
             {
@@ -52,7 +52,7 @@ namespace GiamNuocWeb.Class
             {
                 conn.Close();
             }
-            return null;
+            return table;
         }
 
 

@@ -91,7 +91,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>0.6875in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -110,6 +110,7 @@
                               <Value>=Fields!Value.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
+                                <Format>#,0.00;(#,0.00)</Format>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
@@ -133,7 +134,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -167,6 +167,7 @@
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontWeight>Bold</FontWeight>
+                              <Format>dd/MM</Format>
                               <Color>#465678</Color>
                             </Style>
                           </TextRun>
@@ -175,6 +176,7 @@
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontWeight>Bold</FontWeight>
+                              <Format>dd/MM</Format>
                               <Color>#465678</Color>
                             </Style>
                           </TextRun>
@@ -265,7 +267,7 @@
         <Top>0.59549in</Top>
         <Left>0.17708in</Left>
         <Height>0.5in</Height>
-        <Width>2in</Width>
+        <Width>1.6875in</Width>
         <Style>
           <Border>
             <Style>None</Style>

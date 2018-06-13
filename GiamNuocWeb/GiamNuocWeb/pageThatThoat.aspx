@@ -98,12 +98,12 @@
      .box {
             position:absolute;
             left:20px;
-            top:80px;
+            top:90px;
             z-index:999;
    
         }
     </style>
- <div class="dhnLoi2">
+ <div class="dhnLoi">
   
       <asp:RadioButtonList ID="radioCheck" runat="server" 
           RepeatDirection="Horizontal" AutoPostBack="True" 
@@ -229,7 +229,7 @@
                                     strokeWeight: 1,
                                     scale: 2
                                 }, 
-                              label: {text: lb, color: "Red", fontWeight: "bold",fontSize: "13px"},
+                              label: {text: lb, color: "Red", fontWeight: "bold",fontSize: "12px"},
 				              map: map,
 				              title: name<%=f%>
 				              });
@@ -336,7 +336,7 @@
     <asp:Panel ID="pTiLeThatThoat" runat="server"  Visible="false">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager> 
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Height="1000px">
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Height="700px">
         </rsweb:ReportViewer>
     </asp:Panel>
 </asp:Content>

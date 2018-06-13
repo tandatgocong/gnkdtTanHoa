@@ -115,17 +115,17 @@
     </style>
 
   <body>
-  <div class="dhnLoi2">
+  <div class="dhnLoi">
   
       <asp:RadioButtonList ID="radioCheck" runat="server" 
           RepeatDirection="Horizontal" AutoPostBack="True" 
           onselectedindexchanged="radioCheck_SelectedIndexChanged">
-          <asp:ListItem Value="0" >Tổng Kết Điểm Bể</asp:ListItem>
-          <asp:ListItem Value="1" Selected="True">Báo Bể</asp:ListItem>
+          <asp:ListItem Value="0" Selected="True">Tổng Kết Điểm Bể</asp:ListItem>
+          <asp:ListItem Value="1" >Dò Bể</asp:ListItem>
       </asp:RadioButtonList>
   
   </div>
-  <asp:Panel ID="panelTongKet" runat="server"  Visible=false>
+  <asp:Panel ID="panelTongKet" runat="server" >
      <div class="title_page2"> NHÓM DÒ BỂ  : 
                         <asp:DropDownList ID="cbNhomDoBe" runat="server" Height="34px" 
            Width="144px"  
@@ -149,9 +149,9 @@
    
       </asp:Panel>
 
-       <asp:Panel ID="panelDiemBe" runat="server">
+       <asp:Panel ID="panelDiemBe" runat="server"  Visible=false>
        
-     <div class="dhnLoi">
+     <div class="dhnLoi2">
    <table><tr><td> <div class="title_page2"> DMA : 
                         <asp:DropDownList ID="listDMA" runat="server" Height="24px" 
            Width="67px" onselectedindexchanged="listDMA_SelectedIndexChanged" 
@@ -161,7 +161,7 @@
                     <td> 
                     <%if (Session["login"] == null)
                       { %>
-                     <asp:Button ID="Button2" runat="server"  Text="Đăng Nhập" Width="114px" 
+                     <asp:Button ID="Button2" runat="server"  Text="Đăng Nhập" Visible=false Width="114px" 
                     onclick="login_Click" CssClass="button" Height="30px"/>
                     <%}
                       else {

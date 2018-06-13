@@ -34,6 +34,7 @@ namespace GiamNuocWeb
                 DropDownDMA.Items.Add(item.MaDMA);
             }
         }
+        
         public void getLuuLuong()
         {
             string listDMA = "";
@@ -66,16 +67,32 @@ namespace GiamNuocWeb
             }
             else
             {
-                ReportViewer1.ProcessingMode = ProcessingMode.Local;
-                ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpLuLuongByDate.rdlc");
+                if (check.Checked == false)
+                {
+                    ReportViewer1.ProcessingMode = ProcessingMode.Local;
+                    ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpLuLuongByDate.rdlc");
 
 
-                ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h)  ĐỒNG HỒ TỔNG DMA TỪ NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
-                this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
+                    ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h)  ĐỒNG HỒ TỔNG DMA TỪ NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
+                    this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
 
-                ReportDataSource rds = new ReportDataSource("dsDma", CLuuLuong.getLuuLuongTheoNgay(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_LuuLuongDHT"]);
-                ReportViewer1.LocalReport.DataSources.Clear();
-                ReportViewer1.LocalReport.DataSources.Add(rds);
+                    ReportDataSource rds = new ReportDataSource("dsDma", CLuuLuong.getLuuLuongTheoNgay(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_LuuLuongDHT"]);
+                    ReportViewer1.LocalReport.DataSources.Clear();
+                    ReportViewer1.LocalReport.DataSources.Add(rds);
+                }
+                else
+                {
+                    ReportViewer1.ProcessingMode = ProcessingMode.Local;
+                    ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpLuLuongByDate.rdlc");
+
+
+                    ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h) BAN ĐÊM ĐỒNG HỒ TỔNG DMA TỪ NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
+                    this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
+
+                    ReportDataSource rds = new ReportDataSource("dsDma", CLuuLuong.getLuuLuongTheoNgayNRW(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_LuuLuongDHT"]);
+                    ReportViewer1.LocalReport.DataSources.Clear();
+                    ReportViewer1.LocalReport.DataSources.Add(rds);
+                }
             }
         }
 

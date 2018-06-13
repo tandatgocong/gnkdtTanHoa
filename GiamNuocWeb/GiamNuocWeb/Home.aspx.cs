@@ -24,7 +24,7 @@ namespace GiamNuocWeb
         {
             getLoadDMA();
             //LoadApLuc("");
-            //LoadLuuLuong("");
+            LoadLuuLuong("989");
         }
         public void LoadApLuc(string maDMA)
         {

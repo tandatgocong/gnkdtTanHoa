@@ -839,7 +839,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.29167in</Height>
+              <Height>0.28125in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -2071,9 +2071,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>v_DiemBe</DataSetName>
-        <Top>0.62167in</Top>
+        <Top>0.49667in</Top>
         <Left>0.1425in</Left>
-        <Height>1.64583in</Height>
+        <Height>1.63541in</Height>
         <Width>12.79166in</Width>
         <Style>
           <Border>
@@ -2102,7 +2102,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox921</rd:DefaultName>
-        <Top>0.205in</Top>
+        <Top>0.125in</Top>
         <Left>0.1425in</Left>
         <Height>0.25in</Height>
         <Width>12.79166in</Width>
@@ -2118,7 +2118,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2.38208in</Height>
+    <Height>2.2675in</Height>
     <Style>
       <Border />
       <BackgroundColor>White</BackgroundColor>
@@ -2126,10 +2126,10 @@
   </Body>
   <Width>13.04875in</Width>
   <Page>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <LeftMargin>0.25in</LeftMargin>
+    <RightMargin>0.25in</RightMargin>
+    <TopMargin>0.25in</TopMargin>
+    <BottomMargin>0.25in</BottomMargin>
     <Style />
   </Page>
   <rd:ReportID>8fe02d70-1946-4e84-ba23-ce74eb976ce3</rd:ReportID>

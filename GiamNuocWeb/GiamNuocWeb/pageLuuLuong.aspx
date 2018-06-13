@@ -39,7 +39,7 @@
      </tr>
     <tr ><td class="style1">Từ Ngày  </td><td><asp:TextBox ID="tTuNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
     <tr><td class="style1">Đến Ngày </td><td><asp:TextBox ID="tDenNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
-    <tr><td class="style1" colspan="2"><asp:Button ID="Button1" CssClass="button" runat="server" Text="&nbsp;Xem&nbsp;" OnClick="bt_Click" /></td></tr>
+    <tr><td class="style1" ><asp:CheckBox ID="check" runat="server" Text="NRW" /></td><td><asp:Button ID="Button1" CssClass="button" runat="server" Text="&nbsp;Xem&nbsp;" OnClick="bt_Click" /></td></tr>
 </table>
 
 <table border="1" style="margin-top:5px;">
@@ -47,7 +47,7 @@
     <td>
          <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Height="500px">
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Height="620px">
         </rsweb:ReportViewer>
 
          <br />
