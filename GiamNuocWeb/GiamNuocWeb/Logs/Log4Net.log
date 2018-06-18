@@ -39,3 +39,8 @@
 2018-05-30 13:23:04,971 [2776] ERROR File OleDbConnection getDataTableThe SELECT statement includes a reserved word or an argument name that is misspelled or missing, or the punctuation is incorrect.
 2018-05-31 12:23:16,306 [9348] ERROR File OleDbConnection getDataTableSyntax error in date in query expression 'db.Nhom= nb.ID AND db.DMA=dma.ID AND  (db.NgayDo) >= #2018-05-228# AND (db.NgayDo) <#2018-05-31'.
 2018-05-31 12:24:04,066 [9952] ERROR File OleDbConnection getDataTableSyntax error in date in query expression 'db.Nhom= nb.ID AND db.DMA=dma.ID AND  (db.NgayDo) >= #2018-05-228# AND (db.NgayDo) <#2018-05-31'.
+2018-06-18 14:25:01,314 [4948] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-06-18 14:26:54,775 [1528] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-06-18 15:21:39,695 [1528] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-06-18 15:22:09,181 [1528] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-06-18 15:23:20,938 [3052] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb

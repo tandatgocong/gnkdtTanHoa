@@ -336,7 +336,8 @@
     <asp:Panel ID="pTiLeThatThoat" runat="server"  Visible="false">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager> 
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%" Height="700px">
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="900px" 
+            Height="700px" ZoomMode="PageWidth">
         </rsweb:ReportViewer>
     </asp:Panel>
 </asp:Content>

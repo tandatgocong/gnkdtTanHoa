@@ -167,7 +167,6 @@
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontWeight>Bold</FontWeight>
-                              <Format>dd/MM</Format>
                               <Color>#465678</Color>
                             </Style>
                           </TextRun>
@@ -176,7 +175,6 @@
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontWeight>Bold</FontWeight>
-                              <Format>dd/MM</Format>
                               <Color>#465678</Color>
                             </Style>
                           </TextRun>
@@ -200,6 +198,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixHeader>
               <TablixMembers>

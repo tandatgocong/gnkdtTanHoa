@@ -122,6 +122,7 @@ namespace PMACData
                 UpdateSanLuongNRW(t);
                 UpdateSanLuongDHN_TM(t);
                 UpdateSanLuongDHN_TM_F2(t);
+                UpdateLuuLuongNRW(t);
             }
 
             if (tNow.Hour == 5 && tNow.Minute == 30 && tNow.Second == 0)
