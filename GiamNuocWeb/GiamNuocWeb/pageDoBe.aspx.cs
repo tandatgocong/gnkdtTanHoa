@@ -147,5 +147,19 @@ namespace GiamNuocWeb
             //else
             //    this.mess.Visible = true;
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string FileName = "QuanLyDiemBe.xlsx"; // It's a file name displayed on downloaded file on client side.
+
+            System.Web.HttpResponse response = System.Web.HttpContext.Current.Response;
+            response.ClearContent();
+            response.Clear();
+            response.ContentType = "application/ms-excel";
+            response.AddHeader("Content-Disposition", "attachment; filename=" + FileName + ";");
+            response.TransmitFile(Server.MapPath("~/DanhSachDiemBe.xlsx"));
+            response.Flush();
+            response.End();
+        }
     }
 }

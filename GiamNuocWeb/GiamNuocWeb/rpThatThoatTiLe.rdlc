@@ -308,7 +308,7 @@
             <Direction>Descending</Direction>
           </SortExpression>
         </SortExpressions>
-        <Top>0.5036in</Top>
+        <Top>0.38902in</Top>
         <Height>0.5in</Height>
         <Width>1.63542in</Width>
         <Style>
@@ -338,7 +338,6 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.16333in</Top>
         <Height>0.27083in</Height>
         <Width>4.05917in</Width>
         <ZIndex>1</ZIndex>
@@ -353,7 +352,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.29167in</Height>
+    <Height>1.03125in</Height>
     <Style>
       <Border />
       <BackgroundColor>White</BackgroundColor>

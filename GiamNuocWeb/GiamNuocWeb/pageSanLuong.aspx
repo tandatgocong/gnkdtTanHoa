@@ -53,7 +53,7 @@
          <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
-            Font-Size="8pt" InteractiveDeviceInfos="(Collection)" 
+            Font-Size="8pt"  ZoomMode="PageWidth" InteractiveDeviceInfos="(Collection)" 
             WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%" Height="600px">
             <LocalReport ReportPath="rpSanLuong.rdlc">
                 <DataSources>
@@ -80,7 +80,7 @@
             </asp:DropDownList>
             </td></tr>
       </table>
-         <rsweb:ReportViewer Width="100%" Height="700px" ID="ReportViewer2" runat="server">
+         <rsweb:ReportViewer Width="100%" Height="700px" ID="ReportViewer2"  ZoomMode="PageWidth" runat="server">
          </rsweb:ReportViewer>        
     </asp:Panel>
 

@@ -71,6 +71,10 @@ namespace GiamNuocWeb
             ReportParameter p1 = new ReportParameter("tuNgay", "" + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
             this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
 
+            ReportParameter p2 = new ReportParameter("sanluong", "SẢN LƯỢNG ĐH ");
+            this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p2 });
+
+
             ReportDataSource rds = new ReportDataSource("dsDma", CSanLuong.getSanLuong(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_SanLuongDHT"]);
             ReportViewer1.LocalReport.DataSources.Clear();
             ReportViewer1.LocalReport.DataSources.Add(rds);
@@ -95,6 +99,8 @@ namespace GiamNuocWeb
 
             ReportParameter p1 = new ReportParameter("tuNgay", "" + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
             this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
+            ReportParameter p2 = new ReportParameter("sanluong", "SẢN LƯỢNG BAN ĐÊM ĐH ");
+            this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p2 });
 
             ReportDataSource rds = new ReportDataSource("dsDma", CSanLuong.getSanLuongNRW(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_SanLuongDHT"]);
             ReportViewer1.LocalReport.DataSources.Clear();

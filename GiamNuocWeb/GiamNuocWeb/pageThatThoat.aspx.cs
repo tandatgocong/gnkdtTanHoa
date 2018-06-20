@@ -19,6 +19,11 @@ namespace GiamNuocWeb
             if (IsPostBack)
                 return;
             LoadBieuDo();
+            for (int i = 0; i < 3; i++)
+            {
+                drNam.Items.Add((DateTime.Now.Year + (-i)).ToString());
+
+            }
             
         }
         void LoadBieuDo()
@@ -49,11 +54,30 @@ namespace GiamNuocWeb
 
 
         }
+        public void LoadThatThoatMangLuoi(int nam)
+        {
+            string sql = " SELECT * FROM g_ThatThoatMangLuoi WHERE NAM="+nam+" ORDER BY KY ASC";
+            DataTable tb = LinQConnection.getDataTable(sql);
+
+            ReportViewer2.ProcessingMode = ProcessingMode.Local;
+            ReportViewer2.LocalReport.ReportPath = Server.MapPath("~/rpThatThoatMangLuoi.rdlc");
+            DataTable dtTable = LinQConnection.getDataTable(sql);
+
+            //  ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h)  ĐỒNG HỒ TỔNG DMA NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy"));
+            //  this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
+            // 
+            ////  dtTable.DefaultView.Sort = "STT ASC";
+
+            ReportDataSource rds = new ReportDataSource("g_ThatThoatMangLuoi", dtTable);
+            ReportViewer2.LocalReport.DataSources.Clear();
+            ReportViewer2.LocalReport.DataSources.Add(rds);
+        }
         protected void radioCheck_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (radioCheck.SelectedValue == "0")
             {
                 pBieuDoThatThoat.Visible = true;
+                pThatThoatMangLuoi.Visible = false;
                 pTiLeThatThoat.Visible = false;
                 LoadBieuDo();
             }
@@ -61,9 +85,33 @@ namespace GiamNuocWeb
             {
                 pBieuDoThatThoat.Visible = false;
                 pTiLeThatThoat.Visible = true;
+                pThatThoatMangLuoi.Visible = false;
                 LoadTiLe();
             }
 
+            if (radioCheck.SelectedValue == "2")
+            {
+                pBieuDoThatThoat.Visible = false;
+                pTiLeThatThoat.Visible = false;
+                pThatThoatMangLuoi.Visible = true;
+                LoadThatThoatMangLuoi(DateTime.Now.Year);
+            }
+
+        }
+
+        protected void drNam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int t = int.Parse(drNam.SelectedItem.ToString());
+                LoadThatThoatMangLuoi(t);
+            }
+            catch (Exception)
+            {
+                
+               
+            }
+           
         }
 
        

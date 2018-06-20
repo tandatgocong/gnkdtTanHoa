@@ -24,8 +24,8 @@
     <br />
          <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-         <rsweb:ReportViewer Width="600px" ID="ReportViewer1" runat="server" 
-        Height="198px">
+         <rsweb:ReportViewer Width="100%" ID="ReportViewer1" runat="server" ZoomMode="PageWidth" 
+        Height="650px">
          </rsweb:ReportViewer>
 
 </asp:Content>

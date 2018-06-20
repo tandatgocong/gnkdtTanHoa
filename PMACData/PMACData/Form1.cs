@@ -645,10 +645,12 @@ namespace PMACData
         {
             DateTime t = DateTime.Now;
 
-            for (int i = 0; i <=5; i++)
+            for (int i = 0; i <=3; i++)
             {
-                UpdateSanLuongNRW(t);
+              
                 UpdateSanLuongDHT(t);
+                UpdateSanLuongNRW(t);
+                UpdateLuuLuongNRW(t);
                  t = t.Date.AddDays(-1);
             }
         }
@@ -704,7 +706,7 @@ namespace PMACData
 
         private void btTachMang_Click(object sender, EventArgs e)
         {
-            int ti = 3;
+            int ti = 15;
             DateTime t = DateTime.Now;
             t = t.Date.AddDays(-ti);
 

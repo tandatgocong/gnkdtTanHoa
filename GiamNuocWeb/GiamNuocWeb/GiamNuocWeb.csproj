@@ -362,6 +362,7 @@
       <DependentUpon>pageThatThoat.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="QuanLyDiemBe.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataBase\DMA.dbml">
@@ -414,12 +415,14 @@
     <EmbeddedResource Include="rpLuLuongByGio.rdlc" />
     <EmbeddedResource Include="rpSanLuong.rdlc" />
     <EmbeddedResource Include="rpSanLuongDHT.rdlc" />
+    <EmbeddedResource Include="rpThatThoatMangLuoi.rdlc" />
     <EmbeddedResource Include="rpThatThoatTiLe.rdlc" />
     <EmbeddedResource Include="rpThatThoatTuan.rdlc" />
     <EmbeddedResource Include="rpTongKeDiemBe.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FileUpload\" />
+    <Folder Include="file\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

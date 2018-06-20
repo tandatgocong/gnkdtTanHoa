@@ -108,8 +108,9 @@
       <asp:RadioButtonList ID="radioCheck" runat="server" 
           RepeatDirection="Horizontal" AutoPostBack="True" 
           onselectedindexchanged="radioCheck_SelectedIndexChanged">
-          <asp:ListItem Value="0" Selected="True">Biểu đồ thất thoát</asp:ListItem>
-          <asp:ListItem Value="1">Tỉ lệ thất thoát tuần</asp:ListItem>
+          <asp:ListItem Value="0" Selected="True">Biểu đồ</asp:ListItem>
+          <asp:ListItem Value="1">Tỉ lệ tuần</asp:ListItem>
+          <asp:ListItem Value="2">Thất thoát mạng lưới</asp:ListItem>
       </asp:RadioButtonList>
   
   </div>
@@ -333,11 +334,22 @@
  
     </asp:Panel>
  
-    <asp:Panel ID="pTiLeThatThoat" runat="server"  Visible="false">
+    <asp:Panel ID="pTiLeThatThoat" runat="server"  Visible="false" >
     <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager> 
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="900px" 
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%"
             Height="700px" ZoomMode="PageWidth">
         </rsweb:ReportViewer>
     </asp:Panel>
+    <asp:Panel ID="pThatThoatMangLuoi" runat="server"  Visible="false" Width="100%" Height="100%"  >
+    <div class="dhnLoi2" >Năm 
+        <asp:DropDownList ID="drNam" runat="server" AutoPostBack="True" 
+            onselectedindexchanged="drNam_SelectedIndexChanged">
+        </asp:DropDownList>
+    </div>
+       <rsweb:ReportViewer ID="ReportViewer2" runat="server" Width="100%"
+            Height="700px" ZoomMode="PageWidth">
+        </rsweb:ReportViewer>
+    </asp:Panel>
+
 </asp:Content>

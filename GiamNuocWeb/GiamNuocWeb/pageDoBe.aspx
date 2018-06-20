@@ -113,7 +113,12 @@
         height: 38px;
     }
     </style>
-
+    <script type="text/javascript">
+    function DownloadDMDB() {
+        window.location = "/QuanLyDiemBe.xlsx";
+    }
+</script>
+    </script>
   <body>
   <div class="dhnLoi">
   
@@ -135,8 +140,11 @@
     <table border="1" style="margin-top:10px;">
             <tr ><td class="style1">Từ Ngày  </td><td><asp:TextBox ID="tTuNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
             <tr><td class="style1">Đến Ngày </td><td><asp:TextBox ID="tDenNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
-            <tr><td class="style2"></td><td class="style2"><asp:Button ID="Button1" CssClass="button" 
-                    runat="server" Text="&nbsp;Xem&nbsp;" onclick="Button1_Click" />
+            <tr><td class="style2" colspan=2> 
+                &nbsp;<asp:Button ID="Button3" runat="server" CssClass="button1" 
+                    onclick="Button3_Click" Text="Danh sách Điểm bể" Width="149px" />
+                <asp:Button ID="Button1" runat="server" CssClass="button" 
+                    onclick="Button1_Click" Text="&nbsp;Xem&nbsp;" />
                 </td></tr>
     </table>
 
@@ -144,7 +152,7 @@
 
                       <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-           <rsweb:ReportViewer Width="1000px" Height="600px" ID="ReportViewer1" runat="server" ZoomMode="PageWidth">
+           <rsweb:ReportViewer Height="600px" Width="100%" ID="ReportViewer1" runat="server" ZoomMode="PageWidth">
          </rsweb:ReportViewer>
    
       </asp:Panel>
