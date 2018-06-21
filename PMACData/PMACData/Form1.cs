@@ -364,6 +364,9 @@ namespace PMACData
                 if (ExecuteCommand(sqlInsert) == 0)
                     ExecuteCommand(sqlUpdate);
                 //listBox1.Items.Add(maDMA + "__" + Math.Round(csCu) + "___" + Math.Round(csMoi));
+
+                string sqlUpdate3 = "UPDATE g_SanLuongDHT SET TANGGIAM=(TIEUTHU-T2.Tt) FROM (SELECT MaDMA, TIEUTHU AS Tt FROM  g_SanLuongDHT where [TimeStamp] ='" + (d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 07:00:00:000") + "' )  as T2   where g_SanLuongDHT.MaDMA=T2.MaDMA AND [TimeStamp] ='" + ngay + "' ";
+                ExecuteCommand_No(sqlUpdate3);
             }
         }
 
@@ -421,7 +424,7 @@ namespace PMACData
 
                 double tieuthu = 0.0;
 
-                string SQL = "SELECT AVG(Value)*24 AS Value FROM " + tbName + " WHERE [TimeStamp] BETWEEN '" + ngay2 + "' AND '" + ngay + "'";
+                string SQL = "SELECT AVG(Value)*4 AS Value FROM " + tbName + " WHERE [TimeStamp] BETWEEN '" + ngay2 + "' AND '" + ngay + "'";
 
                 tieuthu = ExecuteScalarCommand(SQL);
                
@@ -435,6 +438,9 @@ namespace PMACData
                 if (ExecuteCommand(sqlInsert) == 0)
                     ExecuteCommand(sqlUpdate);
                 //listBox1.Items.Add(maDMA + "__" + Math.Round(csCu) + "___" + Math.Round(csMoi));
+
+                string sqlUpdate3 = "UPDATE g_SanLuongNRW SET TANGGIAM=(TIEUTHU-T2.Tt) FROM (SELECT MaDMA, TIEUTHU AS Tt FROM  g_SanLuongNRW where [TimeStamp] ='" + (d.AddDays(-1.0).ToString("yyyy-MM-dd") + " 04:00:00:000") + "' )  as T2   where g_SanLuongNRW.MaDMA=T2.MaDMA AND [TimeStamp] ='" + ngay + "' ";
+                ExecuteCommand_No(sqlUpdate3);
             }
         }
 
@@ -643,15 +649,16 @@ namespace PMACData
 
         private void btSanLuong_Click(object sender, EventArgs e)
         {
+            int ti = 15;
             DateTime t = DateTime.Now;
+            t = t.Date.AddDays(-ti);
 
-            for (int i = 0; i <=3; i++)
+            for (int i = 0; i <= ti; i++)
             {
-              
-                UpdateSanLuongDHT(t);
+               // UpdateSanLuongDHT(t);
                 UpdateSanLuongNRW(t);
-                UpdateLuuLuongNRW(t);
-                 t = t.Date.AddDays(-1);
+              //  UpdateLuuLuongNRW(t);
+                t = t.Date.AddDays(1);
             }
         }
 

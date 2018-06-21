@@ -32,6 +32,10 @@
           <DataField>TIEUTHU</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
+        <Field Name="TANGGIAM">
+          <DataField>TANGGIAM</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>dsDma</DataSourceName>
@@ -165,6 +169,82 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>TIEUTHU1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>#9eb6e4</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#7292cc</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TANGGIAM">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!TANGGIAM.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>#,0.00</Format>
+                                <Color>#4d4d4d</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TANGGIAM</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>#e5e5e5</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=IIf( Fields!TANGGIAM.Value &lt; 0,"PaleTurquoise",IIf(Fields!TANGGIAM.Value =0,"Transparent","NavajoWhite"))</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <rd:Selected>true</rd:Selected>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#9eb6e4</Color>
@@ -414,6 +494,7 @@
               </TablixHeader>
               <TablixMembers>
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixMember>
             <TablixMember>
@@ -463,7 +544,7 @@
         <DataSetName>dsDma</DataSetName>
         <Top>0.39931in</Top>
         <Left>0.10083in</Left>
-        <Height>0.75in</Height>
+        <Height>1in</Height>
         <Width>2.69792in</Width>
         <Style>
           <Border>
@@ -525,7 +606,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.19792in</Height>
+    <Height>1.46181in</Height>
     <Style />
   </Body>
   <ReportParameters>

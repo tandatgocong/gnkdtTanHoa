@@ -19,7 +19,7 @@ namespace GiamNuocWeb.Class
             dsDma dsemp = new dsDma();
             try
             {
-                string query = " select convert(date,[TimeStamp],103) as  [TimeStamp], MaDMA, CSCU, CSMOI, TIEUTHU from g_SanLuongDHT  ";
+                string query = " select convert(date,[TimeStamp],103) as  [TimeStamp], MaDMA, CSCU, CSMOI, TIEUTHU,TANGGIAM from g_SanLuongDHT  ";
                 query += " where  MaDMA IN (" + madma + ") AND convert(date,[TimeStamp],101) BETWEEN CONVERT(datetime,'" + tNgay + "',101) AND CONVERT(datetime,'" + dNgay + "',101)  ";
                 query += " order by [TimeStamp] asc, MaDMA asc ";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
@@ -38,7 +38,7 @@ namespace GiamNuocWeb.Class
             dsDma dsemp = new dsDma();
             try
             {
-                string query = " select convert(date,[TimeStamp],103) as  [TimeStamp], MaDMA, CSCU, CSMOI, TIEUTHU from g_SanLuongNRW  ";
+                string query = " select convert(date,[TimeStamp],103) as  [TimeStamp], MaDMA, CSCU, CSMOI, TIEUTHU,TANGGIAM from g_SanLuongNRW  ";
                 query += " where  MaDMA IN (" + madma + ") AND convert(date,[TimeStamp],101) BETWEEN CONVERT(datetime,'" + tNgay + "',101) AND CONVERT(datetime,'" + dNgay + "',101)  ";
                 query += " order by [TimeStamp] asc, MaDMA asc ";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, db.Connection.ConnectionString);
