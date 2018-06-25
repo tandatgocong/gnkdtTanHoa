@@ -25,6 +25,7 @@ namespace GiamNuocWeb
             getLoadDMA();
             //LoadApLuc("");
             LoadLuuLuong("989");
+            getAlert();
         }
         public void LoadApLuc(string maDMA)
         {
@@ -62,6 +63,18 @@ namespace GiamNuocWeb
             listDMA.DataTextField = "MaDMA";
             listDMA.DataBind();
 
+        }
+        public void getAlert()
+        {
+            
+            string luuluong="  SELECT  * FROM  g_ThongTinDHT WHERE  StatusDHT='True' AND CAST(vLuuLuong as float) <= (SELECT GiaTri FROM dbo.g_Alert WHERE ThongTin='luuluong') ";
+            DataTable tb1 = LinQConnection.getDataTable(luuluong);
+            GridView1.DataSource = tb1;
+            GridView1.DataBind();
+            string apluc = "  SELECT  * FROM  g_ThongTinDHT WHERE StatusCMP='True' AND CAST(vCMP as float) <=   (SELECT GiaTri FROM dbo.g_Alert WHERE ThongTin='apluc')  ";
+            DataTable tb2 = LinQConnection.getDataTable(apluc);
+            GridView2.DataSource=tb2;
+            GridView2.DataBind();
         }
         protected void listDMA_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -102,9 +102,12 @@ namespace PMACData
             if (tNow.Hour % 2 == 0 && tNow.Minute == 30 && tNow.Second == 0)
             {
                 UpdateValue();
+                
+            }
+            if (tNow.Hour % 2 == 0 && tNow.Minute == 30 && tNow.Second == 0)
+            {
                 getTimeDatabase();
             }
-
             //if (tNow.Minute % 10==0 && tNow.Second == 0 && lbStatus.Text.Equals("Stop"))
             //{
             //    start.PerformClick();
@@ -580,7 +583,7 @@ namespace PMACData
 
 
 
-                if (maDMA.Equals("pt2027") ||maDMA.Equals("pt2032") ||maDMA.Equals("th2001") ||maDMA.Equals("th2003") )
+                if (maDMA.Equals("th1032") || maDMA.Equals("pt2027") || maDMA.Equals("pt2032") || maDMA.Equals("th2001") || maDMA.Equals("th2003"))
                 {
                     tieuthu = tieuthu * (-1);
                 }
@@ -649,7 +652,7 @@ namespace PMACData
 
         private void btSanLuong_Click(object sender, EventArgs e)
         {
-            int ti = 15;
+            int ti = 5;
             DateTime t = DateTime.Now;
             t = t.Date.AddDays(-ti);
 
@@ -713,7 +716,7 @@ namespace PMACData
 
         private void btTachMang_Click(object sender, EventArgs e)
         {
-            int ti = 15;
+            int ti = 5;
             DateTime t = DateTime.Now;
             t = t.Date.AddDays(-ti);
 
@@ -846,7 +849,7 @@ namespace PMACData
 
         private void btLuuLuong_Click(object sender, EventArgs e)
         {
-            int ti = 30;
+            int ti = 5;
             DateTime t = DateTime.Now;
       //      t = t.Date.AddDays(-ti);
 

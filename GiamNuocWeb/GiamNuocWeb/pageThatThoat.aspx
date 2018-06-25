@@ -98,10 +98,10 @@
      .box {
             position:absolute;
             left:20px;
-            top:90px;
+            top:100px;
             z-index:999;
    
-        }
+     }
     </style>
  <div class="dhnLoi">
   

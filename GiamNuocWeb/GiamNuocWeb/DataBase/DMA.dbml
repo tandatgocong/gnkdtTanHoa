@@ -24,47 +24,6 @@
       <Column Name="LoginTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.g_ThongTinDHT" Member="g_ThongTinDHTs">
-    <Type Name="g_ThongTinDHT">
-      <Column Name="STT" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MaDMA" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ViTri" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Phuong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Quan" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="PRV" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="CoDHN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Hieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="PinNguon" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="ThietBi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="HamDHT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="TuCelloMK4" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="StatusDHT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="TinhTrangDH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="TinhTrangBlogger" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="TinhTrangPRV" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="SoSIM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SoSeri" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SoGon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ChannelId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ChannelIn" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ChannelOut" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ChannelCMP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="StatusCMP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DHTLat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DHTLng" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ModifyBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CMPLat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CMPLng" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ViTriCMP" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="vLuuLuong" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="vApIn" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="vApOut" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="vCMP" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.w_SanLuongTM" Member="w_SanLuongTMs">
     <Type Name="w_SanLuongTM">
       <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
@@ -94,6 +53,48 @@
       <Column Name="ChannelFlow2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="TrungBinh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="avg" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.g_ThongTinDHT" Member="g_ThongTinDHTs">
+    <Type Name="g_ThongTinDHT">
+      <Column Name="STT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaDMA" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ViTri" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Phuong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Quan" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PRV" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CoDHN" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Hieu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PinNguon" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ThietBi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HamDHT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TuCelloMK4" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="StatusDHT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TinhTrangDH" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TinhTrangBlogger" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TinhTrangPRV" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoSIM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoSeri" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoGon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChannelId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ChannelIn" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ChannelOut" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ChannelCMP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StatusCMP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DHTLat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DHTLng" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CMPLat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CMPLng" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ViTriCMP" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="vLuuLuong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="vApIn" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="vApOut" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="vCMP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TieuThuLoi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

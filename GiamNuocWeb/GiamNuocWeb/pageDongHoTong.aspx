@@ -414,10 +414,16 @@
                         CellPadding="4" ForeColor="Black" GridLines="Vertical" Width="391px">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
-                            <asp:BoundField DataField="CREATEDATE" HeaderText="Ngày Kiểm Tra">
-                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Height="20px" 
-                                Width="100px" />
-                            </asp:BoundField>
+                            <asp:TemplateField HeaderText="Ngày Kiểm Tra">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("CREATEDATE") %>'></asp:TextBox>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("CREATEDATE") %>'></asp:Label>
+                                </ItemTemplate>
+                                <ItemStyle Height="20px" HorizontalAlign="Center" VerticalAlign="Middle" 
+                                    Width="100px" />
+                            </asp:TemplateField>
                             <asp:BoundField DataField="NOIDUNG" HeaderText="Nội Dung">
                             <ItemStyle Width="500px" Height="30px" />
                             </asp:BoundField>

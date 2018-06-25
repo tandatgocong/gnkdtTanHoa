@@ -122,7 +122,7 @@ namespace GiamNuocWeb
         public void loadGhiChu()
         {
             string madma = listDMA.SelectedValue.ToString();
-            DataTable tb = Class.LinQConnection.getDataTable("SELECT  CONVERT(varchar(25),CREATEDATE,103) AS CREATEDATE,NOIDUNG FROM  g_GhiChu WHERE MaDMA='" + madma + "'");
+            DataTable tb = Class.LinQConnection.getDataTable("SELECT  CONVERT(varchar(50),CREATEDATE,103) as 'CREATEDATE' ,NOIDUNG FROM  g_GhiChu WHERE MaDMA='" + madma + "' ORDER BY CREATEDATE DESC ");
             GridView1.DataSource = tb;
             GridView1.DataBind();
         }

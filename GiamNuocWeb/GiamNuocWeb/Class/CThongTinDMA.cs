@@ -59,7 +59,7 @@ namespace GiamNuocWeb.Class
 
         public static List<g_ThongTinDHT> getCMPHoatDong()
         {
-            var q = from p in db.g_ThongTinDHTs where p.StatusCMP =="1" orderby p.STT ascending select p;
+            var q = from p in db.g_ThongTinDHTs where p.StatusCMP == true orderby p.STT ascending select p;
             return q.ToList();
         }
 
@@ -100,6 +100,7 @@ namespace GiamNuocWeb.Class
         {
             try
             {
+                DMADataContext db = new DMADataContext();
                 db.g_GhiChus.InsertOnSubmit(g);
                 db.SubmitChanges();
                 return true;
@@ -107,6 +108,7 @@ namespace GiamNuocWeb.Class
             catch (Exception ex)
             {
                 loggger = ex.Message;
+                log.Error(ex.Message);
                 
             }
             return false;
