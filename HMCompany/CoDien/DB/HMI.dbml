@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HMI" Class="HMIDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=HMI;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="HMIConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DMCongty" Member="DMCongties">
+    <Type Name="DMCongty">
+      <Column Name="DMCTID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenCty" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="NganhNghe" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NguoiDD" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="TenCtyEn" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="DMCongty_DTQTLV" Member="DTQTLVs" ThisKey="DMCTID" OtherKey="DMCTID" Type="DTQTLV" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhomDanhMuc" Member="NhomDanhMucs">
+    <Type Name="NhomDanhMuc">
+      <Column Name="MaNhom" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenNhom" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Association Name="NhomDanhMuc_DMDanhMuc" Member="DMDanhMucs" ThisKey="MaNhom" OtherKey="NhomDM" Type="DMDanhMuc" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DMDanhMuc" Member="DMDanhMucs">
+    <Type Name="DMDanhMuc">
+      <Column Name="MaDM" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDM" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="NhomDM" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="IDParent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DienGiai" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DienGiaiEn" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="DMDanhMuc_DTChungChi" Member="DTChungChis" ThisKey="MaDM" OtherKey="BangCap" Type="DTChungChi" />
+      <Association Name="DMDanhMuc_DTChungChi1" Member="DTChungChis1" ThisKey="MaDM" OtherKey="ChuyenNganh" Type="DTChungChi" />
+      <Association Name="DMDanhMuc_DTGiaDinh" Member="DTGiaDinhs" ThisKey="MaDM" OtherKey="QHe" Type="DTGiaDinh" />
+      <Association Name="DMDanhMuc_DTHocVan" Member="DTHocVans" ThisKey="MaDM" OtherKey="TruongHoc" Type="DTHocVan" />
+      <Association Name="DMDanhMuc_DTHocVan1" Member="DTHocVans1" ThisKey="MaDM" OtherKey="KhoaID" Type="DTHocVan" />
+      <Association Name="DMDanhMuc_DTKNLV" Member="DTKNLVs" ThisKey="MaDM" OtherKey="PhongBan" Type="DTKNLV" />
+      <Association Name="DMDanhMuc_DTKNLV1" Member="DTKNLVs1" ThisKey="MaDM" OtherKey="ViTri" Type="DTKNLV" />
+      <Association Name="DMDanhMuc_DTPhieuDNPC" Member="DTPhieuDNPCs" ThisKey="MaDM" OtherKey="NNgheID" Type="DTPhieuDNPC" />
+      <Association Name="DMDanhMuc_DTPhieuDNPC1" Member="DTPhieuDNPCs1" ThisKey="MaDM" OtherKey="CtyTiepNhan" Type="DTPhieuDNPC" />
+      <Association Name="DMDanhMuc_DTPhongVan" Member="DTPhongVans" ThisKey="MaDM" OtherKey="KetQua" Type="DTPhongVan" />
+      <Association Name="DMDanhMuc_DTQTLV" Member="DTQTLVs" ThisKey="MaDM" OtherKey="NganhNghe" Type="DTQTLV" />
+      <Association Name="DMDanhMuc_MTCongTyPhaiCu" Member="MTCongTyPhaiCus" ThisKey="MaDM" OtherKey="ChucVu" Type="MTCongTyPhaiCu" />
+      <Association Name="DMDanhMuc_MTPhieuDNPC" Member="MTPhieuDNPCs" ThisKey="MaDM" OtherKey="NNgheID" Type="MTPhieuDNPC" />
+      <Association Name="DMDanhMuc_MTPhongVan" Member="MTPhongVans" ThisKey="MaDM" OtherKey="NganhNghe" Type="MTPhongVan" />
+      <Association Name="DMDanhMuc_MTToKhaiCN" Member="MTToKhaiCNs" ThisKey="MaDM" OtherKey="HCNoiCap" Type="MTToKhaiCN" />
+      <Association Name="DMDanhMuc_MTToKhaiCN1" Member="MTToKhaiCNs1" ThisKey="MaDM" OtherKey="NguyenQuan" Type="MTToKhaiCN" />
+      <Association Name="DMDanhMuc_MTToKhaiCN2" Member="MTToKhaiCNs2" ThisKey="MaDM" OtherKey="DCHT" Type="MTToKhaiCN" />
+      <Association Name="DMDanhMuc_MTToKhaiCN3" Member="MTToKhaiCNs3" ThisKey="MaDM" OtherKey="TTHN" Type="MTToKhaiCN" />
+      <Association Name="DMDanhMuc_MTToKhaiCN4" Member="MTToKhaiCNs4" ThisKey="MaDM" OtherKey="GioiTinh" Type="MTToKhaiCN" />
+      <Association Name="DMDanhMuc_MTToKhaiCN5" Member="MTToKhaiCNs5" ThisKey="MaDM" OtherKey="NoiSinh" Type="MTToKhaiCN" />
+      <Association Name="DMDanhMuc_MTToKhaiCN6" Member="MTToKhaiCNs6" ThisKey="MaDM" OtherKey="NoiCap" Type="MTToKhaiCN" />
+      <Association Name="DMDanhMuc_MTUngVien" Member="MTUngViens" ThisKey="MaDM" OtherKey="NguyenQuan" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTUngVien1" Member="MTUngViens1" ThisKey="MaDM" OtherKey="HCNoiCap" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTUngVien2" Member="MTUngViens2" ThisKey="MaDM" OtherKey="TTHN" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTUngVien3" Member="MTUngViens3" ThisKey="MaDM" OtherKey="TayThuan" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTUngVien4" Member="MTUngViens4" ThisKey="MaDM" OtherKey="HeDTao" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTUngVien5" Member="MTUngViens5" ThisKey="MaDM" OtherKey="TayNghe" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTUngVien6" Member="MTUngViens6" ThisKey="MaDM" OtherKey="GioiTinh" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTUngVien7" Member="MTUngViens7" ThisKey="MaDM" OtherKey="JPTruong" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTUngVien8" Member="MTUngViens8" ThisKey="MaDM" OtherKey="NoiSinh" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTUngVien9" Member="MTUngViens9" ThisKey="MaDM" OtherKey="DCHT" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTUngVien10" Member="MTUngViens10" ThisKey="MaDM" OtherKey="XQCty" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTUngVien11" Member="MTUngViens11" ThisKey="MaDM" OtherKey="XQNNghe" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTUngVien12" Member="MTUngViens12" ThisKey="MaDM" OtherKey="NoiCap" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTUngVienJP" Member="MTUngVienJPs" ThisKey="MaDM" OtherKey="NoiCap" Type="MTUngVienJP" />
+      <Association Name="DMDanhMuc_MTUngVienJP1" Member="MTUngVienJPs1" ThisKey="MaDM" OtherKey="NguyenQuan" Type="MTUngVienJP" />
+      <Association Name="DMDanhMuc_MTUngVienJP2" Member="MTUngVienJPs2" ThisKey="MaDM" OtherKey="HCNoiCap" Type="MTUngVienJP" />
+      <Association Name="DMDanhMuc_MTUngVienJP3" Member="MTUngVienJPs3" ThisKey="MaDM" OtherKey="TayThuan" Type="MTUngVienJP" />
+      <Association Name="DMDanhMuc_MTUngVienJP4" Member="MTUngVienJPs4" ThisKey="MaDM" OtherKey="TTHN" Type="MTUngVienJP" />
+      <Association Name="DMDanhMuc_MTUngVienJP5" Member="MTUngVienJPs5" ThisKey="MaDM" OtherKey="HeDTao" Type="MTUngVienJP" />
+      <Association Name="DMDanhMuc_MTUngVienJP6" Member="MTUngVienJPs6" ThisKey="MaDM" OtherKey="TayNghe" Type="MTUngVienJP" />
+      <Association Name="DMDanhMuc_MTUngVienJP7" Member="MTUngVienJPs7" ThisKey="MaDM" OtherKey="JPTruong" Type="MTUngVienJP" />
+      <Association Name="DMDanhMuc_MTUngVienJP8" Member="MTUngVienJPs8" ThisKey="MaDM" OtherKey="NoiSinh" Type="MTUngVienJP" />
+      <Association Name="DMDanhMuc_MTUngVienJP9" Member="MTUngVienJPs9" ThisKey="MaDM" OtherKey="GioiTinh" Type="MTUngVienJP" />
+      <Association Name="DMDanhMuc_MTUngVienJP10" Member="MTUngVienJPs10" ThisKey="MaDM" OtherKey="DCHT" Type="MTUngVienJP" />
+      <Association Name="NhomDanhMuc_DMDanhMuc" Member="NhomDanhMuc" ThisKey="NhomDM" OtherKey="MaNhom" Type="NhomDanhMuc" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DMKhachHang" Member="DMKhachHangs">
+    <Type Name="DMKhachHang">
+      <Column Name="MaKH" Type="System.String" DbType="VarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenKH" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MST" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TKNH" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="NganHang" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="DMKhachHang_MTPhongVan" Member="MTPhongVans" ThisKey="MaKH" OtherKey="MaKH" Type="MTPhongVan" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DMNghiepDoan" Member="DMNghiepDoans">
+    <Type Name="DMNghiepDoan">
+      <Column Name="MaND" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenDN" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ViTri" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="DMNghiepDoan_MTPhieuDNPC" Member="MTPhieuDNPCs" ThisKey="MaND" OtherKey="NDID" Type="MTPhieuDNPC" />
+      <Association Name="DMNghiepDoan_MTUngVien" Member="MTUngViens" ThisKey="MaND" OtherKey="XQNDID" Type="MTUngVien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DMTrinhDo" Member="DMTrinhDos">
+    <Type Name="DMTrinhDo">
+      <Column Name="TDID" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DienGiai" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="JPTrinhDo" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="DMTrinhDo_MTUngVien" Member="MTUngViens" ThisKey="TDID" OtherKey="TrinhDo" Type="MTUngVien" />
+      <Association Name="DMTrinhDo_MTUngVienJP" Member="MTUngVienJPs" ThisKey="TDID" OtherKey="TrinhDo" Type="MTUngVienJP" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DTChungChi" Member="DTChungChis">
+    <Type Name="DTChungChi">
+      <Column Name="DTCCID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MTUVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ThangNam" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BangCap" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChuyenNganh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DMDanhMuc_DTChungChi" Member="DMDanhMuc" ThisKey="BangCap" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_DTChungChi1" Member="DMDanhMuc1" ThisKey="ChuyenNganh" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="MTUngVien_DTChungChi" Member="MTUngVien" ThisKey="MTUVID" OtherKey="MTUVID" Type="MTUngVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DTGiaDinh" Member="DTGiaDinhs">
+    <Type Name="DTGiaDinh">
+      <Column Name="DTGDID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MTUVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="QHe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="NamSinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CVHienTai" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="DMDanhMuc_DTGiaDinh" Member="DMDanhMuc" ThisKey="QHe" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="MTUngVien_DTGiaDinh" Member="MTUngVien" ThisKey="MTUVID" OtherKey="MTUVID" Type="MTUngVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DTHocVan" Member="DTHocVans">
+    <Type Name="DTHocVan">
+      <Column Name="DTHVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MTUVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TuThang" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DenThang" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TruongHoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsTN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="KhoaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ghichu" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="DMDanhMuc_DTHocVan" Member="DMDanhMuc" ThisKey="TruongHoc" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_DTHocVan1" Member="DMDanhMuc1" ThisKey="KhoaID" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="MTUngVien_DTHocVan" Member="MTUngVien" ThisKey="MTUVID" OtherKey="MTUVID" Type="MTUngVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DTKNLV" Member="DTKNLVs">
+    <Type Name="DTKNLV">
+      <Column Name="DTKNLVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MTUVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TuNgay" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DenNgay" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PhongBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ViTri" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SanPham" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CongCu" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Congty" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="MoTaJP" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CongtyJP" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="DMDanhMuc_DTKNLV" Member="DMDanhMuc" ThisKey="PhongBan" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_DTKNLV1" Member="DMDanhMuc1" ThisKey="ViTri" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="MTUngVien_DTKNLV" Member="MTUngVien" ThisKey="MTUVID" OtherKey="MTUVID" Type="MTUngVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DTPhieuDNPC" Member="DTPhieuDNPCs">
+    <Type Name="DTPhieuDNPC">
+      <Column Name="DTID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MTPCID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="MTUVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NNgheID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayXC" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CtyTiepNhan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DMDanhMuc_DTPhieuDNPC" Member="DMDanhMuc" ThisKey="NNgheID" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_DTPhieuDNPC1" Member="DMDanhMuc1" ThisKey="CtyTiepNhan" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="MTPhieuDNPC_DTPhieuDNPC" Member="MTPhieuDNPC" ThisKey="MTPCID" OtherKey="MTPCID" Type="MTPhieuDNPC" IsForeignKey="true" />
+      <Association Name="MTUngVien_DTPhieuDNPC" Member="MTUngVien" ThisKey="MTUVID" OtherKey="MTUVID" Type="MTUngVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DTPhongVan" Member="DTPhongVans">
+    <Type Name="DTPhongVan">
+      <Column Name="MTPVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DTID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MTUVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="KetQua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DMDanhMuc_DTPhongVan" Member="DMDanhMuc" ThisKey="KetQua" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="MTPhongVan_DTPhongVan" Member="MTPhongVan" ThisKey="MTPVID" OtherKey="MTPVID" Type="MTPhongVan" IsForeignKey="true" />
+      <Association Name="MTUngVienJP_DTPhongVan" Member="MTUngVienJP" ThisKey="MTUVID" OtherKey="MTUVID" Type="MTUngVienJP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DTQTLV" Member="DTQTLVs">
+    <Type Name="DTQTLV">
+      <Column Name="DTQTLVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MTUVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TuThang" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DenThang" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DMCTID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SanPham" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="NoiDungCV" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NoiDungCVEn" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="NganhNghe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DMCongty_DTQTLV" Member="DMCongty" ThisKey="DMCTID" OtherKey="DMCTID" Type="DMCongty" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_DTQTLV" Member="DMDanhMuc" ThisKey="NganhNghe" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="MTToKhaiCN_DTQTLV" Member="MTToKhaiCN" ThisKey="MTUVID" OtherKey="MTUVID" Type="MTToKhaiCN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MTCongTyPhaiCu" Member="MTCongTyPhaiCus">
+    <Type Name="MTCongTyPhaiCu">
+      <Column Name="MTCTPCID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenCTy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="NguoiDD" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="ChucVu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="NgayTL" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TVon" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="DoanhThu" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="SLNV" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySuaTT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="JPCapital" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="JPNetSales" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="SPChinh" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Association Name="MTCongTyPhaiCu_MTPhieuDNPC" Member="MTPhieuDNPCs" ThisKey="MTCTPCID" OtherKey="CtyPC" Type="MTPhieuDNPC" />
+      <Association Name="MTCongTyPhaiCu_MTUngVien" Member="MTUngViens" ThisKey="MTCTPCID" OtherKey="XQPhaiCu" Type="MTUngVien" />
+      <Association Name="DMDanhMuc_MTCongTyPhaiCu" Member="DMDanhMuc" ThisKey="ChucVu" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MTPhieuDNPC" Member="MTPhieuDNPCs">
+    <Type Name="MTPhieuDNPC">
+      <Column Name="MTPCID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NDID" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="NNgheID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TGTT" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NoiDungTD" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CtyPC" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiDN" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="NgayCB" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="MTPhieuDNPC_DTPhieuDNPC" Member="DTPhieuDNPCs" ThisKey="MTPCID" OtherKey="MTPCID" Type="DTPhieuDNPC" />
+      <Association Name="DMDanhMuc_MTPhieuDNPC" Member="DMDanhMuc" ThisKey="NNgheID" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMNghiepDoan_MTPhieuDNPC" Member="DMNghiepDoan" ThisKey="NDID" OtherKey="MaND" Type="DMNghiepDoan" IsForeignKey="true" />
+      <Association Name="MTCongTyPhaiCu_MTPhieuDNPC" Member="MTCongTyPhaiCu" ThisKey="CtyPC" OtherKey="MTCTPCID" Type="MTCongTyPhaiCu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MTPhongVan" Member="MTPhongVans">
+    <Type Name="MTPhongVan">
+      <Column Name="MTPVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MaKH" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="NganhNghe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MoTa" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NgayNH" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="MTPhongVan_DTPhongVan" Member="DTPhongVans" ThisKey="MTPVID" OtherKey="MTPVID" Type="DTPhongVan" />
+      <Association Name="DMDanhMuc_MTPhongVan" Member="DMDanhMuc" ThisKey="NganhNghe" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMKhachHang_MTPhongVan" Member="DMKhachHang" ThisKey="MaKH" OtherKey="MaKH" Type="DMKhachHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MTToKhaiCN" Member="MTToKhaiCNs">
+    <Type Name="MTToKhaiCN">
+      <Column Name="GioiTinh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NoiSinh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoCMND" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayCap" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NoiCap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HoChieu" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="HCNgay" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="HCNoiCap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NguyenQuan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="HKTT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DTDD" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DCHT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="MucDich" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="MTUVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTenID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TTHN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiaChiEn" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsPreJP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PreFrom" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PreTo" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PrepareDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="MTToKhaiCN_DTQTLV" Member="DTQTLVs" ThisKey="MTUVID" OtherKey="MTUVID" Type="DTQTLV" />
+      <Association Name="DMDanhMuc_MTToKhaiCN" Member="DMDanhMuc" ThisKey="HCNoiCap" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTToKhaiCN1" Member="DMDanhMuc1" ThisKey="NguyenQuan" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTToKhaiCN2" Member="DMDanhMuc2" ThisKey="DCHT" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTToKhaiCN3" Member="DMDanhMuc3" ThisKey="TTHN" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTToKhaiCN4" Member="DMDanhMuc4" ThisKey="GioiTinh" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTToKhaiCN5" Member="DMDanhMuc5" ThisKey="NoiSinh" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTToKhaiCN6" Member="DMDanhMuc6" ThisKey="NoiCap" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="MTUngVien_MTToKhaiCN" Member="MTUngVien" ThisKey="HoTenID" OtherKey="MTUVID" Type="MTUngVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MTUngVien" Member="MTUngViens">
+    <Type Name="MTUngVien">
+      <Column Name="MTUVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="GioiTinh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NoiSinh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoCMND" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayCap" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NoiCap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HoChieu" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="HCNgay" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="HCNoiCap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NguyenQuan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="HKTT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DTDD" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="SDTNT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TTSK" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="SoThich" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="KyNang" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TayThuan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TTHN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDiNN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MucDich" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CoQuan" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsNhapCanh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MucDich1" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CoQuan1" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="JPNguoiThan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsTNS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CoQuan2" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LyDoKTG" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="HeDTao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsLamThem" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CVLamThem" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TayNghe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgoaiNgu" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="JPTuNgay" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="JPDenNgay" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="JPTruong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JPLyDo" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="UuDiem" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="NhuocDiem" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="JPTaiSao" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DuDinh" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="ChieuCao" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="CanNang" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="Blood" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TLMT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TLMP" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="MuMau" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TC1" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TC2" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TC3" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TC4" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TU1" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TU2" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TU3" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="HV1" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="HV2" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="HV3" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="LD1" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="LD2" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="M1" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="M2" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="M3" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="M4" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="M5" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="IQ" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="VNTest" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="Hinh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TrinhDo" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="TSBenh" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DCHT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TinhTrang" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="NganhNghe" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="XQNDID" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="XQCty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="XQNNghe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="XQFrom" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="XQTo" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="XQPhaiCu" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="XQLamViec" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="MTUngVien_DTChungChi" Member="DTChungChis" ThisKey="MTUVID" OtherKey="MTUVID" Type="DTChungChi" />
+      <Association Name="MTUngVien_DTGiaDinh" Member="DTGiaDinhs" ThisKey="MTUVID" OtherKey="MTUVID" Type="DTGiaDinh" />
+      <Association Name="MTUngVien_DTHocVan" Member="DTHocVans" ThisKey="MTUVID" OtherKey="MTUVID" Type="DTHocVan" />
+      <Association Name="MTUngVien_DTKNLV" Member="DTKNLVs" ThisKey="MTUVID" OtherKey="MTUVID" Type="DTKNLV" />
+      <Association Name="MTUngVien_DTPhieuDNPC" Member="DTPhieuDNPCs" ThisKey="MTUVID" OtherKey="MTUVID" Type="DTPhieuDNPC" />
+      <Association Name="MTUngVien_MTToKhaiCN" Member="MTToKhaiCNs" ThisKey="MTUVID" OtherKey="HoTenID" Type="MTToKhaiCN" />
+      <Association Name="MTUngVien_MTUngVienJP" Member="MTUngVienJPs" ThisKey="MTUVID" OtherKey="UVID" Type="MTUngVienJP" />
+      <Association Name="DMDanhMuc_MTUngVien" Member="DMDanhMuc" ThisKey="NguyenQuan" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVien1" Member="DMDanhMuc1" ThisKey="HCNoiCap" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVien2" Member="DMDanhMuc2" ThisKey="TTHN" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVien3" Member="DMDanhMuc3" ThisKey="TayThuan" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVien4" Member="DMDanhMuc4" ThisKey="HeDTao" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVien5" Member="DMDanhMuc5" ThisKey="TayNghe" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVien6" Member="DMDanhMuc6" ThisKey="GioiTinh" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVien7" Member="DMDanhMuc7" ThisKey="JPTruong" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVien8" Member="DMDanhMuc8" ThisKey="NoiSinh" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVien9" Member="DMDanhMuc9" ThisKey="DCHT" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVien10" Member="DMDanhMuc10" ThisKey="XQCty" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVien11" Member="DMDanhMuc11" ThisKey="XQNNghe" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVien12" Member="DMDanhMuc12" ThisKey="NoiCap" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMNghiepDoan_MTUngVien" Member="DMNghiepDoan" ThisKey="XQNDID" OtherKey="MaND" Type="DMNghiepDoan" IsForeignKey="true" />
+      <Association Name="DMTrinhDo_MTUngVien" Member="DMTrinhDo" ThisKey="TrinhDo" OtherKey="TDID" Type="DMTrinhDo" IsForeignKey="true" />
+      <Association Name="MTCongTyPhaiCu_MTUngVien" Member="MTCongTyPhaiCu" ThisKey="XQPhaiCu" OtherKey="MTCTPCID" Type="MTCongTyPhaiCu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MTUngVienJP" Member="MTUngVienJPs">
+    <Type Name="MTUngVienJP">
+      <Column Name="MTUVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Hinh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="GioiTinh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NoiSinh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoCMND" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayCap" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NoiCap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HoChieu" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="HCNgay" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="HCNoiCap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NguyenQuan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="HKTT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DTDD" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="SDTNT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TTSK" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="ChieuCao" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="CanNang" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="Blood" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TLMT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TLMP" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="MuMau" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TayThuan" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoThich" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="KyNang" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TTHN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDiNN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MucDich" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CoQuan" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsNhapCanh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MucDich1" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CoQuan1" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="JPNguoiThan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsTNS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CoQuan2" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LyDoKTG" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="HeDTao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsLamThem" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CVLamThem" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TayNghe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgoaiNgu" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TrinhDo" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="JPTuNgay" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="JPDenNgay" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="JPTruong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JPLyDo" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="UuDiem" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="NhuocDiem" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="JPTaiSao" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DuDinh" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TC1" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TC2" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TC3" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TC4" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TU1" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TU2" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TU3" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="HV1" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="HV2" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="HV3" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="LD1" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="M1" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="M2" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="M3" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="M4" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="M5" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="IQ" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="VNTest" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="JPHoTen" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="UVID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LD2" Type="System.Decimal" DbType="Decimal(20,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TSBenh" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DCHT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MTUngVienJP_DTPhongVan" Member="DTPhongVans" ThisKey="MTUVID" OtherKey="MTUVID" Type="DTPhongVan" />
+      <Association Name="DMDanhMuc_MTUngVienJP" Member="DMDanhMuc" ThisKey="NoiCap" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVienJP1" Member="DMDanhMuc1" ThisKey="NguyenQuan" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVienJP2" Member="DMDanhMuc2" ThisKey="HCNoiCap" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVienJP3" Member="DMDanhMuc3" ThisKey="TayThuan" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVienJP4" Member="DMDanhMuc4" ThisKey="TTHN" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVienJP5" Member="DMDanhMuc5" ThisKey="HeDTao" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVienJP6" Member="DMDanhMuc6" ThisKey="TayNghe" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVienJP7" Member="DMDanhMuc7" ThisKey="JPTruong" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVienJP8" Member="DMDanhMuc8" ThisKey="NoiSinh" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVienJP9" Member="DMDanhMuc9" ThisKey="GioiTinh" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMDanhMuc_MTUngVienJP10" Member="DMDanhMuc10" ThisKey="DCHT" OtherKey="MaDM" Type="DMDanhMuc" IsForeignKey="true" />
+      <Association Name="DMTrinhDo_MTUngVienJP" Member="DMTrinhDo" ThisKey="TrinhDo" OtherKey="TDID" Type="DMTrinhDo" IsForeignKey="true" />
+      <Association Name="MTUngVien_MTUngVienJP" Member="MTUngVien" ThisKey="UVID" OtherKey="MTUVID" Type="MTUngVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

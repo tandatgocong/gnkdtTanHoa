@@ -361,7 +361,7 @@ namespace PMACData
                 if (tinhtrang.Equals("0") || tinhtrang.Equals("") || tinhtrang.Equals("False"))
                     tieuthu = double.Parse(cs);
 
-                string sqlInsert = "INSERT INTO g_SanLuongDHT VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + tieuthu + ")";
+                string sqlInsert = "INSERT INTO g_SanLuongDHT VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + tieuthu + ",NULL)";
                 string sqlUpdate = "UPDATE  g_SanLuongDHT SET [CSCU] = " + Math.Round(csCu) + " ,[CSMOI] = " + Math.Round(csMoi) + ",[TIEUTHU] = " + tieuthu + " WHERE [TimeStamp]='" + ngay + "' AND [MaDMA]='" + maDMA + "'";
 
                 if (ExecuteCommand(sqlInsert) == 0)
@@ -435,7 +435,7 @@ namespace PMACData
                     tieuthu = double.Parse(cs);
 
 
-                string sqlInsert = "INSERT INTO g_SanLuongNRW VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + tieuthu + ")";
+                string sqlInsert = "INSERT INTO g_SanLuongNRW VALUES('" + ngay + "','" + maDMA + "'," + Math.Round(csCu) + "," + Math.Round(csMoi) + "," + tieuthu + ",NULL)";
                 string sqlUpdate = "UPDATE  g_SanLuongNRW SET [CSCU] = " + Math.Round(csCu) + " ,[CSMOI] = " + Math.Round(csMoi) + ",[TIEUTHU] = " + tieuthu + " WHERE [TimeStamp]='" + ngay + "' AND [MaDMA]='" + maDMA + "'";
 
                 if (ExecuteCommand(sqlInsert) == 0)
@@ -658,9 +658,9 @@ namespace PMACData
 
             for (int i = 0; i <= ti; i++)
             {
-               // UpdateSanLuongDHT(t);
+                UpdateSanLuongDHT(t);
                 UpdateSanLuongNRW(t);
-              //  UpdateLuuLuongNRW(t);
+                UpdateLuuLuongNRW(t);
                 t = t.Date.AddDays(1);
             }
         }

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\inetpub\wwwroot\HoangMinh" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="css/bootstrap.css" publishTime="07/06/2018 10:48:17" />
+    <file relUrl="img/team/3.jpg" publishTime="08/17/2014 05:29:18" />
+    <file relUrl="img/team/2.jpg" publishTime="08/17/2014 05:29:16" />
+    <file relUrl="bin/WebHMI.pdb" publishTime="07/06/2018 13:39:11" />
+    <file relUrl="count_visit.txt" publishTime="07/06/2018 14:07:48" />
+    <file relUrl="pUngVien.aspx" publishTime="07/06/2018 14:07:33" />
+    <file relUrl="img/icons/social-icons2.png" publishTime="08/17/2014 05:29:10" />
+    <file relUrl="img/icons/service-icon-3.png" publishTime="08/17/2014 05:29:08" />
+    <file relUrl="js/custom.js" publishTime="01/16/2018 18:44:38" />
+    <file relUrl="img/icons/menu-icons2.png" publishTime="08/17/2014 05:29:06" />
+    <file relUrl="js/jquery.easing.min.js" publishTime="08/17/2014 05:28:16" />
+    <file relUrl="js/jquery.min.js" publishTime="08/17/2014 05:28:20" />
+    <file relUrl="Home.Master" publishTime="07/06/2018 14:21:13" />
+    <file relUrl="js/bootstrap.js" publishTime="08/17/2014 05:28:10" />
+    <file relUrl="contactform/readme.txt" publishTime="10/11/2016 15:04:50" />
+    <file relUrl="img/team/1.jpg" publishTime="08/17/2014 05:29:16" />
+    <file relUrl="img/works/1.jpg" publishTime="08/17/2014 05:29:24" />
+    <file relUrl="img/works/8.jpg" publishTime="08/17/2014 05:29:42" />
+    <file relUrl="img/team/4.jpg" publishTime="08/17/2014 05:29:18" />
+    <file relUrl="Global.asax" publishTime="07/06/2018 09:27:56" />
+    <file relUrl="js/jquery-1.10.2.js" publishTime="08/17/2014 05:28:36" />
+    <file relUrl="css/style.css" publishTime="07/06/2018 13:46:07" />
+    <file relUrl="js/bootstrap.min.js" publishTime="08/17/2014 05:28:12" />
+    <file relUrl="img/bg1.jpg" publishTime="08/17/2014 05:28:12" />
+    <file relUrl="font-awesome/css/font-awesome.css" publishTime="08/17/2014 05:28:30" />
+    <file relUrl="color/default.css" publishTime="01/16/2018 19:59:58" />
+    <file relUrl="Image/logo.jpg" publishTime="07/06/2018 10:12:28" />
+    <file relUrl="img/works/4.jpg" publishTime="08/17/2014 05:29:30" />
+    <file relUrl="img/works/5.jpg" publishTime="08/17/2014 05:29:32" />
+    <file relUrl="img/icons/menu-icons.png" publishTime="08/17/2014 05:29:06" />
+    <file relUrl="img/icons/weather-icons.png" publishTime="08/17/2014 05:29:10" />
+    <file relUrl="img/icons/service-icon-1.png" publishTime="08/17/2014 05:29:08" />
+    <file relUrl="img/icons/weather-main.png" publishTime="08/17/2014 05:29:12" />
+    <file relUrl="font-awesome/css/font-awesome.min.css" publishTime="08/17/2014 05:28:30" />
+    <file relUrl="css/bootstrap.min.css" publishTime="08/17/2014 05:27:50" />
+    <file relUrl="js/jquery.scrollTo.js" publishTime="08/17/2014 05:28:22" />
+    <file relUrl="img/icons/grid-menu-icons.png" publishTime="08/17/2014 05:29:06" />
+    <file relUrl="css/animate.css" publishTime="07/06/2018 10:53:46" />
+    <file relUrl="bin/log4net.dll" publishTime="11/10/2011 07:48:35" />
+    <file relUrl="img/works/6.jpg" publishTime="08/17/2014 05:29:36" />
+    <file relUrl="img/works/7.jpg" publishTime="08/17/2014 05:29:40" />
+    <file relUrl="img/loader.gif" publishTime="08/17/2014 05:28:02" />
+    <file relUrl="Default.aspx" publishTime="07/06/2018 09:29:06" />
+    <file relUrl="img/works/2.jpg" publishTime="08/17/2014 05:29:40" />
+    <file relUrl="img/icons/search2.png" publishTime="08/17/2014 05:29:08" />
+    <file relUrl="img/works/3.jpg" publishTime="08/17/2014 05:29:28" />
+    <file relUrl="bin/WebHMI.dll" publishTime="07/06/2018 13:39:11" />
+    <file relUrl="img/icons/search.png" publishTime="08/17/2014 05:29:08" />
+    <file relUrl="img/icons/service-icon-4.png" publishTime="08/17/2014 05:29:10" />
+    <file relUrl="img/spinner.gif" publishTime="08/17/2014 05:28:04" />
+    <file relUrl="Web.config" publishTime="07/06/2018 12:47:12" />
+    <file relUrl="img/icons/service-icon-2.png" publishTime="08/17/2014 05:29:08" />
+    <file relUrl="Home.aspx" publishTime="07/06/2018 14:03:29" />
+    <file relUrl="img/icons/button-icons.png" publishTime="08/17/2014 05:29:06" />
+    <file relUrl="contactform/contactform.js" publishTime="05/04/2018 11:14:44" />
+    <file relUrl="js/wow.min.js" publishTime="08/17/2014 05:28:22" />
+  </publishProfile>
+</publishData>

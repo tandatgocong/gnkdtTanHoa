@@ -122,10 +122,29 @@
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
      <div id="map" style="width: 100%; height:75vh"></div>
      <div class=box>
+        
+        <input type="button" id="btn1" value="Ẩn"/>
+        <input type="button" id="btn2" value="Hiện"/>
+ 
+        <script language="javascript">
+
+            document.getElementById("btn1").onclick = function () {
+                document.getElementById("content").style.display = 'none';
+            };
+
+            document.getElementById("btn2").onclick = function () {
+                document.getElementById("content").style.display = 'block';
+            };
+ 
+        </script>
+        <div id="content">
      <table style="text-align:center">
             <tr>
                 <td style="background-color:#FF6600	; color:White">
-                   Min Lưu lượng (m3h) </td>                 
+                    Min Lưu lượng (m3h) 
+                   
+                  
+                   </td>                 
             </tr>
             <tr>
                 <td style="background-color:White; color:White">
@@ -180,6 +199,7 @@
             </tr>
             
         </table>
+        </div>
      </div>
     <script>
         var lagx;

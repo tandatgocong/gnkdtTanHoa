@@ -28,8 +28,9 @@ namespace GiamNuocWeb
             catch (Exception)
             {
             }
-            listDMA.SelectedValue = value.Substring(0,5);
+            listDMA.SelectedValue = value.Substring(0, 5);
             getTiLee(value);
+            getCMP(value);
         }
 
         public void getLoadDMA()
@@ -47,12 +48,13 @@ namespace GiamNuocWeb
             {
                 value = listDMA.SelectedValue.ToString();
                 getTiLee(value);
+                getCMP(value);
             }
             catch (Exception)
             {
-             
+
             }
-           
+
         }
 
         protected void bt_Click(object sender, EventArgs e)
@@ -61,6 +63,7 @@ namespace GiamNuocWeb
             {
                 value = listDMA.SelectedValue.ToString();
                 getTiLee(value);
+                getCMP(value);
             }
             catch (Exception)
             {
@@ -82,6 +85,28 @@ namespace GiamNuocWeb
             ReportDataSource rds = new ReportDataSource("g_ThatThoatDMA", dtTable);
             ReportViewer1.LocalReport.DataSources.Clear();
             ReportViewer1.LocalReport.DataSources.Add(rds);
+        }
+
+        public void getCMP(string madma)
+        {
+
+            int rc = int.Parse(this.tTuNgay.Text);
+            DataTable dtTable = CSanLuong.getThatThoatTiLe(rc, madma).Tables["g_ThatThoatDMA"];
+            string title = "['Ngày','TL']";
+
+
+
+            for (int i = 0; i < dtTable.Rows.Count; i++)
+            {
+                string tim = DateTime.Parse(dtTable.Rows[i]["TimeStamp"].ToString()).ToString("dd/MM");
+                string tile = String.Format("{0:0.##}", double.Parse(dtTable.Rows[i]["TiLe"].ToString()) * 100) ;
+                //title += "['" + f + "'" + ", " + table.Rows[i]["TIEUTHU"].ToString() + "],";
+                title += ", ['" + tim + "'," + tile + "]";
+            }
+
+            Session["sanluong"] = title;
+
+
         }
 
     }

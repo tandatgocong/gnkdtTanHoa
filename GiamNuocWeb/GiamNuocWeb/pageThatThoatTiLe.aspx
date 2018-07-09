@@ -9,6 +9,27 @@
       window.document.getElementById("DHT").className = "";
       window.document.getElementById("THATTHOAT").className = "active"; 
   </script>
+   <script type="text/javascript" src="https://www.google.com/jsapi"></script><!-- linechart "corechart",-->
+    <script type="text/javascript">
+        google.load("visualization", "1", { packages: ["linechart" ] });
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {        
+            var data = google.visualization.arrayToDataTable([
+         <%=Session["sanluong"] %>
+        ]);
+
+            var options = {
+                title: null,          
+                 height: 400,
+                 width: 1500,
+                legend : 'top' 
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+            chart.title.remove();
+        }
+    </script>
 
 <table style="width: 200px"><tr><td style="width: 80px"   ><div class="title_page2"> DMA   
                     </div></td><td style="width: 67px"><asp:DropDownList ID="listDMA" runat="server" Height="24px" 
@@ -20,12 +41,12 @@
     <asp:TextBox ID="tTuNgay" runat="server" 
         TextMode="Number" Width="67px">8</asp:TextBox></td><td> </td></tr>
 </table>
-
     <br />
          <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
          <rsweb:ReportViewer Width="100%" ID="ReportViewer1" runat="server" ZoomMode="PageWidth" 
-        Height="650px">
+        Height="300px">
          </rsweb:ReportViewer>
-
+         <br />
+         <div id="chart_div" style="height:400px; width"></div>
 </asp:Content>

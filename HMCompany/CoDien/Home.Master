@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="WebHMI.Home" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html lang="vn">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <LINK REL="SHORTCUT ICON"  HREF="Image/logo.jpg">
+  <title>..: HOANG MINH CO., LTD :..</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Fonts -->
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="css/animate.css" rel="stylesheet" />
+  <!-- Squad theme CSS -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="color/default.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="load"></div>
+  </div>
+
+  <nav class="navbar navbar-custom navbar-fixed-top top-nav-collapse" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+        <a class="navbar-brand" href="index.html">
+          <h1>HOANG MINH CO., LTD</h1>
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse page-scroll">
+        <ul class="nav navbar-nav">
+          <li id="HOME" ><a href="Home.aspx">Home</a></li>
+          <li id="UNGVIEN"><a href="pUngVien.aspx">Ứng Viên</a></li>
+           <li id="UNGVIENJS"><a href="#service">Ứng Viên JS</a></li>
+          <li id="PHONGVAN" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Phỏng Vấn <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Lên Lịch</a></li>
+                      <li><a href="#"> menu</a></li>
+                      <li><a href="#"> menu</a></li>
+                    </ul>
+          </li>
+           <li id="KHACHHANG"><a href="#contact">KHÁCH HÀNG</a></li>
+          <li id="TRACUU"><a href="#contact">Tra Cứu</a></li>
+          <li><a href="#contact">Đăng Nhập</a></li>
+     
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+    <!-- Section: contact -->
+  <section class="home-section text-center">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div> 
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="wow shake" data-wow-delay="0.4s">
+          </div>
+          <p>© Copyright 2018 - CN CÔNG TY TNHH SX TM & DV HOÀNG MINH </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Files -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/jquery.scrollTo.js"></script>
+  <script src="js/wow.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+<%--
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+    </form>
+</body>
+</html>
+
+
+
+
+
+<div>
+      
+    </div>--%>

@@ -1,0 +1,5 @@
+E:\DATA\NETPROJECT\CONGTY\CoDien\CoDien\bin\WebHMI.dll
+E:\DATA\NETPROJECT\CONGTY\CoDien\CoDien\bin\WebHMI.pdb
+E:\DATA\NETPROJECT\CONGTY\CoDien\CoDien\bin\log4net.dll
+E:\DATA\NETPROJECT\CONGTY\CoDien\CoDien\obj\Debug\WebHMI.dll
+E:\DATA\NETPROJECT\CONGTY\CoDien\CoDien\obj\Debug\WebHMI.pdb

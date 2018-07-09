@@ -1,0 +1,53 @@
+2012-04-14 10:49:21,830 [7640] ERROR File LinQConnection getDataTableInvalid column name 'NEWSID'.
+2012-04-14 10:49:37,275 [9096] ERROR File LinQConnection getDataTableInvalid column name 'NEWSID'.
+2012-04-14 12:26:27,242 [13224] ERROR File Load Edit Sp Input string was not in a correct format.
+2012-04-14 12:27:04,734 [13060] ERROR File Load Edit Sp Input string was not in a correct format.
+2012-04-14 12:27:40,183 [13052] ERROR File Load Edit Sp Input string was not in a correct format.
+2012-04-14 12:34:09,110 [10772] ERROR File Load Edit Sp Input string was not in a correct format.
+2012-04-14 12:36:51,031 [13660] ERROR File Load Edit Sp Input string was not in a correct format.
+2012-04-14 12:51:31,474 [13136] ERROR File Add SANPHAMs : Cannot add an entity that already exists.
+2013-07-02 10:41:43,331 [4380] ERROR File LinQConnection getDataTableLogin failed for user 'sa'.
+2013-07-02 10:41:43,396 [4380] ERROR File LinQConnection getDataTableLogin failed for user 'sa'.
+2013-07-02 10:41:43,417 [4380] ERROR File LinQConnection getDataTableLogin failed for user 'sa'.
+2018-07-06 09:30:19,075 [12192] ERROR File LinQConnection getDataTableLogin failed for user 'sa'.
+2018-07-06 09:30:30,721 [4916] ERROR File LinQConnection getDataTableLogin failed for user 'sa'.
+2018-07-06 09:33:20,424 [12192] ERROR File LinQConnection getDataTableLogin failed for user 'sa'.
+2018-07-06 09:33:42,839 [4852] ERROR File LinQConnection getDataTableLogin failed for user 'sa'.
+2018-07-06 09:34:13,602 [8736] ERROR File LinQConnection getDataTableLogin failed for user 'sa'.
+2018-07-06 10:19:02,103 [5872] INFO  File Starting page load
+2018-07-06 10:21:41,326 [7636] INFO  File Starting page load
+2018-07-06 10:22:56,533 [9616] INFO  File Starting page load
+2018-07-06 10:27:24,414 [7640] INFO  File Starting page load
+2018-07-06 10:39:32,290 [10640] INFO  File Starting page load
+2018-07-06 10:39:33,599 [10060] INFO  File Starting page load
+2018-07-06 10:51:27,043 [9544] INFO  File Starting page load
+2018-07-06 10:54:30,881 [9592] INFO  File Starting page load
+2018-07-06 11:00:43,257 [8132] INFO  File Starting page load
+2018-07-06 11:23:02,872 [6684] INFO  File Starting page load
+2018-07-06 11:25:52,807 [6400] INFO  File Starting page load
+2018-07-06 11:27:18,708 [6400] INFO  File Starting page load
+2018-07-06 11:29:08,493 [11636] INFO  File Starting page load
+2018-07-06 11:29:59,888 [2352] INFO  File Starting page load
+2018-07-06 11:30:38,565 [11636] INFO  File Starting page load
+2018-07-06 11:31:46,528 [6164] INFO  File Starting page load
+2018-07-06 11:33:17,489 [2352] INFO  File Starting page load
+2018-07-06 11:36:00,617 [6308] INFO  File Starting page load
+2018-07-06 12:44:48,765 [10692] INFO  File Starting page load
+2018-07-06 12:46:29,758 [10692] INFO  File Starting page load
+2018-07-06 12:49:36,267 [10316] INFO  File Starting page load
+2018-07-06 12:58:18,276 [1180] INFO  File Starting page load
+2018-07-06 13:05:23,500 [12068] INFO  File Starting page load
+2018-07-06 13:07:52,394 [11048] INFO  File Starting page load
+2018-07-06 13:18:47,016 [8892] INFO  File Starting page load
+2018-07-06 13:21:35,128 [5244] INFO  File Starting page load
+2018-07-06 13:25:41,264 [11584] INFO  File Starting page load
+2018-07-06 13:27:56,314 [6100] INFO  File Starting page load
+2018-07-06 13:33:00,686 [8032] INFO  File Starting page load
+2018-07-06 13:36:51,635 [8032] INFO  File Starting page load
+2018-07-06 13:39:15,973 [8032] INFO  File Starting page load
+2018-07-06 13:41:34,383 [8032] INFO  File Starting page load
+2018-07-06 13:46:27,183 [10876] INFO  File Starting page load
+2018-07-06 13:58:56,580 [9972] INFO  File Starting page load
+2018-07-06 14:02:58,026 [9972] INFO  File Starting page load
+2018-07-06 14:03:35,341 [9972] INFO  File Starting page load
+2018-07-06 14:06:28,471 [3080] INFO  File Starting page load
