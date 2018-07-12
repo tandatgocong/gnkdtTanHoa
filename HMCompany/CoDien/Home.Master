@@ -12,20 +12,22 @@
   <meta name="author" content="">
   <LINK REL="SHORTCUT ICON"  HREF="Image/logo.jpg">
   <title>..: HOANG MINH CO., LTD :..</title>
-
-  <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Fonts -->
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="css/animate.css" rel="stylesheet" />
-  <!-- Squad theme CSS -->
+  <link href="css/animate.css" rel="stylesheet" /> 
   <link href="css/style.css" rel="stylesheet">
-  <link href="color/default.css" rel="stylesheet">
-
+  <link href="color/default.css" rel="stylesheet">    
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/jquery.scrollTo.js"></script> 
+  <script src="js/wow.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<form id="form1" runat="server">
   <!-- Preloader -->
   <div id="preloader">
     <div id="load"></div>
@@ -37,13 +39,13 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="#">
           <h1>HOANG MINH CO., LTD</h1>
         </a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-right navbar-main-collapse page-scroll">
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse ">
         <ul class="nav navbar-nav">
           <li id="HOME" ><a href="Home.aspx">Home</a></li>
           <li id="UNGVIEN"><a href="pUngVien.aspx">Ứng Viên</a></li>
@@ -68,13 +70,13 @@
   </nav>
 
     <!-- Section: contact -->
-  <section class="home-section text-center">
+ 
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
     </div> 
-  </section>
+
 
   <footer>
     <div class="container">
@@ -88,41 +90,7 @@
     </div>
   </footer>
 
-  <!-- Core JavaScript Files -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.min.js"></script>
-  <script src="js/jquery.scrollTo.js"></script>
-  <script src="js/wow.min.js"></script>
-  <!-- Custom Theme JavaScript -->
-  <script src="js/custom.js"></script>
-  <script src="contactform/contactform.js"></script>
-
+  </form>
 </body>
 
 </html>
-
-
-
-
-<%--
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-</head>
-<body>
-    <form id="form1" runat="server">
-    
-    </form>
-</body>
-</html>
-
-
-
-
-
-<div>
-      
-    </div>--%>

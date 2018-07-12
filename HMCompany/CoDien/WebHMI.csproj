@@ -66,12 +66,16 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\StyleSheet.css" />
     <Content Include="Default.aspx" />
     <Content Include="font-awesome\css\font-awesome.css" />
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
+    <Content Include="Image\Health.png" />
     <Content Include="Image\logo.jpg" />
+    <Content Include="Image\Search.png" />
+    <Content Include="Image\table_list_bghead.png" />
     <Content Include="img\bg1.jpg" />
     <Content Include="img\icons\button-icons.png" />
     <Content Include="img\icons\grid-menu-icons.png" />
@@ -104,11 +108,15 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\custom.js" />
     <Content Include="js\jquery-1.10.2.js" />
+    <Content Include="js\jquery-1.4.1.min.js" />
+    <Content Include="js\jquery-1.7.1.js" />
     <Content Include="js\jquery.easing.min.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery.scrollTo.js" />
+    <Content Include="js\ScrollableGridPlugin.js" />
     <Content Include="js\wow.min.js" />
     <Content Include="pUngVien.aspx" />
+    <Content Include="pUngVienDetail.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -118,8 +126,10 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\C_UngVien.cs" />
     <Compile Include="Class\LinQConnection.cs" />
     <Compile Include="DB\HMI.designer.cs">
       <AutoGen>True</AutoGen>
@@ -163,9 +173,24 @@
     <Compile Include="pUngVien.aspx.designer.cs">
       <DependentUpon>pUngVien.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pUngVienDetail.aspx.cs">
+      <DependentUpon>pUngVienDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pUngVienDetail.aspx.designer.cs">
+      <DependentUpon>pUngVienDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
     <Folder Include="font-awesome\scss\" />
     <Folder Include="Lib\" />
   </ItemGroup>
