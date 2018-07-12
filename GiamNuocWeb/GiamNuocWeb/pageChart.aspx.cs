@@ -90,7 +90,7 @@ namespace GiamNuocWeb
                     date_ = DateTime.Now.ToString("MM/dd/yyyy");
                 }
 
-                string title = "['GIỜ','kg']";
+                string title = "['GIỜ','bar']";
 
                 string sl = "SELECT  LEFT(CAST(convert(time,[TimeStamp]) AS VARCHAR),5) AS GIO,Value/10 as Value  FROM dbo.t_Data_Logger_" + gTg.ChannelIn + " WHERE convert(date,[TimeStamp],101) =CONVERT(datetime,'" + date_ + "',101) ORDER BY  [TimeStamp] DESC ";
                 DataTable table = LinQConnection.getDataTable(sl);
@@ -124,7 +124,7 @@ namespace GiamNuocWeb
                     date_ = DateTime.Now.ToString("MM/dd/yyyy");
                 }
 
-                string title = "['GIỜ','kg']";
+                string title = "['GIỜ','bar']";
 
                 string sl = "SELECT  LEFT(CAST(convert(time,[TimeStamp]) AS VARCHAR),5) AS GIO,Value/10 as Value FROM dbo.t_Data_Logger_" + gTg.ChannelOut + " WHERE convert(date,[TimeStamp],101) =CONVERT(datetime,'" + date_ + "',101) ORDER BY  [TimeStamp] DESC ";
                 DataTable table = LinQConnection.getDataTable(sl);

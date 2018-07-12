@@ -56,7 +56,7 @@ namespace GiamNuocWeb
                 ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpLuLuongByGio.rdlc");
 
 
-                ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h) ĐH DMA NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy"));
+                ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3/h) ĐH DMA NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy"));
                 this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
                 DataTable dtTable= CLuuLuong.getLuuLuongTheoGio(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_LuuLuongDHT"];
                 dtTable.DefaultView.Sort = "GIO ASC";
@@ -73,7 +73,7 @@ namespace GiamNuocWeb
                     ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpLuLuongByDate.rdlc");
 
 
-                    ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h) ĐH DMA TỪ NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
+                    ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3/h) ĐH DMA TỪ NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
                     this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
 
                     ReportDataSource rds = new ReportDataSource("dsDma", CLuuLuong.getLuuLuongTheoNgay(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_LuuLuongDHT"]);
@@ -86,7 +86,7 @@ namespace GiamNuocWeb
                     ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpLuLuongByDate.rdlc");
 
 
-                    ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h) BAN ĐÊM ĐH DMA TỪ NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
+                    ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3/h) BAN ĐÊM ĐH DMA TỪ NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
                     this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
 
                     ReportDataSource rds = new ReportDataSource("dsDma", CLuuLuong.getLuuLuongTheoNgayNRW(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_LuuLuongDHT"]);

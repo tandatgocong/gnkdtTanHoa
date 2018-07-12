@@ -13,7 +13,7 @@ namespace GiamNuocWeb.Class
     {
         static public string loggger = "";
         private static readonly ILog log = LogManager.GetLogger(typeof(CThongTinDMA).Name);
-        static DMADataContext db = new DMADataContext();
+        //static DMADataContext db = new DMADataContext();
         public static string getDHTLoi()
         {
             
@@ -40,18 +40,21 @@ namespace GiamNuocWeb.Class
 
         public static List<g_ThongTinDHT> getDMAHoatDong()
         {
+            DMADataContext db = new DMADataContext();
             var q = from p in db.g_ThongTinDHTs where p.StatusDHT == true orderby p.STT ascending select p;
             return q.ToList();
         }
 
         public static List<g_ThongTinDHTM> getDongHoTachMang()
         {
+            DMADataContext db = new DMADataContext();
             var q = from p in db.g_ThongTinDHTMs  orderby p.STT ascending select p;
             return q.ToList();
         }
 
         public static g_ThongTinDHTM getDongHoTachMang(string madh)
         {
+            DMADataContext db = new DMADataContext();
             var q = from p in db.g_ThongTinDHTMs where p.MaDH==madh orderby p.STT ascending select p;
             return q.SingleOrDefault();
         }
@@ -59,24 +62,28 @@ namespace GiamNuocWeb.Class
 
         public static List<g_ThongTinDHT> getCMPHoatDong()
         {
+            DMADataContext db = new DMADataContext();
             var q = from p in db.g_ThongTinDHTs where p.StatusCMP == true orderby p.STT ascending select p;
             return q.ToList();
         }
 
         public static List<g_ThongTinDHT> getThongTinDHT()
         {
+            DMADataContext db = new DMADataContext();
             var q = from p in db.g_ThongTinDHTs orderby p.STT ascending select p;
             return q.ToList();
         }
 
         public static List<g_LabelDMA> getThongTinDHT_DB()
         {
+            DMADataContext db = new DMADataContext();
             var q = from p in db.g_LabelDMAs orderby p.MaDMA ascending select p;
             return q.ToList();
         }
-
+        static DMADataContext db = new DMADataContext();
         public static g_ThongTinDHT getDHTByMaDMA(string ma)
         {
+           
             var q = from p in db.g_ThongTinDHTs where p.MaDMA==ma   select p;
             return q.SingleOrDefault();
         }

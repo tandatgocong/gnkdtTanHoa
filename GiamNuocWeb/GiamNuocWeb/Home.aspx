@@ -141,7 +141,7 @@
      <table style="text-align:center">
             <tr>
                 <td style="background-color:#FF6600	; color:White">
-                    Min Lưu lượng (m3h) 
+                    Min Lưu lượng (m3/h) 
                    
                   
                    </td>                 
@@ -169,7 +169,7 @@
             </tr>
             <tr>
                 <td style="background-color:#FF6600; color:White">
-                   Min Áp Lực (kg) </td>                 
+                   Min Áp Lực (bar) </td>                 
             </tr>
             <tr>
                 <td style="background-color:White; color:White">
@@ -259,8 +259,8 @@
 
 
                               var iwContent="<table border=1 cellpadding=0 cellspacing=0> ";
-                                 iwContent+="<tr><td style='border-bottom:1px; border-bottom-style:dotted;'> <a href='pageChart.aspx?value=<%=table.Rows[j]["MaDMA"]%>'> <b><%=table.Rows[j]["vLuuLuong"]%> </b> <img src='Image/m3h.gif'/> </a> </td></tr> ";
-                                 iwContent+="<tr><td><b><%=table.Rows[j]["vApOut"]%> </b> kg </td></tr> ";
+                                 iwContent+="<tr><td style='border-bottom:1px; border-bottom-style:dotted;'> <a href='pageChart.aspx?value=<%=table.Rows[j]["MaDMA"]%>'> <b><%=table.Rows[j]["vLuuLuong"]%> </b> m3/h </a> </td></tr> ";
+                                 iwContent+="<tr><td><b><%=table.Rows[j]["vApOut"]%> </b> bar </td></tr> ";
                                  
                                 iwContent+="</table>";
                               infowindow3.setContent(iwContent);
@@ -309,7 +309,7 @@
 
 
                               var iwContent="<table border=1 cellpadding=0 cellspacing=0> ";
-                                  iwContent+="<tr><td style='color:red;'><b><%=table.Rows[j]["vCMP"]%> </b> kg </td></tr> ";
+                                  iwContent+="<tr><td style='color:red;'><b><%=table.Rows[j]["vCMP"]%> </b> bar </td></tr> ";
                                  
                                 iwContent+="</table>";
                               infowindow4.setContent(iwContent);
