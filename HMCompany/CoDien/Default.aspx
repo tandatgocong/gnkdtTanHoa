@@ -282,9 +282,176 @@
  
  </script>--%>
 
- </form>
     <p>
 &nbsp;&nbsp;&nbsp;
     </p>
-</body>
+ <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
+     BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" 
+     CellPadding="4" ForeColor="Black" GridLines="Vertical">
+     <AlternatingRowStyle BackColor="White" />
+     <Columns>
+         <asp:BoundField DataField="TenDM" HeaderText="Quan Hệ">
+         <ItemStyle Width="60px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="HoTen" HeaderText="Họ Tên">
+         <ItemStyle Width="150px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="NamSinh" HeaderText="Năm Sinh">
+         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="40px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="CVHienTai" HeaderText="Công việc đang làm">
+         <ItemStyle Width="90px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="DiaChi" HeaderText="Chổ ở hiện nay">
+         <ItemStyle Width="110px" />
+         </asp:BoundField>
+     </Columns>
+     <FooterStyle BackColor="#CCCC99" />
+     <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+     <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+     <RowStyle BackColor="#F7F7DE" />
+     <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+     <SortedAscendingCellStyle BackColor="#FBFBF2" />
+     <SortedAscendingHeaderStyle BackColor="#848384" />
+     <SortedDescendingCellStyle BackColor="#EAEAD3" />
+     <SortedDescendingHeaderStyle BackColor="#575357" />
+ </asp:GridView>
+ <asp:GridView ID="grvHocVan" runat="server" AutoGenerateColumns="False" 
+     BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" 
+     CellPadding="4" ForeColor="Black" GridLines="Vertical">
+     <AlternatingRowStyle BackColor="White" />
+     <Columns>
+         <asp:BoundField DataField="TuThang" HeaderText="Từ Ngày">
+         <ItemStyle Width="60px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="DenThang" HeaderText="Đến Ngày">
+         <ItemStyle Width="60px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="TruongHoc" HeaderText="Trường Học">
+         <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Width="150px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="TT" HeaderText="Tốt Nghiệp">
+         <ItemStyle Width="60px" HorizontalAlign="Center" VerticalAlign="Middle" />
+         </asp:BoundField>
+         <asp:BoundField DataField="KhoaID" HeaderText="Khoa">
+         <ItemStyle Width="110px" />
+         </asp:BoundField>
+         <asp:BoundField HeaderText="Ghi Chú" DataField="Ghichu" >
+         <ItemStyle Width="120px" />
+         </asp:BoundField>
+     </Columns>
+     <FooterStyle BackColor="#CCCC99" />
+     <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+     <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+     <RowStyle BackColor="#F7F7DE" />
+     <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+     <SortedAscendingCellStyle BackColor="#FBFBF2" />
+     <SortedAscendingHeaderStyle BackColor="#848384" />
+     <SortedDescendingCellStyle BackColor="#EAEAD3" />
+     <SortedDescendingHeaderStyle BackColor="#575357" />
+ </asp:GridView>
+
+ <asp:GridView ID="grvCHUNGCHI" runat="server" AutoGenerateColumns="False" 
+     BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" 
+     CellPadding="4" ForeColor="Black" GridLines="Vertical">
+     <AlternatingRowStyle BackColor="White" />
+     <Columns>
+         <asp:BoundField DataField="TuThang" HeaderText="Tháng Năm">
+         <ItemStyle Width="80px" HorizontalAlign="Center" VerticalAlign="Middle" />
+         </asp:BoundField>
+         <asp:BoundField DataField="BangCap" HeaderText="Bằng Cấp">
+         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="110px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="ChuyenNganh" HeaderText="Chuyên Ngành">
+         <ItemStyle Width="150px" HorizontalAlign="Left" VerticalAlign="Middle" />
+         </asp:BoundField>
+     </Columns>
+     <FooterStyle BackColor="#CCCC99" />
+     <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+     <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+     <RowStyle BackColor="#F7F7DE" />
+     <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+     <SortedAscendingCellStyle BackColor="#FBFBF2" />
+     <SortedAscendingHeaderStyle BackColor="#848384" />
+     <SortedDescendingCellStyle BackColor="#EAEAD3" />
+     <SortedDescendingHeaderStyle BackColor="#575357" />
+ </asp:GridView>
+ <br />  <asp:Panel ID="Panel1" runat="server" Width="600px" 
+     ScrollBars="Vertical" >
+                   
+ <asp:GridView ID="grvKinhNghiem" runat="server" AutoGenerateColumns="False" 
+     BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" 
+     CellPadding="4" ForeColor="Black" GridLines="Vertical" Font-Size="13px" 
+         Width="950px">
+     <AlternatingRowStyle BackColor="White" />
+     <Columns>
+         <asp:BoundField DataField="TuThang" HeaderText="Từ Ngày">
+         <ItemStyle Width="60px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="DenThang" HeaderText="Đến Ngày">
+         <ItemStyle Width="60px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="PhongBan" HeaderText="Phòng Ban">
+         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="110px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="ViTri" HeaderText="Vị Trí">
+         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="110px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="SanPham" HeaderText="Sản Phẩm">
+         <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Width="150px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="CongCu" HeaderText="Công Cụ">
+         <ItemStyle Width="60px" HorizontalAlign="Center" VerticalAlign="Middle" />
+         </asp:BoundField>
+         <asp:BoundField HeaderText="Mô Tả" DataField="MoTa" >
+         <ItemStyle Width="150px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="Congty" HeaderText="Công Ty">
+         <ItemStyle Width="150px" />
+         </asp:BoundField>
+     </Columns>
+     <FooterStyle BackColor="#CCCC99" />
+     <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+     <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+     <RowStyle BackColor="#F7F7DE" />
+     <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+     <SortedAscendingCellStyle BackColor="#FBFBF2" />
+     <SortedAscendingHeaderStyle BackColor="#848384" />
+     <SortedDescendingCellStyle BackColor="#EAEAD3" />
+     <SortedDescendingHeaderStyle BackColor="#575357" />
+ </asp:GridView>
+ </asp:Panel>
+ <asp:GridView ID="grvPhongVan" runat="server" AutoGenerateColumns="False" 
+     BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" 
+     CellPadding="4" ForeColor="Black" GridLines="Vertical">
+     <AlternatingRowStyle BackColor="White" />
+     <Columns>
+         <asp:BoundField DataField="TT" HeaderText="STT">
+         <ItemStyle Width="40px" HorizontalAlign="Center" VerticalAlign="Middle" />
+         </asp:BoundField>
+         <asp:BoundField DataField="MaKH" HeaderText="Khách Hàng">
+         <ItemStyle Width="200px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="NganhNghe" HeaderText="Ngành Nghề">
+         <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Width="150px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="Remark" HeaderText="Remark">
+         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="80px" />
+         </asp:BoundField>
+         <asp:BoundField DataField="KetQua" HeaderText="Kết Quả">
+         <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Width="200px" />
+         </asp:BoundField>
+     </Columns>
+     <FooterStyle BackColor="#CCCC99" />
+     <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+     <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+     <RowStyle BackColor="#F7F7DE" />
+     <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+     <SortedAscendingCellStyle BackColor="#FBFBF2" />
+     <SortedAscendingHeaderStyle BackColor="#848384" />
+     <SortedDescendingCellStyle BackColor="#EAEAD3" />
+     <SortedDescendingHeaderStyle BackColor="#575357" />
+ </asp:GridView>
+ </form>
+    </body>
 </html>

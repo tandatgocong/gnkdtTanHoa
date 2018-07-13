@@ -22,6 +22,42 @@ namespace WebHMI {
         protected global::System.Web.UI.WebControls.Label title;
         
         /// <summary>
+        /// LinkButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        
+        /// <summary>
+        /// LinkButton2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
+        
+        /// <summary>
+        /// LinkButton3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
+        
+        /// <summary>
+        /// pThongTinCaNhan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pThongTinCaNhan;
+        
+        /// <summary>
         /// Image1 control.
         /// </summary>
         /// <remarks>
@@ -37,16 +73,16 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label HoTen;
+        protected global::System.Web.UI.WebControls.TextBox HoTen;
         
         /// <summary>
-        /// GioiTinh control.
+        /// gioitinhh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label GioiTinh;
+        protected global::System.Web.UI.WebControls.DropDownList gioitinhh;
         
         /// <summary>
         /// NgaySinh control.
@@ -55,34 +91,34 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NgaySinh;
+        protected global::System.Web.UI.WebControls.TextBox NgaySinh;
         
         /// <summary>
-        /// NoiSinh control.
+        /// drNoiSinh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NoiSinh;
+        protected global::System.Web.UI.WebControls.DropDownList drNoiSinh;
         
         /// <summary>
-        /// TinhTrang control.
+        /// drTinhTrang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TinhTrang;
+        protected global::System.Web.UI.WebControls.DropDownList drTinhTrang;
         
         /// <summary>
-        /// NguyenQuan control.
+        /// drNguyenQuan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NguyenQuan;
+        protected global::System.Web.UI.WebControls.DropDownList drNguyenQuan;
         
         /// <summary>
         /// ChoOht control.
@@ -91,7 +127,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ChoOht;
+        protected global::System.Web.UI.WebControls.TextBox ChoOht;
         
         /// <summary>
         /// DienThoai control.
@@ -100,7 +136,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DienThoai;
+        protected global::System.Web.UI.WebControls.TextBox DienThoai;
         
         /// <summary>
         /// DiDong control.
@@ -109,7 +145,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DiDong;
+        protected global::System.Web.UI.WebControls.TextBox DiDong;
         
         /// <summary>
         /// CMND control.
@@ -118,7 +154,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CMND;
+        protected global::System.Web.UI.WebControls.TextBox CMND;
         
         /// <summary>
         /// cmndNgayCap control.
@@ -127,7 +163,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label cmndNgayCap;
+        protected global::System.Web.UI.WebControls.TextBox cmndNgayCap;
         
         /// <summary>
         /// cmndNoiCap control.
@@ -136,7 +172,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label cmndNoiCap;
+        protected global::System.Web.UI.WebControls.DropDownList cmndNoiCap;
         
         /// <summary>
         /// hcSo control.
@@ -145,7 +181,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label hcSo;
+        protected global::System.Web.UI.WebControls.TextBox hcSo;
         
         /// <summary>
         /// hcNgayCap control.
@@ -154,16 +190,16 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label hcNgayCap;
+        protected global::System.Web.UI.WebControls.TextBox hcNgayCap;
         
         /// <summary>
-        /// hcNoiCap control.
+        /// hcNoiCapp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label hcNoiCap;
+        protected global::System.Web.UI.WebControls.DropDownList hcNoiCapp;
         
         /// <summary>
         /// hkThuongTru control.
@@ -172,7 +208,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label hkThuongTru;
+        protected global::System.Web.UI.WebControls.TextBox hkThuongTru;
         
         /// <summary>
         /// hkTamTru control.
@@ -181,7 +217,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label hkTamTru;
+        protected global::System.Web.UI.WebControls.TextBox hkTamTru;
         
         /// <summary>
         /// dtNguoiThan control.
@@ -190,16 +226,16 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dtNguoiThan;
+        protected global::System.Web.UI.WebControls.TextBox dtNguoiThan;
         
         /// <summary>
-        /// honnhan control.
+        /// honnhann control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label honnhan;
+        protected global::System.Web.UI.WebControls.DropDownList honnhann;
         
         /// <summary>
         /// sothich control.
@@ -208,7 +244,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label sothich;
+        protected global::System.Web.UI.WebControls.TextBox sothich;
         
         /// <summary>
         /// kynang control.
@@ -217,7 +253,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label kynang;
+        protected global::System.Web.UI.WebControls.TextBox kynang;
         
         /// <summary>
         /// nganhnghe control.
@@ -226,7 +262,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nganhnghe;
+        protected global::System.Web.UI.WebControls.TextBox nganhnghe;
         
         /// <summary>
         /// chieucao control.
@@ -235,7 +271,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label chieucao;
+        protected global::System.Web.UI.WebControls.TextBox chieucao;
         
         /// <summary>
         /// cannang control.
@@ -244,16 +280,16 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label cannang;
+        protected global::System.Web.UI.WebControls.TextBox cannang;
         
         /// <summary>
-        /// nhommau control.
+        /// drNhomMau control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nhommau;
+        protected global::System.Web.UI.WebControls.DropDownList drNhomMau;
         
         /// <summary>
         /// mumau control.
@@ -262,7 +298,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label mumau;
+        protected global::System.Web.UI.WebControls.TextBox mumau;
         
         /// <summary>
         /// matphai control.
@@ -271,7 +307,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label matphai;
+        protected global::System.Web.UI.WebControls.TextBox matphai;
         
         /// <summary>
         /// matrai control.
@@ -280,7 +316,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label matrai;
+        protected global::System.Web.UI.WebControls.TextBox matrai;
         
         /// <summary>
         /// taythuan control.
@@ -289,7 +325,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label taythuan;
+        protected global::System.Web.UI.WebControls.DropDownList taythuan;
         
         /// <summary>
         /// suckhoe control.
@@ -298,7 +334,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label suckhoe;
+        protected global::System.Web.UI.WebControls.TextBox suckhoe;
         
         /// <summary>
         /// tiensubenh control.
@@ -307,7 +343,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tiensubenh;
+        protected global::System.Web.UI.WebControls.TextBox tiensubenh;
         
         /// <summary>
         /// ckNguoiThan control.
@@ -334,7 +370,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MucDichThoiGian;
+        protected global::System.Web.UI.WebControls.TextBox MucDichThoiGian;
         
         /// <summary>
         /// coquanhs control.
@@ -343,7 +379,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label coquanhs;
+        protected global::System.Web.UI.WebControls.TextBox coquanhs;
         
         /// <summary>
         /// ckNhapCanh control.
@@ -361,7 +397,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lamHSMucDich;
+        protected global::System.Web.UI.WebControls.TextBox lamHSMucDich;
         
         /// <summary>
         /// lamHSCoQuan control.
@@ -370,7 +406,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lamHSCoQuan;
+        protected global::System.Web.UI.WebControls.TextBox lamHSCoQuan;
         
         /// <summary>
         /// ckThamGia control.
@@ -388,7 +424,7 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tNCoQuan;
+        protected global::System.Web.UI.WebControls.TextBox tNCoQuan;
         
         /// <summary>
         /// tNlyDo control.
@@ -397,6 +433,69 @@ namespace WebHMI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tNlyDo;
+        protected global::System.Web.UI.WebControls.TextBox tNlyDo;
+        
+        /// <summary>
+        /// grvGiaDinh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvGiaDinh;
+        
+        /// <summary>
+        /// grvHocVan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvHocVan;
+        
+        /// <summary>
+        /// grvCHUNGCHI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvCHUNGCHI;
+        
+        /// <summary>
+        /// grvKinhNghiem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvKinhNghiem;
+        
+        /// <summary>
+        /// grvPhongVan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvPhongVan;
+        
+        /// <summary>
+        /// pThongTinKhac control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pThongTinKhac;
+        
+        /// <summary>
+        /// pXuatQuoc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pXuatQuoc;
     }
 }

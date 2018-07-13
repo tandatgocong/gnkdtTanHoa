@@ -20,9 +20,9 @@ namespace WebHMI
 
             //   logger.Info("Starting page load");
 
-     //      pLoad();
+       //   pLoad();
 
-          Response.Redirect(@"Home.aspx");
+         Response.Redirect(@"Home.aspx");
         }
         
         public void pLoad()
@@ -131,6 +131,11 @@ namespace WebHMI
         protected void txtSearch_TextChanged(object sender, EventArgs e)
         {
             //if(e
+        }
+
+        protected void grvHocVan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         

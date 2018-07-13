@@ -23,6 +23,14 @@ html {
     height: 95%;
 }
 
+input:focus {
+    background-color:#FFFF99 !important;
+}
+textarea:focus {
+    background-color:#FFFF99 !important;
+}
+
+
 h1,
 h2,
 h3,
@@ -901,7 +909,7 @@ div.groupTitle {
   
 .table_list{
 	
-	border:1px #669966 dotted;
+	border:0px;
 	margin: 0 auto;
 }
 
@@ -930,6 +938,17 @@ div.groupTitle {
 	padding: 2px 5px;
 	height: 25px;
 }
+.table_list tr.head3 td{
+	border-bottom: 1px #99cc99 solid;
+	background-color: #CCFF99;
+	font:normal 13px Arial, Tahoma, Helvetica, sans-serif;
+	color: #006633;
+	font-weight: bold;
+	text-align: left;
+	padding: 2px 5px;
+	height: 25px;
+}
+
 
 .table_list .row td{
 	background:#f7fff9;
@@ -937,3 +956,78 @@ div.groupTitle {
 	#padding-bottom:2px;#padding-top:2px;
 
 }
+
+/*----------------menu tab-------------------*/
+div.block_tab
+{
+    font-size:15px;
+	border: 1px #FFF solid;
+	border-width: 1px 1px 0px 1px;
+	background: #FFF url(../images/block_bg.gif) repeat-x;
+	width:380px;
+	margin: 0 auto;
+	padding:0;
+	
+}
+
+
+.tablink {
+	padding-left:5px;
+	margin-bottom:0px;
+	list-style:none;
+	height:25px;
+	position:relative;
+}
+
+.tablink_left{
+	#margin-left: 0px;
+}
+
+.tablink li {
+	float:left;
+	margin-left: 2px;
+}
+.tablink li a {
+	display:block;
+	float:left;
+	height:21px;
+	line-height:21px;
+	background:url(../images/tab0.png);
+	color:#555;
+	text-decoration:none;
+	font-size:11px;
+	font-family:Tahoma, arial, verdana, sans-serif;
+	font-weight:bold;
+	text-align:center;
+	padding:0 0 0 10px;
+	cursor:pointer;
+}
+.tablink li a b {
+	float:left;
+	display:block;
+	padding:0 12px 0 2px;
+	background:url(../Image/tab0.png) right top;
+}
+.tablink li.current a {
+	color:#006600;
+	background:url(../Image/tab2.png);
+}
+.tablink li.current a b {
+	background:url(../Image/tab2.png) right top;
+}
+.tablink li a:hover {
+	color:#FFF;
+	background:url(../Image/tab1.png);
+}
+.tablink li a:hover b {
+	background:url(../Image/tab1.png) right top;
+}
+.tablink li.current a:hover {
+	color:#006600;
+	background:url(../Image/tab2.png);
+	cursor:default;
+}
+.tablink li.current a:hover b {
+	background:url(../Image/tab2.png) right top;
+}
+/*----------------menu tab-------------------*/

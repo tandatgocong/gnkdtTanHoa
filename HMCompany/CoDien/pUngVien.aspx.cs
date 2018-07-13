@@ -53,10 +53,12 @@ namespace WebHMI
         }
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            e.Row.Attributes.Add("onmouseover", "this.originalstyle=this.style.backgroundColor;this.style.backgroundColor='#EEFFAA'");
-            e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor=this.originalstyle;");
+           
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
+                e.Row.Attributes.Add("onmouseover", "this.originalstyle=this.style.backgroundColor;this.style.backgroundColor='#EEFFAA'");
+                e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor=this.originalstyle;");
+
                 DataRowView dr = (DataRowView)e.Row.DataItem;
                 if (dr["Hinh"].ToString() != "")
                 {
