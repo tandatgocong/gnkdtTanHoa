@@ -40,8 +40,7 @@ namespace WebHMI
             else if (dropSearch.SelectedIndex == 3) { sql += " WHERE TinhTrang=N'Đã xếp phỏng vấn' "; }
             else if (dropSearch.SelectedIndex == 4) { sql += " WHERE TinhTrang=N'Đã phỏng vấn' "; }
             else if (dropSearch.SelectedIndex == 5) { sql += " WHERE TinhTrang=N'Đậu phỏng vấn' "; }
-            else if (dropSearch.SelectedIndex == 6) { sql += " WHERE TinhTrang=N'Đậu phỏng vấn' "; }
-            else if (dropSearch.SelectedIndex == 7) { sql += " WHERE TinhTrang=N'Hủy' "; }
+            else if (dropSearch.SelectedIndex == 6) { sql += " WHERE TinhTrang=N'Hủy' "; }
             else {
                 sql += " WHERE TinhTrang=N'Chưa phỏng vấn' ";
             }

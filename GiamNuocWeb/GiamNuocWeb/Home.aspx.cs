@@ -23,9 +23,17 @@ namespace GiamNuocWeb
         public void Load()
         {
             getLoadDMA();
+            LoadBieuDo();
             //LoadApLuc("");
             LoadLuuLuong("989");
             getAlert();
+        }
+        void LoadBieuDo()
+        {
+
+            string sql = "SELECT MaDMA, Lat, Lng FROM g_LabelDMA   ";
+            DataTable tb = LinQConnection.getDataTable(sql);
+            Session["dsDHtt"] = tb;
         }
         public void LoadApLuc(string maDMA)
         {

@@ -48,40 +48,48 @@ namespace GiamNuocWeb
        
         protected void btSearch_Click(object sender, EventArgs e)
         {
+            string sqlUpdate = "UPDATE g_ThongTinDHT SET ";
             string madma = listDMA.SelectedValue.ToString();
-            g_ThongTinDHT dh = CThongTinDMA.getDHTByMaDMA(madma);
+            //g_ThongTinDHT dh = CThongTinDMA.getDHTByMaDMA(madma);
             try
             {
-                if (dh != null)
-                {
-                    dh.ViTri = this.txtViTri.Text;
-                    dh.Phuong = this.txtPhuong.Text;
-                    dh.Quan = this.txtQuan.Text;
-                    dh.ViTriCMP = this.txtViTriCMP.Text;
-                    dh.CoDHN = this.txtCoDHN0.Text;
-                    dh.Hieu = this.txtHieuDHN0.Text;
-                    dh.ThietBi = this.txtThietBi.Text;
-                    dh.PinNguon = this.cmpPinNguon.SelectedValue;
-                    try { dh.PRV = bool.Parse(this.prv.SelectedValue); }
+            //    if (dh != null)
+            //    {
+
+                sqlUpdate += " ViTri=N'" + this.txtViTri.Text + "'";
+                    sqlUpdate += ", Phuong=N'" +this.txtPhuong.Text+"'";
+                    sqlUpdate += ", Quan=N'" +  this.txtQuan.Text + "'";
+                    sqlUpdate += ", ViTriCMP=N'" +  this.txtViTriCMP.Text + "'";
+                    sqlUpdate += ", CoDHN=N'" + this.txtCoDHN0.Text + "'";
+                    sqlUpdate += ", Hieu=N'" +  this.txtHieuDHN0.Text + "'";
+                    sqlUpdate += ", ThietBi=N'" + this.txtThietBi.Text + "'";
+                    sqlUpdate += ", PinNguon=N'" +  this.cmpPinNguon.SelectedValue + "'";
+                    try { sqlUpdate += ", PRV='" +  bool.Parse(this.prv.SelectedValue) + "'"; }
                     catch (Exception) { }
-                    try { dh.HamDHT = hamdht.SelectedValue; }
+                    try { sqlUpdate += ", HamDHT='" +  hamdht.SelectedValue + "'"; }
                     catch (Exception) { }
-                    dh.TinhTrangPRV = this.txtTinhTrangPRV.Text;
-                    dh.TinhTrangDH = this.txtTinhTrangDHT.Text;
-                    dh.TinhTrangBlogger = this.txtTinhTrangBlogger.Text;
-                    dh.SoSIM = this.txtSoSim.Text;
+                    sqlUpdate += ", TinhTrangPRV=N'" +  this.txtTinhTrangPRV.Text + "'";
+                    sqlUpdate += ", TinhTrangDH=N'" +  this.txtTinhTrangDHT.Text + "'";
+                    sqlUpdate += ", TinhTrangBlogger=N'" + this.txtTinhTrangBlogger.Text + "'";
+                    sqlUpdate += ", SoSIM=N'" +  this.txtSoSim.Text + "'";
                     try
                     {
-                        //kt.Img = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1);
-                        dh.Img = this.imagePath.Value.Replace(",,", @",");
+                        if (imagePath.Value != "")
+                        {
+                            //kt.Img = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1);
+                            sqlUpdate += ", Img=N'" + this.imagePath.Value.Replace(",,", @",") + "'";
+                        }
                     }
                     catch (Exception) { }
 
-                    dh.ModifyDate = DateTime.Now;
-                    dh.ModifyBy = Session["login"] + "";
+                    sqlUpdate += ", ModifyDate=getDate()";
+                    sqlUpdate += ", ModifyBy=N'"+Session["login"] +"'";
 
-                }
-                if (CThongTinDMA.Update())
+                //}
+
+                sqlUpdate += " WHERE MaDMA='"+ madma +"' ";
+
+                if (Class.LinQConnection.ExecuteCommand_(sqlUpdate) > 0)
                 {
                     lbThanhCong.ForeColor = Color.Blue;
                     this.lbThanhCong.Text = "Cập Nhật Hoàn Công Thành Công.";
@@ -109,13 +117,11 @@ namespace GiamNuocWeb
                     this.lbThanhCong.Text = "Cập Nhật Hoàn Công Thất Bại.";
                 }
 
-               
-
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 lbThanhCong.ForeColor = Color.Red;
-                this.lbThanhCong.Text = "Cập Nhật Hoàn Công Thất Bại.";
+                this.lbThanhCong.Text = "Cập Nhật Hoàn Công Thất Bại. Try";
 
             }
         }
@@ -218,6 +224,8 @@ namespace GiamNuocWeb
 
         protected void Button2_Click1(object sender, EventArgs e)
         {
+            string madma = listDMA.SelectedValue.ToString();
+           
             string filelis = Session["imgfile"].ToString();
             string[] words = Regex.Split(filelis, ",");
             string SaveLocation = Server.MapPath("~");
@@ -225,10 +233,19 @@ namespace GiamNuocWeb
             {
                 if (!words[i].Equals(""))
                 {
-                    System.IO.File.Delete(SaveLocation + words[i]);
+                    try
+                    {
+                        System.IO.File.Delete(SaveLocation + words[i]);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                   
                 }
 
             }
+            Class.LinQConnection.ExecuteCommand("UPDATE g_ThongTinDHT SET Img=NULL WHERE MaDMA='" + madma + "'");
             Session["imgfile"] = "";
         }
     }

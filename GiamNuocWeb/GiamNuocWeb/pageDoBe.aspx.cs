@@ -87,32 +87,63 @@ namespace GiamNuocWeb
         }
         public void getDiemBe()
         {
-            string tn = this.tTuNgay.Text;
-            string dn = this.tDenNgay.Text;
-            string connectionString = ConfigurationManager.ConnectionStrings["Database1_beConnectionString"].ConnectionString;
+            if (chekChuaSua.Checked == true)
+            {
+                string tn = this.tTuNgay.Text;
+                string dn = this.tDenNgay.Text;
+                string connectionString = ConfigurationManager.ConnectionStrings["Database1_beConnectionString"].ConnectionString;
 
-            string sql = " SELECT nb.TenNHom, db.NgayDo, db.NgaySua, db.SoNha, db.Duong, dma.DMA, db.TinhTrang, db.LoaiDiemBe, db.OngBe, db.DVTC, db.NguyenNhan, db.GhiChu ";
-            sql += " FROM T_DiemBe AS db, T_NhomDoBe AS nb, T_DMA AS dma ";
-            sql += " WHERE db.Nhom= nb.ID AND db.DMA=dma.ID AND ";
-            sql += " (db.NgayDo) >= #" + tn + "# AND (db.NgayDo) <=#" + dn + "# ";
-            if(cbNhomDoBe.SelectedValue!="0")
-                sql += "  AND db.Nhom=" + cbNhomDoBe.SelectedValue.ToString() + " ";
-            sql += " Order by db.NgayDo ASC";
-            DataTable tb = OledbConnection.getDataTable(connectionString, sql);
+                string sql = " SELECT nb.TenNHom, db.NgayDo, db.NgaySua, db.SoNha, db.Duong, dma.DMA, db.TinhTrang, db.LoaiDiemBe, db.OngBe, db.DVTC, db.NguyenNhan, db.GhiChu ";
+                sql += " FROM T_DiemBe AS db, T_NhomDoBe AS nb, T_DMA AS dma ";
+                sql += " WHERE db.Nhom= nb.ID AND db.DMA=dma.ID AND ";
+                sql += " (db.NgayDo) >= #" + tn + "# AND (db.NgayDo) <=#" + dn + "# ";
 
-            ReportViewer1.ProcessingMode = ProcessingMode.Local;
-            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpTongKeDiemBe.rdlc");
-            DataTable dtTable = tb;
+                sql += "  AND db.TinhTrang=2 ";
+                    sql += " Order by db.Duong ASC";
+                DataTable tb = OledbConnection.getDataTable(connectionString, sql);
 
-            //  ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h)  ĐỒNG HỒ TỔNG DMA NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy"));
-            //  this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
-            // 
-            ////  dtTable.DefaultView.Sort = "STT ASC";
+                ReportViewer1.ProcessingMode = ProcessingMode.Local;
+                //ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpTongKeDiemBe.rdlc");
+                ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpDiemBeChuaSua.rdlc");
+                DataTable dtTable = tb;
 
-            ReportDataSource rds = new ReportDataSource("v_DiemBe", dtTable);
-            ReportViewer1.LocalReport.DataSources.Clear();
-            ReportViewer1.LocalReport.DataSources.Add(rds);
+                //  ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h)  ĐỒNG HỒ TỔNG DMA NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy"));
+                //  this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
+                // 
+                ////  dtTable.DefaultView.Sort = "STT ASC";
 
+                ReportDataSource rds = new ReportDataSource("v_DiemBe", dtTable);
+                ReportViewer1.LocalReport.DataSources.Clear();
+                ReportViewer1.LocalReport.DataSources.Add(rds);
+            }
+            else
+            {
+                string tn = this.tTuNgay.Text;
+                string dn = this.tDenNgay.Text;
+                string connectionString = ConfigurationManager.ConnectionStrings["Database1_beConnectionString"].ConnectionString;
+
+                string sql = " SELECT nb.TenNHom, db.NgayDo, db.NgaySua, db.SoNha, db.Duong, dma.DMA, db.TinhTrang, db.LoaiDiemBe, db.OngBe, db.DVTC, db.NguyenNhan, db.GhiChu ";
+                sql += " FROM T_DiemBe AS db, T_NhomDoBe AS nb, T_DMA AS dma ";
+                sql += " WHERE db.Nhom= nb.ID AND db.DMA=dma.ID AND ";
+                sql += " (db.NgayDo) >= #" + tn + "# AND (db.NgayDo) <=#" + dn + "# ";
+                if (cbNhomDoBe.SelectedValue != "0")
+                    sql += "  AND db.Nhom=" + cbNhomDoBe.SelectedValue.ToString() + " ";
+                sql += " Order by db.NgayDo ASC";
+                DataTable tb = OledbConnection.getDataTable(connectionString, sql);
+
+                ReportViewer1.ProcessingMode = ProcessingMode.Local;
+                ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpTongKeDiemBe.rdlc");                 
+                DataTable dtTable = tb;
+
+                //  ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h)  ĐỒNG HỒ TỔNG DMA NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy"));
+                //  this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
+                // 
+                ////  dtTable.DefaultView.Sort = "STT ASC";
+
+                ReportDataSource rds = new ReportDataSource("v_DiemBe", dtTable);
+                ReportViewer1.LocalReport.DataSources.Clear();
+                ReportViewer1.LocalReport.DataSources.Add(rds);
+            }
 
         }
         protected void cbNhomDoBe_SelectedIndexChanged(object sender, EventArgs e)

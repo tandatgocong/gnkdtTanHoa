@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageDongHoTong.aspx.cs" Inherits="GiamNuocWeb.pageDongHoTong" %>
+﻿<%@ Page Title="-jhj" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageDongHoTong.aspx.cs" Inherits="GiamNuocWeb.pageDongHoTong" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script language="javascript" type="text/javascript">
      window.document.getElementById("HOME").className = "";
@@ -15,6 +17,7 @@
     height: 317px; */
     width: 317px;
     height: 431px;  
+  
     /*-ms-transform: rotate(90deg);  
     -webkit-transform: rotate(90deg);  
     transform: rotate(90deg);*/
@@ -125,7 +128,27 @@
   
     
 </style>
-
+<style>
+        img {
+            cursor: pointer;
+            transition: -webkit-transform 0.1s ease
+        }
+    img:focus {
+        -webkit-transform: scale(3);
+        -ms-transform: scale(3);
+        text-align:center;
+        vertical-align:middle;
+        margin:300px;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var imgs = document.querySelectorAll('img');
+        Array.prototype.forEach.call(imgs, function (el, i) {
+            if (el.tabIndex <= 0) el.tabIndex = 10000;
+        });
+    });
+</script>
     <link href="css/StyleSheet.css" rel="stylesheet" type="text/css" />
     <table >           
 
@@ -360,7 +383,7 @@
                         ValidationGroup="adsfdsafd" Visible="False" />
                     <asp:Button ID="btClear" runat="server" onclick="Button2_Click1" 
                         CssClass="button"  Text="Clear" 
-                        ValidationGroup="adsfdsafd" Visible="False" />
+                        ValidationGroup="adsfdsafd" Visible="False" onclientclick="if(confirm('Bạn có muốn xóa tất cả hình ảnh ?') == false)return false;"  />
                     <asp:HiddenField ID="imagePath" runat="server" />
                     <asp:Label ID="upload" runat="server" ForeColor="Red"></asp:Label>
                 </td>

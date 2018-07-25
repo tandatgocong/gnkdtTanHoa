@@ -106,7 +106,8 @@
         }
     .style1
     {
-        height: 35px;
+        height: 30px;
+        width: 75px;
     }
     .style2
     {
@@ -138,9 +139,10 @@
                         </asp:DropDownList>
    </div>
     <table border="1" style="margin-top:10px;">
-            <tr ><td class="style1">Từ Ngày  </td><td><asp:TextBox ID="tTuNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
-            <tr><td class="style1">Đến Ngày </td><td><asp:TextBox ID="tDenNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
-            <tr><td class="style2" colspan=2> 
+            <tr ><td class="style1">Từ Ngày  </td><td><asp:TextBox ID="tTuNgay" runat="server" TextMode="Date" Width="130px"></asp:TextBox></td><td></td></tr>
+            <tr><td class="style1">Đến Ngày </td><td><asp:TextBox ID="tDenNgay" runat="server" TextMode="Date" Width="130px"></asp:TextBox></td><td>
+                <asp:CheckBox ID="chekChuaSua" runat="server" Text="Chưa Sửa" /></td></tr>
+            <tr><td class="style2" colspan=3> 
                 &nbsp;<asp:Button ID="Button3" runat="server" CssClass="button1" 
                     onclick="Button3_Click" Text="Danh sách Điểm bể" Width="149px" />
                 <asp:Button ID="Button1" runat="server" CssClass="button" 

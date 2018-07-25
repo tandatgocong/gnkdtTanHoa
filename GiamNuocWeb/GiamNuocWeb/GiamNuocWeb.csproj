@@ -410,6 +410,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="rpDiemBeChuaSua.rdlc" />
     <EmbeddedResource Include="rpSanLuongSoSanhDHT.rdlc" />
     <EmbeddedResource Include="rpLuLuongByDate.rdlc" />
     <EmbeddedResource Include="rpLuLuongByGio.rdlc" />

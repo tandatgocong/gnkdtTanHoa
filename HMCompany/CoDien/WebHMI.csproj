@@ -72,6 +72,7 @@
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
+    <Content Include="iisstart.aspx" />
     <Content Include="Image\Health.png" />
     <Content Include="Image\logo.jpg" />
     <Content Include="Image\Search.png" />
@@ -161,6 +162,13 @@
     </Compile>
     <Compile Include="Home.Master.designer.cs">
       <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
+    <Compile Include="iisstart.aspx.cs">
+      <DependentUpon>iisstart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iisstart.aspx.designer.cs">
+      <DependentUpon>iisstart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

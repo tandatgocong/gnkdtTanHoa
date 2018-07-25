@@ -14,9 +14,10 @@ namespace GiamNuocWeb.Class
     {
         
         private static readonly ILog log = LogManager.GetLogger(typeof(LinQConnection).Name);
-        static DMADataContext db = new DMADataContext();
+         
         public static int ExecuteCommand(string sql)
         {
+            DMADataContext db = new DMADataContext();
             int result = 0;
             try
             {
@@ -48,6 +49,7 @@ namespace GiamNuocWeb.Class
 
         public static int ExecuteCommand_(string sql)
         {
+            DMADataContext db = new DMADataContext();
             int result = 0;
             try
             {
@@ -79,6 +81,7 @@ namespace GiamNuocWeb.Class
         }
         public static DataTable getDataTable(string sql)
         {
+            DMADataContext db = new DMADataContext();
             DataTable table = new DataTable();
             try
             {
@@ -103,7 +106,7 @@ namespace GiamNuocWeb.Class
 
         public static DataTable getDataTable(string sql, int FirstRow, int pageSize)
         {
-            
+            DMADataContext db = new DMADataContext();
             try
             {
                 if (db.Connection.State == ConnectionState.Open)

@@ -47,3 +47,17 @@
 2018-06-20 16:11:37,512 [9392] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
 2018-06-20 16:13:05,194 [2824] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
 2018-07-04 13:51:11,071 [5556] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-07-25 10:07:07,086 [7252] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-07-25 10:09:51,945 [9680] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-07-25 10:09:52,043 [9680] ERROR File OleDbConnection getDataTableData type mismatch in criteria expression.
+2018-07-25 10:17:13,823 [10528] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-07-25 10:18:27,727 [2276] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-07-25 10:19:47,519 [8236] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-07-25 10:20:20,532 [9148] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-07-25 10:20:35,340 [7264] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-07-25 10:20:55,078 [11032] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-07-25 10:21:28,738 [9076] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-07-25 10:21:58,454 [9076] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-07-25 10:26:50,800 [7892] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-07-25 10:30:32,124 [7252] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
+2018-07-25 10:32:15,587 [10560] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\inetpub\wwwroot\App_Data\Database1_be.accdb
