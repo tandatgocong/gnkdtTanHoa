@@ -126,11 +126,46 @@
       <asp:RadioButtonList ID="radioCheck" runat="server" 
           RepeatDirection="Horizontal" AutoPostBack="True" 
           onselectedindexchanged="radioCheck_SelectedIndexChanged">
-          <asp:ListItem Value="0" Selected="True">Tổng Kết Điểm Bể</asp:ListItem>
+          <asp:ListItem Value="0" Selected="True">Tổng Điểm Bể</asp:ListItem>
+          <asp:ListItem Value="2" >Dò DMA</asp:ListItem>
           <asp:ListItem Value="1" >Dò Bể</asp:ListItem>
       </asp:RadioButtonList>
   
   </div>
+  <asp:Panel ID="panelDMA" runat="server"   Visible=false >
+     <table><tr><td> <div class="title_page2"> DMA : 
+                        <asp:DropDownList ID="listDMA2" runat="server" Height="24px" 
+           Width="67px" onselectedindexchanged="listDMA2_SelectedIndexChanged" 
+           AutoPostBack="True">
+                        </asp:DropDownList>
+                    </div></td></tr></table>
+                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+                        BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" 
+                        CellPadding="3" CellSpacing="2" Width="334px" Font-Size="X-Large">
+                        <Columns>
+                            <asp:BoundField DataField="TenNHom" HeaderText="Nhóm Dò" />
+                            <asp:TemplateField HeaderText="Ngày">
+                              <ItemTemplate >
+                                   <asp:Label ID="lblFromDate" runat="server" 
+                                             
+                                              HtmlEncode="false"  
+                                              Text='<%#Eval("NgayBatDau", "{0:dd/MM/yyyy}") %>' />
+                                    </ItemTemplate>
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                            </asp:TemplateField>
+                        </Columns>
+                        <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                        <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+                        <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#FFF1D4" />
+                        <SortedAscendingHeaderStyle BackColor="#B95C30" />
+                        <SortedDescendingCellStyle BackColor="#F1E5CE" />
+                        <SortedDescendingHeaderStyle BackColor="#93451F" />
+                  </asp:GridView>
+ 
+  </asp:Panel>
   <asp:Panel ID="panelTongKet" runat="server" >
      <div class="title_page2"> NHÓM DÒ BỂ  : 
                         <asp:DropDownList ID="cbNhomDoBe" runat="server" Height="34px" 
@@ -159,7 +194,7 @@
    
       </asp:Panel>
 
-       <asp:Panel ID="panelDiemBe" runat="server"  Visible=false>
+  <asp:Panel ID="panelDiemBe" runat="server"  Visible=false>
        
      <div class="dhnLoi2">
    <table><tr><td> <div class="title_page2"> DMA : 

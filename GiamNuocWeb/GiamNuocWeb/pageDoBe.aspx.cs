@@ -39,6 +39,11 @@ namespace GiamNuocWeb
             listDMA.DataTextField = "MaDMA";
             listDMA.DataBind();
             Session["dsDHTong"] = tb;
+
+            listDMA2.DataSource = tb;
+            listDMA2.DataValueField = "MaDMA";
+            listDMA2.DataTextField = "MaDMA";
+            listDMA2.DataBind();
         }
         public void getNhomDoBe()
         {
@@ -69,12 +74,54 @@ namespace GiamNuocWeb
 
             }
         }
+        protected void listDMA2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //DataTable tb = LinQConnection.getDataTable("SELECT *,([Lat]+','+[Lng]) AS CENTER FROM [tanhoa].[dbo].[g_LabelDMA] WHERE MaDMA='" + listDMA.SelectedValue.ToString() + "' ");
+                //if (tb != null)
+                //{
+                //    Session["maps"] = tb.Rows[0]["maps"].ToString();
+                //    Session["dobe"] = tb.Rows[0]["NhomDoBe"].ToString();
+                //    Session["center"] = tb.Rows[0]["CENTER"].ToString();
+                //}
+                
+                string connectionString = ConfigurationManager.ConnectionStrings["Database1_beConnectionString"].ConnectionString;
+
+              //  string sql = " SELECT  * FROM T_DMADoBe  ";
+
+                string sql = " SELECT nb.TenNHom, db.NgayBatDau ";
+                sql += " FROM T_DMADoBe AS db, T_NhomDoBe AS nb, T_DMA AS dma ";
+                sql += " WHERE db.Nhom= nb.ID AND db.DMA=dma.ID  AND dma.DMA='"+listDMA.SelectedValue+"'";
+                sql += " ORDER BY NgayBatDau DESC ";
+
+                DataTable tb = OledbConnection.getDataTable(connectionString, sql);
+
+              
+                DataTable dtTable = tb;
+
+                //  ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3h)  ĐỒNG HỒ TỔNG DMA NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy"));
+                //  this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
+                // 
+                ////  dtTable.DefaultView.Sort = "STT ASC";
+
+                GridView1.DataSource = dtTable;
+                GridView1.DataBind();
+
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
 
         protected void radioCheck_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (radioCheck.SelectedValue == "0")
             {
                 panelTongKet.Visible = true;
+                panelDMA.Visible = false;
                 panelDiemBe.Visible = false;
              //   getDiemBe();
             }
@@ -82,6 +129,13 @@ namespace GiamNuocWeb
             {
                 panelTongKet.Visible = false;
                 panelDiemBe.Visible = true;
+                panelDMA.Visible = false;
+            }
+            if (radioCheck.SelectedValue == "2")
+            {
+                panelTongKet.Visible = false;
+                panelDiemBe.Visible = false;
+                panelDMA.Visible = true;
             }
 
         }

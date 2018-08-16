@@ -80,16 +80,17 @@ namespace GiamNuocWeb.Class
             var q = from p in db.g_LabelDMAs orderby p.MaDMA ascending select p;
             return q.ToList();
         }
-        static DMADataContext db = new DMADataContext();
+        
         public static g_ThongTinDHT getDHTByMaDMA(string ma)
         {
-           
+            DMADataContext db = new DMADataContext();
             var q = from p in db.g_ThongTinDHTs where p.MaDMA==ma   select p;
             return q.SingleOrDefault();
         }
 
         public static bool Update()
         {
+            DMADataContext db = new DMADataContext();
             try
             {
                 db.SubmitChanges();

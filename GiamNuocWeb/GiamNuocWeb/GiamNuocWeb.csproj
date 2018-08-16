@@ -376,7 +376,7 @@
     <None Include="DmaDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DmaDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>DmaDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="DmaDataSet.xss">
       <DependentUpon>DmaDataSet.xsd</DependentUpon>
@@ -419,6 +419,7 @@
     <EmbeddedResource Include="rpThatThoatMangLuoi.rdlc" />
     <EmbeddedResource Include="rpThatThoatTiLe.rdlc" />
     <EmbeddedResource Include="rpThatThoatTuan.rdlc" />
+    <EmbeddedResource Include="rpTheoDoiDMA.rdlc" />
     <EmbeddedResource Include="rpTongKeDiemBe.rdlc" />
   </ItemGroup>
   <ItemGroup>

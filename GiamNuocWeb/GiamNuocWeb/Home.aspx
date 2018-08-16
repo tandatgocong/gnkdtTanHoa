@@ -99,7 +99,7 @@
      .box {
             position:absolute;
             left:20px;
-            top:100px;
+            top:110px;
             z-index:999;
    
         }

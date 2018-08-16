@@ -74,8 +74,8 @@ namespace GiamNuocWeb
         }
         public void getAlert()
         {
-            
-            string luuluong="  SELECT  * FROM  g_ThongTinDHT WHERE  StatusDHT='True' AND CAST(vLuuLuong as float) <= (SELECT GiaTri FROM dbo.g_Alert WHERE ThongTin='luuluong') ";
+
+            string luuluong = "SELECT  * FROM  g_ThongTinDHT WHERE  StatusDHT='True' AND (CAST(vLuuLuong as float) <= (SELECT GiaTri FROM dbo.g_Alert WHERE ThongTin='luuluong') OR vLuuLuong> vMax) ";
             DataTable tb1 = LinQConnection.getDataTable(luuluong);
             GridView1.DataSource = tb1;
             GridView1.DataBind();
