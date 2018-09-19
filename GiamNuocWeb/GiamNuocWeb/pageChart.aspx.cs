@@ -20,7 +20,7 @@ namespace GiamNuocWeb
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
-            value = Request.Params["value"].ToString();
+            value = Request.Params["value"].ToString().Replace("D_","").Replace("C_","") ;
             gTg = CThongTinDMA.getDHTByMaDMA(value);
             //title.Text ="DMA "+ gTg.MaDMA;
             tTuNgay.Text = DateTime.Today.ToString("yyyy-MM-dd");
@@ -180,6 +180,8 @@ namespace GiamNuocWeb
 
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            value = listDMA.SelectedValue.ToString();
+            gTg = CThongTinDMA.getDHTByMaDMA(value);
             if (RadioButtonList1.SelectedValue == "1")
             { getLuuLuong(); }
             if (RadioButtonList1.SelectedValue == "2")
@@ -195,6 +197,7 @@ namespace GiamNuocWeb
             try
             {
                 value = listDMA.SelectedValue.ToString();
+                gTg = CThongTinDMA.getDHTByMaDMA(value);
                 if (RadioButtonList1.SelectedValue == "1")
                 { getLuuLuong(); }
                 if (RadioButtonList1.SelectedValue == "2")
@@ -250,6 +253,7 @@ namespace GiamNuocWeb
         protected void bt_Click(object sender, EventArgs e)
         {
             value = listDMA.SelectedValue.ToString();
+            gTg = CThongTinDMA.getDHTByMaDMA(value);
             if (RadioButtonList1.SelectedValue == "1")
             { getLuuLuong(); }
             if (RadioButtonList1.SelectedValue == "2")

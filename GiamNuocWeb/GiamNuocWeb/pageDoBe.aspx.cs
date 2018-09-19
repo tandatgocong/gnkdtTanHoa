@@ -92,7 +92,7 @@ namespace GiamNuocWeb
 
                 string sql = " SELECT nb.TenNHom, db.NgayBatDau ";
                 sql += " FROM T_DMADoBe AS db, T_NhomDoBe AS nb, T_DMA AS dma ";
-                sql += " WHERE db.Nhom= nb.ID AND db.DMA=dma.ID  AND dma.DMA='"+listDMA.SelectedValue+"'";
+                sql += " WHERE db.Nhom= nb.ID AND db.DMA=dma.ID  AND dma.DMA='"+listDMA2.SelectedValue+"'";
                 sql += " ORDER BY NgayBatDau DESC ";
 
                 DataTable tb = OledbConnection.getDataTable(connectionString, sql);

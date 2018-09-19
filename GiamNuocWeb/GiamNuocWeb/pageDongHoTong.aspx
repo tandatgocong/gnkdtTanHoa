@@ -44,11 +44,6 @@
     {
         width: 543px;
     }
-    .style6
-    {
-        border: 1px #669966 dotted;
-        width: 824px;
-    }
     .style7
     {
         width: 30px;
@@ -96,9 +91,6 @@
     {
         height: 30px;
         width: 646px;
-    }
-    .style21
-    {
     }
     .style22
     {
@@ -158,6 +150,10 @@
                         <asp:DropDownList ID="listDMA" runat="server" Height="27px" Width="115px" 
                             AutoPostBack="True" onselectedindexchanged="listDMA_SelectedIndexChanged">
                         </asp:DropDownList>
+                    &nbsp;&nbsp;
+                    <asp:Button ID="btLogin" runat="server"  
+                        CssClass="button"  Text="Login" 
+                        ValidationGroup="adsfdsafd" Height="23px" PostBackUrl="~/pageLogin.aspx"  />
                     </div>
                 </td>
             </tr>

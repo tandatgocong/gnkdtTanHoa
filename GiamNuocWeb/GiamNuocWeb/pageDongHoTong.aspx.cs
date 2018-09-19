@@ -19,7 +19,7 @@ namespace GiamNuocWeb
         string imgpath;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Session["page"] = "pageDongHoTong.aspx";
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
@@ -43,6 +43,7 @@ namespace GiamNuocWeb
                 btClear.Visible = true;
                 btUpload.Visible = true;
                 btSearch.Visible = true;
+                btLogin.Visible = false;
             }
         }
        

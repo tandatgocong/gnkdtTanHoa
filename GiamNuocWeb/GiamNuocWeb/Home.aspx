@@ -141,7 +141,7 @@
      <table style="text-align:center">
             <tr>
                 <td style="background-color:#FF6600	; color:White">
-                    Min Lưu lượng (m3/h) 
+                    Lưu lượng (m3/h) 
                    
                   
                    </td>                 
@@ -149,16 +149,27 @@
             <tr>
                 <td style="background-color:White; color:White">
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-                        BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" 
-                        CellPadding="3" ShowHeader="False" Width="228px">
+                        BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="3px" 
+                        CellPadding="3" ShowHeader="False" Width="158px">
                         <Columns>
-                            <asp:BoundField DataField="MaDMA" HeaderText="MaDMA" />
-                            <asp:BoundField DataField="vLuuLuong" HeaderText="dd" />
+                            <asp:TemplateField HeaderText="MaDMA">
+                                <ItemTemplate>
+                                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("MaDMA") %>'></asp:Label>
+                                </ItemTemplate>
+                                <ItemStyle Font-Bold="False" />
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="dd">
+                                <ItemTemplate>
+                                   <asp:LinkButton ID="LinkButton1" runat="server" 
+                                        PostBackUrl='<%# Eval("MaDMA","pageChart.aspx?value={0}") %>' Text='<%# Bind("vLuuLuong") %>'></asp:LinkButton>
+                                </ItemTemplate>
+                                <ItemStyle Font-Bold="True" />
+                            </asp:TemplateField>
                         </Columns>
                         <FooterStyle BackColor="White" ForeColor="#000066" />
                         <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                         <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-                        <RowStyle ForeColor="#000066" />
+                        <RowStyle ForeColor="#000066" Height="20px" />
                         <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
                         <SortedAscendingCellStyle BackColor="#F1F1F1" />
                         <SortedAscendingHeaderStyle BackColor="#007DBB" />
@@ -169,26 +180,35 @@
             </tr>
             <tr>
                 <td style="background-color:#FF6600; color:White">
-                   Min Áp Lực (bar) </td>                 
+                   Áp Lực (bar) </td>                 
             </tr>
             <tr>
                 <td style="background-color:White; color:White">
                     <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
-                        BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" 
+                        BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="None" BorderWidth="0px" 
                         CellPadding="4" CellSpacing="2" ForeColor="Black" ShowHeader="False" 
-                        Width="231px">
+                        Width="158px">
                         <Columns>
-                            <asp:BoundField HeaderText="MaDMA" DataField="MaDMA">
-                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                            </asp:BoundField>
-                            <asp:BoundField DataField="vCMP">
-                            <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                            </asp:BoundField>
+                            <asp:TemplateField HeaderText="MaDMA">
+                                <ItemTemplate>
+                                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("MaDMA") %>'></asp:Label>
+                                </ItemTemplate>
+                                
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                            </asp:TemplateField>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                     <asp:LinkButton ID="LinkButton1" runat="server" 
+                                        PostBackUrl='<%# Eval("MaDMA","pageChart.aspx?value={0}") %>' Text='<%# Bind("vCMP") %>'></asp:LinkButton>
+                                </ItemTemplate>
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Font-Bold="True" 
+                                    ForeColor="Blue" />
+                            </asp:TemplateField>
                         </Columns>
                         <FooterStyle BackColor="#CCCCCC" />
                         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
                         <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
-                        <RowStyle BackColor="White" />
+                        <RowStyle BackColor="White" Height="20px" />
                         <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
                         <SortedAscendingCellStyle BackColor="#F1F1F1" />
                         <SortedAscendingHeaderStyle BackColor="#808080" />
@@ -197,7 +217,37 @@
                     </asp:GridView>
                     </td>
             </tr>
-            
+             <tr>
+                <td style="background-color:#FF6600; color:White">
+                   Không gửi tín hiệu </td>                 
+            </tr>
+            <tr>
+                <td style="background-color:White; color:White">
+                    <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" 
+                        BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="None" BorderWidth="0px" 
+                        CellPadding="4" CellSpacing="2" ForeColor="Black" ShowHeader="False" 
+                        Width="158px">
+                        <Columns>
+                            <asp:TemplateField HeaderText="MaDMA">
+                                <ItemTemplate>
+                                  <asp:LinkButton ID="LinkButton1" runat="server" 
+                                        PostBackUrl='<%# Eval("DMA","pageChart.aspx?value={0}") %>' Text='<%# Bind("DMA") %>'></asp:LinkButton>
+                                </ItemTemplate>
+                                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                            </asp:TemplateField>
+                        </Columns>
+                        <FooterStyle BackColor="#CCCCCC" />
+                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" Height="20px" />
+                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                        <SortedAscendingHeaderStyle BackColor="#808080" />
+                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                        <SortedDescendingHeaderStyle BackColor="#383838" />
+                    </asp:GridView>
+                    </td>
+            </tr>
         </table>
         </div>
      </div>

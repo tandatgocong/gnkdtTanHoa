@@ -79,12 +79,13 @@ namespace PMACData
 
             DateTime tNow = DateTime.Now;
 
-            if (tNow.Hour % 2 == 0 && tNow.Minute == 0 && tNow.Second == 0)
+            //if (tNow.Hour % 2 == 0 && tNow.Minute == 0 && tNow.Second == 0)
+            if (tNow.Minute == 0 && tNow.Second == 0)
             {
                 stop.PerformClick();
             }
-
-            if (tNow.Hour % 2 == 0 && tNow.Minute == 15 && tNow.Second == 0)
+            //if (tNow.Hour % 2 == 0 && tNow.Minute == 15 && tNow.Second == 0)
+            if (tNow.Minute == 10 && tNow.Second == 0)
             {
                 // start.PerformClick();
                 btCopy.PerformClick();
@@ -94,17 +95,18 @@ namespace PMACData
                 //  getTimeDatabase();
                 stasusLabel.Text = stasusLabel.Text + "__" + tNow.ToString("T");
             }
-            if (tNow.Hour % 2 == 0 && tNow.Minute == 20 && tNow.Second == 0)
+          //  if (tNow.Hour % 2 == 0 && tNow.Minute == 20 && tNow.Second == 0)
+            if (tNow.Minute == 15 && tNow.Second == 0)
             {
                 start.PerformClick();
             }
-
-            if (tNow.Hour % 2 == 0 && tNow.Minute == 30 && tNow.Second == 0)
+            //if (tNow.Hour % 2 == 0 && tNow.Minute == 30 && tNow.Second == 0)
+            if (tNow.Minute == 20 && tNow.Second == 0)
             {
                 UpdateValue();
                 
             }
-            if (tNow.Hour % 2 == 0 && tNow.Minute == 30 && tNow.Second == 0)
+            if (tNow.Minute == 25 && tNow.Second == 0)
             {
                 getTimeDatabase();
             }
@@ -118,7 +120,7 @@ namespace PMACData
             //    getTimeDatabase();
             //}
 
-            if (tNow.Hour == 8 && tNow.Minute == 30 && tNow.Second == 0)
+            if (tNow.Hour == 8 && tNow.Minute == 20 && tNow.Second == 0)
             {
                 DateTime t = DateTime.Now;
                 UpdateSanLuongDHT(t);
@@ -677,10 +679,10 @@ namespace PMACData
                 string tbCMP = "t_Data_Logger_" + table.Rows[i]["ChannelCMP"];
                 string tbALOut = "t_Data_Logger_" + table.Rows[i]["ChannelOut"];
                 string maDMA = table.Rows[i]["MaDMA"] + "";
-                
-                string sqlUpdate = "UPDATE dbo.g_ThongTinDHT SET vLuuLuong=T1.Value ";
+
+                string sqlUpdate = "UPDATE dbo.g_ThongTinDHT SET vLuuLuong=T1.Value, DateValue=T1.[TimeStamp] ";
                 sqlUpdate += " FROM ( ";
-                sqlUpdate += " SELECT  TOP(1) Value FROM " + tbName + " ORDER BY [TimeStamp] DESC ";
+                sqlUpdate += " SELECT  TOP(1) Value,[TimeStamp] FROM " + tbName + " ORDER BY [TimeStamp] DESC ";
                 sqlUpdate += " ) AS T1 ";
                 sqlUpdate += " WHERE [MaDMA]='" + maDMA + "'";
 
@@ -691,11 +693,11 @@ namespace PMACData
                 //    sqlUpdate = "UPDATE dbo.g_ThongTinDHT SET vCMP=T1.Value ";
                 //}
 
-                sqlUpdate = "UPDATE dbo.g_ThongTinDHT SET vCMP=T1.Value ";
+                sqlUpdate = "UPDATE dbo.g_ThongTinDHT SET vCMP=T1.Value, DateValueCmp=T1.[TimeStamp] ";
                 sqlUpdate += " FROM ( ";
-                sqlUpdate += " SELECT  TOP(1) Value/10 as Value FROM " + tbCMP + " ORDER BY [TimeStamp] DESC ";
+                sqlUpdate += " SELECT  TOP(1) Value/10 as Value,[TimeStamp] FROM " + tbCMP + " ORDER BY [TimeStamp] DESC ";
                 sqlUpdate += " ) AS T1 ";
-                sqlUpdate += " WHERE [MaDMA]='" + maDMA + "'";
+                sqlUpdate += " WHERE [MaDMA]='" + maDMA + "' AND CMPLat is NOT NULL ";
                 ExecuteCommand(sqlUpdate);
 
                 sqlUpdate = "UPDATE dbo.g_ThongTinDHT SET vApOut=T1.Value ";
@@ -708,6 +710,44 @@ namespace PMACData
 
                 //listBox1.Items.Add(maDMA + "__" + Math.Round(csCu) + "___" + Math.Round(csMoi));
             }
+            // Tách Mạng
+
+            string sql2 = " SELECT  * FROM g_ThongTinDHTM ";
+
+            //string sql = " SELECT  REPLACE( LEFT([Description],6),' ','') as MaDMA,*  FROM [tanhoa].[dbo].[t_Channel_Configurations] WHERE ChannelId='20238_02'  order by MaDMA";
+            DataTable table2 = getDataTable(sql2);
+            for (int i = 0; i < table2.Rows.Count; i++)
+            {
+                string tbName = "t_Data_Logger_" + table2.Rows[i]["ChannelFlow1"];
+                string tbCMP = "t_Data_Logger_" + table2.Rows[i]["ChannelInlet"];
+
+                string MaDH = table2.Rows[i]["MaDH"] + "";
+
+                string sqlUpdate = "UPDATE dbo.g_ThongTinDHTM SET vLuuLuong=T1.Value, DateUpdate=T1.[TimeStamp] ";
+                sqlUpdate += " FROM ( ";
+                sqlUpdate += " SELECT  TOP(1) Value,[TimeStamp] FROM " + tbName + " ORDER BY [TimeStamp] DESC ";
+                sqlUpdate += " ) AS T1 ";
+                sqlUpdate += " WHERE [MaDH]='" + MaDH + "'";
+
+                ExecuteCommand(sqlUpdate);
+
+                //if (maDMA == "06-02")
+                //{
+                //    sqlUpdate = "UPDATE dbo.g_ThongTinDHT SET vCMP=T1.Value ";
+                //}
+                //listBox1.Items.Add(maDMA + "__" + Math.Round(csCu) + "___" + Math.Round(csMoi));
+
+
+                sqlUpdate = "UPDATE dbo.g_ThongTinDHTM SET vApLuc=T1.Value ";
+                sqlUpdate += " FROM ( ";
+                sqlUpdate += " SELECT  TOP(1) Value/10 as Value FROM " + tbCMP + " ORDER BY [TimeStamp] DESC ";
+                sqlUpdate += " ) AS T1 ";
+                sqlUpdate += " WHERE [MaDH]='" + MaDH + "' AND Inlet='True' ";
+                ExecuteCommand(sqlUpdate);
+
+
+            }
+
         }
         private void btupdateVa_Click(object sender, EventArgs e)
         {

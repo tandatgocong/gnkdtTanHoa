@@ -22,6 +22,15 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.DropDownList listDMA;
         
         /// <summary>
+        /// btLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btLogin;
+        
+        /// <summary>
         /// txtViTri control.
         /// </summary>
         /// <remarks>
