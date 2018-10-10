@@ -85,7 +85,7 @@ namespace PMACData
                 stop.PerformClick();
             }
             //if (tNow.Hour % 2 == 0 && tNow.Minute == 15 && tNow.Second == 0)
-            if (tNow.Minute == 10 && tNow.Second == 0)
+            if (tNow.Minute == 5 && tNow.Second == 0)
             {
                 // start.PerformClick();
                 btCopy.PerformClick();
@@ -94,11 +94,13 @@ namespace PMACData
                 //  start.PerformClick();
                 //  getTimeDatabase();
                 stasusLabel.Text = stasusLabel.Text + "__" + tNow.ToString("T");
+                start.PerformClick();
             }
           //  if (tNow.Hour % 2 == 0 && tNow.Minute == 20 && tNow.Second == 0)
-            if (tNow.Minute == 15 && tNow.Second == 0)
+            if (tNow.Minute == 10 && tNow.Second == 0)
             {
-                start.PerformClick();
+                UpdateValue();
+             //   start.PerformClick();
             }
             //if (tNow.Hour % 2 == 0 && tNow.Minute == 30 && tNow.Second == 0)
             if (tNow.Minute == 20 && tNow.Second == 0)
