@@ -190,6 +190,7 @@
     <Content Include="pageApLuc.aspx" />
     <Content Include="pageChart.aspx" />
     <Content Include="pageDoBe.aspx" />
+    <Content Include="pageDoBeUD.aspx" />
     <Content Include="pageDongHoTong.aspx" />
     <Content Include="pageLogin.aspx" />
     <Content Include="pageLuuLuong.aspx" />
@@ -242,6 +243,13 @@
     </Compile>
     <Compile Include="pageDoBe.aspx.designer.cs">
       <DependentUpon>pageDoBe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pageDoBeUD.aspx.cs">
+      <DependentUpon>pageDoBeUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageDoBeUD.aspx.designer.cs">
+      <DependentUpon>pageDoBeUD.aspx</DependentUpon>
     </Compile>
     <Compile Include="pageThatThoatTiLe.aspx.cs">
       <DependentUpon>pageThatThoatTiLe.aspx</DependentUpon>

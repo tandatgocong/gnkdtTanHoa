@@ -61,10 +61,12 @@ namespace PMACData
             this.dongho.Text = DateTime.Now.ToString("G");
             string path = @"C:\PMAC\DATA";
             string path2 = @"\\192.168.1.2\c$\PMAC\DATA";
-
+            string path3 = @"\\192.168.1.2\D$\DoBe\Database1_be.accdb";
+            string path4 = @"C:\inetpub\wwwroot\App_Data\Database1_be.accdb";
             DateTime dt = Directory.GetLastWriteTime(path);
             lbFilePMAC.Text = dt.ToString("G");
 
+           
             //DateTime dt2 = Directory.GetLastWriteTime(path2);
             //dt2.ToString("G");
             //if (!lbFilePMAC.Equals(dt2.ToString("G")))
@@ -78,6 +80,15 @@ namespace PMACData
 
 
             DateTime tNow = DateTime.Now;
+
+             DateTime dtDoBe = File.GetLastWriteTime(path3);
+             DateTime dtDoBe2 = File.GetLastWriteTime(path4);
+            if (dtDoBe2.Minute != dtDoBe.Minute)
+            {
+                System.Diagnostics.Process.Start("DoBeCopy.bat");
+            }
+
+
 
             //if (tNow.Hour % 2 == 0 && tNow.Minute == 0 && tNow.Second == 0)
             if (tNow.Minute == 0 && tNow.Second == 0)
@@ -131,6 +142,11 @@ namespace PMACData
                 UpdateSanLuongDHN_TM_F2(t);
                 UpdateLuuLuongNRW(t);
             }
+
+            //if (tNow.Minute == 1 && tNow.Second == 0)
+            //{
+            //    System.Diagnostics.Process.Start("ServicesSQL.BAT");
+            //}
 
             if (tNow.Hour == 5 && tNow.Minute == 30 && tNow.Second == 0)
             {

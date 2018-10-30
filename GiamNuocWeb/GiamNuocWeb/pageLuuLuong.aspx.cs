@@ -50,48 +50,68 @@ namespace GiamNuocWeb
             
             string tn = this.tTuNgay.Text;
             string dn = this.tDenNgay.Text;
-            if (tn.Equals(dn))
+            if (checkSX.Checked == true)
             {
                 ReportViewer1.ProcessingMode = ProcessingMode.Local;
-                ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpLuLuongByGio.rdlc");
+                ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpLuLuongByDate.rdlc");
 
 
-                ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3/h) ĐH DMA NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy"));
+                ReportParameter p1 = new ReportParameter("tuNgay", "MAX LƯU LƯỢNG (m3/h) ĐH DMA TỪ NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
                 this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
-                DataTable dtTable= CLuuLuong.getLuuLuongTheoGio(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_LuuLuongDHT"];
-                dtTable.DefaultView.Sort = "GIO ASC";
 
-                ReportDataSource rds = new ReportDataSource("dsDma",dtTable );
+                ReportDataSource rds = new ReportDataSource("dsDma", CLuuLuong.getLuuLuongTheoNgayMAX(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_LuuLuongDHT"]);
                 ReportViewer1.LocalReport.DataSources.Clear();
                 ReportViewer1.LocalReport.DataSources.Add(rds);
             }
             else
             {
-                if (check.Checked == false)
+                if (tn.Equals(dn))
                 {
                     ReportViewer1.ProcessingMode = ProcessingMode.Local;
-                    ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpLuLuongByDate.rdlc");
+                    ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpLuLuongByGio.rdlc");
 
 
-                    ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3/h) ĐH DMA TỪ NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
+                    ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3/h) ĐH DMA NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy"));
                     this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
+                    DataTable dtTable = CLuuLuong.getLuuLuongTheoGio(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_LuuLuongDHT"];
+                    dtTable.DefaultView.Sort = "GIO ASC";
 
-                    ReportDataSource rds = new ReportDataSource("dsDma", CLuuLuong.getLuuLuongTheoNgay(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_LuuLuongDHT"]);
+                    ReportDataSource rds = new ReportDataSource("dsDma", dtTable);
                     ReportViewer1.LocalReport.DataSources.Clear();
                     ReportViewer1.LocalReport.DataSources.Add(rds);
                 }
                 else
                 {
-                    ReportViewer1.ProcessingMode = ProcessingMode.Local;
-                    ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpLuLuongByDate.rdlc");
+                    if (check.Checked == true)
+                    {
+                        ReportViewer1.ProcessingMode = ProcessingMode.Local;
+                        ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpLuLuongByDate.rdlc");
 
 
-                    ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3/h) BAN ĐÊM ĐH DMA TỪ NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
-                    this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
+                        ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3/h) BAN ĐÊM ĐH DMA TỪ NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
+                        this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
 
-                    ReportDataSource rds = new ReportDataSource("dsDma", CLuuLuong.getLuuLuongTheoNgayNRW(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_LuuLuongDHT"]);
-                    ReportViewer1.LocalReport.DataSources.Clear();
-                    ReportViewer1.LocalReport.DataSources.Add(rds);
+                        ReportDataSource rds = new ReportDataSource("dsDma", CLuuLuong.getLuuLuongTheoNgayNRW(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_LuuLuongDHT"]);
+                        ReportViewer1.LocalReport.DataSources.Clear();
+                        ReportViewer1.LocalReport.DataSources.Add(rds);
+
+
+                    }
+
+                    else
+                    {
+                        ReportViewer1.ProcessingMode = ProcessingMode.Local;
+                        ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpLuLuongByDate.rdlc");
+
+
+                        ReportParameter p1 = new ReportParameter("tuNgay", "LƯU LƯỢNG TRUNG BÌNH (m3/h) ĐH DMA TỪ NGÀY " + DateTime.Parse(tn).ToString("dd/MM/yyyy") + " ĐẾN " + DateTime.Parse(dn).ToString("dd/MM/yyyy") + "");
+                        this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1 });
+
+                        ReportDataSource rds = new ReportDataSource("dsDma", CLuuLuong.getLuuLuongTheoNgay(listDMA.Remove(listDMA.Length - 1, 1), tn, dn).Tables["g_LuuLuongDHT"]);
+                        ReportViewer1.LocalReport.DataSources.Clear();
+                        ReportViewer1.LocalReport.DataSources.Add(rds);
+
+                    }
                 }
             }
         }

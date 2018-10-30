@@ -10,34 +10,25 @@
 namespace GiamNuocWeb {
     
     
-    public partial class pageLuuLuong {
+    public partial class pageDoBeUD {
         
         /// <summary>
-        /// Label1 control.
+        /// Head1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
-        /// title control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label title;
-        
-        /// <summary>
-        /// DropDownDMA control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Saplin.Controls.DropDownCheckBoxes DropDownDMA;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// tTuNgay control.
@@ -49,22 +40,13 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.TextBox tTuNgay;
         
         /// <summary>
-        /// tDenNgay control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tDenNgay;
-        
-        /// <summary>
-        /// check control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox check;
+        protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
         /// Button1 control.
@@ -76,30 +58,12 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// checkSX control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox checkSX;
-        
-        /// <summary>
-        /// ScriptManager1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// ReportViewer1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }
