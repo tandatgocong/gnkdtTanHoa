@@ -113,3 +113,17 @@
 2018-10-22 15:30:27,664 [11312] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\192.168.1.2\d$\DoBe\Database1_be.accdb
 2018-10-22 15:37:59,074 [4000] ERROR File OleDbConnection ExecuteCommandData type mismatch in criteria expression.
 2018-10-22 15:37:59,262 [4000] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\192.168.1.2\d$\DoBe\Database1_be.accdb
+2018-10-31 13:57:11,732 [5140] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\192.168.1.2\d$\DoBe\Database1_be.accdb
+2018-10-31 13:58:23,867 [9480] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\192.168.1.2\d$\DoBe\Database1_be.accdb
+2018-10-31 13:59:56,762 [9480] ERROR File OleDbConnection ExecuteCommandData type mismatch in criteria expression.
+2018-10-31 13:59:56,806 [9480] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\192.168.1.2\d$\DoBe\Database1_be.accdb
+2018-10-31 14:00:04,918 [8644] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\192.168.1.2\d$\DoBe\Database1_be.accdb
+2018-10-31 14:01:31,612 [8052] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\192.168.1.2\d$\DoBe\Database1_be.accdb
+2018-10-31 14:03:16,321 [6180] ERROR File OleDbConnection ExecuteCommandData type mismatch in criteria expression.
+2018-10-31 14:03:16,361 [6180] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\192.168.1.2\d$\DoBe\Database1_be.accdb
+2018-10-31 14:03:21,516 [2496] ERROR File OleDbConnection ExecuteCommandData type mismatch in criteria expression.
+2018-10-31 14:03:21,551 [2496] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\192.168.1.2\d$\DoBe\Database1_be.accdb
+2018-10-31 14:09:18,716 [2496] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\192.168.1.2\d$\DoBe\Database1_be.accdb
+2018-10-31 14:09:44,432 [8524] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\192.168.1.2\d$\DoBe\Database1_be.accdb
+2018-10-31 14:14:01,310 [8236] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\192.168.1.2\d$\DoBe\Database1_be.accdb
+2018-10-31 14:15:30,135 [2444] ERROR File Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\192.168.1.2\d$\DoBe\Database1_be.accdb

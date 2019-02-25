@@ -26,7 +26,14 @@ namespace GiamNuocWeb
             getLoadDMA();
             getNhomDoBe();
            // tTuNgay.Text = DateTime.Today.ToString("yyyy-MM-dd");
-            DateTime tun = DateTime.Parse(DateTime.Now.Year+ "-"+(DateTime.Now.Month-1)+"-21");
+            DateTime tun = DateTime.Today ;
+            try
+            {
+               tun= DateTime.Parse(DateTime.Now.Year + "-" + (DateTime.Now.Month - 1) + "-21");
+            }
+            catch (Exception)
+            {
+            } 
             tTuNgay.Text =tun.ToString("yyyy-MM-dd");
             tDenNgay.Text = DateTime.Today.ToString("yyyy-MM-dd");
 

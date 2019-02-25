@@ -81,12 +81,14 @@ namespace PMACData
 
             DateTime tNow = DateTime.Now;
 
-             DateTime dtDoBe = File.GetLastWriteTime(path3);
-             DateTime dtDoBe2 = File.GetLastWriteTime(path4);
-            if (dtDoBe2.Minute != dtDoBe.Minute)
-            {
-                System.Diagnostics.Process.Start("DoBeCopy.bat");
-            }
+            // DateTime dtDoBe = File.GetLastWriteTime(path3);
+            // DateTime dtDoBe2 = File.GetLastWriteTime(path4);
+            //if (dtDoBe2.Minute != dtDoBe.Minute)
+            //{
+            //    System.Diagnostics.Process.Start("DoBeCopy.bat");
+                
+
+            //}
 
 
 
@@ -94,6 +96,7 @@ namespace PMACData
             if (tNow.Minute == 0 && tNow.Second == 0)
             {
                 stop.PerformClick();
+              
             }
             //if (tNow.Hour % 2 == 0 && tNow.Minute == 15 && tNow.Second == 0)
             if (tNow.Minute == 5 && tNow.Second == 0)
@@ -106,6 +109,7 @@ namespace PMACData
                 //  getTimeDatabase();
                 stasusLabel.Text = stasusLabel.Text + "__" + tNow.ToString("T");
                 start.PerformClick();
+                ThemNhomDoBe();
             }
           //  if (tNow.Hour % 2 == 0 && tNow.Minute == 20 && tNow.Second == 0)
             if (tNow.Minute == 10 && tNow.Second == 0)

@@ -14,6 +14,11 @@ namespace GiamNuocWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["page"] = "pageDoBeUD.aspx";
+            if (Session["login"] == null)
+            {
+                Response.Redirect("pageLogin.aspx");
+            }
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
@@ -63,7 +68,7 @@ namespace GiamNuocWeb
                     Label id_ = (Label)row.FindControl("Label1");
                     //lblResult.Text = lblResult.Text +" "+ row.Cells[2].Text;
 
-                    string sql = " UPDATE T_DiemBe SET TinhTrang ='1', NgaySua='" + tTuNgay.Text + "' WHERE ID='" + id_.Text + "'";
+                    string sql = " UPDATE T_DiemBe SET TinhTrang =1, NgaySua='" + tTuNgay.Text + "' WHERE ID=" + id_.Text + "";
                     OledbConnection.ExecuteCommand(connectionString, sql);
                 }
             }
