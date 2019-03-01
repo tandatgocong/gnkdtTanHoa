@@ -4,6 +4,11 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+<script language="javascript" type="text/javascript">
+    window.document.getElementById("HOME").className = "active";
+  </script>
+
 <script type="text/javascript">
     init_reload();
     function init_reload() {
@@ -99,7 +104,7 @@
      .box {
             position:absolute;
             left:20px;
-            top:110px;
+            top:138px;
             z-index:999;
    
         }
@@ -108,9 +113,9 @@
 
 
   <body> <div class="dhnLoi">
-   <table><tr><td> <div class="title_page2"> DMA : 
+   <table width="340px;"><tr><td> <div style="margin-left:7px;"> DMA : 
                         <asp:DropDownList ID="listDMA" runat="server" Height="24px" 
-           Width="67px" onselectedindexchanged="listDMA_SelectedIndexChanged" 
+           Width="80px" onselectedindexchanged="listDMA_SelectedIndexChanged" 
            AutoPostBack="True">
                         </asp:DropDownList>
                     </div></td><td>
@@ -140,7 +145,7 @@
         <div id="content">
      <table style="text-align:center">
             <tr>
-                <td style="background-color:#FF6600	; color:White">
+                <td style="background-color:#02579D	; color:White">
                     Lưu lượng (m3/h) 
                    
                   
@@ -154,13 +159,13 @@
                         <Columns>
                             <asp:TemplateField HeaderText="MaDMA">
                                 <ItemTemplate>
-                                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("MaDMA") %>'></asp:Label>
+                                    <asp:Label ID="Label2" ForeColor="Red" runat="server" Text='<%# Bind("MaDMA") %>'></asp:Label>
                                 </ItemTemplate>
                                 <ItemStyle Font-Bold="False" />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="dd">
                                 <ItemTemplate>
-                                   <asp:LinkButton ID="LinkButton1" runat="server" 
+                                   <asp:LinkButton ID="LinkButton1" ForeColor="Red" runat="server" 
                                         PostBackUrl='<%# Eval("MaDMA","pageChart.aspx?value={0}") %>' Text='<%# Bind("vLuuLuong") %>'></asp:LinkButton>
                                 </ItemTemplate>
                                 <ItemStyle Font-Bold="True" />
@@ -179,7 +184,7 @@
                     </td>
             </tr>
             <tr>
-                <td style="background-color:#FF6600; color:White">
+                <td style="background-color:#02579D; color:White">
                    Áp Lực (bar) </td>                 
             </tr>
             <tr>
@@ -191,14 +196,14 @@
                         <Columns>
                             <asp:TemplateField HeaderText="MaDMA">
                                 <ItemTemplate>
-                                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("MaDMA") %>'></asp:Label>
+                                    <asp:Label ID="Label1" ForeColor="Red" runat="server" Text='<%# Bind("MaDMA") %>'></asp:Label>
                                 </ItemTemplate>
                                 
                                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                             </asp:TemplateField>
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                     <asp:LinkButton ID="LinkButton1" runat="server" 
+                                     <asp:LinkButton  ForeColor="Red" ID="LinkButton1" runat="server" 
                                         PostBackUrl='<%# Eval("MaDMA","pageChart.aspx?value={0}") %>' Text='<%# Bind("vCMP") %>'></asp:LinkButton>
                                 </ItemTemplate>
                                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Font-Bold="True" 
@@ -218,7 +223,7 @@
                     </td>
             </tr>
              <tr>
-                <td style="background-color:#FF6600; color:White">
+                <td style="background-color:#02579D; color:White">
                    Không gửi tín hiệu </td>                 
             </tr>
             <tr>
@@ -230,7 +235,7 @@
                         <Columns>
                             <asp:TemplateField HeaderText="MaDMA">
                                 <ItemTemplate>
-                                  <asp:LinkButton ID="LinkButton1" runat="server" 
+                                  <asp:LinkButton ID="LinkButton1" ForeColor="Red" runat="server" 
                                         PostBackUrl='<%# Eval("DMA","pageChart.aspx?value={0}") %>' Text='<%# Bind("DMA") %>'></asp:LinkButton>
                                 </ItemTemplate>
                                 <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
@@ -308,7 +313,7 @@
                             var  infowindow3 = new google.maps.InfoWindow();
 
 
-                              var iwContent="<table border=1 cellpadding=0 cellspacing=0> ";
+                              var iwContent="<table border=0 cellpadding=0 cellspacing=0> ";
                                  iwContent+="<tr><td style='border-bottom:1px; border-bottom-style:dotted;'> <a href='pageChart.aspx?value=<%=table.Rows[j]["MaDMA"]%>'> <b><%=table.Rows[j]["vLuuLuong"]%> </b> m3/h </a> </td></tr> ";
                                  iwContent+="<tr><td><b><%=table.Rows[j]["vApOut"]%> </b> bar </td></tr> ";
                                  
@@ -358,7 +363,7 @@
                             var  infowindow4 = new google.maps.InfoWindow();
 
 
-                              var iwContent="<table border=1 cellpadding=0 cellspacing=0> ";
+                              var iwContent="<table border=0 cellpadding=0 cellspacing=0> ";
                                   iwContent+="<tr><td style='color:red;'><b><%=table.Rows[j]["vCMP"]%> </b> bar </td></tr> ";
                                  
                                 iwContent+="</table>";

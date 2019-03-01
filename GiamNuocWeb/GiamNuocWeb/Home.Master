@@ -1,70 +1,144 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="GiamNuocWeb.Home" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-	<head>
-		<title>Quản lý DMA Tân Hòa</title>
-        <LINK REL="SHORTCUT ICON"  HREF="Image/th.png">
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'/>
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-        <link rel="shortcut icon" href="Image/th.png" type="image/x-icon"/>
-        <script src="js/jquery.min.js" type="text/javascript"></script> 
-        <script src="js/skel.min.js"></script>
-		<script src="js/skel-panels.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel-noscript.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-desktop.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-	</head>
-	<body class="homepage">
-     <form id="form1" runat="server">
-		<!-- Header -->
-		<div id="header">
-			<div class="container">
-				<!-- Logo -->
-				<div id="logo">
-					<h1><a href="#">DMA - TÂN HÒA</a></h1>
-				</div>
 
-				<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li id="HOME" class="active" ><a href="Home.aspx" class="active">Home</a></li>
+<html lang="vn">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Quản lý DMA Tân Hòa</title>
+   <LINK REL="SHORTCUT ICON"  HREF="Image/logo.png">
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Fonts -->
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="css/animate.css" rel="stylesheet" />
+  <!-- Squad theme CSS -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="color/default.css" rel="stylesheet">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/jquery.scrollTo.js"></script> 
+  <script src="js/wow.min.js"></script>
+  <script src="js/custom.js"></script>
+    <link href="css/StyleSheet.css" rel="stylesheet" type="text/css" />
+  <script src="contactform/contactform.js"></script>  
+</head>
+  
+  <form id="form1" runat="server">
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="load"></div>
+  </div>
+
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+        <a class="navbar-brand" href="#">
+          <h1>DMA - TÂN HÒA</h1>
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+						<li id="HOME" ><a href="Home.aspx">Home</a></li>
                       <!--  <li id="Li2"   ><a href="Home2.aspx" class="active">Add</a></li>-->
-                        <li id="DHT"><a href="pageDongHoTong.aspx" class="active">Đồng Hồ DMA</a></li>
-						<li id="SANLUONG" ><a href="pageSanLuong.aspx">Sản Lượng</a></li>
-						<li id="LUULUONG" ><a href="pageLuuLuong.aspx">Lưu lượng</a></li>
-						<li id="APLUC" ><a href="pageApLuc.aspx">Áp Lực</a></li>
-                        <li id="THATTHOAT" ><a href="pageThatThoat.aspx">Thất Thoát</a></li>
-                        <li id="DOBE" ><a href="pageDoBe.aspx">Dò Bể</a></li>
+                        <li id="DHT" > <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quản Lý DMA <b class="caret"></b></a>
+                            <ul class="dropdown-menu" >
+                              <li style="background-color:#02579D"><a href="pageDongHoTong.aspx" >Thông tin Đồng hồ DMA</a></li>
+                              <li style="background-color:#02579D"><a href="pageSanLuong.aspx">Sản Lượng</a></li>
+                              <li style="background-color:#02579D"><a href="pageLuuLuong.aspx">Lưu lượng</a></li>
+                              <li style="background-color:#02579D"><a href="pageApLuc.aspx">Áp Lực</a></li>
+                              <li style="background-color:#02579D"><a href="pageDoBeDMA.aspx">Tình Hình Dò Bể DMA</a></li>
+                            </ul>
+                        </li>	
+                        		
+                        <li id="SANLUONG" > <a href="#" class="dropdown-toggle" data-toggle="dropdown">Van Bước DMA <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                              <li style="background-color:#02579D"><a href="#">Menu 1</a></li>
+                              <li style="background-color:#02579D"><a href="#">Menu 2</a></li>
+                              <li style="background-color:#02579D"><a href="#">Menu 3</a></li>
+                              
+                            </ul>
+                        </li>			
+                        <li id="THATTHOAT" > <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tỉ Lệ Thất Thoát <b class="caret"></b></a>
+                              <ul class="dropdown-menu">
+                                  <li style="background-color:#02579D"><a href="pageThatThoatBieuDo.aspx">Biểu đồ tỉ lệ thất thoát</a></li>
+                                  <li style="background-color:#02579D"><a href="pageThatThoatMangLuoi.aspx">Thất Thoát Mạng Lưới</a></li>
+                                  <li style="background-color:#02579D"><a href="pageThatThoatTuan.aspx">Thất Thoát DMA Theo Tuần</a></li>                                  
+                                </ul>
+                        </li>		                        
+                        
+
+                         <li id="DOBE">  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quản lý Dò Bể<b class="caret"></b></a>
+                              <ul class="dropdown-menu">
+                                  <li style="background-color:#02579D"><a href="#">Tiếp nhận điểm bể</a></li>
+                                  <li style="background-color:#02579D"><a href="#">Thông báo & Xin phép sửa bể</a></li>
+                                  <li style="background-color:#02579D"><a href="#">Tình Hình Sửa Bể</a></li>
+                                  <li style="background-color:#02579D"><a href="#">Theo Dõi Điểm Bể</a></li>
+                                  <li style="background-color:#02579D"><a href="#">Tổng Kết Điểm Bể</a></li>                                  
+                                </ul>
+                        </li>		   
+                        <li ><a href="pageDoBe.aspx">Dò Bể</a></li>
                       <!--     <li id="Li1" ><a href="pageLogin.aspx">Đăng nhập</a></li> -->
 					</ul>
-				</nav>
 
-			</div>
-    	</div>      
-		   
-        <div id="main" style="font-size:15px;">
-			  <div style="margin-left:5px; margin-right:5px;">             
-              <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+      <!--  <ul class="nav navbar-nav">
+          <li id="HOME" ><a href="Home.aspx">Home</a></li>
+          <li id="UNGVIEN"><a href="pUngVien.aspx">Ứng Viên</a></li>
+           <li id="UNGVIENJS"><a href="#service">Ứng Viên JS</a></li>
+          <li id="PHONGVAN" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Phỏng Vấn <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Lên Lịch</a></li>
+                      <li><a href="#"> menu</a></li>
+                      <li><a href="#"> menu</a></li>
+                    </ul>
+          </li>
+           <li id="KHACHHANG"><a href="#contact">KHÁCH HÀNG</a></li>
+          <li id="TRACUU"><a href="#contact">Tra Cứu</a></li>
+          <li><a href="#contact">Đăng Nhập</a></li>
+     
+        </ul>-->
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+    <!-- Section: contact -->
+ 
+    <div style="margin-top:55px;margin-left:5px; margin-right:5px;">
+      <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
        
-              </asp:ContentPlaceHolder>
-			 </div>
-		</div>
+      </asp:ContentPlaceHolder>
+    </div> 
 
-		<!-- Copyright -->
-		<div id="copyright">
-			<div class="container">
-				© Copyright 2018 - Tan Hoa Water Supply JSC. Developed by Tan Hoa's GNKDT
-			</div>
-		</div>
 
-        </form>
-	</body>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="wow shake" data-wow-delay="0.4s">
+          </div>
+          <p>© Copyright 2018 - Tan Hoa Water Supply JSC. Developed by Tan Hoa's GNKDT</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  </form>
+</body>
+
 </html>
