@@ -3,12 +3,7 @@
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  <script language="javascript" type="text/javascript">
-     window.document.getElementById("HOME").className = "";
-     window.document.getElementById("SANLUONG").className = "";
-     window.document.getElementById("LUULUONG").className = "";
-     window.document.getElementById("DHT").className = "";
-     window.document.getElementById("APLUC").className = "active";
-     window.document.getElementById("THATTHOAT").className = ""; window.document.getElementById("DOBE").className = "";
+     window.document.getElementById("DHT").className = "dropdown active";        
   </script>
    <style>
     
@@ -20,13 +15,13 @@
     
   </style>
                 <div class="dhnLoi">
-                 <marquee ><asp:Label ID="Label1" runat="server" Text="Tổi"></asp:Label></marquee>
+                 <marquee ><asp:Label ID="Label1" runat="server" Text="Tổi" ForeColor="Red"></asp:Label></marquee>
               </div> 
 
 <div class="title_page"><a href="Home.aspx" class="active">&nbsp;<img src="Image/Home2.png" />&nbsp;</a>
 <asp:Label ID="title" runat="server" Text="Áp Lực đồng hồ tổng">
 </asp:Label></div>
-<table border="1" style="margin-top:10px;">
+<table border="0" style="margin-top:10px;">
     <tr><td class="style1">Mã DMA : </td>
     <td><div>
 

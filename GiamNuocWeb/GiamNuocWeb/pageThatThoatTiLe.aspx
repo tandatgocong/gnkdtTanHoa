@@ -1,14 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageThatThoatTiLe.aspx.cs" Inherits="GiamNuocWeb.pageThatThoatTiLe" %>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  <script language="javascript" type="text/javascript">
-      window.document.getElementById("HOME").className = "";
-      window.document.getElementById("SANLUONG").className = "";
-      window.document.getElementById("LUULUONG").className = "";
-      window.document.getElementById("APLUC").className = "";
-      window.document.getElementById("DHT").className = "";
-      window.document.getElementById("THATTHOAT").className = "active"; 
+   <script language="javascript" type="text/javascript">
+       window.document.getElementById("THATTHOAT").className = "dropdown active";        
   </script>
+  
    <script type="text/javascript" src="https://www.google.com/jsapi"></script><!-- linechart "corechart",-->
     <script type="text/javascript">
         google.load("visualization", "1", { packages: ["linechart" ] });

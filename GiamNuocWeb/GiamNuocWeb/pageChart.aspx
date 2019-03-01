@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageChart.aspx.cs" Inherits="GiamNuocWeb.pageChart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<script language="javascript" type="text/javascript">
+    window.document.getElementById("HOME").className = "active";
+  </script>
+
+
  <script type="text/javascript" src="https://www.google.com/jsapi"></script><!-- linechart "corechart",-->
     <script type="text/javascript">
         google.load("visualization", "1", { packages: ["linechart" ] });

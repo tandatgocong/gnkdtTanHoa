@@ -3,26 +3,20 @@
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <script language="javascript" type="text/javascript">
-          window.document.getElementById("HOME").className = "";
-          window.document.getElementById("SANLUONG").className = "active";
-          window.document.getElementById("LUULUONG").className = "";
-          window.document.getElementById("APLUC").className = "";
-          window.document.getElementById("DHT").className = "";
-          window.document.getElementById("THATTHOAT").className = ""; window.document.getElementById("DOBE").className = "";
+          window.document.getElementById("DHT").className = "dropdown active";        
   </script>
   <style>
     
         .style1
         {
-            height: 25px;
-            text-align:center;
+            text-align:center;           
         }
     
   </style>
               <%--    <div class="dhnLoi">
                  <marquee ><asp:Label ID="Label1" runat="server" Text="Tổi"></asp:Label></marquee>
               </div> --%>
-<div class="title_page"><a href="Home.aspx" class="active">&nbsp;<img src="Image/Home2.png" />&nbsp;</a>
+<div class="title_page" style="margin-bottom:10px;"><a href="Home.aspx" class="active">&nbsp;<img src="Image/Home2.png" />&nbsp;</a>
 <asp:Label ID="title" runat="server" Text="Sản Lượng đồng hồ tổng">
 </asp:Label></div>
 
@@ -31,7 +25,7 @@
  <asp:Button ID="bt49dh" CssClass="button" runat="server" Text="49 ĐH Tách mạng" 
         onclick="bt49dh_Click"   />
 <asp:Panel ID="Panel92" runat="server" Visible=true Width="100%">
-    <table border="1" style="margin-top:10px;">
+    <table border="0" style="margin-top:10px;">
     <tr><td class="style1">Mã DMA : </td>
     <td><div>
        <ff:DropDownCheckBoxes ID="DropDownDMA" runat="server" Font-Size="13">
@@ -41,7 +35,7 @@
         </div>
     </td>
      </tr>
-    <tr ><td class="style1">Từ Ngày  </td><td><asp:TextBox ID="tTuNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
+    <tr ><td class="style1">Từ Ngày  </td><td><asp:TextBox  ID="tTuNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
     <tr><td class="style1">Đến Ngày </td><td><asp:TextBox ID="tDenNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
     <tr><td class="style1"><asp:CheckBox ID="check" runat="server" Text="NRW" /></td><td><asp:Button ID="Button1" CssClass="button" runat="server" Text="&nbsp;Xem&nbsp;" OnClick="bt_Click" />
         </td></tr>

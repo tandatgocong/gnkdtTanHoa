@@ -3,12 +3,7 @@
 <%@ Import Namespace="System.Data.SqlClient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script language="javascript" type="text/javascript">
-     window.document.getElementById("HOME").className = "";
-     window.document.getElementById("SANLUONG").className = "";
-     window.document.getElementById("LUULUONG").className = "";
-     window.document.getElementById("DHT").className = "active";
-     window.document.getElementById("APLUC").className = "";
-     window.document.getElementById("THATTHOAT").className = ""; 
+        window.document.getElementById("DHT").className = "dropdown active ";
 
 </script>
 <style>
@@ -132,6 +127,16 @@
         vertical-align:middle;
         margin:300px;
     }
+    front {
+  border:3px solid #c00;
+  background-color:#fff;
+  width:300px;
+  position:absolute;
+  z-index:10;
+  top:30px;
+  left:50px;
+ }
+ 
 </style>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -142,23 +147,20 @@
     });
 </script>
     <link href="css/StyleSheet.css" rel="stylesheet" type="text/css" />
-    <table >           
-
-            <tr  >
-                <td class="style3" colspan="3">
-                    <div class="title_page2"> MÃ DMA : 
+       
+   <div class="title_page2" style="margin-top:10px; margin-bottom:10px;" > MÃ DMA : 
                         <asp:DropDownList ID="listDMA" runat="server" Height="27px" Width="115px" 
                             AutoPostBack="True" onselectedindexchanged="listDMA_SelectedIndexChanged">
                         </asp:DropDownList>
                     &nbsp;&nbsp;
                     <asp:Button ID="btLogin" runat="server"  
                         CssClass="button"  Text="Login" 
-                        ValidationGroup="adsfdsafd" Height="23px" PostBackUrl="~/pageLogin.aspx"  />
+                        ValidationGroup="adsfdsafd" Height="20px" PostBackUrl="~/pageLogin.aspx"  />
                     </div>
-                </td>
-            </tr>
-
-            <tr>
+ <asp:Panel ID="Panel1" runat="server" Height="700px" ScrollBars="Both" 
+          >
+    <table style="margin-top:5px;" >           
+         <tr>
                 <td class="style3" colspan="3"  >
                     <div class="title_page">
                         THÔNG TIN đỒNG HỒ</div>
@@ -466,4 +468,9 @@
                     &nbsp;</td>
             </tr>
         </table>
+
+ </asp:Panel>
+
+
+  </div>
 </asp:Content>

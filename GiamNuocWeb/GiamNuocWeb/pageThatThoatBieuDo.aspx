@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageThatThoat.aspx.cs" Inherits="GiamNuocWeb.pageThatThoat" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageThatThoatBieuDo.aspx.cs" Inherits="GiamNuocWeb.pageThatThoatBieuDo" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="css/StyleSheet.css" rel="stylesheet" type="text/css" />
-   <script language="javascript" type="text/javascript">
-       window.document.getElementById("THATTHOAT").className = "dropdown active";        
+  <script language="javascript" type="text/javascript">
+      window.document.getElementById("THATTHOAT").className = "dropdown active";        
   </script>
   
 
@@ -99,17 +99,7 @@
    
      }
     </style>
- <div class="dhnLoi">
-  
-      <asp:RadioButtonList ID="radioCheck" runat="server" 
-          RepeatDirection="Horizontal" AutoPostBack="True" 
-          onselectedindexchanged="radioCheck_SelectedIndexChanged">
-          <asp:ListItem Value="0" Selected="True">Biểu đồ</asp:ListItem>
-          <asp:ListItem Value="1">Tỉ lệ tuần</asp:ListItem>
-          <asp:ListItem Value="2">Thất thoát mạng lưới</asp:ListItem>
-      </asp:RadioButtonList>
-  
-  </div>
+
  
    <asp:Panel ID="pBieuDoThatThoat" runat="server">
          <input id="pac-input" class="controls" type="text" placeholder="Search Box">
@@ -329,23 +319,4 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnK4XMpV0do1pWTYFGUydQvA_EyMkJ9xU&libraries=places&callback=initAutocomplete"         async defer></script>
  
     </asp:Panel>
- 
-    <asp:Panel ID="pTiLeThatThoat" runat="server"  Visible="false" >
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager> 
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="100%"
-            Height="700px" ZoomMode="PageWidth">
-        </rsweb:ReportViewer>
-    </asp:Panel>
-    <asp:Panel ID="pThatThoatMangLuoi" runat="server"  Visible="false" Width="100%" Height="100%"  >
-    <div class="dhnLoi2" >Năm 
-        <asp:DropDownList ID="drNam" runat="server" AutoPostBack="True" 
-            onselectedindexchanged="drNam_SelectedIndexChanged">
-        </asp:DropDownList>
-    </div>
-       <rsweb:ReportViewer ID="ReportViewer2" runat="server" Width="100%"
-            Height="700px" ZoomMode="PageWidth">
-        </rsweb:ReportViewer>
-    </asp:Panel>
-
 </asp:Content>
