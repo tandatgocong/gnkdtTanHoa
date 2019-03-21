@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13.125" name="DMA">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 14.125" name="DMA">
   <DataContextMoniker Name="/DMADataContext" />
   <nestedChildShapes>
     <classShape Id="c779952e-7a8e-4e66-b5be-7d37f3386327" absoluteBounds="1.5, 1.125, 2, 1.7708968098958331">
@@ -20,10 +20,10 @@
         <elementListCompartment Id="cdd66b5c-62d5-4384-9cb8-c406d1a2e9f9" absoluteBounds="1.5149999999999997, 3.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f84c7229-101e-4871-867d-a9df0767b158" absoluteBounds="8.625, 3.25, 2, 1.5785953776041666">
+    <classShape Id="f84c7229-101e-4871-867d-a9df0767b158" absoluteBounds="4, 3.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/DMADataContext/g_LabelDMA" />
       <nestedChildShapes>
-        <elementListCompartment Id="11659335-bbb7-4c0c-9e86-38d03d33338c" absoluteBounds="8.64, 3.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="11659335-bbb7-4c0c-9e86-38d03d33338c" absoluteBounds="4.0150000000000006, 4.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="3a4b4249-c194-4ca0-b6cd-8f4d4ede20a3" absoluteBounds="3.875, 0.5, 2, 3.1170068359374996">
@@ -32,10 +32,16 @@
         <elementListCompartment Id="8ce05c27-738d-4f39-906e-83564c899698" absoluteBounds="3.8899999999999997, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0aa5539e-428c-41f7-abfd-31d9ae7b0bce" absoluteBounds="6.25, 4.75, 2, 8.1168440755208326">
+    <classShape Id="0aa5539e-428c-41f7-abfd-31d9ae7b0bce" absoluteBounds="4, 5.75, 2, 8.1168440755208326">
       <DataClassMoniker Name="/DMADataContext/g_ThongTinDHT" />
       <nestedChildShapes>
-        <elementListCompartment Id="c2e998cf-b5f0-40b3-bdad-55de4078092c" absoluteBounds="6.265, 5.21, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c2e998cf-b5f0-40b3-bdad-55de4078092c" absoluteBounds="4.015, 6.21, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="01a452bf-15c9-4023-9997-adb03bf0de62" absoluteBounds="6.25, 2.25, 2, 5.0400211588541657">
+      <DataClassMoniker Name="/DMADataContext/w_BaoBe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="78fc260b-8f41-45ec-b4ad-ce4f92fa7c70" absoluteBounds="6.2650000000000006, 2.71, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

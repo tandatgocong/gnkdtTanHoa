@@ -713,3 +713,29 @@ div.numberonline {
     font-family: "Times New Roman";
     color:Blue;
 }
+
+
+
+.buttonGir{
+	background-color:#99FFCC;
+	border: 1px #005534 solid;
+	line-height: 20px;
+	color: Red;
+	font-weight: bold;
+	padding: 0 10px 2px 10px;
+	cursor: pointer;	
+    font-family: "Times New Roman";
+    }
+
+.buttonGir:hover
+{
+    background-color:White;
+	border: 1px #005534 solid;
+	line-height: 20px;
+	color: Blue;
+	font-weight: bold;
+	padding: 0 10px 2px 10px;
+	cursor: pointer;	
+    font-family: "Times New Roman";
+
+}

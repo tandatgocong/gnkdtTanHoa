@@ -20,6 +20,8 @@ namespace GiamNuocWeb
 
             Load();
         }
+        
+
         public void Load()
         {
             getLoadDMA();

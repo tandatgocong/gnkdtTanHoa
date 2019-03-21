@@ -25,11 +25,12 @@ namespace GiamNuocWeb
             Session["zoom"] = 15;
             Session["center"] = "10.801433295748337, 106.65252816547981";
             Session["sanluong"] = null;
-            Session["dobe"] = " ";
+            Session["user"] = " ";
             Session["maps"] = "";
             Session["page"] = "Home.aspx";
             Session["manhom"] = "";
             Session["tennhom"] = "";
+            Session["role"] = " ";
             
         }
 

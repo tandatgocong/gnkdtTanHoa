@@ -9,10 +9,11 @@ using log4net;
 namespace GiamNuocWeb.Class
 {
 
-    public class CThongTinDMA
+    public class CBaoBe
     {
         static public string loggger = "";
-        private static readonly ILog log = LogManager.GetLogger(typeof(CBaoBe).Name);
+        private static readonly ILog log = LogManager.GetLogger(typeof(CThongTinDMA).Name);
+        //static DMADataContext db = new DMADataContext();
         public static string getDHTLoi()
         {
             
@@ -86,13 +87,12 @@ namespace GiamNuocWeb.Class
             var q = from p in db.g_ThongTinDHTs where p.MaDMA==ma   select p;
             return q.SingleOrDefault();
         }
-    
-        public  bool Update()
+
+        public static bool Update()
         {
-           
+            DMADataContext db = new DMADataContext();
             try
             {
-                DMADataContext db = new DMADataContext();
                 db.SubmitChanges();
                // db.Refresh(System.Data.Linq.RefreshMode,null);
                 return true;
@@ -104,12 +104,12 @@ namespace GiamNuocWeb.Class
             }
             return false;
         }
-        public static bool InsertLichSu(g_GhiChu g)
+        public static bool InsertBaoBe(w_BaoBe b)
         {
             try
             {
                 DMADataContext db = new DMADataContext();
-                db.g_GhiChus.InsertOnSubmit(g);
+                db.w_BaoBes.InsertOnSubmit(b);
                 db.SubmitChanges();
                 return true;
             }

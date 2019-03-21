@@ -157,8 +157,7 @@
                         CssClass="button"  Text="Login" 
                         ValidationGroup="adsfdsafd" Height="20px" PostBackUrl="~/pageLogin.aspx"  />
                     </div>
- <asp:Panel ID="Panel1" runat="server" Height="700px" ScrollBars="Both" 
-          >
+ <asp:Panel ID="Panel1" runat="server" Height="700px" ScrollBars="Both">
     <table style="margin-top:5px;" >           
          <tr>
                 <td class="style3" colspan="3"  >

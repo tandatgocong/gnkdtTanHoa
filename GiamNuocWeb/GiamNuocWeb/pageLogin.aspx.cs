@@ -30,7 +30,7 @@ namespace GiamNuocWeb
                 Session["login"] = userLogin.Username;
                 Session["manhom"] = userLogin.Salt;
                 Session["tennhom"] = "NHÓM "+userLogin.Email;
-               
+                Session["role"] = userLogin.Role;
                
                 return true;
             }

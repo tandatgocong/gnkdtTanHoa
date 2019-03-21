@@ -72,7 +72,11 @@
     <Content Include="contactform\readme.txt" />
     <Content Include="css\images\mobileUI-site-nav-opener-bg.svg" />
     <Content Include="Image\Health.png" />
+    <Content Include="pageDBTheoDoiDB.aspx" />
+    <Content Include="pageDBBaoBe.aspx" />
     <Content Include="pageDoBeDMA.aspx" />
+    <Content Include="pageDBTiepNhan.aspx" />
+    <Content Include="pageLogout.aspx" />
     <Content Include="pageThatThoatMangLuoi.aspx" />
     <Content Include="pageThatThoatTuan.aspx" />
     <Content Include="pageThatThoatBieuDo.aspx" />
@@ -219,7 +223,6 @@
     <Content Include="Lib\Microsoft.Office.Interop.Excel.dll" />
     <Content Include="Lib\String_Indentity.dll" />
     <Content Include="Lib\String_Indentity_.dll" />
-    <Content Include="pageAddDiemBe.aspx" />
     <Content Include="pageAddLocaiton.aspx" />
     <Content Include="pageApLuc.aspx" />
     <Content Include="pageChart.aspx" />
@@ -242,15 +245,48 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="WebForm1.aspx" />
+    <Content Include="zphanquyen.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\CBaoBe.cs" />
     <Compile Include="Class\OledbConnection.cs" />
+    <Compile Include="Class\zPhanQuyen.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageDBTheoDoiDB.aspx.cs">
+      <DependentUpon>pageDBTheoDoiDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageDBTheoDoiDB.aspx.designer.cs">
+      <DependentUpon>pageDBTheoDoiDB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pageDBBaoBe.aspx.cs">
+      <DependentUpon>pageDBBaoBe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageDBBaoBe.aspx.designer.cs">
+      <DependentUpon>pageDBBaoBe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pageDoBeDMA.aspx.cs">
       <DependentUpon>pageDoBeDMA.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pageDoBeDMA.aspx.designer.cs">
       <DependentUpon>pageDoBeDMA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pageDBTiepNhan.aspx.cs">
+      <DependentUpon>pageDBTiepNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageDBTiepNhan.aspx.designer.cs">
+      <DependentUpon>pageDBTiepNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pageLogout.aspx.cs">
+      <DependentUpon>pageLogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageLogout.aspx.designer.cs">
+      <DependentUpon>pageLogout.aspx</DependentUpon>
     </Compile>
     <Compile Include="pageThatThoatMangLuoi.aspx.cs">
       <DependentUpon>pageThatThoatMangLuoi.aspx</DependentUpon>
@@ -284,13 +320,6 @@
     </Compile>
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pageAddDiemBe.aspx.cs">
-      <DependentUpon>pageAddDiemBe.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pageAddDiemBe.aspx.designer.cs">
-      <DependentUpon>pageAddDiemBe.aspx</DependentUpon>
     </Compile>
     <Compile Include="pageChart.aspx.cs">
       <DependentUpon>pageChart.aspx</DependentUpon>
@@ -326,6 +355,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="zphanquyen.aspx.cs">
+      <DependentUpon>zphanquyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="zphanquyen.aspx.designer.cs">
+      <DependentUpon>zphanquyen.aspx</DependentUpon>
     </Compile>
     <None Include="Class\C_DuLieuKhachHang33" />
     <Compile Include="Class\CApLuc.cs" />
@@ -498,6 +534,7 @@
     <Folder Include="font-awesome\fonts\" />
     <Folder Include="font-awesome\less\" />
     <Folder Include="font-awesome\scss\" />
+    <Folder Include="HinhDiemBe\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

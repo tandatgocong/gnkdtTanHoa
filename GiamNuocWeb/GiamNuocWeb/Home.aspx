@@ -7,7 +7,7 @@
 
 <script language="javascript" type="text/javascript">
     window.document.getElementById("HOME").className = "active";
-  </script>
+</script>
 
 <script type="text/javascript">
     init_reload();
