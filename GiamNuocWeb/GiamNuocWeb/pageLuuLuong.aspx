@@ -33,8 +33,8 @@
         </div>
     </td>
      </tr>
-    <tr ><td class="style1">Từ Ngày  </td><td><asp:TextBox ID="tTuNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
-    <tr><td class="style1">Đến Ngày </td><td><asp:TextBox ID="tDenNgay" runat="server" TextMode="Date"></asp:TextBox></td></tr>
+    <tr ><td class="style1">Từ Ngày  </td><td><asp:TextBox ID="tTuNgay" runat="server" Width="150px" Height="20px" TextMode="Date"></asp:TextBox></td></tr>
+    <tr><td class="style1">Đến Ngày </td><td><asp:TextBox ID="tDenNgay" runat="server" Width="150px" Height="20px" TextMode="Date"></asp:TextBox></td></tr>
     <tr><td class="style1" ><asp:CheckBox ID="check" runat="server" Text="NRW" /></td><td><asp:Button ID="Button1" CssClass="button" runat="server" Text="&nbsp;Xem&nbsp;" OnClick="bt_Click" /></td><td><asp:CheckBox ID="checkSX" runat="server" Text="SX" /></td></tr>
 </table>
 

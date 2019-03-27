@@ -121,6 +121,19 @@ namespace GiamNuocWeb.Class
             }
             return false;
         }
+        public static w_Quan getQuan(int maquan)
+        {
+            DMADataContext db = new DMADataContext();
+            var q = from p in db.w_Quans where p.MaQuan == maquan select p;
+            return q.SingleOrDefault();
+        }
+
+        public static w_Phuong getPhuong(int maquan, string maphuong)
+        {
+            DMADataContext db = new DMADataContext();
+            var q = from p in db.w_Phuongs where p.MaQuan == maquan && p.MaPhuong == maphuong select p;
+            return q.SingleOrDefault();
+        }
 
     }
 }

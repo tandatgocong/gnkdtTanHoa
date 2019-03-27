@@ -70,12 +70,12 @@
     <Content Include="color\default.css" />
     <Content Include="contactform\contactform.js" />
     <Content Include="contactform\readme.txt" />
+    <Content Include="pageDBBaoBeTB.aspx" />
     <Content Include="css\images\mobileUI-site-nav-opener-bg.svg" />
     <Content Include="Image\Health.png" />
-    <Content Include="pageDBTheoDoiDB.aspx" />
+    <Content Include="Image\Search.png" />
     <Content Include="pageDBBaoBe.aspx" />
     <Content Include="pageDoBeDMA.aspx" />
-    <Content Include="pageDBTiepNhan.aspx" />
     <Content Include="pageLogout.aspx" />
     <Content Include="pageThatThoatMangLuoi.aspx" />
     <Content Include="pageThatThoatTuan.aspx" />
@@ -253,12 +253,12 @@
     <Compile Include="Class\zPhanQuyen.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pageDBTheoDoiDB.aspx.cs">
-      <DependentUpon>pageDBTheoDoiDB.aspx</DependentUpon>
+    <Compile Include="pageDBBaoBeTB.aspx.cs">
+      <DependentUpon>pageDBBaoBeTB.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pageDBTheoDoiDB.aspx.designer.cs">
-      <DependentUpon>pageDBTheoDoiDB.aspx</DependentUpon>
+    <Compile Include="pageDBBaoBeTB.aspx.designer.cs">
+      <DependentUpon>pageDBBaoBeTB.aspx</DependentUpon>
     </Compile>
     <Compile Include="pageDBBaoBe.aspx.cs">
       <DependentUpon>pageDBBaoBe.aspx</DependentUpon>
@@ -273,13 +273,6 @@
     </Compile>
     <Compile Include="pageDoBeDMA.aspx.designer.cs">
       <DependentUpon>pageDoBeDMA.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pageDBTiepNhan.aspx.cs">
-      <DependentUpon>pageDBTiepNhan.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pageDBTiepNhan.aspx.designer.cs">
-      <DependentUpon>pageDBTiepNhan.aspx</DependentUpon>
     </Compile>
     <Compile Include="pageLogout.aspx.cs">
       <DependentUpon>pageLogout.aspx</DependentUpon>

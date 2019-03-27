@@ -84,7 +84,7 @@
                          <li id="DOBE">  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quản lý Dò Bể<b class="caret"></b></a>
                               <ul class="dropdown-menu">
                                   <li style="background-color:#02579D"><a href="pageDBBaoBe.aspx">Tiếp nhận điểm bể</a></li>
-                                  <li style="background-color:#02579D"><a href="pageDBTiepNhan.aspx">Thông báo & Xin phép sửa bể</a></li>
+                                  <li style="background-color:#02579D"><a href="pageDBBaoBeTB.aspx">Thông báo & Xin phép sửa bể</a></li>
                                   <li style="background-color:#02579D"><a href="#">Theo Dõi Sửa Bể</a></li>
                                   <li style="background-color:#02579D"><a href="#">Theo Dõi Điểm Bể Nhóm</a></li>
                                   <li style="background-color:#02579D"><a href="#">Tổng Kết Điểm Bể</a></li>                                  

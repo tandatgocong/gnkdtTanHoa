@@ -12,8 +12,8 @@ namespace GiamNuocWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataSource = Class.LinQConnection.getDataTable("SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],[SoNha] + ' '+  [TenDuong]  AS 'DiaChi',CASE WHEN [Chuyen]='True' THEN N'Rồi' ELSE N'Chưa' END AS 'Chuyen',* FROM w_BaoBe WHERE DATEDIFF(D,CreateDate,GETDATE())=0 ");
-            GridView1.DataBind();
+            //GridView1.DataSource = Class.LinQConnection.getDataTable("SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],[SoNha] + ' '+  [TenDuong]  AS 'DiaChi',CASE WHEN [Chuyen]='True' THEN N'Rồi' ELSE N'Chưa' END AS 'Chuyen',* FROM w_BaoBe WHERE DATEDIFF(D,CreateDate,GETDATE())=0 ");
+            //GridView1.DataBind();
         }
 
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
@@ -36,6 +36,31 @@ namespace GiamNuocWeb
         }
 
         protected void checkDDS_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+
+        protected void cbMaDMA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void cbKetCauLe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void inQuan_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

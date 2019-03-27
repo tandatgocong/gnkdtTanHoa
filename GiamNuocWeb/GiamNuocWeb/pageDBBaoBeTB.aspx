@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageDBBaoBe.aspx.cs" Inherits="GiamNuocWeb.pageDoBeBaoBe" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="pageDBBaoBeTB.aspx.cs" Inherits="GiamNuocWeb.pageDBBaoBeTB" %>
 <%@ Import Namespace="System.Data" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
 <%@ Import Namespace="GiamNuocWeb.Class" %>
@@ -49,6 +49,12 @@
       .style3
       {
           height: 29px;
+          border-bottom: 1px #99cc99 solid; 
+      }
+       .style33
+      {
+          height: 29px;
+          width:110px;
           border-bottom: 1px #99cc99 solid; 
       }
       .style4
@@ -139,18 +145,18 @@
  <asp:RadioButtonList ID="RadioButtonList1" CssClass=style7 runat="server"  Width="250px" AutoPostBack="true"
                 onselectedindexchanged="RadioButtonList1_SelectedIndexChanged" 
                 RepeatDirection="Horizontal">
-                <asp:ListItem Selected="True" Value="0">Thêm Mới</asp:ListItem>
-                <asp:ListItem Value="1">Theo dõi Điểm Bể</asp:ListItem>
+                <asp:ListItem Selected="True" Value="0">Điều chỉnh Điểm Bể</asp:ListItem>
+                <asp:ListItem Value="1">In Thông Báo</asp:ListItem>
 </asp:RadioButtonList>
 </div>
 
  <asp:Panel ID="pThemMoi" runat="server" >   
-  <div class='title_page'>THÊM MỚI ĐIỂM BỂ</div>
+  <div class='title_page'>ĐIỀU CHỈNH ĐIỂM BỂ</div>
   <div style="margin-left:10px;">
           
-          <table  >
+          <table>
             <tr>
-                <td class="style3">
+                <td class="style33">
                     <asp:Label ID="IDBB" runat="server" Text="" Visible=false></asp:Label>
                     Nhóm Dò Bể                    
                 </td>
@@ -168,71 +174,79 @@
                     <asp:DropDownList ID="cbLoaiBe" runat="server">
                         <asp:ListItem Value="False">Bể Ngầm</asp:ListItem>
                         <asp:ListItem Value="True">Bể Nổi</asp:ListItem>
-                    </asp:DropDownList>                   
-                </td>
-            </tr>
-
-            <tr>
-                <td class="style3">
-                    Tình trạng
-                    
-                </td>
-                <td class="style3" >
-                    <asp:DropDownList ID="cbTinhTrang" runat="server">
+                    </asp:DropDownList>        
+                    T.Trạng     <asp:DropDownList ID="cbTinhTrang" runat="server">
                         <asp:ListItem Value="KTB">KTB</asp:ListItem>
                         <asp:ListItem Value="ĐĐS">Bể ĐĐS</asp:ListItem>
-                    </asp:DropDownList>                   
+                    </asp:DropDownList>       
                 </td>
             </tr>
             <tr>
                 <td class="style3">
                     Số nhà</td>
                 <td class="style3" >
-                    <asp:TextBox ID="txtSoNha" runat="server" Height="25px" Width="204px"></asp:TextBox>
+                    <asp:TextBox ID="txtSoNha" runat="server" Height="25px" Width="216px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="style3">
                     Đường</td>
                 <td class="style3" >
-                    <asp:TextBox ID="txtDuong" runat="server" Height="25px" Width="203px"></asp:TextBox>
-
-                   
+                    <asp:TextBox ID="txtDuong" runat="server" Height="25px" Width="216px"></asp:TextBox>
                     <asp:HiddenField ID="hfTenDuong" runat="server" />
-
-                   
                 </td>
             </tr>
-           
+            <tr>
+                <td class="style3">
+                    Mã DMA</td>
+                <td class="style3" >               
+                 <asp:DropDownList ID="cbMaDMA" runat="server" AutoPostBack="True" 
+            onselectedindexchanged="cbMaDMA_SelectedIndexChanged">
+                    </asp:DropDownList>
+                </td>
+            </tr>
              <tr>
                 <td class="style3">
-                    Kết Cấu Lề </td>
+                    Phường - Quận </td>
+                <td class="style3" >
+                    <asp:DropDownList ID="cbPhuong" runat="server"/> &nbsp;<asp:DropDownList ID="cbQuan" Width="90px" runat="server"/>                     
+                </td>
+            </tr>
+            <tr>
+                <td class="style3">
+                    Kết Cấu Lề <br />Phui </td>
                      <td class="style3" >
                      <asp:DropDownList ID="cbKetCauLe" runat="server"> 
-                         <asp:ListItem Value=" ">Không</asp:ListItem>
+                         <asp:ListItem Value="KH">Không</asp:ListItem>
                          <asp:ListItem Value="BTXM">BTXM</asp:ListItem>
                          <asp:ListItem Value="GACH">Gạch</asp:ListItem>
                          <asp:ListItem Value="DA">Đá Hoa Cương</asp:ListItem>
-                     </asp:DropDownList> </td>
+                     </asp:DropDownList> <br />
+                     <asp:TextBox ID="lePhui" runat="server" Height="50px" TextMode="MultiLine" 
+                        Width="216px"></asp:TextBox>
+                     </td>
             </tr>
              <tr>
                 <td class="style3">
-                    Kết Cấu Đường &nbsp;&nbsp;&nbsp;</td>
+                    Kết Cấu Đường  <br />Phui</td>
                      <td class="style3" > <asp:DropDownList ID="cbKetCauDuong" runat="server"> 
-                         <asp:ListItem Value=" ">Không</asp:ListItem>
+                         <asp:ListItem Value="KH">Không</asp:ListItem>
                          <asp:ListItem Value="NHUA">Nhựa</asp:ListItem>
                          <asp:ListItem Value="BTXM">BTXM</asp:ListItem>
                          <asp:ListItem Value="DAT">Đất</asp:ListItem>
-                        </asp:DropDownList> </td>
+                        </asp:DropDownList> <br />
+                          <asp:TextBox ID="duongPhui" runat="server" Height="50px" TextMode="MultiLine" 
+                        Width="216px"></asp:TextBox>
+                        </td>
             </tr>
-            <tr>
+           <%-- <tr>
                   <td class="style3">
                       Hình Ảnh</td>
                   <td class="style3">
                       <asp:FileUpload ID="FileUpload1" runat="server" />
                       <asp:HiddenField ID="imagePath" runat="server" />
                   </td>
-              </tr>
+              </tr>--%>
             <tr>
                 <td class="style1">
                     Ghi Chú</td>
@@ -244,7 +258,7 @@
               <tr>
                   <td class="style2" colspan="2">
                       <asp:Button ID="btThen" runat="server" CssClass="button" Height="25px" 
-                          onclick="btThen_Click" Text="Thêm Mới" Width="103px" />
+                          onclick="btThen_Click" Text="Cập Nhật" Width="103px" />
                       <asp:Button ID="btBack" Visible=false runat="server"  onclientclick="if(confirm('Bạn có chắc chắn xóa điểm bể ?') == false)return false;"  CssClass="button" Height="25px" 
                           onclick="btBack_Click" Text="Xóa" Width="103px" />
                       <br />
@@ -254,19 +268,11 @@
               </tr>
         </table>
         <div style="border-right:1px #FF0000 solid; background-color:#FFFFCC; font-size:small; border-bottom: 2px #FF0000 solid; width:100%"> 
-          <table><tr><td style="border-right:2px #FF0000 solid;">
-            <asp:RadioButtonList ID="RadioButtonList2" runat="server"  Width="140px" AutoPostBack="true"
-                onselectedindexchanged="RadioButtonList2_SelectedIndexChanged" 
-                RepeatDirection="Horizontal">
-                <asp:ListItem Selected="True" Value="0">All</asp:ListItem>
-                <asp:ListItem Value="1">ĐĐS</asp:ListItem>
-                <asp:ListItem Value="2">KTB</asp:ListItem>
-              </asp:RadioButtonList>
-               </td><td>
-              &nbsp;Địa chỉ: <asp:TextBox ID="txtSearch" runat="server" Height="25px" Width="124px"/></td><td>&nbsp;<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Image/Search.png"  Height="26px"  onclick="ImageButton1_Click" /></td>
-              </tr></table>
+          <table><tr><td>
+              &nbsp;Ngày: <asp:TextBox ID="tNgay" runat="server" Width="122px" Height="20px" TextMode="Date"/></td><td>đến&nbsp;</td><td><asp:TextBox ID="dNgay" runat="server" Width="122px" Height="20px" TextMode="Date"/></td><td>&nbsp;<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Image/Search.png"  Height="20px"  onclick="ImageButton1_Click" /></td>
+              </tr>
+          </table>
           </div>
-
            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
                 BackColor="White" Font-Size="Small" BorderColor="#CCCCCC" 
                 BorderStyle="None" BorderWidth="1px"  Width="100%"
@@ -285,6 +291,12 @@
                          </ItemTemplate>
                          <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:TemplateField>
+                      <asp:BoundField DataField="TenPhuong" HeaderText="Phường">
+                    </asp:BoundField>
+                      <asp:BoundField DataField="TenQuan" HeaderText="Quận">
+                    </asp:BoundField>
+                    <asp:BoundField DataField="MaDMA" HeaderText="DMA">
+                    </asp:BoundField>
                     <asp:TemplateField HeaderText="">
                         <ItemTemplate>
                             <div ID="popup">
@@ -307,10 +319,10 @@
                         </ItemTemplate>
                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:TemplateField>
-                     <asp:BoundField DataField="KetCauLe" HeaderText="Kết Cấu Lề">
+                     <asp:BoundField DataField="PhuiLe" HeaderText="Kết Cấu Lề">
                     <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:BoundField>
-                    <asp:BoundField DataField="KetCauDuong" HeaderText="Kết Cấu Đường">
+                    <asp:BoundField DataField="PhuiDuong" HeaderText="Kết Cấu Đường">
                     <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:BoundField>
                     <asp:BoundField DataField="NgayBao" HeaderText="Ngày Báo" >
@@ -319,9 +331,9 @@
                     <asp:BoundField DataField="GhiChuu" HeaderText="Ghi Chú" >
                     <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:BoundField>
-                    <asp:TemplateField HeaderText="Chuyển Thông Báo">                      
+                    <asp:TemplateField HeaderText="In Thông Báo">                      
                         <ItemTemplate>
-                               <asp:Button ID="btChuyenTB" CssClass=buttonGir runat="server" Width="100%" Text='<%# Bind("Chuyen") %>' Visible=false  CommandArgument='<%# Bind("ID") %>' CommandName="chuyenTB"   onclientclick="if(confirm('Bạn có muốn chuyển Thông Báo?') == false)return false;" />
+                               <asp:Button ID="btChuyenTB" CssClass=buttonGir runat="server" Width="100%" Text='<%# Bind("InThongBao") %>' CommandArgument='<%# Bind("ID") %>' CommandName="chuyenTB"   onclientclick="if(confirm('Bạn có muốn chuyển In lại Thông Báo?') == false)return false;" />
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="ID" HeaderText="ID" Visible="False" />
@@ -338,87 +350,92 @@
             </asp:GridView>
         </asp:Panel>
 
-   <asp:Panel ID="PTheoDoi" runat="server" Visible="false" >   
-  <table border="0" style="margin-top:10px;">
-   <tr ><td class="style1">Nhóm Dò Bể </td><td>&nbsp;<asp:DropDownList ID="tdNhomDB" Width="150px" runat="server">                      
+<asp:Panel ID="PTheoDoi" runat="server" Visible="false" >   
+    <div style="background-color:#CCFFFF"><table border="0" style="margin-top:10px;">
+   <tr ><td  class="style1">Chọn Quận </td><td>&nbsp;<asp:DropDownList ID="inQuan" Width="150px" runat="server" AutoPostBack="True" onselectedindexchanged="inQuan_SelectedIndexChanged">                      
                     </asp:DropDownList>   </td></tr>
-    <tr ><td class="style1">Từ Ngày  </td><td>&nbsp;<asp:TextBox ID="tNgay" runat="server" Width="150px" Height="20px" TextMode="Date"></asp:TextBox></td></tr>
-    <tr><td class="style1">Đến Ngày </td><td>&nbsp;<asp:TextBox ID="dNgay" runat="server" Width="150px" Height="20px" TextMode="Date"></asp:TextBox></td></tr>
-    <tr><td class="style1">Tình Trạng </td><td>&nbsp;<asp:DropDownList ID="tdTinhTrang" runat="server"  Width="150px" RepeatDirection="Horizontal">
-                <asp:ListItem Selected="True" Value="0">Tất Cả</asp:ListItem>
-                <asp:ListItem Value="1">ĐĐS</asp:ListItem>
-                <asp:ListItem Value="2">KTB</asp:ListItem>
-                <asp:ListItem Value="3">Hết Hạn KTB</asp:ListItem>
-                <asp:ListItem Value="4">Điểm bể Ngầm</asp:ListItem>
-                <asp:ListItem Value="5">Điểm bể Nổi</asp:ListItem>
-              </asp:DropDownList>
-    </td></tr>
-    <tr><td class="style1"> </td><td>&nbsp;<asp:Button ID="THeoDoiDemB" runat="server" CssClass="button" Height="25px" onclick="THeoDoiDemB_Click" Text="Tra Cứu" Width="103px" /></td></tr>
-</table>
-
-    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
-            BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" 
-            CellPadding="4" Font-Size="Small" onrowdatabound="GridView2_RowDataBound"          
-            style="text-align: center" Width="100%">
-            <Columns>
-                <asp:BoundField DataField="STT" HeaderText="STT">
-                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="40px" />
-                </asp:BoundField>
-                <asp:BoundField DataField="TenNhom" HeaderText="Nhóm " />
-                <asp:TemplateField HeaderText="Địa Chỉ">
-                    <ItemTemplate>
-                        <b>
-                        <asp:LinkButton ID="LinkButton1" runat="server" 
-                            CommandArgument='<%# Bind("ID") %>' CommandName="updateeee" 
-                            Text='<%# Bind("DiaChi") %>'></asp:LinkButton>
-                        </b>
-                    </ItemTemplate>
+    
+</table></div>
+        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
+                BackColor="White" Font-Size="Small" BorderColor="#CC9966" 
+                BorderStyle="None" BorderWidth="1px"  Width="100%"
+                CellPadding="4" 
+                style="text-align: center" onrowdatabound="GridView2_RowDataBound" >
+                <Columns>
+                    <asp:TemplateField HeaderText="Chọn" Visible="False">
+                        <ItemTemplate>
+                            <asp:CheckBox ID="checkChon" runat="server" />
+                        </ItemTemplate>                        
+                        <ItemStyle Width="40px" />
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="STT" HeaderText="STT">
                     <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                </asp:TemplateField>
-                <asp:BoundField DataField="LoaiBe" HeaderText="Loại Bể" />
-                <asp:TemplateField HeaderText="Tình Trạng">
-                    <ItemTemplate>
-                        <asp:Label ID="lbTinhTrang" runat="server"  Text='<%# Bind("TinhTrang") %>'></asp:Label>                        
-                    </ItemTemplate>
+                    <ItemStyle Width="40px" HorizontalAlign="Center" VerticalAlign="Middle" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="TenNhom" HeaderText="Nhóm ">
+                    </asp:BoundField>
+                     <asp:TemplateField HeaderText="Địa Chỉ">
+                         <ItemTemplate>
+                            <b> <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Bind("ID") %>' Text='<%# Bind("DiaChi") %>'></asp:LinkButton> </b>
+                         </ItemTemplate>
+                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                    </asp:TemplateField>
+                      <asp:BoundField DataField="TenPhuong" HeaderText="Phường">
+                    </asp:BoundField>
+                      <asp:BoundField DataField="TenQuan" HeaderText="Quận">
+                    </asp:BoundField>
+                    <asp:BoundField DataField="MaDMA" HeaderText="DMA">
+                    </asp:BoundField>
+                    <asp:TemplateField HeaderText="" Visible="False">
+                        <ItemTemplate>
+                            <div ID="popup">
+                                <a href="#">Image<span>
+                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# BIND("HinhAnh") %>' />
+                                </span></a>
+                            </div>
+                        </ItemTemplate>
+                        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                        <ItemStyle Width="30px" />
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="LoaiBe" HeaderText="Loại Bể">
+                    </asp:BoundField>
+                     <asp:BoundField DataField="PhuiLe" HeaderText="Kết Cấu Lề">
                     <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                </asp:TemplateField>
-                <asp:BoundField DataField="KetCauLe" HeaderText="Kết Cấu Lề">
-                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                </asp:BoundField>
-                <asp:BoundField DataField="KetCauDuong" HeaderText="Kết Cấu Đường">
-                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                </asp:BoundField>
-                <asp:BoundField DataField="NgayBao" HeaderText="Ngày Báo">
-                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                </asp:BoundField>
-                <asp:TemplateField HeaderText="Chuyển Thông Báo">
-                    <ItemTemplate>
-                       <asp:Label ID="lbChuyenTBB" runat="server"  Text='<%# Bind("Chuyen") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:BoundField DataField="ChuyenNgay" HeaderText="Ngày Chuyển" />
-                 <asp:TemplateField HeaderText="Tự động xóa">
-                    <ItemTemplate>
-                       <asp:Label ID="AutoDel" runat="server"  Text='<%# Bind("AutoDel") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:BoundField DataField="GhiChuu" HeaderText="Ghi Chú">
-                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                </asp:BoundField>
-                <asp:BoundField DataField="ID" HeaderText="ID" Visible="False" />
-            </Columns>
-            <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-            <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
-            <RowStyle BackColor="White" ForeColor="#330099" Height="25px" />
-            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-            <SortedAscendingCellStyle BackColor="#FEFCEB" />
-            <SortedAscendingHeaderStyle BackColor="#AF0101" />
-            <SortedDescendingCellStyle BackColor="#F6F0C0" />
-            <SortedDescendingHeaderStyle BackColor="#7E0000" />
-        </asp:GridView>
+                    </asp:BoundField>
+                    <asp:BoundField DataField="PhuiDuong" HeaderText="Kết Cấu Đường">
+                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="NgayBao" HeaderText="Ngày Báo" >
+                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="GhiChuu" HeaderText="Ghi Chú" >
+                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                    </asp:BoundField>
+                     <asp:TemplateField HeaderText="ID" Visible="False" >
+                         <ItemTemplate>
+                            <b> <asp:Label ID="lbID" runat="server"  Text='<%# Bind("ID") %>'></asp:Label> </b>
+                         </ItemTemplate>
+                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                    </asp:TemplateField>
+                </Columns>
+                <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                <RowStyle ForeColor="#330099" Height="25px" BackColor="White" />
+                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                <SortedDescendingHeaderStyle BackColor="#7E0000" />
+            </asp:GridView>
 
-  </asp:Panel>
+<div style="background-color:#CCFFFF;width:100%;font-size:small;"> 
+          <table><tr><td>
+              &nbsp;TC Ngày: <asp:TextBox ID="tcTNgay" runat="server" Width="122px" Height="20px" TextMode="Date"/></td><td>đến&nbsp;</td><td><asp:TextBox ID="tcDNgay" runat="server" Width="122px" Height="20px" TextMode="Date"/></td>
+              </tr>
+          </table>
+</div>
+  &nbsp;<asp:Button ID="THeoDoiDemB" runat="server" CssClass="button" Height="25px" onclick="THeoDoiDemB_Click" Text="In Thông Báo" Width="103px" />
+</asp:Panel>
 
 </asp:Content>
