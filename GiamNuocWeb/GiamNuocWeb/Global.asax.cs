@@ -31,6 +31,7 @@ namespace GiamNuocWeb
             Session["manhom"] = "";
             Session["tennhom"] = "";
             Session["role"] = " ";
+            Session["ten"] = "";
             
         }
 

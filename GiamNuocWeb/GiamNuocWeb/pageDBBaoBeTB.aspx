@@ -3,6 +3,7 @@
 <%@ Import Namespace="System.Data.SqlClient" %>
 <%@ Import Namespace="GiamNuocWeb.Class" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit"  %>
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <link href="css/style22.css" rel="stylesheet" type="text/css" />
@@ -142,7 +143,7 @@
     </script>   
 
 <div style="border-right:1px #FF0000 solid; background-color:#FFFFCC; font-size:small; border-bottom: 2px #FF0000 solid; width:100%"> 
- <asp:RadioButtonList ID="RadioButtonList1" CssClass=style7 runat="server"  Width="250px" AutoPostBack="true"
+ <asp:RadioButtonList ID="RadioButtonList1" CssClass=style7 runat="server"  Width="270px" AutoPostBack="true"
                 onselectedindexchanged="RadioButtonList1_SelectedIndexChanged" 
                 RepeatDirection="Horizontal">
                 <asp:ListItem Selected="True" Value="0">Điều chỉnh Điểm Bể</asp:ListItem>
@@ -152,7 +153,7 @@
 
  <asp:Panel ID="pThemMoi" runat="server" >   
   <div class='title_page'>ĐIỀU CHỈNH ĐIỂM BỂ</div>
-  <div style="margin-left:10px;">
+  <div style="margin-left:10px; ">
           
           <table>
             <tr>
@@ -205,7 +206,7 @@
                     </asp:DropDownList>
                 </td>
             </tr>
-             <tr>
+            <tr>
                 <td class="style3">
                     Phường - Quận </td>
                 <td class="style3" >
@@ -351,11 +352,13 @@
         </asp:Panel>
 
 <asp:Panel ID="PTheoDoi" runat="server" Visible="false" >   
-    <div style="background-color:#CCFFFF"><table border="0" style="margin-top:10px;">
-   <tr ><td  class="style1">Chọn Quận </td><td>&nbsp;<asp:DropDownList ID="inQuan" Width="150px" runat="server" AutoPostBack="True" onselectedindexchanged="inQuan_SelectedIndexChanged">                      
+<div style="background-color:#CCFFFF">
+    <table border="0" style="margin-top:10px;">
+     <tr ><td  class="style1">Chọn Quận </td><td>&nbsp;<asp:DropDownList ID="inQuan" Width="150px" runat="server" AutoPostBack="True" onselectedindexchanged="inQuan_SelectedIndexChanged">                      
                     </asp:DropDownList>   </td></tr>
     
-</table></div>
+    </table>
+</div>
         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
                 BackColor="White" Font-Size="Small" BorderColor="#CC9966" 
                 BorderStyle="None" BorderWidth="1px"  Width="100%"
@@ -436,6 +439,13 @@
           </table>
 </div>
   &nbsp;<asp:Button ID="THeoDoiDemB" runat="server" CssClass="button" Height="25px" onclick="THeoDoiDemB_Click" Text="In Thông Báo" Width="103px" />
+
+     <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+    <rsweb:ReportViewer ID="ReportViewer1" runat="server" ConsumeContainerWhiteSpace = true ShowPrintButton="true"  Width="795px" Height="590px"
+        Visible="false" ZoomMode="PageWidth" >
+    </rsweb:ReportViewer>
+
 </asp:Panel>
 
 </asp:Content>

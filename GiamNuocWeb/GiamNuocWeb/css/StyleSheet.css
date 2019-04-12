@@ -739,3 +739,81 @@ div.numberonline {
     font-family: "Times New Roman";
 
 }
+
+
+.table_list_TK{
+	
+	border:1px #669966 dotted;
+}
+
+.table_list_TK tr.head td{
+    background-color:#CCFFCC;
+	border-bottom: 1px #99cc99 solid;
+	color: #006633;
+	font-weight: bold;
+	text-align: center;
+	padding: 2px 5px;
+	font-style: normal;
+    font-variant: normal;
+    font-size: 14px;
+    line-height: normal;
+    font-family: "Times New Roman";
+}
+
+
+.table_list tr.head1 td{
+	border-bottom: 1px #99cc99 solid;
+	background-color: #F8F8F8;
+	color: #006633;
+	font-weight: bold;
+	text-align: right;
+	padding: 2px 5px;
+	height: 25px;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 13px;
+    line-height: normal;
+    font-family: Arial, Tahoma, Helvetica, sans-serif;
+}
+
+.table_list tr.head11 td{
+	border-bottom: 1px #99cc99 solid;	
+	font:normal 12px Arial, Tahoma, Helvetica, sans-serif;
+	color: #006633;
+	font-weight: bold;
+	text-align: center;
+	padding: 2px 5px;
+	height: 25px;
+}
+
+.table_list .head_bor{
+	border-right: 1px #99cc99 solid;
+}
+
+.table_list .head_nobor{
+	border: 0;
+}
+
+.table_list td{
+	border-right:1px solid #EAEAEA;
+	padding-right:3px;padding-left:5px;
+	#height: 20px;
+    margin-left: 240px;
+}
+
+.table_list .nobor{
+	border: 0;
+	#padding-bottom:2px;#padding-top:2px;
+}
+
+.table_list .row1 td{
+	background:#f7fff9;
+	padding-bottom:4px;padding-top:4px;
+	#padding-bottom:2px;#padding-top:2px;
+
+}
+.table_list .row2 td{
+	background:#F1F1F1;
+	padding-bottom:4px;padding-top:4px;
+	#padding-bottom:2px;#padding-top:2px;
+}

@@ -40,9 +40,8 @@ namespace GiamNuocWeb
                 return;
             pageLoad();
             LoadDiemBe("AND NOT Chuyen='True'");
-           
-
         }
+
         public DataTable DataDiemBe(string dk)
         {
             DataTable tb = Class.LinQConnection.getDataTable("SELECT ROW_NUMBER() OVER (ORDER BY ID  DESC) [STT],[SoNha] + ' '+  [TenDuong]  AS 'DiaChi',GhiChu  AS 'GhiChuu',CASE WHEN [Chuyen]='True' THEN N'Rồi' ELSE N'Chưa' END AS 'Chuyen',* FROM w_BaoBe  WHERE DATEDIFF(dd, NgayBao,getdate())<=7 AND AutoDel='false' " + dk);
@@ -229,6 +228,12 @@ namespace GiamNuocWeb
                         kt.NgayBao = DateTime.Now;
                         kt.AutoDel = false;
                         //  Response.Redirect(@"mBaoBe.aspx");
+                        if (kt.LoaiBe == true)
+                        {
+                            kt.TinhTrang = "ĐĐS";
+                            kt.Chuyen = true;
+                            kt.ChuyenNgay = DateTime.Now;
+                        }
                         if (Class.CBaoBe.InsertBaoBe(kt))
                         {
                             lbThanhCong.ForeColor = System.Drawing.Color.Blue;

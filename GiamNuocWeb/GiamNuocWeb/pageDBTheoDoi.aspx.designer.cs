@@ -10,25 +10,16 @@
 namespace GiamNuocWeb {
     
     
-    public partial class pageDBBaoBeTB {
+    public partial class pageDBTheoDoi {
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
-        
-        /// <summary>
-        /// pThemMoi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pThemMoi;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// IDBB control.
@@ -85,15 +76,6 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.TextBox txtDuong;
         
         /// <summary>
-        /// hfTenDuong control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfTenDuong;
-        
-        /// <summary>
         /// cbMaDMA control.
         /// </summary>
         /// <remarks>
@@ -121,40 +103,49 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.DropDownList cbQuan;
         
         /// <summary>
-        /// cbKetCauLe control.
+        /// ngaysuaBe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cbKetCauLe;
+        protected global::System.Web.UI.WebControls.TextBox ngaysuaBe;
         
         /// <summary>
-        /// lePhui control.
+        /// cbKetQuaSua control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lePhui;
+        protected global::System.Web.UI.WebControls.DropDownList cbKetQuaSua;
         
         /// <summary>
-        /// cbKetCauDuong control.
+        /// cbOngBe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cbKetCauDuong;
+        protected global::System.Web.UI.WebControls.DropDownList cbOngBe;
         
         /// <summary>
-        /// duongPhui control.
+        /// txtNguyenNhanBe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox duongPhui;
+        protected global::System.Web.UI.WebControls.TextBox txtNguyenNhanBe;
+        
+        /// <summary>
+        /// hfTenDuong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfTenDuong;
         
         /// <summary>
         /// txtGhiChu control.
@@ -175,15 +166,6 @@ namespace GiamNuocWeb {
         protected global::System.Web.UI.WebControls.Button btThen;
         
         /// <summary>
-        /// btBack control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btBack;
-        
-        /// <summary>
         /// lbThanhCong control.
         /// </summary>
         /// <remarks>
@@ -200,113 +182,5 @@ namespace GiamNuocWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label uploadfile;
-        
-        /// <summary>
-        /// tNgay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tNgay;
-        
-        /// <summary>
-        /// dNgay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dNgay;
-        
-        /// <summary>
-        /// ImageButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
-        
-        /// <summary>
-        /// GridView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// PTheoDoi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PTheoDoi;
-        
-        /// <summary>
-        /// inQuan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList inQuan;
-        
-        /// <summary>
-        /// GridView2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
-        
-        /// <summary>
-        /// tcTNgay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tcTNgay;
-        
-        /// <summary>
-        /// tcDNgay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tcDNgay;
-        
-        /// <summary>
-        /// THeoDoiDemB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button THeoDoiDemB;
-        
-        /// <summary>
-        /// ScriptManager1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// ReportViewer1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
     }
 }

@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using GiamNuocWeb.Class;
 using GiamNuocWeb.DataBase;
+using Microsoft.Reporting.WebForms;
 
 namespace GiamNuocWeb
 {
@@ -264,12 +265,19 @@ namespace GiamNuocWeb
                 LoadDiemBe("AND NOT Chuyen='True'");
             }
         }
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            LoadDiemBe("AND NOT Chuyen='True'");
+        }
+
+
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (RadioButtonList1.Items[0].Selected)
             {
                 pThemMoi.Visible = true;
                 PTheoDoi.Visible = false;
+               // ImageButton1_Click(sender, e);
             }
             else if (RadioButtonList1.Items[1].Selected)
             {
@@ -284,7 +292,7 @@ namespace GiamNuocWeb
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 Button btChuyenTB = (Button)e.Row.FindControl("btChuyenTB");
-                if (btChuyenTB.Text=="Chưa")
+                if (btChuyenTB.Text == "Chưa")
                     btChuyenTB.Visible = false;
 
                 Label idText = (Label)e.Row.FindControl("ID");
@@ -316,9 +324,10 @@ namespace GiamNuocWeb
             {
                 case "BTXM": result = "BTXM"; break;
                 case "GACH": result = "Gạch"; break;
-                case "DA": result = "Đá Hoa Cương"; break;
+                case "DAH": result = "Đá Hoa Cương"; break;
                 case "NHUA": result = "Nhựa"; break;
                 case "DAT": result = "Đất"; break;
+                case "DA": result = "Đá"; break;
                 default:
                     result = "";
                     break;
@@ -403,16 +412,12 @@ namespace GiamNuocWeb
 
         //}
 
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
-        {
-            LoadDiemBe("AND NOT Chuyen='True'");
-        }
-
+     
 
 
         protected void GridView2_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-           
+
 
             if (e.Row.RowType != DataControlRowType.Header)
             {
@@ -450,7 +455,7 @@ namespace GiamNuocWeb
 
         protected void THeoDoiDemB_Click(object sender, EventArgs e)
         {
-            
+
             string listID = "";
             foreach (GridViewRow row in GridView2.Rows)
             {
@@ -459,19 +464,87 @@ namespace GiamNuocWeb
                     //CheckBox chkRow = (row.Cells[0].FindControl("checkChon") as CheckBox);
                     //if (chkRow.Checked)
                     //{
-                        Label lbID = (row.Cells[1].FindControl("lbID") as Label);
-                        listID += ("'" + lbID.Text + "',");
+                    Label lbID = (row.Cells[1].FindControl("lbID") as Label);
+                    listID += ("'" + lbID.Text + "',");
                     //}
                 }
             }
             listID = listID.Remove(listID.Length - 1, 1);
 
-            string sql = "UPDATE w_BaoBe SET InThongBao='True',NgayIn=GETDATE(),ThiCongTN='"+tcTNgay.Text+"',ThiCongDN='"+tcDNgay.Text+"'  WHERE  ID IN ("+listID+")  ";
+            string sql = "UPDATE w_BaoBe SET InThongBao='True',NgayIn=GETDATE(),ThiCongTN='" + tcTNgay.Text + "',ThiCongDN='" + tcDNgay.Text + "'  WHERE  ID IN (" + listID + ")  ";
             Class.LinQConnection.ExecuteCommand_(sql);
 
+            ReportViewer1.Visible = true;
+
+
+            ReportViewer1.ProcessingMode = ProcessingMode.Local;
+            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/rpTBSuaBeQPhuong.rdlc");
+
+            DataTable dsDB = getThongBaoSuaBe(listID).Tables["w_BaoBe"];
+            string dsDMA = "Thông báo thi công \"Công tác sửa bể ngầm tại DMA ";
+
+            foreach (DataRow item in dsDB.Rows)
+            {
+                if (!dsDMA.Contains(item["MaDMA"].ToString()))
+                    dsDMA += item["MaDMA"] + ", ";
+            }
+            dsDMA = dsDMA.Remove(dsDMA.Length - 1, 1);
+            dsDMA += " thuộc dự án giảm thất thoát nước Tp.HCM \"";
+            ReportParameter p1 = new ReportParameter("thongbao", dsDMA);
+            ReportParameter p2 = new ReportParameter("tNgay", DateTime.Parse(tcTNgay.Text).ToString("dd/MM/yyyy"));
+            ReportParameter p3 = new ReportParameter("dNgay", DateTime.Parse(tcDNgay.Text).ToString("dd/MM/yyyy"));
+            ReportParameter p4 = new ReportParameter("ten", Session["ten"].ToString());
+            ReportParameter p5 = new ReportParameter("nguoiky", ConfigurationManager.AppSettings["nguoiky"].ToString());
+            this.ReportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1, p2, p3, p4, p5 });
+
+            ReportViewer1.LocalReport.DataSources.Clear();
+            ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dsTB", getThongBaoSuaBe(listID).Tables["w_NoiDungTB"]));
+            ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dsQuanPhuong", getThongBaoSuaBe(listID).Tables["tb_TenQuanPhuong"]));
+            ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dsDMA", dsDB));
+            //ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("reportDataSource3", getThongBaoSuaBe().Tables["w_NoiDungTB"]));
+            //ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("reportDataSource4", getThongBaoSuaBe().Tables["w_NoiDungTB"]));
+        }
+
+
+        public DataSet getThongBaoSuaBe(string lisDB)
+        {
+            DMADataContext db = new DMADataContext();
+            dsDma dsemp = new dsDma();
+            DataTable tbLuuLuong = dsemp.g_LuuLuongDHT;
 
 
 
+            ////////////////////////// quận phường
+            string sql = "  select distinct N'Ủy Ban Nhân Dân Phường ' + TenPhuong + N', Quận'+TenQuan as [TenPhuongQuan],(N'Phường ' + TenPhuong) AS FullPhuong   from w_BaoBe where ID IN (" + lisDB + ") order by FullPhuong ASC";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dsemp, "tb_TenQuanPhuong");
+            DataTable tb = dsemp.Tables["tb_TenQuanPhuong"];
+
+            /////////////////////////// Căn cứ
+            sql = "SELECT * FROM w_NoiDungTB ORDER BY STT ASC ";
+
+            adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dsemp, "w_NoiDungTB");
+
+            string dieu3 = "Công Ty Cổ Phần Cấp Nước Tân Hòa xin thông báo kế hoạch đào đường tại ";
+            foreach (DataRow item in tb.Rows)
+            {
+                dieu3 += item["FullPhuong"] + ", ";
+            }
+            dieu3 = dieu3.Remove(dieu3.Length - 2, 2);
+            dieu3 += " để thực hiện \"Công tác sửa bể ngầm\". Thuộc dự án giảm thất thoát nước TP.HCM, theo Điều 4 - Quyết định số 87/2007/QĐ ngày 04/07/2007 của UBND Thành Phố, cụ thể như sau:";
+            DataRow ro = dsemp.Tables["w_NoiDungTB"].NewRow();
+            ro["STT"] = "4";
+            ro["NoiDung"] = dieu3;
+            dsemp.Tables["w_NoiDungTB"].Rows.Add(ro);
+
+            ///////////////////////////// ds
+
+            sql = "  select ROW_NUMBER() OVER (ORDER BY ID  DESC) 'ID',*   from w_BaoBe where ID IN (" + lisDB + ") order by MaPhuong ASC";
+            adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
+            adapter.Fill(dsemp, "w_BaoBe");
+
+            return dsemp;
         }
     }
 }

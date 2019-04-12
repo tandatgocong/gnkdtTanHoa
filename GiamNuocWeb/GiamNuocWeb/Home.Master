@@ -62,16 +62,17 @@
                               <li style="background-color:#02579D"><a href="pageApLuc.aspx">Áp Lực</a></li>
                               <li style="background-color:#02579D"><a href="pageDoBeDMA.aspx">Tình Hình Dò Bể DMA</a></li>
                             </ul>
-                        </li>	
-                        		
+                        </li>
+
+                        <!--                        		
                         <li id="SANLUONG" > <a href="#" class="dropdown-toggle" data-toggle="dropdown">Van Bước DMA <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                               <li style="background-color:#02579D"><a href="#">Menu 1</a></li>
                               <li style="background-color:#02579D"><a href="#">Menu 2</a></li>
-                              <li style="background-color:#02579D"><a href="#">Menu 3</a></li>
-                              
+                              <li style="background-color:#02579D"><a href="#">Menu 3</a></li>                              
                             </ul>
-                        </li>			
+                        </li>-->
+                        	
                         <li id="THATTHOAT" > <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tỉ Lệ Thất Thoát <b class="caret"></b></a>
                               <ul class="dropdown-menu">
                                   <li style="background-color:#02579D"><a href="pageThatThoatBieuDo.aspx">Biểu đồ tỉ lệ thất thoát</a></li>
@@ -85,9 +86,10 @@
                               <ul class="dropdown-menu">
                                   <li style="background-color:#02579D"><a href="pageDBBaoBe.aspx">Tiếp nhận điểm bể</a></li>
                                   <li style="background-color:#02579D"><a href="pageDBBaoBeTB.aspx">Thông báo & Xin phép sửa bể</a></li>
-                                  <li style="background-color:#02579D"><a href="#">Theo Dõi Sửa Bể</a></li>
-                                  <li style="background-color:#02579D"><a href="#">Theo Dõi Điểm Bể Nhóm</a></li>
-                                  <li style="background-color:#02579D"><a href="#">Tổng Kết Điểm Bể</a></li>                                  
+                                  <li style="background-color:#02579D"><a href="pageDBTheoDoi.aspx">Cập Nhật Sửa Bể</a></li>
+                                  <li style="background-color:#02579D"><a href="pageDBGiaoNhanDMA.aspx">Giao DMA Dò Bể</a></li>   
+                                  <li style="background-color:#02579D"><a href="pageDBTongKet.aspx">Theo Dõi Điểm Bể Nhóm</a></li>  
+                                  <li style="background-color:#02579D"><a href="pageDBTongKetIn.aspx">Tổng Kết Điểm Bể</a></li>                             
                                 </ul>
                         </li>
                         <% if (Session["login"] != null)

@@ -212,7 +212,8 @@
                          <asp:ListItem Value=" ">Không</asp:ListItem>
                          <asp:ListItem Value="BTXM">BTXM</asp:ListItem>
                          <asp:ListItem Value="GACH">Gạch</asp:ListItem>
-                         <asp:ListItem Value="DA">Đá Hoa Cương</asp:ListItem>
+                           <asp:ListItem Value="DA">Đá</asp:ListItem>
+                         <asp:ListItem Value="DAH">Đá Hoa Cương</asp:ListItem>
                      </asp:DropDownList> </td>
             </tr>
              <tr>
@@ -222,6 +223,7 @@
                          <asp:ListItem Value=" ">Không</asp:ListItem>
                          <asp:ListItem Value="NHUA">Nhựa</asp:ListItem>
                          <asp:ListItem Value="BTXM">BTXM</asp:ListItem>
+                           <asp:ListItem Value="DA">Đá</asp:ListItem>
                          <asp:ListItem Value="DAT">Đất</asp:ListItem>
                         </asp:DropDownList> </td>
             </tr>

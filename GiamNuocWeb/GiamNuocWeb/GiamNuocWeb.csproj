@@ -70,11 +70,15 @@
     <Content Include="color\default.css" />
     <Content Include="contactform\contactform.js" />
     <Content Include="contactform\readme.txt" />
+    <Content Include="pageDBTongKetIn.aspx" />
+    <Content Include="pageDBGiaoNhanDMA.aspx" />
+    <Content Include="pageDBTheoDoi.aspx" />
     <Content Include="pageDBBaoBeTB.aspx" />
     <Content Include="css\images\mobileUI-site-nav-opener-bg.svg" />
     <Content Include="Image\Health.png" />
     <Content Include="Image\Search.png" />
     <Content Include="pageDBBaoBe.aspx" />
+    <Content Include="pageDBTongKet.aspx" />
     <Content Include="pageDoBeDMA.aspx" />
     <Content Include="pageLogout.aspx" />
     <Content Include="pageThatThoatMangLuoi.aspx" />
@@ -245,6 +249,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm3.aspx" />
     <Content Include="zphanquyen.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +257,27 @@
     <Compile Include="Class\OledbConnection.cs" />
     <Compile Include="Class\zPhanQuyen.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageDBTongKetIn.aspx.cs">
+      <DependentUpon>pageDBTongKetIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageDBTongKetIn.aspx.designer.cs">
+      <DependentUpon>pageDBTongKetIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pageDBGiaoNhanDMA.aspx.cs">
+      <DependentUpon>pageDBGiaoNhanDMA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageDBGiaoNhanDMA.aspx.designer.cs">
+      <DependentUpon>pageDBGiaoNhanDMA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pageDBTheoDoi.aspx.cs">
+      <DependentUpon>pageDBTheoDoi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageDBTheoDoi.aspx.designer.cs">
+      <DependentUpon>pageDBTheoDoi.aspx</DependentUpon>
     </Compile>
     <Compile Include="pageDBBaoBeTB.aspx.cs">
       <DependentUpon>pageDBBaoBeTB.aspx</DependentUpon>
@@ -266,6 +292,13 @@
     </Compile>
     <Compile Include="pageDBBaoBe.aspx.designer.cs">
       <DependentUpon>pageDBBaoBe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pageDBTongKet.aspx.cs">
+      <DependentUpon>pageDBTongKet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageDBTongKet.aspx.designer.cs">
+      <DependentUpon>pageDBTongKet.aspx</DependentUpon>
     </Compile>
     <Compile Include="pageDoBeDMA.aspx.cs">
       <DependentUpon>pageDoBeDMA.aspx</DependentUpon>
@@ -348,6 +381,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
     </Compile>
     <Compile Include="zphanquyen.aspx.cs">
       <DependentUpon>zphanquyen.aspx</DependentUpon>
@@ -509,12 +549,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="rpDBTheoDoi.rdlc" />
+    <EmbeddedResource Include="rpDBTongKet.rdlc" />
     <EmbeddedResource Include="rpDiemBeChuaSua.rdlc" />
     <EmbeddedResource Include="rpSanLuongSoSanhDHT.rdlc" />
     <EmbeddedResource Include="rpLuLuongByDate.rdlc" />
     <EmbeddedResource Include="rpLuLuongByGio.rdlc" />
     <EmbeddedResource Include="rpSanLuong.rdlc" />
     <EmbeddedResource Include="rpSanLuongDHT.rdlc" />
+    <EmbeddedResource Include="rpTBSuaBeQPhuong.rdlc" />
     <EmbeddedResource Include="rpThatThoatMangLuoi.rdlc" />
     <EmbeddedResource Include="rpThatThoatTiLe.rdlc" />
     <EmbeddedResource Include="rpThatThoatTuan.rdlc" />
