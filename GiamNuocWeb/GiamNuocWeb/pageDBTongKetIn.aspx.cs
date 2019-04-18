@@ -49,7 +49,7 @@ namespace GiamNuocWeb
 
         public void pageLoad()
         {
-            this.tNgay.Text = DateTime.Now.Year + "-" + DateTime.Now.ToString("MM") + "-21";
+            this.tNgay.Text = DateTime.Now.ToString("yyyy-MM-dd");
             this.dNgay.Text = DateTime.Now.ToString("yyyy-MM-dd");
             
         }

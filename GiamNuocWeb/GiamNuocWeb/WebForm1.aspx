@@ -12,11 +12,11 @@
 <body>
     <form id="form1" runat="server">
     
-    <asp:DropDownList ID="DropDownList1" runat="server" Enabled="False">
-    </asp:DropDownList>
-    <asp:DropDownList ID="DropDownList2" runat="server">
-    </asp:DropDownList>
+   
+    <asp:TextBox ID="NgayDo" runat="server" Height="20px" TextMode="DateTime" 
+        Width="122px" />
     
+   
     </form>
 </body>
 </html>

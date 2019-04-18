@@ -100,7 +100,7 @@ namespace GiamNuocWeb
         public void pageLoad()
         {
 
-            this.tNgay.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            this.tNgay.Text = DateTime.Now.AddDays(-2).ToString("yyyy-MM-dd");
             this.dNgay.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
             this.tcTNgay.Text = DateTime.Now.AddDays(2).ToString("yyyy-MM-dd");
@@ -311,7 +311,12 @@ namespace GiamNuocWeb
         }
         void loadDMAByDuong()
         {
-            cbMaDMA.DataSource = Class.LinQConnection.getDataTable("SELECT MaDMA FROM  w_TenDuongDB Where replace((TenDuong),' ','') LIKE replace(N'%" + txtDuong.Text + "%',' ','') GROUP BY MaDMA ORDER BY MaDMA ASC ");
+            DataTable tb = Class.LinQConnection.getDataTable("SELECT MaDMA FROM  w_TenDuongDB Where replace((TenDuong),' ','') LIKE replace(N'%" + txtDuong.Text + "%',' ','') GROUP BY MaDMA ORDER BY MaDMA ASC ");
+            if (tb.Rows.Count <= 0)
+            {
+                tb = Class.LinQConnection.getDataTable("SELECT MaDMA FROM g_LabelDMA ORDER BY MaDMA ASC ");
+            }
+            cbMaDMA.DataSource = tb;
             cbMaDMA.DataTextField = "MaDma";
             cbMaDMA.DataValueField = "MaDma";
             cbMaDMA.DataBind();
@@ -380,7 +385,8 @@ namespace GiamNuocWeb
             {
                 string id = e.CommandArgument.ToString();
                 Class.LinQConnection.ExecuteCommand_("UPDATE w_BaoBe SET InThongBao=null,NgayIn=null WHERE ID='" + id + "'");
-                inQuan_SelectedIndexChanged(sender, e);
+                LoadDiemBe("AND NOT Chuyen='True'");
+                //inQuan_SelectedIndexChanged(sender, e);
             }
         }
 
@@ -540,7 +546,7 @@ namespace GiamNuocWeb
 
             ///////////////////////////// ds
 
-            sql = "  select ROW_NUMBER() OVER (ORDER BY ID  DESC) 'ID',*   from w_BaoBe where ID IN (" + lisDB + ") order by MaPhuong ASC";
+            sql = "  select ROW_NUMBER() OVER (ORDER BY ID  DESC) 'ID',*   from w_BaoBe where ID IN (" + lisDB + ") ";
             adapter = new SqlDataAdapter(sql, db.Connection.ConnectionString);
             adapter.Fill(dsemp, "w_BaoBe");
 

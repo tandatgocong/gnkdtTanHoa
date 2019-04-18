@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using GiamNuocWeb.Class;
 using GiamNuocWeb.DataBase;
+using System.Globalization;
 
 namespace GiamNuocWeb
 {
@@ -24,7 +25,7 @@ namespace GiamNuocWeb
                 Response.Redirect(@"pageLogin.aspx");
                
             }
-            else if (!Session["role"].ToString().Equals(pUser))
+            else if (!Session["role"].ToString().Contains(pUser))
             {
                 Response.Redirect(@"zphanquyen.aspx");
             }
@@ -34,7 +35,7 @@ namespace GiamNuocWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["page"] = "pageDBBaoBe.aspx";
-             pagePhanQuyen("baobe");
+            pagePhanQuyen("baobe");
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
@@ -83,8 +84,9 @@ namespace GiamNuocWeb
 
      public void pageLoad()
      {
-         this.tNgay.Text = DateTime.Now.Year + "-" + DateTime.Now.ToString("MM") + "-21";
-         this.dNgay.Text = DateTime.Now.ToString("yyyy-MM-dd");
+         this.tNgay.Text = DateTime.Now.AddDays(-3).ToString("yyyy-MM-dd");
+         this.dNgay.Text = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
+         NgayDo.Text = DateTime.Now.ToUniversalTime().ToString("MM/dd/yyyy hh:mm tt");
 
          DataTable tb = Class.LinQConnection.getDataTable("SELECT IdNhom,TenNhom FROM  t_Users WHERE Role='dobe' Order By IdNhom ASC ");
 
@@ -188,7 +190,7 @@ namespace GiamNuocWeb
         {
      
             IDBB.Text = "";
-            this.btThen.Text="Thêm Mới";
+            this.btThen.Text="Lưu";
             txtSoNha.Text = "";
             txtDuong.Text = "";
             cbKetCauLe.Text = "";
@@ -225,7 +227,14 @@ namespace GiamNuocWeb
                         kt.CreateBy = Session["login"].ToString();
                         if (this.imagePath.Value != "")
                             kt.HinhAnh = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1);
-                        kt.NgayBao = DateTime.Now;
+                        try
+                        {
+                            kt.NgayBao = DateTime.Parse(NgayDo.Text);
+                        }
+                        catch (Exception)
+                        {
+                        }
+                       
                         kt.AutoDel = false;
                         //  Response.Redirect(@"mBaoBe.aspx");
                         if (kt.LoaiBe == true)
@@ -277,6 +286,16 @@ namespace GiamNuocWeb
                 kt.KetCauDuong = cbKetCauDuong.Text;
                 kt.Chuyen = false;
                 kt.GhiChu = this.txtGhiChu.Text;
+
+                try
+                {
+                    kt.NgayBao = DateTime.Parse(NgayDo.Text);
+                }
+                catch (Exception)
+                {
+
+                }
+
                 if (this.imagePath.Value != "")
                     kt.HinhAnh = this.imagePath.Value.Remove(imagePath.Value.Length - 1, 1);
 
@@ -389,6 +408,7 @@ namespace GiamNuocWeb
                 cbKetCauLe.SelectedValue = kt.KetCauLe;
                 cbKetCauDuong.SelectedValue = kt.KetCauDuong;
                 txtGhiChu.Text = kt.GhiChu;
+                
                 this.btThen.Text = "Cập Nhật";
                 this.btBack.Visible = true;
             }

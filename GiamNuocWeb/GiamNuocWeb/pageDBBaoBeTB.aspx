@@ -221,7 +221,8 @@
                          <asp:ListItem Value="KH">Không</asp:ListItem>
                          <asp:ListItem Value="BTXM">BTXM</asp:ListItem>
                          <asp:ListItem Value="GACH">Gạch</asp:ListItem>
-                         <asp:ListItem Value="DA">Đá Hoa Cương</asp:ListItem>
+                         <asp:ListItem Value="DA">Đá</asp:ListItem>
+                         <asp:ListItem Value="DAH">Đá Hoa Cương</asp:ListItem>
                      </asp:DropDownList> <br />
                      <asp:TextBox ID="lePhui" runat="server" Height="50px" TextMode="MultiLine" 
                         Width="216px"></asp:TextBox>
@@ -234,6 +235,7 @@
                          <asp:ListItem Value="KH">Không</asp:ListItem>
                          <asp:ListItem Value="NHUA">Nhựa</asp:ListItem>
                          <asp:ListItem Value="BTXM">BTXM</asp:ListItem>
+                         <asp:ListItem Value="DA">Đá</asp:ListItem>
                          <asp:ListItem Value="DAT">Đất</asp:ListItem>
                         </asp:DropDownList> <br />
                           <asp:TextBox ID="duongPhui" runat="server" Height="50px" TextMode="MultiLine" 
@@ -334,7 +336,7 @@
                     </asp:BoundField>
                     <asp:TemplateField HeaderText="In Thông Báo">                      
                         <ItemTemplate>
-                               <asp:Button ID="btChuyenTB" CssClass=buttonGir runat="server" Width="100%" Text='<%# Bind("InThongBao") %>' CommandArgument='<%# Bind("ID") %>' CommandName="chuyenTB"   onclientclick="if(confirm('Bạn có muốn chuyển In lại Thông Báo?') == false)return false;" />
+                               <asp:Button ID="btChuyenTB" CssClass=buttonGir runat="server" Width="100%" Text='<%# Bind("InThongBao") %>' CommandArgument='<%# Bind("ID") %>' CommandName="chuyenTB"   />
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="ID" HeaderText="ID" Visible="False" />

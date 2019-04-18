@@ -184,6 +184,15 @@
                     </asp:DropDownList>                   
                 </td>
             </tr>
+       <tr>
+                <td class="style3">
+                    Ngày dò</td>
+                <td class="style3" >
+                    <asp:TextBox ID="NgayDo" runat="server" Height="20px" TextMode="DateTimeLocal" 
+        Width="204px" />
+                </td>
+            </tr>
+
             <tr>
                 <td class="style3">
                     Số nhà</td>
@@ -203,7 +212,9 @@
                    
                 </td>
             </tr>
-           
+
+
+          
              <tr>
                 <td class="style3">
                     Kết Cấu Lề </td>
@@ -212,7 +223,7 @@
                          <asp:ListItem Value=" ">Không</asp:ListItem>
                          <asp:ListItem Value="BTXM">BTXM</asp:ListItem>
                          <asp:ListItem Value="GACH">Gạch</asp:ListItem>
-                           <asp:ListItem Value="DA">Đá</asp:ListItem>
+                         <asp:ListItem Value="DA">Đá</asp:ListItem>
                          <asp:ListItem Value="DAH">Đá Hoa Cương</asp:ListItem>
                      </asp:DropDownList> </td>
             </tr>
@@ -246,7 +257,7 @@
               <tr>
                   <td class="style2" colspan="2">
                       <asp:Button ID="btThen" runat="server" CssClass="button" Height="25px" 
-                          onclick="btThen_Click" Text="Thêm Mới" Width="103px" />
+                          onclick="btThen_Click" Text="Lưu" Width="103px" />
                       <asp:Button ID="btBack" Visible=false runat="server"  onclientclick="if(confirm('Bạn có chắc chắn xóa điểm bể ?') == false)return false;"  CssClass="button" Height="25px" 
                           onclick="btBack_Click" Text="Xóa" Width="103px" />
                       <br />

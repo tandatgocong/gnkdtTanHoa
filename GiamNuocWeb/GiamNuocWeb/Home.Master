@@ -52,7 +52,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
         <ul class="nav navbar-nav">
-						<li id="HOME" ><a href="Home.aspx">Home</a></li>
+						<li id="HOME" ><a href="Home.aspx">Trang Chủ</a></li>
                       <!--  <li id="Li2"   ><a href="Home2.aspx" class="active">Add</a></li>-->
                         <li id="DHT" > <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quản Lý DMA <b class="caret"></b></a>
                             <ul class="dropdown-menu" >
