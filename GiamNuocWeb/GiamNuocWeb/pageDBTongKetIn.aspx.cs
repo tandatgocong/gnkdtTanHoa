@@ -21,7 +21,11 @@ namespace GiamNuocWeb
                 Response.Redirect(@"pageLogin.aspx");
 
             }
-            else if (!Session["role"].ToString().Equals(pUser))
+            else if (Session["role"].ToString().Equals(pUser) == true || Session["role"].ToString().Equals("admin"))
+            {
+
+            }
+            else
             {
                 Response.Redirect(@"zphanquyen.aspx");
             }
@@ -31,7 +35,7 @@ namespace GiamNuocWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["page"] = "pageDBTongKet.aspx";
-            pagePhanQuyen("thongbao");           
+             pagePhanQuyen("thongbao");           
 
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)

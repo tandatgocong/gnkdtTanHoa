@@ -53,7 +53,11 @@
             this.btSanLuong = new System.Windows.Forms.Button();
             this.btDoBe = new System.Windows.Forms.Button();
             this.btBackup = new System.Windows.Forms.Button();
-            this.btLuuLuong = new System.Windows.Forms.Button();
+            this.btDHHu = new System.Windows.Forms.Button();
+            this.cbMaDMA = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btNet01 = new System.Windows.Forms.Button();
+            this.btNet90 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,9 +128,9 @@
             // 
             // stop
             // 
-            this.stop.Location = new System.Drawing.Point(697, 191);
+            this.stop.Location = new System.Drawing.Point(709, 193);
             this.stop.Name = "stop";
-            this.stop.Size = new System.Drawing.Size(75, 33);
+            this.stop.Size = new System.Drawing.Size(75, 34);
             this.stop.TabIndex = 8;
             this.stop.Text = "Stop";
             this.stop.UseVisualStyleBackColor = true;
@@ -134,7 +138,7 @@
             // 
             // btCopy
             // 
-            this.btCopy.Location = new System.Drawing.Point(694, 104);
+            this.btCopy.Location = new System.Drawing.Point(709, 104);
             this.btCopy.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btCopy.Name = "btCopy";
             this.btCopy.Size = new System.Drawing.Size(75, 34);
@@ -157,9 +161,9 @@
             // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(611, 189);
+            this.start.Location = new System.Drawing.Point(623, 192);
             this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(80, 35);
+            this.start.Size = new System.Drawing.Size(80, 34);
             this.start.TabIndex = 12;
             this.start.Text = "Start";
             this.start.UseVisualStyleBackColor = true;
@@ -191,7 +195,7 @@
             this.stasusLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 332);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(956, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(792, 22);
             this.statusStrip1.TabIndex = 14;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -202,32 +206,34 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(28, 246);
+            this.button1.BackColor = System.Drawing.Color.Cyan;
+            this.button1.Location = new System.Drawing.Point(28, 235);
             this.button1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(68, 32);
             this.button1.TabIndex = 15;
             this.button1.Text = "Hide";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btExit
             // 
-            this.btExit.Location = new System.Drawing.Point(108, 246);
+            this.btExit.BackColor = System.Drawing.Color.Red;
+            this.btExit.Location = new System.Drawing.Point(101, 236);
             this.btExit.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(68, 32);
             this.btExit.TabIndex = 16;
             this.btExit.Text = "Exit";
-            this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.UseVisualStyleBackColor = false;
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // btCopyData
             // 
-            this.btCopyData.Location = new System.Drawing.Point(611, 232);
+            this.btCopyData.Location = new System.Drawing.Point(623, 234);
             this.btCopyData.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btCopyData.Name = "btCopyData";
-            this.btCopyData.Size = new System.Drawing.Size(75, 34);
+            this.btCopyData.Size = new System.Drawing.Size(80, 34);
             this.btCopyData.TabIndex = 17;
             this.btCopyData.Text = "Copy";
             this.btCopyData.UseVisualStyleBackColor = true;
@@ -235,10 +241,10 @@
             // 
             // btupdateVa
             // 
-            this.btupdateVa.Location = new System.Drawing.Point(197, 232);
+            this.btupdateVa.Location = new System.Drawing.Point(171, 235);
             this.btupdateVa.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btupdateVa.Name = "btupdateVa";
-            this.btupdateVa.Size = new System.Drawing.Size(75, 34);
+            this.btupdateVa.Size = new System.Drawing.Size(93, 32);
             this.btupdateVa.TabIndex = 19;
             this.btupdateVa.Text = "Value";
             this.btupdateVa.UseVisualStyleBackColor = true;
@@ -246,7 +252,7 @@
             // 
             // btTachMang
             // 
-            this.btTachMang.Location = new System.Drawing.Point(533, 232);
+            this.btTachMang.Location = new System.Drawing.Point(508, 236);
             this.btTachMang.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btTachMang.Name = "btTachMang";
             this.btTachMang.Size = new System.Drawing.Size(75, 34);
@@ -257,10 +263,10 @@
             // 
             // btSanLuong
             // 
-            this.btSanLuong.Location = new System.Drawing.Point(284, 232);
+            this.btSanLuong.Location = new System.Drawing.Point(273, 236);
             this.btSanLuong.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btSanLuong.Name = "btSanLuong";
-            this.btSanLuong.Size = new System.Drawing.Size(117, 34);
+            this.btSanLuong.Size = new System.Drawing.Size(108, 32);
             this.btSanLuong.TabIndex = 18;
             this.btSanLuong.Text = "Sản Lượng";
             this.btSanLuong.UseVisualStyleBackColor = true;
@@ -268,10 +274,10 @@
             // 
             // btDoBe
             // 
-            this.btDoBe.Location = new System.Drawing.Point(404, 232);
+            this.btDoBe.Location = new System.Drawing.Point(403, 236);
             this.btDoBe.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btDoBe.Name = "btDoBe";
-            this.btDoBe.Size = new System.Drawing.Size(117, 34);
+            this.btDoBe.Size = new System.Drawing.Size(93, 34);
             this.btDoBe.TabIndex = 18;
             this.btDoBe.Text = "Dò Bể";
             this.btDoBe.UseVisualStyleBackColor = true;
@@ -279,33 +285,77 @@
             // 
             // btBackup
             // 
-            this.btBackup.Location = new System.Drawing.Point(694, 232);
+            this.btBackup.Location = new System.Drawing.Point(709, 234);
             this.btBackup.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btBackup.Name = "btBackup";
-            this.btBackup.Size = new System.Drawing.Size(89, 34);
+            this.btBackup.Size = new System.Drawing.Size(75, 34);
             this.btBackup.TabIndex = 21;
             this.btBackup.Text = "Backup";
             this.btBackup.UseVisualStyleBackColor = true;
             this.btBackup.Click += new System.EventHandler(this.btBackup_Click);
             // 
-            // btLuuLuong
+            // btDHHu
             // 
-            this.btLuuLuong.Location = new System.Drawing.Point(611, 276);
-            this.btLuuLuong.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btLuuLuong.Name = "btLuuLuong";
-            this.btLuuLuong.Size = new System.Drawing.Size(117, 34);
-            this.btLuuLuong.TabIndex = 22;
-            this.btLuuLuong.Text = "Lưu Lượng";
-            this.btLuuLuong.UseVisualStyleBackColor = true;
-            this.btLuuLuong.Click += new System.EventHandler(this.btLuuLuong_Click);
+            this.btDHHu.Location = new System.Drawing.Point(273, 280);
+            this.btDHHu.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btDHHu.Name = "btDHHu";
+            this.btDHHu.Size = new System.Drawing.Size(108, 34);
+            this.btDHHu.TabIndex = 22;
+            this.btDHHu.Text = "ĐH Hư";
+            this.btDHHu.UseVisualStyleBackColor = true;
+            this.btDHHu.Click += new System.EventHandler(this.btDHHu_Click);
+            // 
+            // cbMaDMA
+            // 
+            this.cbMaDMA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMaDMA.FormattingEnabled = true;
+            this.cbMaDMA.Location = new System.Drawing.Point(171, 283);
+            this.cbMaDMA.Name = "cbMaDMA";
+            this.cbMaDMA.Size = new System.Drawing.Size(93, 31);
+            this.cbMaDMA.TabIndex = 24;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(76, 286);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 23);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Mã DMA :";
+            // 
+            // btNet01
+            // 
+            this.btNet01.Location = new System.Drawing.Point(403, 280);
+            this.btNet01.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btNet01.Name = "btNet01";
+            this.btNet01.Size = new System.Drawing.Size(180, 34);
+            this.btNet01.TabIndex = 25;
+            this.btNet01.Text = "Network 01";
+            this.btNet01.UseVisualStyleBackColor = true;
+            this.btNet01.Click += new System.EventHandler(this.btNet01_Click);
+            // 
+            // btNet90
+            // 
+            this.btNet90.Location = new System.Drawing.Point(623, 280);
+            this.btNet90.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btNet90.Name = "btNet90";
+            this.btNet90.Size = new System.Drawing.Size(161, 34);
+            this.btNet90.TabIndex = 25;
+            this.btNet90.Text = "Network 90";
+            this.btNet90.UseVisualStyleBackColor = true;
+            this.btNet90.Click += new System.EventHandler(this.btNet90_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(956, 354);
-            this.Controls.Add(this.btLuuLuong);
+            this.ClientSize = new System.Drawing.Size(792, 354);
+            this.Controls.Add(this.btNet90);
+            this.Controls.Add(this.btNet01);
+            this.Controls.Add(this.cbMaDMA);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btDHHu);
             this.Controls.Add(this.btBackup);
             this.Controls.Add(this.btTachMang);
             this.Controls.Add(this.btupdateVa);
@@ -364,7 +414,11 @@
         private System.Windows.Forms.Button btSanLuong;
         private System.Windows.Forms.Button btDoBe;
         private System.Windows.Forms.Button btBackup;
-        private System.Windows.Forms.Button btLuuLuong;
+        private System.Windows.Forms.Button btDHHu;
+        private System.Windows.Forms.ComboBox cbMaDMA;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btNet01;
+        private System.Windows.Forms.Button btNet90;
     }
 }
 

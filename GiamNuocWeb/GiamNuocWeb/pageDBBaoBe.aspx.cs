@@ -25,8 +25,11 @@ namespace GiamNuocWeb
                 Response.Redirect(@"pageLogin.aspx");
                
             }
-            else if (!Session["role"].ToString().Contains(pUser))
+            else if (Session["role"].ToString().Equals(pUser) == true || Session["role"].ToString().Equals("admin"))
             {
+                
+            }
+            else {
                 Response.Redirect(@"zphanquyen.aspx");
             }
         }
@@ -88,7 +91,7 @@ namespace GiamNuocWeb
          this.dNgay.Text = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
          NgayDo.Text = DateTime.Now.ToUniversalTime().ToString("MM/dd/yyyy hh:mm tt");
 
-         DataTable tb = Class.LinQConnection.getDataTable("SELECT IdNhom,TenNhom FROM  t_Users WHERE Role='dobe' Order By IdNhom ASC ");
+         DataTable tb = Class.LinQConnection.getDataTable("SELECT IdNhom,TenNhom FROM  t_Users WHERE Role='dobe'  AND Active='True' Order By IdNhom ASC ");
 
          cbNhomDB.DataSource = tb;
          cbNhomDB.DataTextField = "TenNhom";

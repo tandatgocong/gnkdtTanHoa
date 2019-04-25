@@ -28,6 +28,8 @@ namespace PMACData
             getTimeDatabase();
             //string time1 = DateTime.Parse("12:15:00 AM").ToString("T");
             stasusLabel.Text = DateTime.Now.ToString("T");
+            cbMaDMA.DataSource = getDataTable("SELECT MaDMA FROM [tanhoa].[dbo].[g_ThongTinDHT] ORDER BY MaDMA ASC ");
+            cbMaDMA.DisplayMember = "MaDMA";
         }
         public void getTimeDatabase()
         {
@@ -685,8 +687,10 @@ namespace PMACData
                 UpdateSanLuongDHT(t);
                 UpdateSanLuongNRW(t);
                 UpdateLuuLuongNRW(t);
+                UpdateLuuLuongNRW(t);
                 t = t.Date.AddDays(1);
             }
+
         }
 
         public void UpdateValue()
@@ -909,18 +913,44 @@ namespace PMACData
             }
         }
 
-        private void btLuuLuong_Click(object sender, EventArgs e)
+        private void btDHHu_Click(object sender, EventArgs e)
         {
-            int ti = 5;
-            DateTime t = DateTime.Now;
-      //      t = t.Date.AddDays(-ti);
+            ExecuteCommand("UPDATE g_ThongTinDHT SET StatusDHT=CASE WHEN StatusDHT= 'true' THEN 'false' ELSE 'true' END WHERE MaDMA='" + cbMaDMA.Text + "' ");
+            MessageBox.Show(this, "OK");
+        }
 
-            for (int i = 0; i <= ti; i++)
-            {
-                UpdateLuuLuongNRW(t);
-                //ExecuteStoredProcedure(t);
-                t = t.Date.AddDays(-1);
-            }
+
+        static void Enable(string interfaceName)
+        {
+            System.Diagnostics.ProcessStartInfo psi =
+                   new System.Diagnostics.ProcessStartInfo("netsh", "interface set interface \"" + interfaceName + "\" enable");
+            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            p.StartInfo = psi;
+            p.Start();
+        }
+
+        static void Disable(string interfaceName)
+        {
+            System.Diagnostics.ProcessStartInfo psi =
+                new System.Diagnostics.ProcessStartInfo("netsh", "interface set interface \"" + interfaceName + "\" disable");
+            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            p.StartInfo = psi;
+            p.Start();
+        }
+
+
+        private void btNet01_Click(object sender, EventArgs e)
+        {
+            Disable("Local Area Connection");
+
+            Enable("Local Area Connection");
+        }
+
+        private void btNet90_Click(object sender, EventArgs e)
+        {
+            Disable("Local Area Connection 2");
+
+            Enable("Local Area Connection 2");
         }
     }
 }

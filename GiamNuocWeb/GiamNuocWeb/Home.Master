@@ -88,8 +88,8 @@
                                   <li style="background-color:#02579D"><a href="pageDBBaoBeTB.aspx">Thông báo & Xin phép sửa bể</a></li>
                                   <li style="background-color:#02579D"><a href="pageDBTheoDoi.aspx">Cập Nhật Sửa Bể</a></li>
                                   <li style="background-color:#02579D"><a href="pageDBGiaoNhanDMA.aspx">Giao DMA Dò Bể</a></li>   
+                                  <li style="background-color:#02579D"><a href="pageDBTongKetIn.aspx">Tổng Kết Điểm Bể</a></li>   
                                   <li style="background-color:#02579D"><a href="pageDBTongKet.aspx">Theo Dõi Điểm Bể Nhóm</a></li>  
-                                  <li style="background-color:#02579D"><a href="pageDBTongKetIn.aspx">Tổng Kết Điểm Bể</a></li>                             
                                 </ul>
                         </li>
                         <% if (Session["login"] != null)

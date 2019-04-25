@@ -25,7 +25,11 @@ namespace GiamNuocWeb
                 Response.Redirect(@"pageLogin.aspx");
 
             }
-            else if (!Session["role"].ToString().Equals(pUser))
+            else if (Session["role"].ToString().Equals(pUser) == true || Session["role"].ToString().Equals("admin"))
+            {
+
+            }
+            else
             {
                 Response.Redirect(@"zphanquyen.aspx");
             }
@@ -35,7 +39,7 @@ namespace GiamNuocWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["page"] = "pageDBBaoBeTB.aspx";
-            pagePhanQuyen("thongbao");
+             pagePhanQuyen("thongbao");
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
@@ -107,7 +111,7 @@ namespace GiamNuocWeb
             this.tcDNgay.Text = DateTime.Now.AddDays(9).ToString("yyyy-MM-dd");
 
 
-            DataTable tb = Class.LinQConnection.getDataTable("SELECT IdNhom,TenNhom FROM  t_Users WHERE Role='dobe' Order By IdNhom ASC ");
+            DataTable tb = Class.LinQConnection.getDataTable("SELECT IdNhom,TenNhom FROM  t_Users WHERE Role='dobe' AND Active='True' Order By IdNhom ASC ");
             cbNhomDB.DataSource = tb;
             cbNhomDB.DataTextField = "TenNhom";
             cbNhomDB.DataValueField = "IdNhom";
@@ -228,12 +232,15 @@ namespace GiamNuocWeb
 
                 kt.IdNhom = int.Parse(cbNhomDB.SelectedValue + "");
                 kt.TenNhom = cbNhomDB.SelectedItem.Text;
+
                 kt.TinhTrang = cbTinhTrang.SelectedValue + "";
                 kt.LoaiBe = bool.Parse(cbLoaiBe.SelectedValue);
                 kt.SoNha = txtSoNha.Text;
                 kt.TenDuong = txtDuong.Text;
-                kt.KetCauLe = cbKetCauLe.Text;
-                kt.KetCauDuong = cbKetCauDuong.Text;
+                             
+                kt.KetCauLe = cbKetCauLe.SelectedValue;
+                kt.KetCauDuong = cbKetCauDuong.SelectedValue;
+                
                 kt.GhiChu = this.txtGhiChu.Text;
                 kt.MaDMA = cbMaDMA.SelectedValue.ToString();
 
@@ -261,7 +268,7 @@ namespace GiamNuocWeb
 
                 //RadioButtonList2_SelectedIndexChanged(sender, e);
                 kt = null;
-                refesh();
+            //    refesh();
                 LoadDiemBe("AND NOT Chuyen='True'");
             }
         }

@@ -70,6 +70,8 @@
     <Content Include="color\default.css" />
     <Content Include="contactform\contactform.js" />
     <Content Include="contactform\readme.txt" />
+    <Content Include="font-awesome\css\font-awesome.css" />
+    <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="pageDBTongKetIn.aspx" />
     <Content Include="pageDBGiaoNhanDMA.aspx" />
     <Content Include="pageDBTheoDoi.aspx" />
@@ -501,6 +503,28 @@
       <DependentUpon>pageThatThoat.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="font-awesome\fonts\fontawesome-webfont.svg" />
+    <None Include="font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="font-awesome\fonts\FontAwesome.otf" />
+    <None Include="font-awesome\less\bordered-pulled.less" />
+    <None Include="font-awesome\less\core.less" />
+    <None Include="font-awesome\less\fixed-width.less" />
+    <None Include="font-awesome\less\font-awesome.less" />
+    <None Include="font-awesome\less\icons.less" />
+    <None Include="font-awesome\less\larger.less" />
+    <None Include="font-awesome\less\list.less" />
+    <None Include="font-awesome\less\mixins.less" />
+    <None Include="font-awesome\less\path.less" />
+    <None Include="font-awesome\less\rotated-flipped.less" />
+    <None Include="font-awesome\less\spinning.less" />
+    <None Include="font-awesome\less\stacked.less" />
+    <None Include="font-awesome\less\variables.less" />
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.svg" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="QuanLyDiemBe.xlsx" />
   </ItemGroup>
   <ItemGroup>
@@ -566,9 +590,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FileUpload\" />
-    <Folder Include="font-awesome\css\" />
-    <Folder Include="font-awesome\fonts\" />
-    <Folder Include="font-awesome\less\" />
     <Folder Include="font-awesome\scss\" />
     <Folder Include="HinhDiemBe\" />
   </ItemGroup>

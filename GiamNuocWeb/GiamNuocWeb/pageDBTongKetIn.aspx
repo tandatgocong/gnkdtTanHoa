@@ -41,8 +41,7 @@
                     <asp:DropDownList ID="cbChonBC" runat="server"> 
                         <asp:ListItem Value="1">Theo Dõi Định Mức Dò Bể</asp:ListItem>
                         <asp:ListItem Value="2">Báo Cáo Định Mức Dò Bể</asp:ListItem>
-                        <asp:ListItem Value="3">KTB</asp:ListItem>
-                        <asp:ListItem Value="ĐĐS">Bể ĐĐS</asp:ListItem>                     
+                                     
                     </asp:DropDownList>                   
                 </td>
             </tr>

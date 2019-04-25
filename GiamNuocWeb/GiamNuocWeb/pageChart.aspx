@@ -49,5 +49,7 @@
     </td></tr>
 
 </table>
-<div id="chart_div" style="height:400px; width"></div>
+  <asp:Panel ID="Panel1" runat="server"  ScrollBars="Horizontal">
+        <div id="chart_div" style="height:400px; width"></div>
+  </asp:Panel>
 </asp:Content>

@@ -20,7 +20,7 @@ namespace GiamNuocWeb
     {
         public void pagePhanQuyen(string pUser)
         {
-           if (Session["role"].ToString().Equals(pUser))
+            if (Session["role"].ToString().Equals(pUser) == true || Session["role"].ToString().Equals("admin"))
             {
                 Panel1.Visible = true;
             }
@@ -30,7 +30,7 @@ namespace GiamNuocWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["page"] = "pageDBGiaoNhanDMA.aspx";
-            pagePhanQuyen("thongbao");
+           // pagePhanQuyen("thongbao");
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
                 return;
@@ -48,7 +48,7 @@ namespace GiamNuocWeb
             table.Columns.Add("TenNhom", typeof(string));
             table.Columns.Add("NgayBatDau", typeof(string));
             table.Columns.Add("DMA", typeof(string));
-            DataTable tb = Class.LinQConnection.getDataTable("SELECT IdNhom,TenNhom FROM  t_Users WHERE Role='dobe' Order By IdNhom ASC ");
+            DataTable tb = Class.LinQConnection.getDataTable("SELECT IdNhom,TenNhom FROM  t_Users WHERE Role='dobe'  AND Active='True' Order By IdNhom ASC ");
            
             cbNhomDB.DataSource = tb;
             cbNhomDB.DataTextField = "TenNhom";

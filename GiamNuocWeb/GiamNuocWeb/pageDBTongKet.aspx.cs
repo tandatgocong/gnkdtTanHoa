@@ -18,17 +18,21 @@ namespace GiamNuocWeb
                 Response.Redirect(@"pageLogin.aspx");
 
             }
-            //else if (!Session["role"].ToString().Equals(pUser))
-            //{
-            //    Response.Redirect(@"zphanquyen.aspx");
-            //}
+            else if (Session["role"].ToString().Equals(pUser) == true || Session["role"].ToString().Equals("admin"))
+            {
+
+            }
+            else
+            {
+                Response.Redirect(@"zphanquyen.aspx");
+            }
         }
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["page"] = "pageDBTongKet.aspx";
-            pagePhanQuyen("baobe");           
+           // pagePhanQuyen("baobe");           
 
             MaintainScrollPositionOnPostBack = true;
             if (IsPostBack)
@@ -51,7 +55,7 @@ namespace GiamNuocWeb
         {
             this.tNgay.Text = DateTime.Now.ToString("yyyy-MM-dd");
             this.dNgay.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            DataTable tb = Class.LinQConnection.getDataTable("SELECT IdNhom,TenNhom FROM  t_Users WHERE Role='dobe' Order By IdNhom ASC ");           
+            DataTable tb = Class.LinQConnection.getDataTable("SELECT IdNhom,TenNhom FROM  t_Users WHERE Role='dobe'  AND Active='True' Order By IdNhom ASC ");           
             cbNhomDB.DataSource = tb;
             cbNhomDB.DataTextField = "TenNhom";
             cbNhomDB.DataValueField = "IdNhom";
