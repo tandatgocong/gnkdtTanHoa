@@ -952,5 +952,13 @@ namespace PMACData
 
             Enable("Local Area Connection 2");
         }
+
+        private void btThatThoat_Click(object sender, EventArgs e)
+        {
+            frmThatThoatML tl = new frmThatThoatML();
+            tl.Show();
+        }
+
+       
     }
 }

@@ -148,6 +148,7 @@
                 RepeatDirection="Horizontal">
                 <asp:ListItem Selected="True" Value="0">Điều chỉnh Điểm Bể</asp:ListItem>
                 <asp:ListItem Value="1">In Thông Báo</asp:ListItem>
+               
 </asp:RadioButtonList>
 </div>
 

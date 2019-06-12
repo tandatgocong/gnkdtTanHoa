@@ -58,6 +58,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btNet01 = new System.Windows.Forms.Button();
             this.btNet90 = new System.Windows.Forms.Button();
+            this.btThatThoat = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -345,6 +346,17 @@
             this.btNet90.UseVisualStyleBackColor = true;
             this.btNet90.Click += new System.EventHandler(this.btNet90_Click);
             // 
+            // btThatThoat
+            // 
+            this.btThatThoat.Location = new System.Drawing.Point(709, 59);
+            this.btThatThoat.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btThatThoat.Name = "btThatThoat";
+            this.btThatThoat.Size = new System.Drawing.Size(75, 34);
+            this.btThatThoat.TabIndex = 9;
+            this.btThatThoat.Text = "Tỉ Lệ";
+            this.btThatThoat.UseVisualStyleBackColor = true;
+            this.btThatThoat.Click += new System.EventHandler(this.btThatThoat_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -368,6 +380,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.start);
             this.Controls.Add(this.lbStatus);
+            this.Controls.Add(this.btThatThoat);
             this.Controls.Add(this.btCopy);
             this.Controls.Add(this.stop);
             this.Controls.Add(this.label3);
@@ -419,6 +432,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btNet01;
         private System.Windows.Forms.Button btNet90;
+        private System.Windows.Forms.Button btThatThoat;
     }
 }
 

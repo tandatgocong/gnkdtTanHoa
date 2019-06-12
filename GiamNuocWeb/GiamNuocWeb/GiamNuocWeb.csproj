@@ -70,6 +70,7 @@
     <Content Include="color\default.css" />
     <Content Include="contactform\contactform.js" />
     <Content Include="contactform\readme.txt" />
+    <Content Include="pageDBBaoBeXuatFile.aspx" />
     <Content Include="font-awesome\css\font-awesome.css" />
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="pageDBTongKetIn.aspx" />
@@ -259,6 +260,13 @@
     <Compile Include="Class\OledbConnection.cs" />
     <Compile Include="Class\zPhanQuyen.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageDBBaoBeXuatFile.aspx.cs">
+      <DependentUpon>pageDBBaoBeXuatFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pageDBBaoBeXuatFile.aspx.designer.cs">
+      <DependentUpon>pageDBBaoBeXuatFile.aspx</DependentUpon>
     </Compile>
     <Compile Include="pageDBTongKetIn.aspx.cs">
       <DependentUpon>pageDBTongKetIn.aspx</DependentUpon>

@@ -90,6 +90,8 @@
                                   <li style="background-color:#02579D"><a href="pageDBGiaoNhanDMA.aspx">Giao DMA Dò Bể</a></li>   
                                   <li style="background-color:#02579D"><a href="pageDBTongKetIn.aspx">Tổng Kết Điểm Bể</a></li>   
                                   <li style="background-color:#02579D"><a href="pageDBTongKet.aspx">Theo Dõi Điểm Bể Nhóm</a></li>  
+                                  <li style="background-color:#02579D"><a href="pageDBBaoBeXuatFile.aspx">Xuất Excel Điểm Bể</a></li>  
+                                  
                                 </ul>
                         </li>
                         <% if (Session["login"] != null)
